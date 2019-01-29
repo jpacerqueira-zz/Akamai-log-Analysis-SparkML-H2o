@@ -1,0 +1,51 @@
+ 
+RESULTS :
+
+
+|Livesport.WebApi.Controllers.Playback.PlaybackV2Controller|
+
+ -- NEW Process with tokenizer 
+ -- NEW N-GRAM 5 from tokenizer
+
+ 
+spark2-shell --conf spark.debug.maxToStringFields=1500
+
+val df2 = spark.read.json("hdfs:///user/siemanalyst/data/raw/ott_dazn/logs-archive-production/dt=20190101/*.log.gz")
+df2.printSchema()
+val df3 = df2.filter(" message like '%\"Url\":\"https://isl-ca.dazn.com/misl/v2/Playback%' AND ( message like '%&Format=MPEG-DASH&%' ) AND (message like '%\"User-Agent\":\"Mozilla/5.0,(Macintosh; Intel Mac OS X 10_12_6),AppleWebKit/605.1.15,(KHTML, like Gecko),Version/11.1.2,Safari/605.1.15\"},%' ) AND ( message like '%,\"Response\":{\"StatusCode\":200,\"ReasonPhrase\":\"OK\",%') ").toDF()
+df3.printSchema()
+val df4 = df3.withColumn("messagecut", expr("substring(message, locate('|Livesport.WebApi.Controllers.Playback.PlaybackV2Controller|',message)+60 , length(message)-1)"))
+import org.apache.spark.ml.feature.{RegexTokenizer, Tokenizer}
+import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql.functions._
+val tokenizer = new Tokenizer().setInputCol("messagecut").setOutputCol("words")
+val regexTokenizer = new RegexTokenizer().setInputCol("messagecut").setOutputCol("words").setPattern("\\w+|").setGaps(false)
+val tokenized = regexTokenizer.transform(df4)
+tokenized.printSchema()
+tokenized.coalesce(1).write.json("data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190101")
+
+import org.apache.spark.ml.feature.NGram
+val df5 = spark.read.json("data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190101/*.json")
+val ngram = new NGram().setN(75).setInputCol("words").setOutputCol("ngrams")
+val ngramDataFrame = ngram.transform(df5)
+ngramDataFrame.select("ngrams").coalesce(1).write.json("data/staged/ott_dazn/fraud-canada-tokenizedwords-ngram-85/dt=20190101")
+
+sys.exit
+ 
+
+spark2-shell --conf spark.debug.maxToStringFields=1500
+
+import org.apache.spark.ml.feature.NGram
+val df4 = spark.read.json("data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181224/*.json")
+val ngram = new NGram().setN(75).setInputCol("words").setOutputCol("ngrams")
+val ngramDataFrame = ngram.transform(df4)
+ngramDataFrame.select("ngrams").coalesce(1).write.json("data/staged/ott_dazn/fraud-canada-tokenizedwords-ngram-75/dt=20181224")
+
+sys.exit 
+ 
+
+https://chpbda01.prod.ch.perform.local:8889/hue/filebrowser/view=/user/siemanalyst/data/staged/ott_dazn/fraud-canada-tokenizedwords#/user/siemanalyst/data/staged/ott_dazn/fraud-canada-tokenizedwords 
+ 
+ 
+ 
+ 

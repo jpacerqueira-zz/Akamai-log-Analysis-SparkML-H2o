@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+DATE_V1=$1
+if [ -z "$DATE_V1" ]
+then
+ DATE_V1=20170101
+fi
+
+echo "RAW d=20${DATE_V1} FILES COUNT : "
+hdfs dfs -ls /data/raw/ott_dazn/docomo_investigations/logs-archive-production/gzip/dt=20${DATE_V1}/*.gz | wc -l
+
+hdfs dfs -mkdir -p /data/staged/ott_dazn/docomo_investigations/logs-archive-production/parquet
+
+echo "Clean Stage to Avoid Duplicates of dt=20${DATE_V1}"
+hdfs dfs -rm -r -f -skipTrash  /data/staged/ott_dazn/docomo_investigations/logs-archive-production/parquet/dt=20${DATE_V1}/*.parquet 
+
+echo "TOTAL STAGED FILES COUNT : "
+hdfs dfs -ls -R /data/staged/ott_dazn/docomo_investigations/logs-archive-production/parquet/dt=*/*.parquet | wc -l 
+
+
+echo "STAGE RAW DATA AS PARQUET FOR DATE 20${DATE_V1} with SPARK"
+#  Spark Shell operations 
+# val df1=sqlContext.read.json("/data/raw/ott_dazn/docomo_investigations/logs-archive-production/gzip/dt=20170202/*.gz")
+# df1.printSchema()
+# df1.coalesce(24).write.mode("append").partitionBy("dt").parquet("/data/staged/ott_dazn/docomo_investigations/logs-archive-production/parquet")
+# val df2 = sqlContext.read.parquet("/data/staged/ott_dazn/docomo_investigations/logs-archive-production/gzip").printSchema()
+# exit()
+#
+
+# Additional for Spark container 
+
+MASTER_URL=yarn
+DEPLOY_MODE=client
+
+NUM_EXECUTORS=136
+DRIVER_MEMORY=4g
+EXECUTOR_MEMORY=2G
+EXECUTOR_CORES=4
+
+# Additional Logic workarround for new null token DI
+#
+#import org.apache.spark.sql.types.StringType
+#df.withColumn("token", lit(null).cast(StringType))
+#
+
+bash -c "echo 'import org.apache.spark.sql.types.StringType ;  sqlContext.setConf(\"spark.sql.hive.convertMetastoreParquet\",\"false\") ; val df1=sqlContext.read.json(\"/data/raw/ott_dazn/docomo_investigations/logs-archive-production/gzip/dt=20${DATE_V1}/*.gz\"); df1.printSchema() ; val df2=df1.withColumnRenamed(\"@metadata\", \"metadata\").withColumnRenamed(\"@timestamp\", \"timestamp\").withColumnRenamed(\"__logzio_id\",\"logzio_id\").withColumn(\"token\", lit(null).cast(StringType)) ; df2.write.mode(\"append\").partitionBy(\"dt\").parquet(\"/data/staged/ott_dazn/docomo_investigations/logs-archive-production/parquet\") ; val df3=sqlContext.read.parquet(\"/data/staged/ott_dazn/docomo_investigations/logs-archive-production/parquet\").printSchema() ; exit() ' | spark-shell --master ${MASTER_URL} --deploy-mode ${DEPLOY_MODE} --num-executors ${NUM_EXECUTORS}  --driver-memory ${DRIVER_MEMORY} --executor-memory ${EXECUTOR_MEMORY} --executor-cores ${EXECUTOR_CORES}  2>out1.log&" 
+#
+sleep 660
+#
+
+echo "Clean Hive Published to Avoid Duplicates of dt=20${DATE_V1}"
+hdfs dfs -rm -r -f -skipTrash  /user/hive/warehouse/published_ott_dazn.db/massive_elb_logs/dt=20${DATE_V1}/*.parquet 
+
+
+bash -c "echo ' spark.sql(\"USE published_ott_dazn\") ; spark.read.parquet(\"/data/staged/ott_dazn/docomo_investigations/logs-archive-production/parquet/dt=20${DATE_V1}/\").registerTempTable(\"massive_elb_logs_temp\") ; spark.sql(\"INSERT INTO TABLE published_ott_dazn.massive_elb_logs PARTITION (dt=20${DATE_V1}) SELECT metadata,timestamp,logzio_id,beat,input_type,it,logzio_codec,message,offset,source,tags,token,type  FROM massive_elb_logs_temp \")  ; sys.exit ' | spark2-shell --master ${MASTER_URL} --deploy-mode ${DEPLOY_MODE}  --num-executors ${NUM_EXECUTORS}  --driver-memory ${DRIVER_MEMORY} --executor-memory ${EXECUTOR_MEMORY} --executor-cores ${EXECUTOR_CORES} 2>out2.log&"
+
+echo "STAGED  d=20${DATE_V1} FILES COUNT : "
+hdfs dfs -ls -R /data/staged/ott_dazn/docomo_investigations/logs-archive-production/parquet/dt=20${DATE_V1}/*.parquet | wc -l 
+
+echo 1

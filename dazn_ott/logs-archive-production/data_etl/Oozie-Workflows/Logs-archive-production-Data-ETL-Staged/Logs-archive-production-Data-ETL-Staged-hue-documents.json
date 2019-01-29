@@ -1,0 +1,49 @@
+[
+{
+  "pk": 1450, 
+  "model": "desktop.document2", 
+  "fields": {
+    "search": null, 
+    "uuid": "c5b63554-734b-28c9-315d-e02c395a45ae", 
+    "extra": "", 
+    "type": "oozie-workflow2", 
+    "description": "Logs-archive-production - Data-ETL - Staged", 
+    "is_history": false, 
+    "parent_directory": [
+      "7dd1ee15-9892-4193-a4d7-242df5b85f36", 
+      1, 
+      false
+    ], 
+    "is_managed": false, 
+    "last_modified": "2017-12-01T17:25:23", 
+    "version": 1, 
+    "owner": [
+      "oracle"
+    ], 
+    "dependencies": [
+      [
+        "d7404e52-f8a3-4eee-8438-70ebeddad953", 
+        1, 
+        true
+      ], 
+      [
+        "654e04b5-c0dd-4c99-9134-166a25f14a31", 
+        1, 
+        true
+      ], 
+      [
+        "66fc51d8-79fb-4bf5-bd5c-4f45c14a9651", 
+        1, 
+        true
+      ], 
+      [
+        "6e9222cf-b8b0-41ba-84d2-316da97b36a8", 
+        1, 
+        true
+      ]
+    ], 
+    "data": "{\"layout\": [{\"oozieRows\": [{\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Ssh\", \"widgetType\": \"ssh-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"6ef4b3ad-8e92-35ed-cffb-880f602c9927\", \"size\": 12}], \"id\": \"9177288e-9b2c-d182-2b9d-5967eb6bcd7e\", \"columns\": []}], \"rows\": [{\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Start\", \"widgetType\": \"start-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"size\": 12}], \"id\": \"1e2a0e22-3514-67f6-8c74-29ac10c56ab7\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Ssh\", \"widgetType\": \"ssh-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"6ef4b3ad-8e92-35ed-cffb-880f602c9927\", \"size\": 12}], \"id\": \"9177288e-9b2c-d182-2b9d-5967eb6bcd7e\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"End\", \"widgetType\": \"end-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"size\": 12}], \"id\": \"413408b7-0824-bad3-a4ea-aff9769c9e20\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Kill\", \"widgetType\": \"kill-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"size\": 12}], \"id\": \"75745286-8910-f271-42e1-1b1ba6f7b2d6\", \"columns\": []}], \"oozieEndRow\": {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"End\", \"widgetType\": \"end-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"size\": 12}], \"id\": \"413408b7-0824-bad3-a4ea-aff9769c9e20\", \"columns\": []}, \"oozieKillRow\": {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Kill\", \"widgetType\": \"kill-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"size\": 12}], \"id\": \"75745286-8910-f271-42e1-1b1ba6f7b2d6\", \"columns\": []}, \"enableOozieDropOnAfter\": true, \"oozieStartRow\": {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Start\", \"widgetType\": \"start-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"size\": 12}], \"id\": \"1e2a0e22-3514-67f6-8c74-29ac10c56ab7\", \"columns\": []}, \"klass\": \"card card-home card-column span12\", \"enableOozieDropOnBefore\": true, \"drops\": [\"temp\"], \"id\": \"7826b3ce-2c56-91cb-a7fd-40984cd53a9d\", \"size\": 12}], \"workflow\": {\"properties\": {\"job_xml\": \"\", \"description\": \"Logs-archive-production - Data-ETL - Staged\", \"parameters\": [{\"name\": \"oozie.use.system.libpath\", \"value\": true}], \"sla_enabled\": false, \"deployment_dir\": \"/user/hue/oozie/workspaces/hue-oozie-1512135219.16\", \"schema_version\": \"uri:oozie:workflow:0.5\", \"properties\": [], \"show_arrows\": true, \"wf1_id\": null, \"sla\": [{\"key\": \"enabled\", \"value\": false}, {\"key\": \"nominal-time\", \"value\": \"${nominal_time}\"}, {\"key\": \"should-start\", \"value\": \"\"}, {\"key\": \"should-end\", \"value\": \"${30 * MINUTES}\"}, {\"key\": \"max-duration\", \"value\": \"\"}, {\"key\": \"alert-events\", \"value\": \"\"}, {\"key\": \"alert-contact\", \"value\": \"\"}, {\"key\": \"notification-msg\", \"value\": \"\"}, {\"key\": \"upstream-apps\", \"value\": \"\"}]}, \"name\": \"My Workflow\", \"versions\": [\"uri:oozie:workflow:0.4\", \"uri:oozie:workflow:0.4.5\", \"uri:oozie:workflow:0.5\"], \"isDirty\": true, \"movedNode\": null, \"linkMapping\": {\"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\": [], \"3f107997-04cc-8733-60a9-a4bb62cebffc\": [\"6ef4b3ad-8e92-35ed-cffb-880f602c9927\"], \"6ef4b3ad-8e92-35ed-cffb-880f602c9927\": [\"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\"], \"17c9c895-5a16-7443-bb81-f34b30b21548\": []}, \"nodeIds\": [\"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"6ef4b3ad-8e92-35ed-cffb-880f602c9927\"], \"nodes\": [{\"properties\": {}, \"name\": \"Start\", \"children\": [{\"to\": \"6ef4b3ad-8e92-35ed-cffb-880f602c9927\"}], \"actionParametersFetched\": false, \"type\": \"start-widget\", \"id\": \"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"actionParameters\": []}, {\"properties\": {}, \"name\": \"End\", \"children\": [], \"actionParametersFetched\": false, \"type\": \"end-widget\", \"id\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"actionParameters\": []}, {\"properties\": {\"body\": \"\", \"cc\": \"\", \"to\": \"\", \"enableMail\": false, \"message\": \"Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]\", \"subject\": \"\"}, \"name\": \"Kill\", \"children\": [], \"actionParametersFetched\": false, \"type\": \"kill-widget\", \"id\": \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"actionParameters\": []}, {\"properties\": {\"ssh_command\": \"bash -x /home/oracle/projects/dazn_ott/logs-archive-production/data_etl/stageprocess-transform_rawjson2parquet-ixpbda09 ${RUN_DATE}\", \"retry_max\": [], \"retry_interval\": [], \"capture_output\": true, \"host\": \"oracle@ixpbda09.prod.ix.perform.local\", \"arguments\": [], \"credentials\": [], \"sla\": [{\"key\": \"enabled\", \"value\": false}, {\"key\": \"nominal-time\", \"value\": \"${nominal_time}\"}, {\"key\": \"should-start\", \"value\": \"\"}, {\"key\": \"should-end\", \"value\": \"${30 * MINUTES}\"}, {\"key\": \"max-duration\", \"value\": \"\"}, {\"key\": \"alert-events\", \"value\": \"\"}, {\"key\": \"alert-contact\", \"value\": \"\"}, {\"key\": \"notification-msg\", \"value\": \"\"}, {\"key\": \"upstream-apps\", \"value\": \"\"}]}, \"name\": \"ssh-6ef4\", \"children\": [{\"to\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\"}, {\"error\": \"17c9c895-5a16-7443-bb81-f34b30b21548\"}], \"actionParametersFetched\": false, \"type\": \"ssh-widget\", \"id\": \"6ef4b3ad-8e92-35ed-cffb-880f602c9927\", \"actionParameters\": []}], \"id\": 1450, \"nodeNamesMapping\": {\"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\": \"End\", \"3f107997-04cc-8733-60a9-a4bb62cebffc\": \"Start\", \"6ef4b3ad-8e92-35ed-cffb-880f602c9927\": \"ssh-6ef4\", \"17c9c895-5a16-7443-bb81-f34b30b21548\": \"Kill\"}, \"uuid\": \"c5b63554-734b-28c9-315d-e02c395a45ae\"}}", 
+    "name": "Logs-archive-production - Data-ETL - Staged"
+  }
+}
+]

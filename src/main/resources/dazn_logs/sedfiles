@@ -1,0 +1,6 @@
+#!/bin/bash
+FILENAME=$1
+sed -i '2d' $FILENAME
+sed -i '1d' $FILENAME
+sed -i.bak 1i"date\ttime\tcs_ip\tcs_method\tcs_uri_origin\tcs_uri_stem\tcs_uri_query\tsc_status\tsc_bytes\ttime_taken\tcs_referer\tcs_user_agent\tcs_cookie\tcs_host_header\tcs_request_id\tcached" $FILENAME
+exit 0

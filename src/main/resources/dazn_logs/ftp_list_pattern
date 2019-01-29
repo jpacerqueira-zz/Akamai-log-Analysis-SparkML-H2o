@@ -1,0 +1,14 @@
+#!/bin/sh
+SERVER=$1
+USER=$2
+PASSWD=$3
+PATTERN=$4
+
+ftp -n $SERVER <<SCRIPT
+user $USER $PASSWD
+binary
+ls $PATTERN
+quit
+SCRIPT
+
+#exit 0

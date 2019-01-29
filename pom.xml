@@ -1,0 +1,327 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>ptv.content.akamailogs.staged</groupId>
+    <artifactId>parquetindexer</artifactId>
+    <version>1.0-TPOC</version>
+
+    <properties>
+            <scala.version>2.11.8</scala.version>
+            <hadoop-client.version>2.6.0-cdh5.14.2</hadoop-client.version>
+            <spark.version>2.3.0.cloudera2</spark.version>
+            <elasticsearch-spark.version>2.4.4</elasticsearch-spark.version>
+            <elasticsearch-hadoop>2.4.4</elasticsearch-hadoop>
+            <joda-time.version>2.7</joda-time.version>
+            <joda-convert.version>1.7</joda-convert.version>
+            <snappy-java.version>1.0.5.4</snappy-java.version>
+            <scalatest.version>2.2.4</scalatest.version>
+            <maven-scala-plugin.version>2.15.2</maven-scala-plugin.version>
+	        <maven-assembly-plugin.version>2.6</maven-assembly-plugin.version>
+            <guava.version>16.0</guava.version>
+            <snappy-java.version>1.0.5.4</snappy-java.version>
+            <junit.version>4.12</junit.version>
+            <hadoop-hdfs.version>2.6.0-cdh5.14.2</hadoop-hdfs.version>
+            <hadoop-common.version>2.6.0-cdh5.14.2</hadoop-common.version>
+            <spock.version>1.0-groovy-2.4</spock.version>
+            <groovy.all.version>2.4.3</groovy.all.version>
+            <gmaven.version>1.5</gmaven.version>
+            <slf4j.version>1.7.5</slf4j.version>
+            <log4j.version>1.2.17</log4j.version>
+            <commons-cli.version>1.2</commons-cli.version>
+            <cglib.version>3.2.4</cglib.version>
+            <hadoop-minicluster.version>2.6.0-cdh5.14.2</hadoop-minicluster.version>
+            <oozie.version>4.1.0-cdh5.14.1</oozie.version>
+            <databricks.spark-csv.version>1.5.0</databricks.spark-csv.version>
+            <scopt.version>3.5.0</scopt.version>
+    </properties>
+
+
+    <repositories>
+            <repository>
+                <id>cloudera</id>
+                <url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
+            </repository>
+            <repository>
+                <id>org.apache.spark</id>
+                <name>org.apache.spark</name>
+                <url>https://mvnrepository.com/artifact/org.apache.spark/</url>
+            </repository>
+
+            <repository>
+                <id>org.scala-tools</id>
+                <name>org.scala-tools</name>
+                <url>http://scala-tools.org/repo-releases</url>
+            </repository>
+            <repository>
+                <id>org.elasticsearch</id>
+                <name>ElasticSearch</name>
+                <url>https://mvnrepository.com/artifact/org.elasticsearch/elasticsearch</url>
+            </repository>
+            <repository>
+                <id>com.databricks</id>
+                <name>DataBricks</name>
+                <url>https://mvnrepository.com/artifact/com.databricks/spark-avro_2.10</url>
+            </repository>
+    </repositories>
+
+    <pluginRepositories>
+            <pluginRepository>
+                <id>org.scala-tools</id>
+                <name>org.scala-tools</name>
+                <url>http://scala-tools.org/repo-releases</url>
+            </pluginRepository>
+            <pluginRepository>
+                <id>org.apache.spark</id>
+                <name>org.apache.spark</name>
+                <url>https://mvnrepository.com/artifact/org.apache.spark/spark-core_2.11/</url>
+            </pluginRepository>
+
+            <pluginRepository>
+                <id>cloudera</id>
+                <name>Cloudera Repo</name>
+                <url>https://repository.cloudera.com/artifactory/cloudera-repos/
+                </url>
+            </pluginRepository>
+            <pluginRepository>
+                <id>org.elasticsearch</id>
+                <name>org.elasticSearch</name>
+                <url>https://mvnrepository.com/artifact/org.elasticsearch/elasticsearch/</url>
+            </pluginRepository>
+            <pluginRepository><id>com.databricks</id>
+                <name>DataBricks</name>
+                <url>https://mvnrepository.com/artifact/com.databricks/spark-avro_2.11</url>
+            </pluginRepository>
+
+    </pluginRepositories>
+
+    <dependencies>
+
+            <dependency>
+                <groupId>org.scala-lang</groupId>
+                <artifactId>scala-library</artifactId>
+                <version>${scala.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.spark</groupId>
+                <artifactId>spark-core_2.11</artifactId>
+                <version>${spark.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.spark</groupId>
+                <artifactId>spark-sql_2.11</artifactId>
+                <version>${spark.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.hadoop</groupId>
+                <artifactId>hadoop-client</artifactId>
+                <version>${hadoop-client.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>javax.servlet</groupId>
+                        <artifactId>servlet-api</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.scalatest</groupId>
+                <artifactId>scalatest_2.11</artifactId>
+                <version>${scalatest.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>joda-time</groupId>
+                <artifactId>joda-time</artifactId>
+                <version>${joda-time.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.joda</groupId>
+                <artifactId>joda-convert</artifactId>
+                <version>${joda-convert.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.xerial.snappy</groupId>
+                <artifactId>snappy-java</artifactId>
+                <version>${snappy-java.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+        <dependency>
+            <groupId>com.databricks</groupId>
+            <artifactId>spark-csv_2.11</artifactId>
+            <version>${databricks.spark-csv.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.scopt</groupId>
+            <artifactId>scopt_2.10</artifactId>
+            <version>${scopt.version}</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+            <sourceDirectory>src/main/scala</sourceDirectory>
+            <testSourceDirectory>src/tests</testSourceDirectory>
+            <plugins>
+
+                <!-- Scala Compiler -->
+                <plugin>
+                    <groupId>net.alchim31.maven</groupId>
+                    <artifactId>scala-maven-plugin</artifactId>
+                    <version>3.2.2</version>
+                    <executions>
+                        <!-- Run scala compiler in the process-resources phase, so that dependencies on
+                            scala classes can be resolved later in the (Java) compile phase -->
+                        <execution>
+                            <id>scala-compile-first</id>
+                            <phase>process-resources</phase>
+                            <goals>
+                                <goal>compile</goal>
+                            </goals>
+                        </execution>
+
+                        <!-- Run scala compiler in the process-test-resources phase, so that dependencies on
+                             scala classes can be resolved later in the (Java) test-compile phase -->
+                        <execution>
+                            <id>scala-test-compile</id>
+                            <phase>process-test-resources</phase>
+                            <goals>
+                                <goal>testCompile</goal>
+                            </goals>
+                        </execution>
+
+                        <!-- Make Scala source code visible to Maven.  This is required for
+                                                 correct work of Eclipse/Scala integration. -->
+                        <execution>
+                            <id>scala-add-source</id>
+                            <goals>
+                                <goal>add-source</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <jvmArgs>
+                            <jvmArg>-Xms128m</jvmArg>
+                            <jvmArg>-Xmx512m</jvmArg>
+                        </jvmArgs>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>3.0.1</version><!--$NO-MVN-MAN-VER$-->
+                    <executions>
+                        <execution>
+                            <id>attach-sources</id>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <executions>
+
+                        <!-- MBoxParser -->
+                        <execution>
+                            <id>MBoxParser</id>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+
+                            <configuration>
+                                <classifier>MBoxParser</classifier>
+
+                                <archive>
+                                    <manifestEntries>
+                                        <main-class>com.dataartisans.flinkTraining.dataSetPreparation.MBoxParser</main-class>
+                                    </manifestEntries>
+                                </archive>
+
+                                <includes>
+                                    <include>**/MBoxParser.class</include>
+                                    <include>**/MBoxParser$*.class</include>
+                                </includes>
+                            </configuration>
+                        </execution>
+
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.scala-tools</groupId>
+                    <artifactId>maven-scala-plugin</artifactId>
+                    <version>${maven-scala-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>compile</id>
+                            <goals>
+                                <goal>compile</goal>
+                            </goals>
+                            <phase>compile</phase>
+                        </execution>
+                        <execution>
+                            <id>test-compile</id>
+                            <goals>
+                                <goal>testCompile</goal>
+                            </goals>
+                            <phase>test-compile</phase>
+                        </execution>
+                        <execution>
+                            <phase>process-resources</phase>
+                            <goals>
+                                <goal>compile</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <jvmArgs>
+                            <jvmArg>-Xmx1024m</jvmArg>
+
+                        </jvmArgs>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <version>${maven-assembly-plugin.version}</version>
+                    <configuration>
+                        <descriptorRefs>
+                            <descriptorRef>jar-with-dependencies</descriptorRef>
+                        </descriptorRefs>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>make-assembly</id>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>single</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+    </build>
+
+    <scm>
+            <connection>scm:git:ssh://git@github.com/performgroup/bda-akamai-logs-spark.git</connection>
+            <developerConnection>scm:git:ssh://git@github.com/performgroup/bda-akamai-logs-spark.git</developerConnection>
+            <url>https://github.com/performgroup/bda-akamai-logs-spark</url>
+    </scm>
+
+</project>

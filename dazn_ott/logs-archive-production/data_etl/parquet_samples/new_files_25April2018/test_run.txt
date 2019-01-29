@@ -1,0 +1,87 @@
+6bbf5-030a-45d3-9a81-93a61b41e398.snappy.parquet
+-rw-r--r--   3 oracle hive  204239108 2018-04-24 22:39 /user/hive/warehouse/published_ott_dazn.db/massive_elb_logs/dt=20180423/part-00061-d606bbf5-030a-45d3-9a81-93a61b41e398.snappy.parquet
+[oracle@ixpbda09 new_files_25April2018]$ hdfs dfs -copyToLocal /user/hive/warehouse/published_ott_dazn.db/massive_elb_logs/dt=20180423/part-00061-d606bbf5-030a-45d3-9a81-93a61b41e398.snappy.parquet
+[oracle@ixpbda09 new_files_25April2018]$ ls
+part-00061-d606bbf5-030a-45d3-9a81-93a61b41e398.snappy.parquet  test_files.sh
+[oracle@ixpbda09 new_files_25April2018]$ vi test_files.sh
+[oracle@ixpbda09 new_files_25April2018]$ bash -x test_files.sh
++ parquet-tools meta part-00061-d606bbf5-030a-45d3-9a81-93a61b41e398.snappy.parquet
+creator:      parquet-mr version 1.5.0-cdh5.7.0 (build ${buildNumber})
+extra:        org.apache.spark.sql.parquet.row.metadata = {"type":"struct","fields":[{"name":"metadata","type":{"type":"struct","fi [more]...
+
+file schema:  spark_schema
+---------------------------------------------------------------------------------------------------------------------------------------------
+metadata:     OPTIONAL F:2
+.beat:        OPTIONAL BINARY O:UTF8 R:0 D:2
+.type:        OPTIONAL BINARY O:UTF8 R:0 D:2
+timestamp:    OPTIONAL BINARY O:UTF8 R:0 D:1
+logzio_id:    OPTIONAL BINARY O:UTF8 R:0 D:1
+beat:         OPTIONAL F:3
+.hostname:    OPTIONAL BINARY O:UTF8 R:0 D:2
+.name:        OPTIONAL BINARY O:UTF8 R:0 D:2
+.version:     OPTIONAL BINARY O:UTF8 R:0 D:2
+input_type:   OPTIONAL BINARY O:UTF8 R:0 D:1
+it:           OPTIONAL BINARY O:UTF8 R:0 D:1
+logzio_codec: OPTIONAL BINARY O:UTF8 R:0 D:1
+message:      OPTIONAL BINARY O:UTF8 R:0 D:1
+offset:       OPTIONAL INT64 R:0 D:1
+source:       OPTIONAL BINARY O:UTF8 R:0 D:1
+tags:         OPTIONAL F:1
+.bag:         REPEATED F:1
+..array:      OPTIONAL BINARY O:UTF8 R:1 D:3
+token:        OPTIONAL BINARY O:UTF8 R:0 D:1
+type:         OPTIONAL BINARY O:UTF8 R:0 D:1
+
+row group 1:  RC:688907 TS:354697943
+---------------------------------------------------------------------------------------------------------------------------------------------
+metadata:
+.beat:         BINARY SNAPPY DO:0 FPO:4 SZ:24686/96501/3.91 VC:688907 ENC:BIT_PACKED,RLE,PLAIN_DICTIONARY
+.type:         BINARY SNAPPY DO:0 FPO:24690 SZ:30788/103426/3.36 VC:688907 ENC:BIT_PACKED,RLE,PLAIN_DICTIONARY
+timestamp:     BINARY SNAPPY DO:0 FPO:55478 SZ:3351872/15773347/4.71 VC:688907 ENC:BIT_PACKED,RLE,PLAIN_DICTIONARY,PLAIN
+logzio_id:     BINARY SNAPPY DO:0 FPO:3407350 SZ:5688826/16535047/2.91 VC:688907 ENC:BIT_PACKED,RLE,PLAIN
+beat:
+.hostname:     BINARY SNAPPY DO:0 FPO:9096176 SZ:361898/434394/1.20 VC:688907 ENC:BIT_PACKED,RLE,PLAIN_DICTIONARY
+.name:         BINARY SNAPPY DO:0 FPO:9458074 SZ:361898/434394/1.20 VC:688907 ENC:BIT_PACKED,RLE,PLAIN_DICTIONARY
+.version:      BINARY SNAPPY DO:0 FPO:9819972 SZ:24579/96419/3.92 VC:688907 ENC:BIT_PACKED,RLE,PLAIN_DICTIONARY
+input_type:    BINARY SNAPPY DO:0 FPO:9844551 SZ:20869/53842/2.58 VC:688907 ENC:BIT_PACKED,RLE,PLAIN_DICTIONARY
+it:            BINARY SNAPPY DO:0 FPO:9865420 SZ:21592/54040/2.50 VC:688907 ENC:BIT_PACKED,RLE,PLAIN_DICTIONARY
+logzio_codec:  BINARY SNAPPY DO:0 FPO:9887012 SZ:21161/53900/2.55 VC:688907 ENC:BIT_PACKED,RLE,PLAIN_DICTIONARY
+message:       BINARY SNAPPY DO:0 FPO:9908173 SZ:117117173/317988532/2.72 VC:688907 ENC:BIT_PACKED,RLE,PLAIN
+offset:        INT64 SNAPPY DO:0 FPO:127025346 SZ:1757223/2728889/1.55 VC:688907 ENC:BIT_PACKED,RLE,PLAIN
+source:        BINARY SNAPPY DO:0 FPO:128782569 SZ:49665/146837/2.96 VC:688907 ENC:BIT_PACKED,RLE,PLAIN_DICTIONARY
+tags:
+.bag:
+..array:       BINARY SNAPPY DO:0 FPO:128832234 SZ:24712/96553/3.91 VC:688907 ENC:RLE,PLAIN_DICTIONARY
+token:         BINARY SNAPPY DO:0 FPO:128856946 SZ:35/33/0.94 VC:688907 ENC:BIT_PACKED,RLE,PLAIN
+type:          BINARY SNAPPY DO:0 FPO:128856981 SZ:32172/101789/3.16 VC:688907 ENC:BIT_PACKED,RLE,PLAIN_DICTIONARY
+
+row group 2:  RC:396093 TS:211460179
+---------------------------------------------------------------------------------------------------------------------------------------------
+metadata:
+.beat:         BINARY SNAPPY DO:0 FPO:128889153 SZ:11649/35908/3.08 VC:396093 ENC:BIT_PACKED,RLE,PLAIN_DICTIONARY
+.type:         BINARY SNAPPY DO:0 FPO:128900802 SZ:16327/41647/2.55 VC:396093 ENC:BIT_PACKED,RLE,PLAIN_DICTIONARY
+timestamp:     BINARY SNAPPY DO:0 FPO:128917129 SZ:1711741/7734016/4.52 VC:396093 ENC:BIT_PACKED,RLE,PLAIN_DICTIONARY,PLAIN
+logzio_id:     BINARY SNAPPY DO:0 FPO:130628870 SZ:3032676/9507029/3.13 VC:396093 ENC:BIT_PACKED,RLE,PLAIN
+beat:
+.hostname:     BINARY SNAPPY DO:0 FPO:133661546 SZ:235609/260772/1.11 VC:396093 ENC:BIT_PACKED,RLE,PLAIN_DICTIONARY
+.name:         BINARY SNAPPY DO:0 FPO:133897155 SZ:235609/260772/1.11 VC:396093 ENC:BIT_PACKED,RLE,PLAIN_DICTIONARY
+.version:      BINARY SNAPPY DO:0 FPO:134132764 SZ:11527/35891/3.11 VC:396093 ENC:BIT_PACKED,RLE,PLAIN_DICTIONARY
+input_type:    BINARY SNAPPY DO:0 FPO:134144291 SZ:10185/21674/2.13 VC:396093 ENC:BIT_PACKED,RLE,PLAIN_DICTIONARY
+it:            BINARY SNAPPY DO:0 FPO:134154476 SZ:10853/22871/2.11 VC:396093 ENC:BIT_PACKED,RLE,PLAIN_DICTIONARY
+logzio_codec:  BINARY SNAPPY DO:0 FPO:134165329 SZ:10230/21683/2.12 VC:396093 ENC:BIT_PACKED,RLE,PLAIN_DICTIONARY
+message:       BINARY SNAPPY DO:0 FPO:134175559 SZ:68847407/191586990/2.78 VC:396093 ENC:BIT_PACKED,RLE,PLAIN
+offset:        INT64 SNAPPY DO:0 FPO:203022966 SZ:1159037/1794269/1.55 VC:396093 ENC:BIT_PACKED,RLE,PLAIN
+source:        BINARY SNAPPY DO:0 FPO:204182003 SZ:21982/57721/2.63 VC:396093 ENC:BIT_PACKED,RLE,PLAIN_DICTIONARY
+tags:
+.bag:
+..array:       BINARY SNAPPY DO:0 FPO:204203985 SZ:11625/35933/3.09 VC:396093 ENC:RLE,PLAIN_DICTIONARY
+token:         BINARY SNAPPY DO:0 FPO:204215610 SZ:35/33/0.94 VC:396093 ENC:BIT_PACKED,RLE,PLAIN
+type:          BINARY SNAPPY DO:0 FPO:204215645 SZ:17374/42970/2.47 VC:396093 ENC:BIT_PACKED,RLE,PLAIN_DICTIONARY
+[oracle@ixpbda09 new_files_25April2018]$
+[oracle@ixpbda09 new_files_25April2018]$ pws
+-bash: pws: command not found
+[oracle@ixpbda09 new_files_25April2018]$ pwd
+/home/oracle/projects/dazn_ott/logs-archive-production/data_etl/parquet_samples/new_files_25April2018
+[oracle@ixpbda09 new_files_25April2018]$ pwd
+/home/oracle/projects/dazn_ott/logs-archive-production/data_etl/parquet_samples/new_files_25April2018
+[oracle@ixpbda09 new_files_25April2018]$
