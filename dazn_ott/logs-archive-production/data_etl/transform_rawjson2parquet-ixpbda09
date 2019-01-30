@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+DATE_V1=$1
+if [ -z "$DATE_V1" ]
+then
+ DATE_V1=20170101
+fi
+
+echo "RAW d=20${DATE_V1} FILES COUNT : "
+hdfs dfs -ls /data/raw/ott_dazn/docomo_investigations/logs-archive-production/gzip/dt=20${DATE_V1}/*.gz | wc -l
+
+hdfs dfs -mkdir -p /data/staged/ott_dazn/docomo_investigations/logs-archive-production/parquet
+
+echo "TOTAL STAGED FILES COUNT : "
+hdfs dfs -ls -R /data/staged/ott_dazn/docomo_investigations/logs-archive-production/parquet/dt=*/*.parquet | wc -l 
+
+echo "STAGE RAW DATA AS PARQUET FOR DATE 20${DATE_V1} with SPARK"
+#  Spark Shell operations 
+# val df1=sqlContext.read.json("/data/raw/ott_dazn/docomo_investigations/logs-archive-production/gzip/dt=20170202/*.gz")
+# df1.printSchema()
+# df1.coalesce(24).write.mode("append").partitionBy("dt").parquet("/data/staged/ott_dazn/docomo_investigations/logs-archive-production/parquet")
+# val df2 = sqlContext.read.parquet("/data/staged/ott_dazn/docomo_investigations/logs-archive-production/gzip").printSchema()
+# exit()
+#
+
+# Additional for Spark container 
+
+MASTER_URL=yarn
+DEPLOY_MODE=client
+
+NUM_EXECUTORS=136
+DRIVER_MEMORY=3g
+EXECUTOR_MEMORY=2G
+EXECUTOR_CORES=4
+
+bash -c "echo ' sqlContext.setConf(\"spark.sql.hive.convertMetastoreParquet\",\"false\") ; val df1=sqlContext.read.json(\"/data/raw/ott_dazn/docomo_investigations/logs-archive-production/gzip/dt=20${DATE_V1}/*.gz\"); df1.printSchema() ; val df2=df1.withColumnRenamed(\"@metadata\", \"metadata\").withColumnRenamed(\"@timestamp\", \"timestamp\").withColumnRenamed(\"__logzio_id\",\"logzio_id\") ; df2.coalesce(24).write.mode(\"append\").partitionBy(\"dt\").parquet(\"/data/staged/ott_dazn/docomo_investigations/logs-archive-production/parquet\") ; val df3=sqlContext.read.parquet(\"/data/staged/ott_dazn/docomo_investigations/logs-archive-production/parquet\").printSchema() ; exit() ' | spark-shell --master ${MASTER_URL} --deploy-mode ${DEPLOY_MODE} --num-executors ${NUM_EXECUTORS}  --driver-memory ${DRIVER_MEMORY} --executor-memory ${EXECUTOR_MEMORY} --executor-cores ${EXECUTOR_CORES}  2>1&" 
+#
+sleep 1200
+#
+bash -c "echo ' spark.sql(\"USE published_ott_dazn\") ; spark.read.parquet(\"/data/staged/ott_dazn/docomo_investigations/logs-archive-production/parquet/dt=20${DATE_V1}/\").registerTempTable(\"massive_elb_logs_temp\") ; spark.sql(\"INSERT INTO TABLE published_ott_dazn.massive_elb_logs PARTITION (dt=20${DATE_V1}) SELECT * FROM massive_elb_logs_temp \")  ; sys.exit ' | spark2-shell --master ${MASTER_URL} --deploy-mode ${DEPLOY_MODE} 2>1&"
+
+echo "STAGED  d=20${DATE_V1} FILES COUNT : "
+hdfs dfs -ls -R /data/staged/ott_dazn/docomo_investigations/logs-archive-production/parquet/dt=20${DATE_V1}/*.parquet | wc -l 
+

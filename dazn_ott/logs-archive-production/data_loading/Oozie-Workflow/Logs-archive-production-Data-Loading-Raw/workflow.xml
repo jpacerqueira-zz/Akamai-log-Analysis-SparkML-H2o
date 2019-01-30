@@ -1,0 +1,16 @@
+<workflow-app name="My_Workflow" xmlns="uri:oozie:workflow:0.5">
+    <start to="ssh-68f2"/>
+    <kill name="Kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="ssh-68f2">
+        <ssh xmlns="uri:oozie:ssh-action:0.1">
+            <host>oracle@ixpbda08.prod.ix.perform.local</host>
+            <command>bash -x /home/oracle/projects/massive_elb_logs_archive_production/data/raw/ott_dazn/docomo_investigations/logs-archive-production/data_loading/load_rawjson-ixpbda08 ${RUN_DATE}</command>
+            <capture-output/>
+        </ssh>
+        <ok to="End"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

@@ -1,0 +1,1 @@
+spark.sql("USE published_ott_dazn ") ; spark.read.parquet("/data/staged/ott_dazn/pair_misldeviceid_mislviewerid/parquet").registerTempTable("pair_misldeviceid_mislviewerid_temp") ; spark.sql("CREATE TABLE published_ott_dazn.pair_misldeviceid_mislviewerid USING PARQUET  AS SELECT * FROM pair_misldeviceid_mislviewerid_temp ") ; sys.exit  

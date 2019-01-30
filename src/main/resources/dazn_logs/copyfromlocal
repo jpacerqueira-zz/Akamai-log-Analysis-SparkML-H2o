@@ -1,0 +1,6 @@
+#!/bin/bash
+FILENAME=$1
+ID=0
+hdfs dfs -copyFromLocal -f $FILENAME /data/raw/akamai/dazn_logs/dt=0/id=${ID}/hh=0
+rm $FILENAME $FILENAME.bak
+hdfs dfs -ls -R /data/raw/akamai/dazn_logs/dt=0/id=${ID}/hh=0

@@ -1,0 +1,7 @@
+#!/bin/bash
+FILENAME=$1
+sed -i '2d' $FILENAME
+sed -i '1d' $FILENAME
+sed -i.bak 1i"date\ttime\tcs_ip\tcs_method\tcs_uri\tsc-status\tsc_bytes\ttime_taken\tcs_referer\tcs_user_agent\tcs_cookie\tx-custo" $FILENAME
+## #Fields:   date  time  cs-ip  cs-method  cs-uri  sc-status  sc-bytes  time-taken  cs(Referer) cs(User-Agent) cs(Cookie) x-custo
+exit 0
