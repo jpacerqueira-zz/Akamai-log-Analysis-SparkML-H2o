@@ -1,2 +1,0 @@
-date	time	cs_ip	cs_method	cs_uri_origin	cs_uri_stem	cs_uri_query	sc_status	sc_bytes	time_taken	cs_referer	cs_user_agent	cs_cookie	cs_host_header	cs_request_id	cached
-2017-03-03	21:54:01	126.150.92.254	GET	origin1-dc1-live-ak.dazn.com	/out/u/333_audio_1_13_103987.mp4	m=1488369126	200	200119	7	-	"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"	-	"dc1livejpdazn-a.akamaihd.net"	"173a91f7"	1

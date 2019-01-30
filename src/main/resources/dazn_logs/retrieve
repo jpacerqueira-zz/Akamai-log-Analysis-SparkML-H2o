@@ -1,8 +1,0 @@
-#!/bin/sh
-#ftp_fetch_pattern SERVER USER PASSWORD PATTERN
-USER=$1
-PASSWORD=$2
-PFILE=$3
-echo $PFILE
-#bash -x ftp_list_pattern ftp.performgroup.com $USER $PASSWORD  $PFILE >> current_fetched_files.txt
-bash -x ftp_fetch_pattern ftp.performgroup.com $USER $PASSWORD  $PFILE
