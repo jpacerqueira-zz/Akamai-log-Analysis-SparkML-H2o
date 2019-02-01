@@ -1,0 +1,123 @@
+[
+{
+  "pk": 1293, 
+  "model": "desktop.document2", 
+  "fields": {
+    "search": null, 
+    "uuid": "4205ae11-f43f-e715-c2a3-abcb3d5eb87c", 
+    "extra": "", 
+    "type": "oozie-workflow2", 
+    "description": "Fraud Canada Tokenized NGrams 85", 
+    "is_history": false, 
+    "parent_directory": [
+      "15c3778f-8947-49b8-8a46-cc286ddc553f", 
+      1, 
+      false
+    ], 
+    "is_managed": false, 
+    "last_modified": "2019-01-29T10:34:39", 
+    "version": 1, 
+    "owner": [
+      "siemanalyst"
+    ], 
+    "dependencies": [
+      [
+        "555d79b2-a10d-4415-b129-6fbd27fd5c9a", 
+        1, 
+        true
+      ], 
+      [
+        "72940615-35bd-46b1-87a7-09b1d141b6a8", 
+        1, 
+        true
+      ], 
+      [
+        "1cc9fe12-2439-4d28-b149-4929c0be51ad", 
+        1, 
+        true
+      ], 
+      [
+        "676be0ff-e86c-4135-93f5-28b1ea8b0bae", 
+        1, 
+        true
+      ], 
+      [
+        "4c3e9a86-5e0b-43e4-a504-6a4ccec6a57f", 
+        1, 
+        true
+      ], 
+      [
+        "6f86b23a-0dd7-4061-9a9d-deac236e005a", 
+        1, 
+        true
+      ], 
+      [
+        "42e63c55-1b29-4dc5-bbec-710c9d278f9b", 
+        1, 
+        true
+      ], 
+      [
+        "980c3c71-6aa7-40cf-ba0a-b4744ffd53fe", 
+        1, 
+        true
+      ], 
+      [
+        "ab5492b6-c158-43a2-acf5-303881cbd1ed", 
+        1, 
+        true
+      ], 
+      [
+        "6def5e94-3e26-4b08-bf2b-98435f8553d0", 
+        1, 
+        true
+      ], 
+      [
+        "e415589f-ddd2-414e-9605-71c8b09e24cb", 
+        1, 
+        true
+      ], 
+      [
+        "6a5d6ed5-8b61-4f9d-8a63-c1da7fc8ac55", 
+        1, 
+        true
+      ]
+    ], 
+    "data": "{\"layout\": [{\"oozieRows\": [{\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Ssh\", \"widgetType\": \"ssh-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"gridsterHeight\": 0, \"externalIdUrl\": \"\", \"properties\": {}, \"externalId\": \"\", \"isLoading\": false, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"e40aa1e8-f8cf-3a5b-9bc2-6dfc17fc8540\", \"size\": 12}], \"id\": \"c56f4b8c-a9b1-3efe-1ccd-f34d1af19b7a\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Email\", \"widgetType\": \"email-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"gridsterHeight\": 0, \"externalIdUrl\": \"\", \"properties\": {}, \"externalId\": \"\", \"isLoading\": false, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"fcbebab5-a4f6-5150-b463-841a87958bdb\", \"size\": 12}], \"id\": \"5e06f1b3-fea6-cddb-ec71-32efa9ae769e\", \"columns\": []}], \"rows\": [{\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Start\", \"widgetType\": \"start-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"gridsterHeight\": 0, \"externalIdUrl\": \"\", \"properties\": {}, \"externalId\": \"\", \"isLoading\": false, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"size\": 12}], \"id\": \"3468e1af-f801-5b14-e166-f1a4d85135cb\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Ssh\", \"widgetType\": \"ssh-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"gridsterHeight\": 0, \"externalIdUrl\": \"\", \"properties\": {}, \"externalId\": \"\", \"isLoading\": false, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"e40aa1e8-f8cf-3a5b-9bc2-6dfc17fc8540\", \"size\": 12}], \"id\": \"c56f4b8c-a9b1-3efe-1ccd-f34d1af19b7a\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Email\", \"widgetType\": \"email-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"gridsterHeight\": 0, \"externalIdUrl\": \"\", \"properties\": {}, \"externalId\": \"\", \"isLoading\": false, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"fcbebab5-a4f6-5150-b463-841a87958bdb\", \"size\": 12}], \"id\": \"5e06f1b3-fea6-cddb-ec71-32efa9ae769e\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"End\", \"widgetType\": \"end-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"gridsterHeight\": 0, \"externalIdUrl\": \"\", \"properties\": {}, \"externalId\": \"\", \"isLoading\": false, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"size\": 12}], \"id\": \"4eea1f15-5d2f-e423-2015-adbdd64fe72a\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Kill\", \"widgetType\": \"kill-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"gridsterHeight\": 0, \"externalIdUrl\": \"\", \"properties\": {}, \"externalId\": \"\", \"isLoading\": false, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"size\": 12}], \"id\": \"b8bbbe0a-7764-846c-6d41-9e51c2da80a7\", \"columns\": []}], \"oozieEndRow\": {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"End\", \"widgetType\": \"end-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"gridsterHeight\": 0, \"externalIdUrl\": \"\", \"properties\": {}, \"externalId\": \"\", \"isLoading\": false, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"size\": 12}], \"id\": \"4eea1f15-5d2f-e423-2015-adbdd64fe72a\", \"columns\": []}, \"oozieKillRow\": {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Kill\", \"widgetType\": \"kill-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"gridsterHeight\": 0, \"externalIdUrl\": \"\", \"properties\": {}, \"externalId\": \"\", \"isLoading\": false, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"size\": 12}], \"id\": \"b8bbbe0a-7764-846c-6d41-9e51c2da80a7\", \"columns\": []}, \"enableOozieDropOnAfter\": true, \"oozieStartRow\": {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Start\", \"widgetType\": \"start-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"gridsterHeight\": 0, \"externalIdUrl\": \"\", \"properties\": {}, \"externalId\": \"\", \"isLoading\": false, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"size\": 12}], \"id\": \"3468e1af-f801-5b14-e166-f1a4d85135cb\", \"columns\": []}, \"klass\": \"card card-home card-column span12\", \"enableOozieDropOnBefore\": true, \"drops\": [\"temp\"], \"id\": \"ba049360-b2f2-c143-2cd9-0b615967141f\", \"size\": 12}], \"workflow\": {\"properties\": {\"job_xml\": \"\", \"description\": \"Fraud Canada Tokenized NGrams 85\", \"parameters\": [{\"name\": \"oozie.use.system.libpath\", \"value\": true}], \"sla_enabled\": false, \"deployment_dir\": \"/user/hue/oozie/workspaces/hue-oozie-1546613741.36\", \"schema_version\": \"uri:oozie:workflow:0.5\", \"sla\": [{\"value\": false, \"key\": \"enabled\"}, {\"value\": \"${nominal_time}\", \"key\": \"nominal-time\"}, {\"value\": \"\", \"key\": \"should-start\"}, {\"value\": \"${30 * MINUTES}\", \"key\": \"should-end\"}, {\"value\": \"\", \"key\": \"max-duration\"}, {\"value\": \"\", \"key\": \"alert-events\"}, {\"value\": \"\", \"key\": \"alert-contact\"}, {\"value\": \"\", \"key\": \"notification-msg\"}, {\"value\": \"\", \"key\": \"upstream-apps\"}], \"show_arrows\": true, \"wf1_id\": null, \"properties\": []}, \"name\": \"Fraud-Canada-Tokenized-NGrams-85\", \"hasKillNode\": true, \"versions\": [\"uri:oozie:workflow:0.4\", \"uri:oozie:workflow:0.4.5\", \"uri:oozie:workflow:0.5\"], \"isDirty\": true, \"movedNode\": null, \"linkMapping\": {\"fcbebab5-a4f6-5150-b463-841a87958bdb\": [\"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\"], \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\": [], \"e40aa1e8-f8cf-3a5b-9bc2-6dfc17fc8540\": [\"fcbebab5-a4f6-5150-b463-841a87958bdb\"], \"3f107997-04cc-8733-60a9-a4bb62cebffc\": [\"e40aa1e8-f8cf-3a5b-9bc2-6dfc17fc8540\"], \"17c9c895-5a16-7443-bb81-f34b30b21548\": []}, \"nodeIds\": [\"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"e40aa1e8-f8cf-3a5b-9bc2-6dfc17fc8540\", \"fcbebab5-a4f6-5150-b463-841a87958bdb\"], \"nodes\": [{\"name\": \"Start\", \"associatedDocumentLoading\": true, \"children\": [{\"to\": \"e40aa1e8-f8cf-3a5b-9bc2-6dfc17fc8540\"}], \"actionParametersFetched\": false, \"properties\": {}, \"associatedDocumentUuid\": null, \"type\": \"start-widget\", \"id\": \"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"actionParameters\": []}, {\"name\": \"End\", \"associatedDocumentLoading\": true, \"children\": [], \"actionParametersFetched\": false, \"properties\": {\"body\": \"\", \"cc\": \"\", \"to\": \"\", \"enableMail\": false, \"attachment\": \"\", \"content_type\": \"text/plain\", \"subject\": \"\"}, \"associatedDocumentUuid\": null, \"type\": \"end-widget\", \"id\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"actionParameters\": []}, {\"name\": \"Kill\", \"associatedDocumentLoading\": true, \"children\": [], \"actionParametersFetched\": false, \"properties\": {\"body\": \"\", \"cc\": \"\", \"to\": \"\", \"enableMail\": false, \"message\": \"Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]\", \"subject\": \"\"}, \"associatedDocumentUuid\": null, \"type\": \"kill-widget\", \"id\": \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"actionParameters\": []}, {\"name\": \"ssh-e40a\", \"associatedDocumentLoading\": true, \"children\": [{\"to\": \"fcbebab5-a4f6-5150-b463-841a87958bdb\"}, {\"error\": \"17c9c895-5a16-7443-bb81-f34b30b21548\"}], \"actionParametersFetched\": false, \"properties\": {\"ssh_command\": \"bash -x /home/siemanalyst/projects/logs-archive-production/fraud-canada-tokenizedwords/execute-fraud-canada-tokenizedwords-ngram85.sh ${DATE_YYYYMMDD}\", \"retry_max\": [], \"retry_interval\": [], \"capture_output\": true, \"host\": \"siemanalyst@chpbdaodi02.prod.ch.perform.local\", \"arguments\": [], \"credentials\": [], \"sla\": [{\"value\": false, \"key\": \"enabled\"}, {\"value\": \"${nominal_time}\", \"key\": \"nominal-time\"}, {\"value\": \"\", \"key\": \"should-start\"}, {\"value\": \"${30 * MINUTES}\", \"key\": \"should-end\"}, {\"value\": \"\", \"key\": \"max-duration\"}, {\"value\": \"\", \"key\": \"alert-events\"}, {\"value\": \"\", \"key\": \"alert-contact\"}, {\"value\": \"\", \"key\": \"notification-msg\"}, {\"value\": \"\", \"key\": \"upstream-apps\"}]}, \"associatedDocumentUuid\": null, \"type\": \"ssh-widget\", \"id\": \"e40aa1e8-f8cf-3a5b-9bc2-6dfc17fc8540\", \"actionParameters\": []}, {\"name\": \"email-fcbe\", \"associatedDocumentLoading\": true, \"children\": [{\"to\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\"}, {\"error\": \"17c9c895-5a16-7443-bb81-f34b30b21548\"}], \"actionParametersFetched\": false, \"properties\": {\"body\": \"Regarding Ops ticket https:// livesport.atlassian.net /browse/OPS-511\\n\\nPlease find attached , the latest daily filtered records for the Canada Playback Fraud pattern of HeheStreams . Was produced over the log records from s3://logs-archive-production attached.\\n\\n Regards ,\\n  The Bot\\n  DAZN Technology - Oracle BDA dc2\\n\\n. \", \"cc\": \"dl-daznincidentmanagers@dazn.com,Bob.Hannent@dazn.com,joao.cerqueira@dazn.com,Alex.Hollerith@dazn.com,mark.hewis@dazn.com,David.Toth@performgroup.com,Chris.Peart@dazn.com\", \"retry_interval\": [], \"retry_max\": [], \"bcc\": \"\", \"to\": \"dazn.cs.ca@dazn.com\", \"attachment\": \"hdfs:///data/staged/ott_dazn/fraud-canada-email/dt=${DATE_YYYYMMDD}/${DATE_YYYYMMDD}.json\", \"content_type\": \"text/plain\", \"credentials\": [], \"sla\": [{\"value\": false, \"key\": \"enabled\"}, {\"value\": \"${nominal_time}\", \"key\": \"nominal-time\"}, {\"value\": \"\", \"key\": \"should-start\"}, {\"value\": \"${30 * MINUTES}\", \"key\": \"should-end\"}, {\"value\": \"\", \"key\": \"max-duration\"}, {\"value\": \"\", \"key\": \"alert-events\"}, {\"value\": \"\", \"key\": \"alert-contact\"}, {\"value\": \"\", \"key\": \"notification-msg\"}, {\"value\": \"\", \"key\": \"upstream-apps\"}], \"subject\": \"DAZN Fraud Playback Canada for Date ${DATE_YYYYMMDD}\"}, \"associatedDocumentUuid\": null, \"type\": \"email-widget\", \"id\": \"fcbebab5-a4f6-5150-b463-841a87958bdb\", \"actionParameters\": []}], \"id\": 1293, \"nodeNamesMapping\": {\"fcbebab5-a4f6-5150-b463-841a87958bdb\": \"email-fcbe\", \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\": \"End\", \"e40aa1e8-f8cf-3a5b-9bc2-6dfc17fc8540\": \"ssh-e40a\", \"3f107997-04cc-8733-60a9-a4bb62cebffc\": \"Start\", \"17c9c895-5a16-7443-bb81-f34b30b21548\": \"Kill\"}, \"uuid\": \"4205ae11-f43f-e715-c2a3-abcb3d5eb87c\"}}", 
+    "is_trashed": false, 
+    "name": "Fraud-Canada-Tokenized-NGrams-85"
+  }
+},
+{
+  "pk": 1723, 
+  "model": "desktop.document2", 
+  "fields": {
+    "search": null, 
+    "uuid": "3dbe804f-5bdb-8a3a-b168-28dfb563ffac", 
+    "extra": "", 
+    "type": "oozie-coordinator2", 
+    "description": "SB-Fraud-Canada-Fire-Emails", 
+    "is_history": false, 
+    "parent_directory": [
+      "15c3778f-8947-49b8-8a46-cc286ddc553f", 
+      1, 
+      false
+    ], 
+    "is_managed": false, 
+    "last_modified": "2019-02-01T17:38:14", 
+    "version": 1, 
+    "owner": [
+      "siemanalyst"
+    ], 
+    "dependencies": [
+      [
+        "4205ae11-f43f-e715-c2a3-abcb3d5eb87c", 
+        1, 
+        false
+      ]
+    ], 
+    "data": "{\"end_date\": {\"name\": \"end_date\", \"value\": \"2019-02-04T17:35\"}, \"variables\": [{\"shared_dataset_uuid\": \"\", \"is_advanced_start_instance\": false, \"show_advanced\": false, \"start_instance\": \"0\", \"timezone\": \"Atlantic/Canary\", \"end_instance\": \"0\", \"same_timezone\": true, \"uuid\": \"b60908a6-83ab-7f63-0b71-3a0fc167e0d3\", \"frequency_number\": 1, \"dataset_variable\": \" ${coord:formatTime(coord:dateOffset(coord:nominalTime(), -0, 'DAY') , \\\"yyyyMMdd\\\")}\", \"start\": \"2019-02-01T17:36\", \"same_frequency\": true, \"advanced_start_instance\": \"${coord:current(0)}\", \"advanced_end_instance\": \"${coord:current(0)}\", \"instance_choice\": \"default\", \"dataset_type\": \"parameter\", \"use_done_flag\": false, \"done_flag\": \"_SUCCESS\", \"same_start\": true, \"frequency_unit\": \"days\", \"workflow_variable\": \"DATE_YYYYMMDD\", \"is_advanced_end_instance\": false}], \"isDirty\": true, \"showAdvancedFrequencyUI\": true, \"isManaged\": false, \"variablesUI\": [\"parameter\", \"input_path\", \"output_path\"], \"workflowParameters\": [{\"name\": \"DATE_YYYYMMDD\", \"value\": \"\"}], \"properties\": {\"job_xml\": \"\", \"timeout\": null, \"document\": null, \"end\": \"${end_date}\", \"description\": \"SB-Fraud-Canada-Fire-Emails\", \"frequency_number\": 1, \"workflow\": \"4205ae11-f43f-e715-c2a3-abcb3d5eb87c\", \"deployment_dir\": \"/user/hue/oozie/workspaces/hue-oozie-1549042544.27\", \"cron_frequency\": \"45 4 * * *\", \"frequency_unit\": \"days\", \"schema_version\": \"uri:oozie:coordinator:0.2\", \"cron_advanced\": false, \"start\": \"${start_date}\", \"parameters\": [{\"name\": \"oozie.use.system.libpath\", \"value\": true}, {\"name\": \"start_date\", \"value\": \"2019-02-01T17:35\"}, {\"name\": \"end_date\", \"value\": \"2019-02-04T17:35\"}], \"concurrency\": 0, \"timezone\": \"Europe/London\", \"credentials\": [], \"throttle\": 0, \"execution\": \"FIFO\", \"sla\": [{\"key\": \"enabled\", \"value\": false}, {\"key\": \"nominal-time\", \"value\": \"${nominal_time}\"}, {\"key\": \"should-start\", \"value\": \"\"}, {\"key\": \"should-end\", \"value\": \"${30 * MINUTES}\"}, {\"key\": \"max-duration\", \"value\": \"\"}, {\"key\": \"alert-events\", \"value\": \"\"}, {\"key\": \"alert-contact\", \"value\": \"\"}, {\"key\": \"notification-msg\", \"value\": \"\"}, {\"key\": \"upstream-apps\", \"value\": \"\"}]}, \"uuid\": \"3dbe804f-5bdb-8a3a-b168-28dfb563ffac\", \"name\": \"SB-Weekend-Fraud-Canada\", \"id\": 1723, \"start_date\": {\"name\": \"start_date\", \"value\": \"2019-02-01T17:35\"}}", 
+    "is_trashed": false, 
+    "name": "SB-Weekend-Fraud-Canada"
+  }
+}
+]

@@ -1,0 +1,123 @@
+[
+{
+  "pk": 1705, 
+  "model": "desktop.document2", 
+  "fields": {
+    "search": null, 
+    "uuid": "ea9711d1-9c29-22f6-0922-1e9def8b5880", 
+    "extra": "", 
+    "type": "oozie-workflow2", 
+    "description": "Search over Non-Fraud for Similar Records to Fraud . An expansion of the Potential Fraud Cases", 
+    "is_history": false, 
+    "parent_directory": [
+      "15c3778f-8947-49b8-8a46-cc286ddc553f", 
+      1, 
+      false
+    ], 
+    "is_managed": false, 
+    "last_modified": "2019-01-31T14:56:01", 
+    "version": 1, 
+    "owner": [
+      "siemanalyst"
+    ], 
+    "dependencies": [
+      [
+        "02682eef-2eaa-41b0-8027-a4c5173b98bd", 
+        1, 
+        true
+      ], 
+      [
+        "9131c631-ea80-48c2-b517-a93b410c0d6f", 
+        1, 
+        true
+      ], 
+      [
+        "25037b4a-f087-4dde-89e2-717ac9db7ea5", 
+        1, 
+        true
+      ], 
+      [
+        "f6b18626-6324-44f5-90a9-2c19f5508e83", 
+        1, 
+        true
+      ], 
+      [
+        "75f02866-e161-42cd-9d93-3c2bf6824e7b", 
+        1, 
+        true
+      ], 
+      [
+        "50f5f3fa-ca13-4a22-a906-0b884a449ab0", 
+        1, 
+        true
+      ], 
+      [
+        "1749c4e8-fdc2-4bda-baea-ef3b20c52b78", 
+        1, 
+        true
+      ], 
+      [
+        "56b4662d-c56a-4100-a184-91861231e798", 
+        1, 
+        true
+      ], 
+      [
+        "1ae6c0b6-764c-4c79-9e6e-36fbe349964c", 
+        1, 
+        true
+      ], 
+      [
+        "2bd26c85-ed42-48ec-964f-4a019561b0bb", 
+        1, 
+        true
+      ], 
+      [
+        "ab3e5797-c013-4d49-88db-a79f6fdc4bfd", 
+        1, 
+        true
+      ], 
+      [
+        "9aa4679c-7aa7-4900-9eed-7c1139a3c293", 
+        1, 
+        true
+      ]
+    ], 
+    "data": "{\"layout\": [{\"oozieRows\": [{\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Ssh\", \"widgetType\": \"ssh-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"gridsterHeight\": 0, \"externalIdUrl\": \"\", \"properties\": {}, \"externalId\": \"\", \"isLoading\": false, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"e0cfe17b-1240-5be1-1100-d2976f81d60f\", \"size\": 12}], \"id\": \"88de9da2-f239-41e6-79d1-c8dc073c429e\", \"columns\": []}], \"rows\": [{\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Start\", \"widgetType\": \"start-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"gridsterHeight\": 0, \"externalIdUrl\": \"\", \"properties\": {}, \"externalId\": \"\", \"isLoading\": false, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"size\": 12}], \"id\": \"05c4c1bc-6c5f-c46c-edb4-dbe71faaf02e\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Ssh\", \"widgetType\": \"ssh-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"gridsterHeight\": 0, \"externalIdUrl\": \"\", \"properties\": {}, \"externalId\": \"\", \"isLoading\": false, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"e0cfe17b-1240-5be1-1100-d2976f81d60f\", \"size\": 12}], \"id\": \"88de9da2-f239-41e6-79d1-c8dc073c429e\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"End\", \"widgetType\": \"end-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"gridsterHeight\": 0, \"externalIdUrl\": \"\", \"properties\": {}, \"externalId\": \"\", \"isLoading\": false, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"size\": 12}], \"id\": \"2c0d65b1-ef8d-f101-53f7-3426b0a6a1a3\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Kill\", \"widgetType\": \"kill-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"gridsterHeight\": 0, \"externalIdUrl\": \"\", \"properties\": {}, \"externalId\": \"\", \"isLoading\": false, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"size\": 12}], \"id\": \"9f831f09-4591-1bfe-7c4e-8194fe8b522b\", \"columns\": []}], \"oozieEndRow\": {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"End\", \"widgetType\": \"end-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"gridsterHeight\": 0, \"externalIdUrl\": \"\", \"properties\": {}, \"externalId\": \"\", \"isLoading\": false, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"size\": 12}], \"id\": \"2c0d65b1-ef8d-f101-53f7-3426b0a6a1a3\", \"columns\": []}, \"oozieKillRow\": {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Kill\", \"widgetType\": \"kill-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"gridsterHeight\": 0, \"externalIdUrl\": \"\", \"properties\": {}, \"externalId\": \"\", \"isLoading\": false, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"size\": 12}], \"id\": \"9f831f09-4591-1bfe-7c4e-8194fe8b522b\", \"columns\": []}, \"enableOozieDropOnAfter\": true, \"oozieStartRow\": {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Start\", \"widgetType\": \"start-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"gridsterHeight\": 0, \"externalIdUrl\": \"\", \"properties\": {}, \"externalId\": \"\", \"isLoading\": false, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"size\": 12}], \"id\": \"05c4c1bc-6c5f-c46c-edb4-dbe71faaf02e\", \"columns\": []}, \"klass\": \"card card-home card-column span12\", \"enableOozieDropOnBefore\": true, \"drops\": [\"temp\"], \"id\": \"5c38d92a-7f94-eb71-fe13-3ba0ba9e7f74\", \"size\": 12}], \"workflow\": {\"properties\": {\"job_xml\": \"\", \"description\": \"Search over Non-Fraud for Similar Records to Fraud . An expansion of the Potential Fraud Cases\", \"parameters\": [{\"name\": \"oozie.use.system.libpath\", \"value\": true}], \"sla_enabled\": false, \"deployment_dir\": \"/user/hue/oozie/workspaces/hue-oozie-1548946440.95\", \"schema_version\": \"uri:oozie:workflow:0.5\", \"sla\": [{\"value\": false, \"key\": \"enabled\"}, {\"value\": \"${nominal_time}\", \"key\": \"nominal-time\"}, {\"value\": \"\", \"key\": \"should-start\"}, {\"value\": \"${30 * MINUTES}\", \"key\": \"should-end\"}, {\"value\": \"\", \"key\": \"max-duration\"}, {\"value\": \"\", \"key\": \"alert-events\"}, {\"value\": \"\", \"key\": \"alert-contact\"}, {\"value\": \"\", \"key\": \"notification-msg\"}, {\"value\": \"\", \"key\": \"upstream-apps\"}], \"show_arrows\": true, \"wf1_id\": null, \"properties\": []}, \"name\": \"Execute - Fraud -  AUTOML - Daily\", \"hasKillNode\": true, \"versions\": [\"uri:oozie:workflow:0.4\", \"uri:oozie:workflow:0.4.5\", \"uri:oozie:workflow:0.5\"], \"isDirty\": false, \"movedNode\": null, \"linkMapping\": {\"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\": [], \"e0cfe17b-1240-5be1-1100-d2976f81d60f\": [\"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\"], \"3f107997-04cc-8733-60a9-a4bb62cebffc\": [\"e0cfe17b-1240-5be1-1100-d2976f81d60f\"], \"17c9c895-5a16-7443-bb81-f34b30b21548\": []}, \"nodeIds\": [\"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"e0cfe17b-1240-5be1-1100-d2976f81d60f\"], \"nodes\": [{\"name\": \"Start\", \"associatedDocumentLoading\": true, \"children\": [{\"to\": \"e0cfe17b-1240-5be1-1100-d2976f81d60f\"}], \"actionParametersFetched\": false, \"properties\": {}, \"associatedDocumentUuid\": null, \"type\": \"start-widget\", \"id\": \"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"actionParameters\": []}, {\"name\": \"End\", \"associatedDocumentLoading\": true, \"children\": [], \"actionParametersFetched\": false, \"properties\": {\"body\": \"\", \"cc\": \"\", \"to\": \"\", \"enableMail\": false, \"attachment\": \"\", \"content_type\": \"text/plain\", \"subject\": \"\"}, \"associatedDocumentUuid\": null, \"type\": \"end-widget\", \"id\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"actionParameters\": []}, {\"name\": \"Kill\", \"associatedDocumentLoading\": true, \"children\": [], \"actionParametersFetched\": false, \"properties\": {\"body\": \"\", \"cc\": \"\", \"to\": \"\", \"enableMail\": false, \"message\": \"Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]\", \"subject\": \"\"}, \"associatedDocumentUuid\": null, \"type\": \"kill-widget\", \"id\": \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"actionParameters\": []}, {\"name\": \"ssh-e0cf\", \"associatedDocumentLoading\": true, \"children\": [{\"to\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\"}, {\"error\": \"17c9c895-5a16-7443-bb81-f34b30b21548\"}], \"actionParametersFetched\": false, \"properties\": {\"ssh_command\": \"bash -x /home/siemanalyst/projects/logs-archive-production/fraud-canada-tokenizedwords/notebooks/x0-execute-fraud-automl.sh ${DATE_YYYYMMDD}\", \"retry_max\": [], \"retry_interval\": [], \"capture_output\": true, \"host\": \"siemanalyst@chpbdaodi02.prod.ch.perform.local\", \"arguments\": [], \"credentials\": [], \"sla\": [{\"value\": false, \"key\": \"enabled\"}, {\"value\": \"${nominal_time}\", \"key\": \"nominal-time\"}, {\"value\": \"\", \"key\": \"should-start\"}, {\"value\": \"${30 * MINUTES}\", \"key\": \"should-end\"}, {\"value\": \"\", \"key\": \"max-duration\"}, {\"value\": \"\", \"key\": \"alert-events\"}, {\"value\": \"\", \"key\": \"alert-contact\"}, {\"value\": \"\", \"key\": \"notification-msg\"}, {\"value\": \"\", \"key\": \"upstream-apps\"}]}, \"associatedDocumentUuid\": null, \"type\": \"ssh-widget\", \"id\": \"e0cfe17b-1240-5be1-1100-d2976f81d60f\", \"actionParameters\": []}], \"id\": 1705, \"nodeNamesMapping\": {\"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\": \"End\", \"e0cfe17b-1240-5be1-1100-d2976f81d60f\": \"ssh-e0cf\", \"3f107997-04cc-8733-60a9-a4bb62cebffc\": \"Start\", \"17c9c895-5a16-7443-bb81-f34b30b21548\": \"Kill\"}, \"uuid\": \"ea9711d1-9c29-22f6-0922-1e9def8b5880\"}}", 
+    "is_trashed": false, 
+    "name": "Execute - Fraud -  AUTOML - Daily"
+  }
+},
+{
+  "pk": 1721, 
+  "model": "desktop.document2", 
+  "fields": {
+    "search": null, 
+    "uuid": "ca18a2ef-20ac-0b42-3714-44e2c71a4ca8", 
+    "extra": "", 
+    "type": "oozie-coordinator2", 
+    "description": "KeepInSync-AutoML - Executes backwards for LAstWeekJan", 
+    "is_history": false, 
+    "parent_directory": [
+      "15c3778f-8947-49b8-8a46-cc286ddc553f", 
+      1, 
+      false
+    ], 
+    "is_managed": false, 
+    "last_modified": "2019-02-01T17:21:18", 
+    "version": 1, 
+    "owner": [
+      "siemanalyst"
+    ], 
+    "dependencies": [
+      [
+        "ea9711d1-9c29-22f6-0922-1e9def8b5880", 
+        1, 
+        false
+      ]
+    ], 
+    "data": "{\"end_date\": {\"name\": \"end_date\", \"value\": \"2019-02-04T17:18\"}, \"variables\": [{\"shared_dataset_uuid\": \"\", \"is_advanced_start_instance\": false, \"show_advanced\": false, \"start_instance\": \"0\", \"timezone\": \"Atlantic/Canary\", \"end_instance\": \"0\", \"same_timezone\": true, \"uuid\": \"d62790e6-18dd-b79f-3cae-6f11f85cf3cc\", \"frequency_number\": 1, \"dataset_variable\": \" ${coord:formatTime(coord:dateOffset(coord:nominalTime(), -1, 'DAY') , \\\"yyyyMMdd\\\")}\", \"start\": \"2019-02-01T17:18\", \"same_frequency\": true, \"advanced_start_instance\": \"${coord:current(0)}\", \"advanced_end_instance\": \"${coord:current(0)}\", \"instance_choice\": \"default\", \"dataset_type\": \"parameter\", \"use_done_flag\": false, \"done_flag\": \"_SUCCESS\", \"same_start\": true, \"frequency_unit\": \"days\", \"workflow_variable\": \"DATE_YYYYMMDD\", \"is_advanced_end_instance\": false}], \"isDirty\": false, \"showAdvancedFrequencyUI\": true, \"isManaged\": false, \"variablesUI\": [\"parameter\", \"input_path\", \"output_path\"], \"workflowParameters\": [{\"name\": \"DATE_YYYYMMDD\", \"value\": \"\"}], \"properties\": {\"job_xml\": \"\", \"timeout\": null, \"document\": null, \"end\": \"${end_date}\", \"description\": \"KeepInSync-AutoML - Executes backwards for LAstWeekJan\", \"frequency_number\": 1, \"workflow\": \"ea9711d1-9c29-22f6-0922-1e9def8b5880\", \"deployment_dir\": \"/user/hue/oozie/workspaces/hue-oozie-1549041513.44\", \"cron_frequency\": \"30 17 * * *\", \"frequency_unit\": \"days\", \"schema_version\": \"uri:oozie:coordinator:0.2\", \"cron_advanced\": false, \"start\": \"${start_date}\", \"parameters\": [{\"name\": \"oozie.use.system.libpath\", \"value\": true}, {\"name\": \"start_date\", \"value\": \"2019-01-18T17:18\"}, {\"name\": \"end_date\", \"value\": \"2019-02-04T17:18\"}], \"concurrency\": 0, \"timezone\": \"Europe/London\", \"credentials\": [], \"throttle\": 0, \"execution\": \"FIFO\", \"sla\": [{\"key\": \"enabled\", \"value\": false}, {\"key\": \"nominal-time\", \"value\": \"${nominal_time}\"}, {\"key\": \"should-start\", \"value\": \"\"}, {\"key\": \"should-end\", \"value\": \"${30 * MINUTES}\"}, {\"key\": \"max-duration\", \"value\": \"\"}, {\"key\": \"alert-events\", \"value\": \"\"}, {\"key\": \"alert-contact\", \"value\": \"\"}, {\"key\": \"notification-msg\", \"value\": \"\"}, {\"key\": \"upstream-apps\", \"value\": \"\"}]}, \"uuid\": \"ca18a2ef-20ac-0b42-3714-44e2c71a4ca8\", \"name\": \"KeepInSync-AutoML\", \"id\": 1721, \"start_date\": {\"name\": \"start_date\", \"value\": \"2019-01-18T17:18\"}}", 
+    "is_trashed": false, 
+    "name": "KeepInSync-AutoML"
+  }
+}
+]

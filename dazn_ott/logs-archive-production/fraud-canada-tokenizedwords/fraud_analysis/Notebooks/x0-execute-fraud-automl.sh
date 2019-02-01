@@ -26,17 +26,18 @@ unset http_proxy
 #
 JOB_LOG_FILE=$MY_FOLDER/logs/execute-fraud-automl-lastrun-${DATE_V1}.log
 #
-echo "RAW d=${DATE_V1} FILES COUNT : " >> $JOB_LOG_FILE 2>&1
-hdfs dfs -ls hdfs:///data/staged/ott_dazn/logs-archive-production/parquet/dt=${DATE_V1}/*.parquet | wc -l > $JOB_LOG_FILE 2>&1 
+echo "Process d=${DATE_V1} FILES COUNT : " > $JOB_LOG_FILE 2>&1
+hdfs dfs -ls hdfs:///data/staged/ott_dazn/logs-archive-production/parquet/dt=${DATE_V1}/*.parquet | wc -l >> $JOB_LOG_FILE 2>&1 
 echo "|___|" >> $JOB_LOG_FILE 2>&1
 #
 ## Atomic All or Nothing to Clear all staged on date
 #
-hdfs dfs -rm -r -f -skipTrash hdfs:///data/staged/ott_dazn/advanced-model-data/fraud-notfraud-canada-tokenizedwords-ngrams-7-features-85/dt=${DATE_V1}
-hdfs dfs -rm -r -f -skipTrash hdfs://bda-ns/data/staged/ott_dazn/advanced-model-data/label-fraud-notfraud-data-model/dt=${DATE_V1}
-hdfs dfs -rm -r -f -skipTrash hdfs:///data/staged/ott_dazn/advanced-model-data/not-fraud-canada-tokenizedwords/dt=${DATE_V1}
-hdfs dfs -rm -r -f -skipTrash hdfs:///data/staged/ott_dazn/advanced-model-data/the-most-frequent-fraud-hash_message/dt=${DATE_V1}
-
+hdfs dfs -rm -r -f -skipTrash hdfs:///data/staged/ott_dazn/advanced-model-data/fraud-notfraud-canada-tokenizedwords-ngrams-7-features-85/dt=${DATE_V1} >> $JOB_LOG_FILE 2>&1
+hdfs dfs -rm -r -f -skipTrash hdfs:///data/staged/ott_dazn/advanced-model-data/label-fraud-notfraud-data-model/dt=${DATE_V1} >> $JOB_LOG_FILE 2>&1
+hdfs dfs -rm -r -f -skipTrash hdfs:///data/staged/ott_dazn/advanced-model-data/not-fraud-canada-tokenizedwords/dt=${DATE_V1} >> $JOB_LOG_FILE 2>&1
+hdfs dfs -rm -r -f -skipTrash hdfs:///data/staged/ott_dazn/advanced-model-data/the-most-frequent-fraud-hash_message/dt=${DATE_V1} >> $JOB_LOG_FILE 2>&1
+hdfs dfs -rm -r -f -skipTrash hdfs:///data/staged/ott_dazn/advanced-model-data/the-most-frequent-notfraud-hash_message/dt=${DATE_V1} >> $JOB_LOG_FILE 2>&1
+#
 # x1 Job Clean Not-Fraud and Ngrams/Features/Vectors
 echo "|" >> $JOB_LOG_FILE 2>&1
 echo "Pyspark :-: x1-FraudCanada-Model-NGrams-CountVectorizer-KL-KS-Entropy-Model-CleanData.py" >> $JOB_LOG_FILE 2>&1
@@ -60,6 +61,16 @@ FILE_TRAIN=$(find . -name file_train_${DATE_V1}.csv\*)
 hdfs dfs -moveFromLocal -f ${FILE_PREDICTION} ${FILE_TRAIN} hdfs:///data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=${DATE_V1}
 echo ${FILE_PREDICTION} >> $JOB_LOG_FILE 2>&1
 echo ${FILE_TRAIN} >> $JOB_LOG_FILE 2>&1
-#hdfs dfs -moveFromLocal -f ${FILE_TRAIN} hdfs:///data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=${DATE_V1}
+#
+### X4 Job
+echo "|" >> $JOB_LOG_FILE 2>&1
+hdfs dfs -rm -r -f -skipTrash hdfs:///data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=${DATE_V1}/merged_prediction_train >> $JOB_LOG_FILE 2>&1
+rm -f ${MY_FOLDER}/product_model_prediction/merge_prediction_train_${DATE_V1}.csv
+echo "Pyspark :-: x4-FraudCanada-Merge-Scoring-Data-From-Model.py" >> $JOB_LOG_FILE 2>&1
+echo "|" >> $JOB_LOG_FILE 2>&1
+spark2-submit --master yarn --deploy-mode client --conf spark.debug.maxToStringFields=3500 $MY_FOLDER/x4-FraudCanada-Merge-Scoring-Data-From-Model.py --datev1 ${DATE_V1} >> $JOB_LOG_FILE 2>&1
+#
+hdfs dfs -cp hdfs:///data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=${DATE_V1}/merged_prediction_train/part-*.csv hdfs:///data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=${DATE_V1}/merged_prediction_train/merge_prediction_train_${DATE_V1}.csv >> $JOB_LOG_FILE 2>&1
+#
 echo "| Job Finished  ___;" >> $JOB_LOG_FILE 2>&1
 #

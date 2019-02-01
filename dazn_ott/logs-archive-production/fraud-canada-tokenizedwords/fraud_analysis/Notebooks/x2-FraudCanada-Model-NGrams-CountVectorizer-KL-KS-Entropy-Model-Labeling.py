@@ -157,17 +157,22 @@ sc = pyspark.SparkContext(appName="FraudCanada-Model-NGrams-CountVectorizer-KL-K
 sqlContext = SQLContext(sc)
 #
 #
-input_most_frequent_df="hdfs:///data/staged/ott_dazn/advanced-model-data/the-most-frequent-fraud-hash_message/dt="+process_date
+input_most_frequent_fraud_df="hdfs:///data/staged/ott_dazn/advanced-model-data/the-most-frequent-fraud-hash_message/dt="+process_date
+#
+input_most_frequent_notfraud_df="hdfs:///data/staged/ott_dazn/advanced-model-data/the-most-frequent-notfraud-hash_message/dt="+process_date
+#
 input_fraud="hdfs:///data/staged/ott_dazn/advanced-model-data/fraud-notfraud-canada-tokenizedwords-ngrams-7-features-85/dt="+process_date
 #
 input_file1="hdfs:///data/staged/ott_dazn/advanced-model-data/fraud-notfraud-canada-tokenizedwords-ngrams-7-features-85/dt="+process_date
+#
 output_file1="hdfs:///data/staged/ott_dazn/advanced-model-data/label-fraud-notfraud-data-model/dt="+process_date
+#
 preserve_training_output_file="hdfs:///data/staged/ott_dazn/advanced-model-data/preserve-training-output-automl-clean/dt="+process_date
 #
 # The most Frequent would the ones with the max frequency of NGrams85 tokens
 pd.options.display.max_colwidth = 512
 #
-standard_fraud_ngram=sqlContext.read.json(input_most_frequent_df)\
+standard_fraud_ngram=sqlContext.read.json(input_most_frequent_fraud_df)\
 .orderBy(col('count').desc()).select(col('hash_message')).limit(1).toPandas()['hash_message'][0]
 print("Value UDF : standard_fraud_ngram=")
 print(standard_fraud_ngram)
@@ -176,22 +181,44 @@ print(standard_fraud_ngram)
 standard_fraud_ngram_words=sqlContext.read.json(input_fraud)
 standard_fraud_ngram_words.printSchema()
 #
-standard_words_search=standard_fraud_ngram_words\
+standard_fraud_words_search=standard_fraud_ngram_words\
 .withColumn('fraud_master_hash',lit(standard_fraud_ngram).cast('string'))\
 .filter(" hash_message=fraud_master_hash ")
-standard_words_search.printSchema()
+standard_fraud_words_search.printSchema()
 #
-standard_words=standard_words_search\
+standard_fraud_words=standard_fraud_words_search\
 .withColumn('words_conc',F.concat_ws('',col('words')).cast('string'))\
 .select(col('words_conc')).limit(1).toPandas()['words_conc'][0] 
-# Working now! 
+#
+print("Value UDF : standard_fraud_words=")
+print(standard_fraud_words)
+#
+# Working now!
 # Needs to be bigger than message twice should be tested!
 #   Py4JJavaError: An error occurred while calling z:org.apache.spark.sql.functions.lit.
 #      : java.lang.RuntimeException: Unsupported literal type class java.util.HashMap 
 # {0=root15c466c8e6e8f9d17adb73426cd55c70f72b9f18e39e3455c9043a18b86b122b6requestmethodgeturlhttpsislcadazncommislv2playbackassetidfg5oon8sl71n1nfwuegbo8npgeventidarticleidfg5oon8sl71n1nfwuegbo8npgformatmpegdashplayeriddaznf3874e050812a853securetruelanguagecodeenlatitudenulllongitudenullplatformandroidtvmanufacturernvidiamodelnullmtalanguagecodeenclientip50100225179headersuseragentmozilla50linuxandroid800shieldandroidtvbuildopr6170623010wvapplewebkit53736khtmllikegeckoversion40chrome710357899mobilesafari53736fev1420typeinresponsestatuscode200reasonphraseokduration47jwtvieweridc2ebc25d8085deviceid993bf365c72c4b0b9168c2ebc25d8085f3874e050812a853userstatusactivepaid}
 #
-print("Value UDF : standard_words=")
-print(standard_fraud_ngram)
+standard_notfraud_ngram=sqlContext.read.json(input_most_frequent_notfraud_df)\
+.orderBy(col('count').desc()).select(col('hash_message')).limit(1).toPandas()['hash_message'][0]
+print("Value UDF : standard_notfraud_ngram=")
+print(standard_notfraud_ngram)
+#
+# Select Tokens/words form the max frequency of NGrams85 tokens hash_message
+standard_notfraud_ngram_words=sqlContext.read.json(input_fraud)
+standard_notfraud_ngram_words.printSchema()
+#
+standard_notfraud_words_search=standard_notfraud_ngram_words\
+.withColumn('fraud_master_hash',lit(standard_notfraud_ngram).cast('string'))\
+.filter(" hash_message=fraud_master_hash ")
+standard_notfraud_words_search.printSchema()
+#
+standard_notfraud_words=standard_notfraud_words_search\
+.withColumn('words_conc',F.concat_ws('',col('words')).cast('string'))\
+.select(col('words_conc')).limit(1).toPandas()['words_conc'][0] 
+#
+print("Value UDF : standard_notfraud_words=")
+print(standard_notfraud_words)
 #
 ngram7_fraud=sqlContext.read.json(input_file1)
 ngram7_fraud.printSchema()
@@ -200,11 +227,14 @@ drop_phish_cols=['words','ngrams_7']
 #
 fraud_label_read_df=ngram7_fraud.filter("hash_message is not NULL")\
 .withColumn('words_conc',F.concat_ws('',col('words')).cast('string'))\
-    .drop(*drop_phish_cols)\
-    .withColumn('kl_words',func_kl_ngram_msg_udf(col('words_conc'),lit(standard_words).cast('string')).cast('double'))\
-    .withColumn('ks_words',func_ks_ngram_msg_udf(col('words_conc'),lit(standard_words).cast('string')).cast('double'))\
-    .withColumn('entropy_words',func_entropy_ngram_msg_udf(col('words_conc'),lit(standard_words).cast('string')).cast('double'))\
-    .persist(pyspark.StorageLevel.MEMORY_AND_DISK_2)
+.drop(*drop_phish_cols)\
+.withColumn('kl_fraud_words',func_kl_ngram_msg_udf(col('words_conc'),lit(standard_fraud_words).cast('string')).cast('double'))\
+.withColumn('ks_fraud_words',func_ks_ngram_msg_udf(col('words_conc'),lit(standard_fraud_words).cast('string')).cast('double'))\
+.withColumn('entropy_fraud_words',func_entropy_ngram_msg_udf(col('words_conc'),lit(standard_fraud_words).cast('string')).cast('double'))\
+.withColumn('kl_notfraud_words',func_kl_ngram_msg_udf(col('words_conc'),lit(standard_notfraud_words).cast('string')).cast('double'))\
+.withColumn('ks_notfraud_words',func_ks_ngram_msg_udf(col('words_conc'),lit(standard_notfraud_words).cast('string')).cast('double'))\
+.withColumn('entropy_notfraud_words',func_entropy_ngram_msg_udf(col('words_conc'),lit(standard_notfraud_words).cast('string')).cast('double'))\
+.persist(pyspark.StorageLevel.MEMORY_AND_DISK_2)
 fraud_label_read_df.printSchema()
 #
 fraud_label_read_df.coalesce(1).write.json(output_file1)

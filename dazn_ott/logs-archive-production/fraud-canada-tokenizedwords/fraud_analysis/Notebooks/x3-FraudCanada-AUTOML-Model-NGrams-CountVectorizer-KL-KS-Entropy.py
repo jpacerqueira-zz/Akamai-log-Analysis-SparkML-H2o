@@ -90,7 +90,10 @@ fraud_label_read_file.printSchema()
 #
 fraud_label_read_df=fraud_label_read_file\
 .select(col('hash_message').cast('string'),col('fraud_label').cast('int'),\
-        col('kl_words').cast('double'), col('ks_words').cast('double'),col('entropy_words').cast('double'),\
+        col('kl_fraud_words').cast('double'),col('ks_fraud_words').cast('double'),\
+        col('entropy_fraud_words').cast('double'),\
+        col('kl_notfraud_words').cast('double'), col('ks_notfraud_words').cast('double'),\
+        col('entropy_notfraud_words').cast('double'),\
         col('features_85.type').alias('features85_type').cast('long'),\
         col('features_85.size').alias('features85_size').cast('long'),\
         col('features_85.indices').alias('features85_indices'),\
@@ -124,43 +127,57 @@ drop_list_cols=['features85_indices','features85_values','ngramscounts7_indices'
 ###    df.assign(temp_f=lambda x: x['temp_c'] * 9 / 5 + 32,temp_k=lambda x: (x['temp_f'] +  459.67) * 5 / 9)
 ### 3.) https://stackoverflow.com/questions/43216411/pandas-flatten-a-list-of-list-within-a-column
 ###    df['var2'] = df['var2'].apply(np.ravel)
-fraud_label_train_pd=fraud_fraud_label_read1_df.limit(2500).toPandas()\
-.assign(features85_list_indices=lambda x: x['features85_indices'].apply(np.ravel),\
-        features85_list_values=lambda x: x['features85_values'].apply(np.ravel),\
-        ngramscounts7_list_indices=lambda x: x['ngramscounts7_indices'].apply(np.ravel),\
-        ngramscounts7_list_values=lambda x: x['ngramscounts7_values'].apply(np.ravel))\
-.drop(drop_list_cols, axis=1, inplace=False)
-#.tail(1200)
-# dummy_dif=lambda x:list(x['fraud_label'])
+### 4.) Random xxx rows
+###    df.orderBy(rand()).limit(n)
+from pyspark.sql.functions import rand
 #
-fraud_label_test_pd=fraud_fraud_label_read1_df.limit(500).toPandas()\
+fraud_label_train_pd_rand=fraud_fraud_label_read1_df.limit(10000)\
+.orderBy(rand()).persist(pyspark.StorageLevel.MEMORY_AND_DISK_SER)
+#
+fraud_label_train_pd=fraud_label_train_pd_rand.limit(3000).toPandas()\
 .assign(features85_list_indices=lambda x: x['features85_indices'].apply(np.ravel),\
         features85_list_values=lambda x: x['features85_values'].apply(np.ravel),\
         ngramscounts7_list_indices=lambda x: x['ngramscounts7_indices'].apply(np.ravel),\
         ngramscounts7_list_values=lambda x: x['ngramscounts7_values'].apply(np.ravel))\
 .drop(drop_list_cols, axis=1, inplace=False)
 #
-not_fraud_label_train_pd=notfraud_fraud_label_read1_df.limit(2500).toPandas()\
+fraud_label_test_pd_rand=fraud_fraud_label_read1_df.limit(10000)\
+.orderBy(rand()).persist(pyspark.StorageLevel.MEMORY_AND_DISK_SER)
+#
+fraud_label_test_pd=fraud_label_test_pd_rand.limit(500).toPandas()\
 .assign(features85_list_indices=lambda x: x['features85_indices'].apply(np.ravel),\
         features85_list_values=lambda x: x['features85_values'].apply(np.ravel),\
         ngramscounts7_list_indices=lambda x: x['ngramscounts7_indices'].apply(np.ravel),\
         ngramscounts7_list_values=lambda x: x['ngramscounts7_values'].apply(np.ravel))\
 .drop(drop_list_cols, axis=1, inplace=False)
-#.tail(3000)
-#
-not_fraud_label_test_pd=notfraud_fraud_label_read1_df.limit(500).toPandas()\
-.assign(features85_list_indices=lambda x: x['features85_indices'].apply(np.ravel),\
-        features85_list_values=lambda x: x['features85_values'].apply(np.ravel),\
-        ngramscounts7_list_indices=lambda x: x['ngramscounts7_indices'].apply(np.ravel),\
-        ngramscounts7_list_values=lambda x: x['ngramscounts7_values'].apply(np.ravel))\
-.drop(drop_list_cols, axis=1, inplace=False)
-#.head(800)
-#
-not_fraud_label_train=h2o.H2OFrame(not_fraud_label_train_pd)
-not_fraud_label_test=h2o.H2OFrame(not_fraud_label_test_pd)
 #
 fraud_label_train=h2o.H2OFrame(fraud_label_train_pd)
 fraud_label_test=h2o.H2OFrame(fraud_label_test_pd)
+#
+not_fraud_label_train_pd_rand=notfraud_fraud_label_read1_df.limit(10000)\
+.orderBy(rand()).persist(pyspark.StorageLevel.MEMORY_AND_DISK_SER)
+#
+not_fraud_label_train_pd=not_fraud_label_train_pd_rand.limit(3000).toPandas()\
+.assign(features85_list_indices=lambda x: x['features85_indices'].apply(np.ravel),\
+        features85_list_values=lambda x: x['features85_values'].apply(np.ravel),\
+        ngramscounts7_list_indices=lambda x: x['ngramscounts7_indices'].apply(np.ravel),\
+        ngramscounts7_list_values=lambda x: x['ngramscounts7_values'].apply(np.ravel))\
+.drop(drop_list_cols, axis=1, inplace=False)
+#
+not_fraud_label_test_pd_rand=notfraud_fraud_label_read1_df.limit(10000)\
+.orderBy(rand()).persist(pyspark.StorageLevel.MEMORY_AND_DISK_SER)
+#
+not_fraud_label_test_pd=not_fraud_label_test_pd_rand.limit(800).toPandas()\
+.assign(features85_list_indices=lambda x: x['features85_indices'].apply(np.ravel),\
+        features85_list_values=lambda x: x['features85_values'].apply(np.ravel),\
+        ngramscounts7_list_indices=lambda x: x['ngramscounts7_indices'].apply(np.ravel),\
+        ngramscounts7_list_values=lambda x: x['ngramscounts7_values'].apply(np.ravel))\
+.drop(drop_list_cols, axis=1, inplace=False)
+#.orderBy(rand())\
+#.sort(notfraud_fraud_label_read1_df.kl_notfraud_words.desc())\
+#
+not_fraud_label_train=h2o.H2OFrame(not_fraud_label_train_pd)
+not_fraud_label_test=h2o.H2OFrame(not_fraud_label_test_pd)
 #
 ################# Use Two DataFrames ##################### - rbind() H2o Frames issue
 #
@@ -192,7 +209,7 @@ test[y] = test[y].asfactor()
 # http://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html
 # Balance Classes to compensate unbalanced data
 # Run AutoML for 25 base models (limited to 1 hour max runtime by default)
-aml = H2OAutoML(max_models=40, seed=19, exclude_algos=["DRF","GLM"])
+aml = H2OAutoML(max_models=30, seed=19, exclude_algos=["DRF","GLM"])
 aml.train(x=x, y=y, training_frame=train)
 #
 #preserve_training_output.write.json(preserve_training_output_file)
@@ -231,7 +248,7 @@ print(preds.head(10))
 #
 #
 print("Save Model For Future Usage")
-aml.leader.download_mojo(path = "product_model_bin/ngrams7_features85_m25/v"+process_date+"/mojo", get_genmodel_jar = True)
+aml.leader.download_mojo(path = "./projects/logs-archive-production/fraud-canada-tokenizedwords/notebooks/product_model_bin/ngrams7_features85_m30/v"+process_date+"/mojo", get_genmodel_jar = True)
 # If you need to generate predictions on a test set, you can make
 # predictions directly on the `"H2OAutoML"` object, or on the leader
 # model object directly
@@ -250,11 +267,11 @@ print(preds.tail(10))
 #preds = aml.predict(test)
 # or:
 preds_over_all_hf = aml.leader.predict(train)
-path_out_file1="file_prediction_"+process_date+".csv"
+path_out_file1="./projects/logs-archive-production/fraud-canada-tokenizedwords/notebooks/product_model_prediction/file_prediction_"+process_date+".csv"
 output_pred_file=h2o.export_file(frame=preds_over_all_hf, path=path_out_file1, force=False)
 #
 train_over_all_hf = train
-path_out_file2="file_train_"+process_date+".csv"
+path_out_file2="./projects/logs-archive-production/fraud-canada-tokenizedwords/notebooks/product_model_prediction/file_train_"+process_date+".csv"
 output_pred_file=h2o.export_file(frame=train_over_all_hf, path=path_out_file2, force=False)
 #
 sc.stop()

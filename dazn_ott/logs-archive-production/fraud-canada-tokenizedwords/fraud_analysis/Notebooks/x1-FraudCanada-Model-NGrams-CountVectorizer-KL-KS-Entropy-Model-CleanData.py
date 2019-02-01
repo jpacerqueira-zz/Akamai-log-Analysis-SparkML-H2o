@@ -68,7 +68,9 @@ input_file3=output_file2
 #
 input_file4="hdfs:///data/staged/ott_dazn/advanced-model-data/fraud-notfraud-canada-tokenizedwords-ngrams-7-features-85/dt="+process_date+"/*.*"
 #
-output_most_frequent_df="hdfs:///data/staged/ott_dazn/advanced-model-data/the-most-frequent-fraud-hash_message/dt="+process_date
+output_most_frequent_fraud_df="hdfs:///data/staged/ott_dazn/advanced-model-data/the-most-frequent-fraud-hash_message/dt="+process_date
+#
+output_most_frequent_notfraud_df="hdfs:///data/staged/ott_dazn/advanced-model-data/the-most-frequent-notfraud-hash_message/dt="+process_date
 #
 #  FILTER Non-Fraud AND LABEL
 from pyspark.sql import functions as F
@@ -171,12 +173,11 @@ result_ngrams_words_fraud_DF.printSchema()
 #
 result_ngrams_words_fraud_DF.coalesce(1).write.json(output_file1)
 #
-#  CALCULATE KL,KS COEF. Label Data
-ngram7_fraud=sqlContext.read.json(input_file4).filter("fraud_label=0" )
-ngram7_fraud.printSchema()
 #
-print("Calculation of standard_fraud_ngram - Start!")
+print("Calculation of most frequent fraud_ngram notfraud_ngram - Start!")
 #
+#  CALCULATE KL,KS COEF. Label Data fraud/not_fraud
+###################
 # Obtain the most frequent word on each position 
 # Compose the standard_fraud_ngram from the most common positions
 # Calculate the standard_fraud_ngram
@@ -190,37 +191,45 @@ print("Calculation of standard_fraud_ngram - Start!")
 #  .agg(F.max(struct(col("cnt"), col("id_sb"))).alias("max"))
 #  .select(col("id_sa"), col("max.id_sb")))
 #
-#Py4JJavaError: An error occurred while calling o3400.select.
-#: org.apache.spark.sql.AnalysisException: cannot resolve '`ngrams`' given input columns: [mostfrequent];;
-#'Project ['ngrams, mostfrequent#8033.count AS count#8037L]
-#+- AnalysisBarrier
-#      +- Aggregate [max(named_struct(count, count#8029L)) AS mostfrequent#8033]
-#         +- Aggregate [ngrams#8016], [ngrams#8016, count(1) AS count#8029L]
-#            +- Relation[fraud_label#8013L,hash_message#8014,message#8075,ngrams#8016,words#8017] json
-#
-####### OLD  ######
-#.groupby(col('hash_message'))\
-#.agg(F.first(col('features_75')).alias('features_75'),\
-#     F.first(col('fraud_label')).alias('fraud_label'),\
-#     F.first(col('ngrams_75')).alias('ngrams_75'),\
-#     F.first(col('ngramscounts_75')).alias('ngramscounts_75'),F.first(col('words')).alias('words'))
 ####################
+# FRAUD
+ngram7_fraud=sqlContext.read.json(input_file4).filter("fraud_label=1")
+ngram7_fraud.printSchema()
 #
-most_frequent_df=ngram7_fraud\
+most_frequent_fraud_df=ngram7_fraud\
 .withColumn("value_sum",F.explode("ngramscounts_7.values"))\
 .groupBy("hash_message").agg(F.sum("value_sum").alias('count'))\
 .persist(pyspark.StorageLevel.MEMORY_AND_DISK_2)
-most_frequent_df.printSchema()
+most_frequent_fraud_df.printSchema()
 #
-most_frequent_df.coalesce(1).write.json(output_most_frequent_df)
+most_frequent_fraud_df.coalesce(1).write.json(output_most_frequent_fraud_df)
 #
 # The most Frequent would the the max
-standard_fraud_ngram=most_frequent_df.orderBy(col('count').desc()).select(col('hash_message')).limit(1).toPandas()
+standard_fraud_ngram=most_frequent_fraud_df.orderBy(col('count').desc()).select(col('hash_message')).limit(1).toPandas()
 #
 print("Value Print: standard_fraud_ngram=")
 print(standard_fraud_ngram)
 #
-print("Calculation of standard_fraud_ngram - Done!")
+####################
+# NOT FRAUD
+ngram7_notfraud=sqlContext.read.json(input_file4).filter("fraud_label=0")
+ngram7_notfraud.printSchema()
+#
+most_frequent_notfraud_df=ngram7_notfraud\
+.withColumn("value_sum",F.explode("ngramscounts_7.values"))\
+.groupBy("hash_message").agg(F.sum("value_sum").alias('count'))\
+.persist(pyspark.StorageLevel.MEMORY_AND_DISK_2)
+most_frequent_notfraud_df.printSchema()
+#
+most_frequent_notfraud_df.coalesce(1).write.json(output_most_frequent_notfraud_df)
+#
+# The most Frequent would the the max
+standard_notfraud_ngram=most_frequent_notfraud_df.orderBy(col('count').desc()).select(col('hash_message')).limit(1).toPandas()
+#
+print("Value Print: standard_notfraud_ngram=")
+print(standard_notfraud_ngram)
+#
+print("Calculation of most frequent fraud_ngram notfraud_ngram - Done!")
 #
 sc.stop()
 #

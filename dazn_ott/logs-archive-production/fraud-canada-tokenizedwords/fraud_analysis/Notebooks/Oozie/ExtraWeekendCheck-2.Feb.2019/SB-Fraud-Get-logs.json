@@ -1,0 +1,108 @@
+[
+{
+  "pk": 1533, 
+  "model": "desktop.document2", 
+  "fields": {
+    "search": null, 
+    "uuid": "30c17cfc-04fc-5c0b-8b6f-3a6df96a33e0", 
+    "extra": "", 
+    "type": "oozie-workflow2", 
+    "description": "get daily s3://logs-archive/production/yymmdd || Get daily logs and move them  via /raw /staged /published", 
+    "is_history": false, 
+    "parent_directory": [
+      "15c3778f-8947-49b8-8a46-cc286ddc553f", 
+      1, 
+      false
+    ], 
+    "is_managed": false, 
+    "last_modified": "2019-01-23T11:13:51", 
+    "version": 1, 
+    "owner": [
+      "siemanalyst"
+    ], 
+    "dependencies": [
+      [
+        "381bb293-e14a-45e4-bdad-d56168535a25", 
+        1, 
+        true
+      ], 
+      [
+        "0cf518b7-9825-4682-b8d4-a6a12058ce0d", 
+        1, 
+        true
+      ], 
+      [
+        "450e6686-e37d-4ae6-8681-0d7743a77cc4", 
+        1, 
+        true
+      ], 
+      [
+        "c6bbd6fb-9510-4922-9fd6-3de99accb04b", 
+        1, 
+        true
+      ], 
+      [
+        "716ef149-9d45-4ca6-9424-a5553e959938", 
+        1, 
+        true
+      ], 
+      [
+        "066d88ae-5afd-49ba-9d7e-9999cc636a3a", 
+        1, 
+        true
+      ], 
+      [
+        "1de9bfae-bb80-4c37-8e18-d8925b814090", 
+        1, 
+        true
+      ], 
+      [
+        "d1a9fe5a-3789-4c48-ae75-69d3dbc9897f", 
+        1, 
+        true
+      ], 
+      [
+        "2b4fa35d-cccf-4c16-be29-77112d2f588d", 
+        1, 
+        true
+      ]
+    ], 
+    "data": "{\"layout\": [{\"oozieRows\": [{\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Ssh\", \"widgetType\": \"ssh-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"gridsterHeight\": 0, \"externalIdUrl\": \"\", \"properties\": {}, \"externalId\": \"\", \"isLoading\": false, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"a5e229d5-1fbd-4dfd-2436-541d46fc3450\", \"size\": 12}], \"id\": \"ad185cab-3085-5c30-07e6-a917b25965be\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Ssh\", \"widgetType\": \"ssh-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"gridsterHeight\": 0, \"externalIdUrl\": \"\", \"properties\": {}, \"externalId\": \"\", \"isLoading\": false, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"4417b374-d440-336c-b216-192183f4b1e6\", \"size\": 12}], \"id\": \"1b655a0c-3818-1da3-0ef8-6b000f10587a\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Ssh\", \"widgetType\": \"ssh-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"gridsterHeight\": 0, \"externalIdUrl\": \"\", \"properties\": {}, \"externalId\": \"\", \"isLoading\": false, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"45e30a1e-379b-4114-8c99-80a3a92377d7\", \"size\": 12}], \"id\": \"7c0128d6-404b-ad0c-eebb-ce38f2f64d49\", \"columns\": []}], \"rows\": [{\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Start\", \"widgetType\": \"start-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"gridsterHeight\": 0, \"externalIdUrl\": \"\", \"properties\": {}, \"externalId\": \"\", \"isLoading\": false, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"size\": 12}], \"id\": \"7ed3036b-a15a-d14f-eb95-1bd05f0e8301\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Ssh\", \"widgetType\": \"ssh-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"gridsterHeight\": 0, \"externalIdUrl\": \"\", \"properties\": {}, \"externalId\": \"\", \"isLoading\": false, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"a5e229d5-1fbd-4dfd-2436-541d46fc3450\", \"size\": 12}], \"id\": \"ad185cab-3085-5c30-07e6-a917b25965be\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Ssh\", \"widgetType\": \"ssh-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"gridsterHeight\": 0, \"externalIdUrl\": \"\", \"properties\": {}, \"externalId\": \"\", \"isLoading\": false, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"4417b374-d440-336c-b216-192183f4b1e6\", \"size\": 12}], \"id\": \"1b655a0c-3818-1da3-0ef8-6b000f10587a\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Ssh\", \"widgetType\": \"ssh-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"gridsterHeight\": 0, \"externalIdUrl\": \"\", \"properties\": {}, \"externalId\": \"\", \"isLoading\": false, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"45e30a1e-379b-4114-8c99-80a3a92377d7\", \"size\": 12}], \"id\": \"7c0128d6-404b-ad0c-eebb-ce38f2f64d49\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"End\", \"widgetType\": \"end-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"gridsterHeight\": 0, \"externalIdUrl\": \"\", \"properties\": {}, \"externalId\": \"\", \"isLoading\": false, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"size\": 12}], \"id\": \"3200c428-0a49-816c-c566-143a6a7d0650\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Kill\", \"widgetType\": \"kill-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"gridsterHeight\": 0, \"externalIdUrl\": \"\", \"properties\": {}, \"externalId\": \"\", \"isLoading\": false, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"size\": 12}], \"id\": \"7af99022-9a0f-ba4d-db74-701d38378c8b\", \"columns\": []}], \"oozieEndRow\": {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"End\", \"widgetType\": \"end-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"gridsterHeight\": 0, \"externalIdUrl\": \"\", \"properties\": {}, \"externalId\": \"\", \"isLoading\": false, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"size\": 12}], \"id\": \"3200c428-0a49-816c-c566-143a6a7d0650\", \"columns\": []}, \"oozieKillRow\": {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Kill\", \"widgetType\": \"kill-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"gridsterHeight\": 0, \"externalIdUrl\": \"\", \"properties\": {}, \"externalId\": \"\", \"isLoading\": false, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"size\": 12}], \"id\": \"7af99022-9a0f-ba4d-db74-701d38378c8b\", \"columns\": []}, \"enableOozieDropOnAfter\": true, \"oozieStartRow\": {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Start\", \"widgetType\": \"start-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"gridsterHeight\": 0, \"externalIdUrl\": \"\", \"properties\": {}, \"externalId\": \"\", \"isLoading\": false, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"size\": 12}], \"id\": \"7ed3036b-a15a-d14f-eb95-1bd05f0e8301\", \"columns\": []}, \"klass\": \"card card-home card-column span12\", \"enableOozieDropOnBefore\": true, \"drops\": [\"temp\"], \"id\": \"347698d0-9ad7-c120-36a6-016bb8d96664\", \"size\": 12}], \"workflow\": {\"properties\": {\"job_xml\": \"\", \"description\": \"get daily s3://logs-archive/production/yymmdd || Get daily logs and move them  via /raw /staged /published\", \"parameters\": [{\"name\": \"oozie.use.system.libpath\", \"value\": true}], \"sla_enabled\": false, \"deployment_dir\": \"/user/hue/oozie/workspaces/hue-oozie-1547572708.49\", \"schema_version\": \"uri:oozie:workflow:0.5\", \"properties\": [], \"show_arrows\": true, \"wf1_id\": null, \"sla\": [{\"key\": \"enabled\", \"value\": false}, {\"key\": \"nominal-time\", \"value\": \"${nominal_time}\"}, {\"key\": \"should-start\", \"value\": \"\"}, {\"key\": \"should-end\", \"value\": \"${30 * MINUTES}\"}, {\"key\": \"max-duration\", \"value\": \"\"}, {\"key\": \"alert-events\", \"value\": \"\"}, {\"key\": \"alert-contact\", \"value\": \"\"}, {\"key\": \"notification-msg\", \"value\": \"\"}, {\"key\": \"upstream-apps\", \"value\": \"\"}]}, \"name\": \"Get-Daily-Logs-Archive-Production-yymmdd\", \"hasKillNode\": true, \"versions\": [\"uri:oozie:workflow:0.4\", \"uri:oozie:workflow:0.4.5\", \"uri:oozie:workflow:0.5\"], \"isDirty\": false, \"movedNode\": null, \"linkMapping\": {\"17c9c895-5a16-7443-bb81-f34b30b21548\": [], \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\": [], \"3f107997-04cc-8733-60a9-a4bb62cebffc\": [\"a5e229d5-1fbd-4dfd-2436-541d46fc3450\"], \"4417b374-d440-336c-b216-192183f4b1e6\": [\"45e30a1e-379b-4114-8c99-80a3a92377d7\"], \"a5e229d5-1fbd-4dfd-2436-541d46fc3450\": [\"4417b374-d440-336c-b216-192183f4b1e6\"], \"45e30a1e-379b-4114-8c99-80a3a92377d7\": [\"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\"]}, \"nodeIds\": [\"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"a5e229d5-1fbd-4dfd-2436-541d46fc3450\", \"4417b374-d440-336c-b216-192183f4b1e6\", \"45e30a1e-379b-4114-8c99-80a3a92377d7\"], \"nodes\": [{\"name\": \"Start\", \"associatedDocumentLoading\": true, \"children\": [{\"to\": \"a5e229d5-1fbd-4dfd-2436-541d46fc3450\"}], \"actionParametersFetched\": false, \"properties\": {}, \"associatedDocumentUuid\": null, \"type\": \"start-widget\", \"id\": \"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"actionParameters\": []}, {\"name\": \"End\", \"associatedDocumentLoading\": true, \"children\": [], \"actionParametersFetched\": false, \"properties\": {\"body\": \"\", \"cc\": \"\", \"to\": \"\", \"enableMail\": false, \"attachment\": \"\", \"content_type\": \"text/plain\", \"subject\": \"\"}, \"associatedDocumentUuid\": null, \"type\": \"end-widget\", \"id\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"actionParameters\": []}, {\"name\": \"Kill\", \"associatedDocumentLoading\": true, \"children\": [], \"actionParametersFetched\": false, \"properties\": {\"body\": \"\", \"cc\": \"\", \"to\": \"\", \"enableMail\": false, \"message\": \"Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]\", \"subject\": \"\"}, \"associatedDocumentUuid\": null, \"type\": \"kill-widget\", \"id\": \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"actionParameters\": []}, {\"name\": \"ssh-a5e2\", \"associatedDocumentLoading\": true, \"children\": [{\"to\": \"4417b374-d440-336c-b216-192183f4b1e6\"}, {\"error\": \"17c9c895-5a16-7443-bb81-f34b30b21548\"}], \"actionParametersFetched\": false, \"properties\": {\"ssh_command\": \"bash -x  /home/siemanalyst/projects/logs-archive-production/aws_cli/get_daily_logs.sh ${DATE_YYMMDD}\", \"retry_max\": [], \"retry_interval\": [], \"capture_output\": true, \"host\": \"siemanalyst@chpbdamedia01.prod.ch.perform.local\", \"arguments\": [], \"credentials\": [], \"sla\": [{\"key\": \"enabled\", \"value\": false}, {\"key\": \"nominal-time\", \"value\": \"${nominal_time}\"}, {\"key\": \"should-start\", \"value\": \"\"}, {\"key\": \"should-end\", \"value\": \"${30 * MINUTES}\"}, {\"key\": \"max-duration\", \"value\": \"\"}, {\"key\": \"alert-events\", \"value\": \"\"}, {\"key\": \"alert-contact\", \"value\": \"\"}, {\"key\": \"notification-msg\", \"value\": \"\"}, {\"key\": \"upstream-apps\", \"value\": \"\"}]}, \"associatedDocumentUuid\": null, \"type\": \"ssh-widget\", \"id\": \"a5e229d5-1fbd-4dfd-2436-541d46fc3450\", \"actionParameters\": []}, {\"name\": \"ssh-4417\", \"associatedDocumentLoading\": true, \"children\": [{\"to\": \"45e30a1e-379b-4114-8c99-80a3a92377d7\"}, {\"error\": \"17c9c895-5a16-7443-bb81-f34b30b21548\"}], \"actionParametersFetched\": false, \"properties\": {\"ssh_command\": \"bash -x /home/siemanalyst/projects/logs-archive-production/data_etl/stageprocess-SparkStageLogsArchiveProd-chpbdamedia01 ${DATE_YYYYMMDD}\", \"retry_max\": [], \"retry_interval\": [], \"capture_output\": true, \"host\": \"siemanalyst@chpbdamedia01.prod.ch.perform.local\", \"arguments\": [], \"credentials\": [], \"sla\": [{\"key\": \"enabled\", \"value\": false}, {\"key\": \"nominal-time\", \"value\": \"${nominal_time}\"}, {\"key\": \"should-start\", \"value\": \"\"}, {\"key\": \"should-end\", \"value\": \"${30 * MINUTES}\"}, {\"key\": \"max-duration\", \"value\": \"\"}, {\"key\": \"alert-events\", \"value\": \"\"}, {\"key\": \"alert-contact\", \"value\": \"\"}, {\"key\": \"notification-msg\", \"value\": \"\"}, {\"key\": \"upstream-apps\", \"value\": \"\"}]}, \"associatedDocumentUuid\": null, \"type\": \"ssh-widget\", \"id\": \"4417b374-d440-336c-b216-192183f4b1e6\", \"actionParameters\": []}, {\"name\": \"ssh-45e3\", \"associatedDocumentLoading\": true, \"children\": [{\"to\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\"}, {\"error\": \"17c9c895-5a16-7443-bb81-f34b30b21548\"}], \"actionParametersFetched\": false, \"properties\": {\"ssh_command\": \"bash -x /home/siemanalyst/projects/logs-archive-production/data_etl/publishprocess-SparkPublishLogsArchiveProd-chpbdamedia01 ${DATE_YYYYMMDD}\", \"retry_max\": [], \"retry_interval\": [], \"capture_output\": true, \"host\": \"siemanalyst@chpbdamedia01.prod.ch.perform.local\", \"arguments\": [], \"credentials\": [], \"sla\": [{\"key\": \"enabled\", \"value\": false}, {\"key\": \"nominal-time\", \"value\": \"${nominal_time}\"}, {\"key\": \"should-start\", \"value\": \"\"}, {\"key\": \"should-end\", \"value\": \"${30 * MINUTES}\"}, {\"key\": \"max-duration\", \"value\": \"\"}, {\"key\": \"alert-events\", \"value\": \"\"}, {\"key\": \"alert-contact\", \"value\": \"\"}, {\"key\": \"notification-msg\", \"value\": \"\"}, {\"key\": \"upstream-apps\", \"value\": \"\"}]}, \"associatedDocumentUuid\": null, \"type\": \"ssh-widget\", \"id\": \"45e30a1e-379b-4114-8c99-80a3a92377d7\", \"actionParameters\": []}], \"id\": 1533, \"nodeNamesMapping\": {\"17c9c895-5a16-7443-bb81-f34b30b21548\": \"Kill\", \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\": \"End\", \"3f107997-04cc-8733-60a9-a4bb62cebffc\": \"Start\", \"4417b374-d440-336c-b216-192183f4b1e6\": \"ssh-4417\", \"a5e229d5-1fbd-4dfd-2436-541d46fc3450\": \"ssh-a5e2\", \"45e30a1e-379b-4114-8c99-80a3a92377d7\": \"ssh-45e3\"}, \"uuid\": \"30c17cfc-04fc-5c0b-8b6f-3a6df96a33e0\"}}", 
+    "is_trashed": false, 
+    "name": "Get-Daily-Logs-Archive-Production-yymmdd"
+  }
+},
+{
+  "pk": 1722, 
+  "model": "desktop.document2", 
+  "fields": {
+    "search": null, 
+    "uuid": "c2b93717-3093-025f-c0c2-53c8fd5eb7f4", 
+    "extra": "", 
+    "type": "oozie-coordinator2", 
+    "description": "SuperBowlWeekend-Fraud-Canada-Check", 
+    "is_history": false, 
+    "parent_directory": [
+      "15c3778f-8947-49b8-8a46-cc286ddc553f", 
+      1, 
+      false
+    ], 
+    "is_managed": false, 
+    "last_modified": "2019-02-01T17:35:06", 
+    "version": 1, 
+    "owner": [
+      "siemanalyst"
+    ], 
+    "dependencies": [
+      [
+        "30c17cfc-04fc-5c0b-8b6f-3a6df96a33e0", 
+        1, 
+        false
+      ]
+    ], 
+    "data": "{\"end_date\": {\"name\": \"end_date\", \"value\": \"2019-02-04T17:31\"}, \"variables\": [{\"shared_dataset_uuid\": \"\", \"is_advanced_start_instance\": false, \"show_advanced\": false, \"start_instance\": \"0\", \"timezone\": \"Atlantic/Canary\", \"end_instance\": \"0\", \"same_timezone\": true, \"uuid\": \"47e4be72-86a9-4a03-d7e3-1324d6f0f5cd\", \"frequency_number\": 1, \"dataset_variable\": \" ${coord:formatTime(coord:dateOffset(coord:nominalTime(), -0, 'DAY') , \\\"yyyyMMdd\\\")}\", \"start\": \"2019-02-01T17:32\", \"same_frequency\": true, \"advanced_start_instance\": \"${coord:current(0)}\", \"advanced_end_instance\": \"${coord:current(0)}\", \"instance_choice\": \"default\", \"dataset_type\": \"parameter\", \"use_done_flag\": false, \"done_flag\": \"_SUCCESS\", \"same_start\": true, \"frequency_unit\": \"days\", \"workflow_variable\": \"DATE_YYYYMMDD\", \"is_advanced_end_instance\": false}, {\"shared_dataset_uuid\": \"\", \"is_advanced_start_instance\": false, \"show_advanced\": false, \"start_instance\": \"0\", \"timezone\": \"Atlantic/Canary\", \"end_instance\": \"0\", \"same_timezone\": true, \"uuid\": \"ffb5e0c1-50dd-cdf6-bec1-21d6eb247814\", \"frequency_number\": 1, \"dataset_variable\": \" ${coord:formatTime(coord:dateOffset(coord:nominalTime(), -0, 'DAY') , \\\"yyMMdd\\\")}\", \"start\": \"2019-02-01T17:32\", \"same_frequency\": true, \"advanced_start_instance\": \"${coord:current(0)}\", \"advanced_end_instance\": \"${coord:current(0)}\", \"instance_choice\": \"default\", \"dataset_type\": \"parameter\", \"use_done_flag\": false, \"done_flag\": \"_SUCCESS\", \"same_start\": true, \"frequency_unit\": \"days\", \"workflow_variable\": \"DATE_YYMMDD\", \"is_advanced_end_instance\": false}], \"isDirty\": true, \"showAdvancedFrequencyUI\": true, \"isManaged\": false, \"variablesUI\": [\"parameter\", \"input_path\", \"output_path\"], \"workflowParameters\": [{\"name\": \"DATE_YYYYMMDD\", \"value\": \"\"}, {\"name\": \"DATE_YYMMDD\", \"value\": \"\"}], \"id\": 1722, \"name\": \"SB-Fraud-Get-logs\", \"uuid\": \"c2b93717-3093-025f-c0c2-53c8fd5eb7f4\", \"properties\": {\"job_xml\": \"\", \"timeout\": null, \"document\": null, \"end\": \"${end_date}\", \"description\": \"SuperBowlWeekend-Fraud-Canada-Check\", \"frequency_number\": 1, \"workflow\": \"30c17cfc-04fc-5c0b-8b6f-3a6df96a33e0\", \"deployment_dir\": \"/user/hue/oozie/workspaces/hue-oozie-1549042268.77\", \"cron_frequency\": \"0 4 * * *\", \"frequency_unit\": \"days\", \"schema_version\": \"uri:oozie:coordinator:0.2\", \"cron_advanced\": false, \"start\": \"${start_date}\", \"parameters\": [{\"name\": \"oozie.use.system.libpath\", \"value\": true}, {\"name\": \"start_date\", \"value\": \"2019-02-01T17:31\"}, {\"name\": \"end_date\", \"value\": \"2019-02-04T17:31\"}], \"concurrency\": 0, \"timezone\": \"Atlantic/Canary\", \"credentials\": [], \"throttle\": 0, \"execution\": \"FIFO\", \"sla\": [{\"key\": \"enabled\", \"value\": false}, {\"key\": \"nominal-time\", \"value\": \"${nominal_time}\"}, {\"key\": \"should-start\", \"value\": \"\"}, {\"key\": \"should-end\", \"value\": \"${30 * MINUTES}\"}, {\"key\": \"max-duration\", \"value\": \"\"}, {\"key\": \"alert-events\", \"value\": \"\"}, {\"key\": \"alert-contact\", \"value\": \"\"}, {\"key\": \"notification-msg\", \"value\": \"\"}, {\"key\": \"upstream-apps\", \"value\": \"\"}]}, \"start_date\": {\"name\": \"start_date\", \"value\": \"2019-02-01T17:31\"}}", 
+    "is_trashed": false, 
+    "name": "SB-Fraud-Get-logs"
+  }
+}
+]
