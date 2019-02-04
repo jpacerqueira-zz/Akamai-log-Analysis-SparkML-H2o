@@ -72,5 +72,15 @@ spark2-submit --master yarn --deploy-mode client --conf spark.debug.maxToStringF
 #
 hdfs dfs -cp hdfs:///data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=${DATE_V1}/merged_prediction_train/part-*.csv hdfs:///data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=${DATE_V1}/merged_prediction_train/merge_prediction_train_${DATE_V1}.csv >> $JOB_LOG_FILE 2>&1
 #
+### X5 Job
+echo "|" >> $JOB_LOG_FILE 2>&1
+hdfs dfs -rm -r -f -skipTrash hdfs:///data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=${DATE_V1}/no_match_hash_message >> $JOB_LOG_FILE 2>&1
+rm -f ${MY_FOLDER}/product_model_prediction/no_match_hash_message_${DATE_V1}.csv
+echo "Pyspark :-: x5-search-discover-values-hash_message.py" >> $JOB_LOG_FILE 2>&1
+echo "|" >> $JOB_LOG_FILE 2>&1
+spark2-submit --master yarn --deploy-mode client --conf spark.debug.maxToStringFields=3500 $MY_FOLDER/x5-search-discover-values-hash_message.py --datev1 ${DATE_V1} >> $JOB_LOG_FILE 2>&1
+#
+hdfs dfs -cp hdfs:///data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=${DATE_V1}/no_match_hash_message/part-*.csv hdfs:///data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=${DATE_V1}/no_match_hash_message/no_match_hash_message_${DATE_V1}.csv >> $JOB_LOG_FILE 2>&1
+#
 echo "| Job Finished  ___;" >> $JOB_LOG_FILE 2>&1
 #

@@ -92,7 +92,7 @@ tokenized.printSchema()
 tokenized.coalesce(1).write.json(output_file2)
 # Tokenize NON-Fraud-LABEL
 # hash the message de-duplicate those records
-notfraud_file=sqlContext.read.json(input_file3)
+notfraud_file=sqlContext.read.json(input_file3).repartition(500)
 notfraud_file.printSchema()
 #
 notfraud_df=notfraud_file\
@@ -102,15 +102,19 @@ notfraud_df=notfraud_file\
 .agg(F.first(col('fraud_label')).alias('fraud_label'),F.first(col('words')).alias('words'),F.first(col('message')).alias('message'))\
 .persist(pyspark.StorageLevel.MEMORY_AND_DISK_2)
 notfraud_df.printSchema()
+# Only the Not-Fraud are randomly sorted
+#
+from pyspark.sql.functions import rand
 #
 df_notfraud_words = notfraud_df.filter("message IS NOT NULL").select(col('fraud_label'),col('hash_message'),col('words'))\
+.orderBy(rand())\
 .persist(pyspark.StorageLevel.MEMORY_AND_DISK_2)
 df_notfraud_words.printSchema()
 #
 # FILTER FRAUD AND LABEL 
 # Join with Internal Curation Data in urltopredict staged folder
 # hash the message de-duplicate those records
-fraud_file=sqlContext.read.json(input_file1_playback_fraud)
+fraud_file=sqlContext.read.json(input_file1_playback_fraud).repartition(500)
 fraud_file.printSchema()
 #
 fraud_df=fraud_file\
@@ -125,7 +129,10 @@ df_words = fraud_df.filter("message IS NOT NULL").select(col('fraud_label'),col(
 .persist(pyspark.StorageLevel.MEMORY_AND_DISK_2)
 df_words.printSchema()
 #
-result_fraud_nofraud_words = df_words.union(df_notfraud_words)
+# Limit to 250,000 Daily Not-Fraud Records input in the nGrams Graph analysis
+#
+result_fraud_nofraud_words = df_words.union(df_notfraud_words).limit(250000)\
+.persist(pyspark.StorageLevel.MEMORY_AND_DISK_SER)
 ## Register Generic Functions
 # -----------------------------------------------------------------------------
 # Build ngrams 75 90 n=6 

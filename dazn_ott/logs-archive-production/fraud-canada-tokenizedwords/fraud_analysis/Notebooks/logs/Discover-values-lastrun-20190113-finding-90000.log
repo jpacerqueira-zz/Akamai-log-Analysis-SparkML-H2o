@@ -1,0 +1,51 @@
+19/02/03 21:56:07 WARN util.Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+19/02/03 21:56:17 WARN streaming.FileStreamSink: Error while looking for metadata directory.
+root
+ |-- features_85: struct (nullable = true)
+ |    |-- indices: array (nullable = true)
+ |    |    |-- element: long (containsNull = true)
+ |    |-- size: long (nullable = true)
+ |    |-- type: long (nullable = true)
+ |    |-- values: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |-- fraud_label: long (nullable = true)
+ |-- hash_message: string (nullable = true)
+ |-- ngrams_7: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+ |-- ngramscounts_7: struct (nullable = true)
+ |    |-- indices: array (nullable = true)
+ |    |    |-- element: long (containsNull = true)
+ |    |-- size: long (nullable = true)
+ |    |-- type: long (nullable = true)
+ |    |-- values: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |-- words: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+
+root
+ |-- features_85: struct (nullable = true)
+ |    |-- indices: array (nullable = true)
+ |    |    |-- element: long (containsNull = true)
+ |    |-- size: long (nullable = true)
+ |    |-- type: long (nullable = true)
+ |    |-- values: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |-- fraud_label: long (nullable = true)
+ |-- hash_message: string (nullable = true)
+ |-- ngrams_7: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+ |-- ngramscounts_7: struct (nullable = true)
+ |    |-- indices: array (nullable = true)
+ |    |    |-- element: long (containsNull = true)
+ |    |-- size: long (nullable = true)
+ |    |-- type: long (nullable = true)
+ |    |-- values: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |-- words: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+ |-- fraud_search_hash: string (nullable = false)
+
+From Identifyed Label=0, prediction p=1 : var_hash_message=
+47bade7fcc6883b26ff81f0681ff8b824d97718c1f9d4584c66f2d58b925f4da9447f6215c62293565820492f7499efea8aed25ef1bf5ddeb36b3872d4ad243d
+Potential fraud value FROM : standard_notfraud_words=
+root15c3b77bfe1cd80dca6427b88a9286320requestmethodgeturlhttpsislcadazncommislv2playbackassetidmy4tjadinerw13fyo5wctaw80eventid1gl0x6xanfdohjxczy1eezg4qformatm3uplayeriddazn0021bb375fsecuretruelanguagecodeenlatitudenulllongitudenullplatformwebmanufacturermodelnullclientip24141148249headersuseragentmozilla50macintoshintelmacosx10_12_6applewebkit605115khtmllikegeckoversion1112safari605115typeinresponsestatuscode200reasonphraseokduration109jwtvieweridext00307136deviceid0012400000moemwaae001c3b59f4userstatusactivepaid

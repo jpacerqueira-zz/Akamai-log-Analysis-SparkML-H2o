@@ -28,7 +28,7 @@ fi
 #
 # hdfs dfs -mkdir -p hdfs:///data/raw/ott_dazn/logs-archive-production/dt=20190120
 #
-##
+#
 MY_FOLDER="/home/siemanalyst/projects/logs-archive-production/fraud-canada-tokenizedwords"
-spark2-submit --master yarn --deploy-mode client --conf spark.debug.maxToStringFields=1500 $MY_FOLDER/execute-fraud-canada-tokenizedwords-ngram85-stagedparquet.py --datev1 ${DATE_V1} > $MY_FOLDER/logs/execute-fraud-canada-tokenizedwords-ngram85-stagedparquet-lastrun-${DATE_V1}.log 2>&1
+spark2-submit --master yarn --deploy-mode client --conf spark.debug.maxToStringFields=1500 $MY_FOLDER/notebooks/x5-search-discover-values-hash_message.py --datev1 ${DATE_V1} > $MY_FOLDER/notebooks/logs/Discover-values-lastrun-${DATE_V1}.log 2>&1
 echo 0
