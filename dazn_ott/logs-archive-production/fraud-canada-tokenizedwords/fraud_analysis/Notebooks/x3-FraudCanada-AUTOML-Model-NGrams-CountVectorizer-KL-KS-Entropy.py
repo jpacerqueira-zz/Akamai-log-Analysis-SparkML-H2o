@@ -37,7 +37,6 @@ from pyspark.ml.feature import PCA
 from pyspark.ml.linalg import Vectors
 #
 #  FILTER with PySpark SQL Functions F.
-import pyspark.sql.functions as F
 #
 # Arguments
 #
@@ -112,32 +111,10 @@ fraud_label_read_df.printSchema()
 # https://stackoverflow.com/questions/47401418/pyspark-conversion-to-array-types?rq=1 
 #
 #
-from pyspark.sql.functions import rand
-#
 fraud_fraud_label_read1_df=fraud_label_read_df.filter("fraud_label=1")\
 .persist(pyspark.StorageLevel.MEMORY_AND_DISK_2)
 notfraud_fraud_label_read1_df=fraud_label_read_df.filter("fraud_label=0")\
 .persist(pyspark.StorageLevel.MEMORY_AND_DISK_2)
-#
-# Apply Quartiles over KL Function 
-# https://stackoverflow.com/questions/51506820/pyspark-calculate-quartiles-based-on-id-and-classify-based-on-the-quartile-range
-#
-#fraud_fraud_label_read1_df.registerTempTable("fraud_fraud_label_read1_df_tb")
-#quartile_f_df = sqlContext.sql("select hash_message, percentile_approx(cast(kl_fraud_words as double), 0.25) as Q1_value, percentile_approx(cast(kl_fraud_words as double), 0.5) as Q2_value, percentile_approx(cast(kl_fraud_words as double), 0.75) as Q3_value from fraud_fraud_label_read1_df_tb group by hash_message")
-#
-#fraud_fraud_label_read1_df=fraud_fraud_label_read1_df.join(quartile_f_df, fraud_fraud_label_read1_df.hash_message == quartile_f_df.hash_message, 'left_outer')
-#fraud_label_qt_rand=fraud_fraud_label_read1_df.select(F.when(fraud_fraud_label_read1_df.kl_fraud_words < fraud_fraud_label_read1_df.Q1_value, '25').when(fraud_fraud_label_read1_df.kl_fraud_words.between(fraud_fraud_label_read1_df.Q1_value, fraud_fraud_label_read1_df.Q3_value), '50').when(fraud_fraud_label_read1_df.kl_fraud_words > fraud_fraud_label_read1_df.Q3_value, '75').alias('kl_fraud_words_quartile')).limit(200000)\
-#.persist(pyspark.StorageLevel.MEMORY_AND_DISK_SER)
-#
-#notfraud_fraud_label_read1_df.registerTempTable("notfraud_fraud_label_read1_df_tb")
-#quartile_nf_df = sqlContext.sql("select hash_message, percentile_approx(cast(kl_notfraud_words as double), 0.25) as Q1_value, percentile_approx(cast(kl_notfraud_words as double), 0.5) as Q2_value, percentile_approx(cast(kl_notfraud_words as double), 0.75) as Q3_value from notfraud_fraud_label_read1_df_tb group by hash_message")
-#
-#notfraud_fraud_label_read1_df=notfraud_fraud_label_read1_df.join(quartile_nf_df, notfraud_fraud_label_read1_df.hash_message == quartile_nf_df.hash_message, 'left_outer')
-#notfraud_label_qt_rand=notfraud_fraud_label_read1_df.select(F.when(notfraud_fraud_label_read1_df.kl_fraud_words < notfraud_fraud_label_read1_df.Q1_value, '25').when(notfraud_fraud_label_read1_df.kl_fraud_words.between(notfraud_fraud_label_read1_df.Q1_value, notfraud_fraud_label_read1_df.Q3_value), '50').when(notfraud_fraud_label_read1_df.kl_fraud_words > notfraud_fraud_label_read1_df.Q3_value, '75').alias('kl_fraud_words_quartile')).limit(200000)\
-#.persist(pyspark.StorageLevel.MEMORY_AND_DISK_SER)
-#
-#fraud_label_qt_rand.printSchema()
-#notfraud_label_qt_rand.printSchema()
 #
 fraud_fraud_label_read1_df.printSchema()
 notfraud_fraud_label_read1_df.printSchema()
@@ -152,31 +129,22 @@ drop_list_cols=['features85_indices','features85_values','ngramscounts7_indices'
 ###    df['var2'] = df['var2'].apply(np.ravel)
 ### 4.) Random xxx rows
 ###    df.orderBy(rand()).limit(n)
-#
-#### Quartiles are computationaly too expensive to run
-#### Random record seection has similar or even better results with less computational steps
-#
-###    df.orderBy(rand()).limit(n)
 from pyspark.sql.functions import rand
 #
-fraud_label_train_pd_rand=fraud_fraud_label_read1_df.limit(300000)\
+fraud_label_train_pd_rand=fraud_fraud_label_read1_df.limit(10000)\
 .orderBy(rand()).persist(pyspark.StorageLevel.MEMORY_AND_DISK_SER)
 #
-fraud_label_train_pd=fraud_label_train_pd_rand.orderBy(col('kl_fraud_words')).limit(150000)\
-.union(fraud_label_train_pd_rand.orderBy(col('kl_fraud_words').desc()).limit(150000))\
-.orderBy(rand()).limit(1600).toPandas()\
+fraud_label_train_pd=fraud_label_train_pd_rand.limit(3100).toPandas()\
 .assign(features85_list_indices=lambda x: x['features85_indices'].apply(np.ravel),\
         features85_list_values=lambda x: x['features85_values'].apply(np.ravel),\
         ngramscounts7_list_indices=lambda x: x['ngramscounts7_indices'].apply(np.ravel),\
         ngramscounts7_list_values=lambda x: x['ngramscounts7_values'].apply(np.ravel))\
 .drop(drop_list_cols, axis=1, inplace=False)
 #
-fraud_label_test_pd_rand=fraud_fraud_label_read1_df.orderBy(col('kl_fraud_words')).limit(300000)\
+fraud_label_test_pd_rand=fraud_fraud_label_read1_df.limit(10000)\
 .orderBy(rand()).persist(pyspark.StorageLevel.MEMORY_AND_DISK_SER)
 #
-fraud_label_test_pd=fraud_label_test_pd_rand.orderBy(col('kl_fraud_words')).limit(150000)\
-.union(fraud_label_test_pd_rand.orderBy(col('kl_fraud_words').desc()).limit(150000))\
-.orderBy(rand()).limit(800).toPandas()\
+fraud_label_test_pd=fraud_label_test_pd_rand.limit(500).toPandas()\
 .assign(features85_list_indices=lambda x: x['features85_indices'].apply(np.ravel),\
         features85_list_values=lambda x: x['features85_values'].apply(np.ravel),\
         ngramscounts7_list_indices=lambda x: x['ngramscounts7_indices'].apply(np.ravel),\
@@ -186,24 +154,20 @@ fraud_label_test_pd=fraud_label_test_pd_rand.orderBy(col('kl_fraud_words')).limi
 fraud_label_train=h2o.H2OFrame(fraud_label_train_pd)
 fraud_label_test=h2o.H2OFrame(fraud_label_test_pd)
 #
-not_fraud_label_train_pd_rand=notfraud_fraud_label_read1_df.limit(300000)\
+not_fraud_label_train_pd_rand=notfraud_fraud_label_read1_df.limit(10000)\
 .orderBy(rand()).persist(pyspark.StorageLevel.MEMORY_AND_DISK_SER)
 #
-not_fraud_label_train_pd=not_fraud_label_train_pd_rand.orderBy(col('kl_notfraud_words')).limit(150000)\
-.union(not_fraud_label_train_pd_rand.orderBy(col('kl_notfraud_words').desc()).limit(150000))\
-.orderBy(rand()).limit(3400).toPandas()\
+not_fraud_label_train_pd=not_fraud_label_train_pd_rand.limit(3100).toPandas()\
 .assign(features85_list_indices=lambda x: x['features85_indices'].apply(np.ravel),\
         features85_list_values=lambda x: x['features85_values'].apply(np.ravel),\
         ngramscounts7_list_indices=lambda x: x['ngramscounts7_indices'].apply(np.ravel),\
         ngramscounts7_list_values=lambda x: x['ngramscounts7_values'].apply(np.ravel))\
 .drop(drop_list_cols, axis=1, inplace=False)
 #
-not_fraud_label_test_pd_rand=notfraud_fraud_label_read1_df.limit(300000)\
+not_fraud_label_test_pd_rand=notfraud_fraud_label_read1_df.limit(10000)\
 .orderBy(rand()).persist(pyspark.StorageLevel.MEMORY_AND_DISK_SER)
 #
-not_fraud_label_test_pd=not_fraud_label_test_pd_rand.orderBy(col('kl_notfraud_words')).limit(150000)\
-.union(not_fraud_label_test_pd_rand.orderBy(col('kl_notfraud_words').desc()).limit(150000))\
-.orderBy(rand()).limit(1200).toPandas()\
+not_fraud_label_test_pd=not_fraud_label_test_pd_rand.limit(800).toPandas()\
 .assign(features85_list_indices=lambda x: x['features85_indices'].apply(np.ravel),\
         features85_list_values=lambda x: x['features85_values'].apply(np.ravel),\
         ngramscounts7_list_indices=lambda x: x['ngramscounts7_indices'].apply(np.ravel),\
@@ -225,9 +189,13 @@ not_fraud_label_test=h2o.H2OFrame(not_fraud_label_test_pd)
 train = fraud_label_train.rbind(not_fraud_label_train)
 test = fraud_label_test.rbind(not_fraud_label_test)
 #
-# Clear Cache from Spark Context as 
-# From here all operations are with H2ODataFrame and H2o.ai Context
-sqlContext.clearCache()
+#  Unpersist Dataframes indivilually releasing memmory from Cluster Nodes
+#  While doing AUTOML use only memmory in the Driver Node and in H20 Cluster in gatewayNode
+#
+fraud_label_train_pd_rand.unpersist() 
+fraud_label_test_pd_rand.unpersist() 
+not_fraud_label_train_pd_rand.unpersist() 
+not_fraud_label_test_pd_rand.unpersist() 
 #
 print("train")
 print(train.head(10))
@@ -246,10 +214,11 @@ x.remove(y)
 train[y] = train[y].asfactor()
 test[y] = test[y].asfactor()
 #
+#
 # http://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html
 # Balance Classes to compensate unbalanced data
-# Run AutoML for 25 base models (limited to 1 hour max runtime by default)
-aml = H2OAutoML(max_models=30, seed=1999, exclude_algos=["DRF","GLM"])
+# Run AutoML for 50 base models (limited to 1 hour max runtime by default)
+aml = H2OAutoML(max_models=50, seed=1999, exclude_algos=["DRF","GLM"])
 aml.train(x=x, y=y, training_frame=train)
 #
 #preserve_training_output.write.json(preserve_training_output_file)
@@ -288,7 +257,7 @@ print(preds.head(10))
 #
 #
 print("Save Model For Future Usage")
-aml.leader.download_mojo(path = "./projects/logs-archive-production/fraud-canada-tokenizedwords/notebooks/product_model_bin/ngrams7_features85_m30/v"+process_date+"/mojo", get_genmodel_jar = True)
+aml.leader.download_mojo(path = "./projects/logs-archive-production/fraud-canada-tokenizedwords/notebooks/product_model_bin/ngrams7_features85_m50/v"+process_date+"/mojo", get_genmodel_jar = True)
 # If you need to generate predictions on a test set, you can make
 # predictions directly on the `"H2OAutoML"` object, or on the leader
 # model object directly

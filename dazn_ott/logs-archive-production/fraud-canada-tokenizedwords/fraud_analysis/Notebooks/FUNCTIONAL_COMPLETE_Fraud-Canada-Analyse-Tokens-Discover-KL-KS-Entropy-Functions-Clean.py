@@ -631,24 +631,24 @@ drop_list_cols=['features85_indices','features85_values','ngramscounts7_indices'
 ###    df.orderBy(rand()).limit(n)
 from pyspark.sql.functions import rand
 #
-fraud_label_train_pd_rand=fraud_fraud_label_read1_df.limit(100000).orderBy(rand()).persist(pyspark.StorageLevel.MEMORY_AND_DISK_SER)
+fraud_label_train_pd_rand=fraud_fraud_label_read1_df.limit(10000).orderBy(rand()).persist(pyspark.StorageLevel.MEMORY_AND_DISK_SER)
 #
-fraud_label_train_pd=fraud_label_train_pd_rand.orderBy(col('kl_fraud_words')).limit(800).union( fraud_label_train_pd_rand.orderBy(col('kl_fraud_words').desc()).limit(500)).toPandas().assign(features85_list_indices=lambda x: x['features85_indices'].apply(np.ravel),        features85_list_values=lambda x: x['features85_values'].apply(np.ravel),        ngramscounts7_list_indices=lambda x: x['ngramscounts7_indices'].apply(np.ravel),        ngramscounts7_list_values=lambda x: x['ngramscounts7_values'].apply(np.ravel)).drop(drop_list_cols, axis=1, inplace=False)
+fraud_label_train_pd=fraud_label_train_pd_rand.limit(3100).toPandas().assign(features85_list_indices=lambda x: x['features85_indices'].apply(np.ravel),        features85_list_values=lambda x: x['features85_values'].apply(np.ravel),        ngramscounts7_list_indices=lambda x: x['ngramscounts7_indices'].apply(np.ravel),        ngramscounts7_list_values=lambda x: x['ngramscounts7_values'].apply(np.ravel)).drop(drop_list_cols, axis=1, inplace=False)
 #
-fraud_label_test_pd_rand=fraud_fraud_label_read1_df.orderBy(col('kl_fraud_words')).limit(100000).orderBy(rand()).persist(pyspark.StorageLevel.MEMORY_AND_DISK_SER)
+fraud_label_test_pd_rand=fraud_fraud_label_read1_df.limit(10000).orderBy(rand()).persist(pyspark.StorageLevel.MEMORY_AND_DISK_SER)
 #
-fraud_label_test_pd=fraud_label_test_pd_rand.orderBy(col('kl_fraud_words')).limit(500).union(fraud_label_test_pd_rand.orderBy(col('kl_fraud_words').desc()).limit(300)).toPandas().assign(features85_list_indices=lambda x: x['features85_indices'].apply(np.ravel),        features85_list_values=lambda x: x['features85_values'].apply(np.ravel),        ngramscounts7_list_indices=lambda x: x['ngramscounts7_indices'].apply(np.ravel),        ngramscounts7_list_values=lambda x: x['ngramscounts7_values'].apply(np.ravel)).drop(drop_list_cols, axis=1, inplace=False)
+fraud_label_test_pd=fraud_label_test_pd_rand.limit(500).toPandas().assign(features85_list_indices=lambda x: x['features85_indices'].apply(np.ravel),        features85_list_values=lambda x: x['features85_values'].apply(np.ravel),        ngramscounts7_list_indices=lambda x: x['ngramscounts7_indices'].apply(np.ravel),        ngramscounts7_list_values=lambda x: x['ngramscounts7_values'].apply(np.ravel)).drop(drop_list_cols, axis=1, inplace=False)
 #
 fraud_label_train=h2o.H2OFrame(fraud_label_train_pd)
 fraud_label_test=h2o.H2OFrame(fraud_label_test_pd)
 #
-not_fraud_label_train_pd_rand=notfraud_fraud_label_read1_df.limit(100000).orderBy(rand()).persist(pyspark.StorageLevel.MEMORY_AND_DISK_SER)
+not_fraud_label_train_pd_rand=notfraud_fraud_label_read1_df.limit(10000).orderBy(rand()).persist(pyspark.StorageLevel.MEMORY_AND_DISK_SER)
 #
-not_fraud_label_train_pd=not_fraud_label_train_pd_rand.orderBy(col('kl_notfraud_words')).limit(1600).union(not_fraud_label_train_pd_rand.orderBy(col('kl_notfraud_words').desc()).limit(1400)).toPandas().assign(features85_list_indices=lambda x: x['features85_indices'].apply(np.ravel),        features85_list_values=lambda x: x['features85_values'].apply(np.ravel),        ngramscounts7_list_indices=lambda x: x['ngramscounts7_indices'].apply(np.ravel),        ngramscounts7_list_values=lambda x: x['ngramscounts7_values'].apply(np.ravel)).drop(drop_list_cols, axis=1, inplace=False)
+not_fraud_label_train_pd=not_fraud_label_train_pd_rand.limit(3100).toPandas().assign(features85_list_indices=lambda x: x['features85_indices'].apply(np.ravel),        features85_list_values=lambda x: x['features85_values'].apply(np.ravel),        ngramscounts7_list_indices=lambda x: x['ngramscounts7_indices'].apply(np.ravel),        ngramscounts7_list_values=lambda x: x['ngramscounts7_values'].apply(np.ravel)).drop(drop_list_cols, axis=1, inplace=False)
 #
-not_fraud_label_test_pd_rand=notfraud_fraud_label_read1_df.limit(100000).orderBy(rand()).persist(pyspark.StorageLevel.MEMORY_AND_DISK_SER)
+not_fraud_label_test_pd_rand=notfraud_fraud_label_read1_df.limit(10000).orderBy(rand()).persist(pyspark.StorageLevel.MEMORY_AND_DISK_SER)
 #
-not_fraud_label_test_pd=not_fraud_label_test_pd_rand.orderBy(col('kl_notfraud_words')).limit(500).union(not_fraud_label_test_pd_rand.orderBy(col('kl_notfraud_words').desc()).limit(300)).toPandas().assign(features85_list_indices=lambda x: x['features85_indices'].apply(np.ravel),        features85_list_values=lambda x: x['features85_values'].apply(np.ravel),        ngramscounts7_list_indices=lambda x: x['ngramscounts7_indices'].apply(np.ravel),        ngramscounts7_list_values=lambda x: x['ngramscounts7_values'].apply(np.ravel)).drop(drop_list_cols, axis=1, inplace=False)
+not_fraud_label_test_pd=not_fraud_label_test_pd_rand.limit(800).toPandas().assign(features85_list_indices=lambda x: x['features85_indices'].apply(np.ravel),        features85_list_values=lambda x: x['features85_values'].apply(np.ravel),        ngramscounts7_list_indices=lambda x: x['ngramscounts7_indices'].apply(np.ravel),        ngramscounts7_list_values=lambda x: x['ngramscounts7_values'].apply(np.ravel)).drop(drop_list_cols, axis=1, inplace=False)
 #.orderBy(rand())\
 #.sort(notfraud_fraud_label_read1_df.kl_notfraud_words.desc())\
 #
@@ -664,10 +664,6 @@ not_fraud_label_test=h2o.H2OFrame(not_fraud_label_test_pd)
 #
 train = fraud_label_train.rbind(not_fraud_label_train)
 test = fraud_label_test.rbind(not_fraud_label_test)
-#
-# Clear Cache from Spark Context as 
-# From here all operations are with H2ODataFrame and H2o.ai Context
-sqlContext.clearCache()
 #
 print("train")
 print(train.head(10))

@@ -75,8 +75,10 @@ notfraud_df=sqlContext.read.json(input_fraud)\
 .select(col('hash_message'),col('words'))
 notfraud_df.printSchema()
 #
+# Filter only the "'no_match_predict_fraud'"
+#
 merged_df=sqlContext.read.csv(input_merged_prediction_train,header=True,inferSchema=True,multiLine=True)\
-.filter(" match_no_match = 'no_match' ")
+.filter(" match_no_match = 'no_match_predict_fraud' ")
 merged_df.printSchema()
 #
 join_results_df=merged_df.join(notfraud_df, "hash_message" )\

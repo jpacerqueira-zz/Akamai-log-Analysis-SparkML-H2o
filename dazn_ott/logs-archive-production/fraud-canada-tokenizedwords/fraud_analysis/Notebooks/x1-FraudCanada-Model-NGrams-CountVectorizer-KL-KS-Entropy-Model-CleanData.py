@@ -102,10 +102,10 @@ notfraud_df=notfraud_file\
 .agg(F.first(col('fraud_label')).alias('fraud_label'),F.first(col('words')).alias('words'),F.first(col('message')).alias('message'))\
 .persist(pyspark.StorageLevel.MEMORY_AND_DISK_2)
 notfraud_df.printSchema()
+# Only the Not-Fraud are randomly sorted
 #
 from pyspark.sql.functions import rand
 #
-# Only the Not-Fraud are randomly sorted
 df_notfraud_words = notfraud_df.filter("message IS NOT NULL").select(col('fraud_label'),col('hash_message'),col('words'))\
 .orderBy(rand())\
 .persist(pyspark.StorageLevel.MEMORY_AND_DISK_2)
@@ -131,7 +131,7 @@ df_words.printSchema()
 #
 # Limit to 250,000 Daily Not-Fraud Records input in the nGrams Graph analysis
 #
-result_fraud_nofraud_words = df_words.union(df_notfraud_words).limit(500000)\
+result_fraud_nofraud_words = df_words.union(df_notfraud_words).limit(250000)\
 .persist(pyspark.StorageLevel.MEMORY_AND_DISK_SER)
 ## Register Generic Functions
 # -----------------------------------------------------------------------------

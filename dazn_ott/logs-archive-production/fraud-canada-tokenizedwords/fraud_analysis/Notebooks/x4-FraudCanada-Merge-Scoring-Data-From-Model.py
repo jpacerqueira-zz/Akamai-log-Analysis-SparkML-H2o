@@ -43,12 +43,15 @@ from pyspark.sql.functions import monotonically_increasing_id
 #  FILTER with PySpark SQL Functions F.
 from pyspark.sql.types import StringType
 from pyspark.sql.functions import udf
-
+#
 def match_func(predict, fraud_label):
-    if predict != fraud_label:
-        return "no_match"
-    else:
+    if ((predict == 0)&(fraud_label == 1)):
+        return "no_match_predict_no_fraud"
+    elif ((predict == 1)&(fraud_label == 0)):
+        return "no_match_predict_fraud"
+    else :
         return "match"
+#       
 match_udf = udf(match_func, StringType())    
 #match_udf = udf(lambda (prediction,fraud_label): "no_match" if prediction!=fraud_label else "match", StringType())
 
