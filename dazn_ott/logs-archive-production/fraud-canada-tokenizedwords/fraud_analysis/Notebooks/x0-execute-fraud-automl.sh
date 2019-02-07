@@ -64,9 +64,9 @@ echo ${FILE_TRAIN} >> $JOB_LOG_FILE 2>&1
 #
 ### X4 Job
 echo "|" >> $JOB_LOG_FILE 2>&1
+echo "Pyspark :-: x4-FraudCanada-Merge-Scoring-Data-From-Model.py" >> $JOB_LOG_FILE 2>&1
 hdfs dfs -rm -r -f -skipTrash hdfs:///data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=${DATE_V1}/merged_prediction_train >> $JOB_LOG_FILE 2>&1
 rm -f ${MY_FOLDER}/product_model_prediction/merge_prediction_train_${DATE_V1}.csv
-echo "Pyspark :-: x4-FraudCanada-Merge-Scoring-Data-From-Model.py" >> $JOB_LOG_FILE 2>&1
 echo "|" >> $JOB_LOG_FILE 2>&1
 spark2-submit --master yarn --deploy-mode client --conf spark.debug.maxToStringFields=3500 $MY_FOLDER/x4-FraudCanada-Merge-Scoring-Data-From-Model.py --datev1 ${DATE_V1} >> $JOB_LOG_FILE 2>&1
 #
@@ -74,13 +74,29 @@ hdfs dfs -cp hdfs:///data/staged/ott_dazn/advanced-model-data/scoring-fraud-notf
 #
 ### X5 Job
 echo "|" >> $JOB_LOG_FILE 2>&1
+echo "Pyspark :-: x5-search-discover-values-hash_message.py" >> $JOB_LOG_FILE 2>&1
 hdfs dfs -rm -r -f -skipTrash hdfs:///data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=${DATE_V1}/no_match_hash_message >> $JOB_LOG_FILE 2>&1
 rm -f ${MY_FOLDER}/product_model_prediction/no_match_hash_message_${DATE_V1}.csv
-echo "Pyspark :-: x5-search-discover-values-hash_message.py" >> $JOB_LOG_FILE 2>&1
 echo "|" >> $JOB_LOG_FILE 2>&1
 spark2-submit --master yarn --deploy-mode client --conf spark.debug.maxToStringFields=3500 $MY_FOLDER/x5-search-discover-values-hash_message.py --datev1 ${DATE_V1} >> $JOB_LOG_FILE 2>&1
 #
-hdfs dfs -cp hdfs:///data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=${DATE_V1}/no_match_hash_message/part-*.csv hdfs:///data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=${DATE_V1}/no_match_hash_message/no_match_hash_message_${DATE_V1}.csv >> $JOB_LOG_FILE 2>&1
+hdfs dfs -cp hdfs:///data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=${DATE_V1}/no_match_hash_message/part-*.csv hdfs:///data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=${DATE_V1}/no_match_hash_message/TEMP_no_match_hash_message_${DATE_V1}.csv >> $JOB_LOG_FILE 2>&1
 #
-echo "| Job Finished  ___;" >> $JOB_LOG_FILE 2>&1
+NUM_FRAUD_RECORDS=$(hdfs dfs -cat hdfs:///data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=${DATE_V1}/no_match_hash_message/TEMP_no_match_hash_message_${DATE_V1}.csv | wc -l )
+echo " NO_MATCH_NUM_FRAUD_RECORDS= : "  >> $JOB_LOG_FILE 2>&1
+echo "$NUM_FRAUD_RECORDS"  >> $JOB_LOG_FILE 2>&1
+#
+if [ -z "$NUM_FRAUD_RECORDS" ] || [ "$NUM_FRAUD_RECORDS" = "0" ]
+then
+  # for zero records fraud
+  echo "| Job Finished  ___;" >> $JOB_LOG_FILE 2>&1
+  hdfs dfs -copyFromLocal -f $JOB_LOG_FILE hdfs:///data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=${DATE_V1}
+  exit 1
+else
+  # for any records fraud
+  hdfs dfs -cp hdfs:///data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=${DATE_V1}/no_match_hash_message/TEMP_no_match_hash_message_${DATE_V1}.csv hdfs:///data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=${DATE_V1}/no_match_hash_message/no_match_hash_message_${DATE_V1}.csv >> $JOB_LOG_FILE 2>&1
+  echo "| Job Finished  ___;" >> $JOB_LOG_FILE 2>&1
+  hdfs dfs -copyFromLocal -f $JOB_LOG_FILE hdfs:///data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=${DATE_V1}
+  exit 0
+fi
 #

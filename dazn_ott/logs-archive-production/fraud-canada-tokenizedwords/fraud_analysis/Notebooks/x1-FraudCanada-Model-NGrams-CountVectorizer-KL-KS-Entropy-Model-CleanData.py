@@ -102,10 +102,10 @@ notfraud_df=notfraud_file\
 .agg(F.first(col('fraud_label')).alias('fraud_label'),F.first(col('words')).alias('words'),F.first(col('message')).alias('message'))\
 .persist(pyspark.StorageLevel.MEMORY_AND_DISK_2)
 notfraud_df.printSchema()
-# Only the Not-Fraud are randomly sorted
 #
 from pyspark.sql.functions import rand
 #
+# Only the Not-Fraud are randomly sorted
 df_notfraud_words = notfraud_df.filter("message IS NOT NULL").select(col('fraud_label'),col('hash_message'),col('words'))\
 .orderBy(rand())\
 .persist(pyspark.StorageLevel.MEMORY_AND_DISK_2)
@@ -131,7 +131,7 @@ df_words.printSchema()
 #
 # Limit to 250,000 Daily Not-Fraud Records input in the nGrams Graph analysis
 #
-result_fraud_nofraud_words = df_words.union(df_notfraud_words).limit(250000)\
+result_fraud_nofraud_words = df_words.union(df_notfraud_words).limit(500000)\
 .persist(pyspark.StorageLevel.MEMORY_AND_DISK_SER)
 ## Register Generic Functions
 # -----------------------------------------------------------------------------
@@ -159,9 +159,9 @@ ngram = NGram(n=7, inputCol="words", outputCol="ngrams_7")
 countvector = CountVectorizer(inputCol="ngrams_7", outputCol="ngramscounts_7")
 # fit a CountVectorizerModel from the corpus.
 countvModel = CountVectorizer(inputCol="words", outputCol="features_85", vocabSize=85, minDF=2.0)
-# fit a PCA Dimensionality reduction into 85/7=12.x components from ngramscounts_7 ## Too Heavy 1st PCA
-pcaNgrams = PCA(k=5, inputCol="ngramscounts_7", outputCol="pcaweightngrams")
-# fit a PCA Dimensionality reduction into 85/7=12.x components from words
+# fit a PCA Dimensionality reduction into 7/3=2.x components from ngramscounts_7 ## Too Heavy 1st PCA
+pcaNgrams = PCA(k=3, inputCol="ngramscounts_7", outputCol="pcaweightngrams")
+# fit a PCA Dimensionality reduction into 85/17=5 components from words
 pcaWords = PCA(k=5, inputCol="features_85", outputCol="pcaweightwords")  ## Too Heavy 2nd PCA
 #
 ngram_fraud_DF = ngram.transform(result_fraud_nofraud_words)
@@ -169,17 +169,53 @@ ngram_vc_fraud_DF = countvector.fit(ngram_fraud_DF).transform(ngram_fraud_DF)\
 .persist(pyspark.StorageLevel.MEMORY_AND_DISK_2)
 ngram_vc_fraud_DF.printSchema()
 #
+# Trial of PCA now with Less Data
 #modelPCA_ngram_fraud_DF = pcaNgrams.fit(ngram_vc_fraud_DF).transform(ngram_vc_fraud_DF)\
 #.persist(pyspark.StorageLevel.MEMORY_AND_DISK_2)
 #modelPCA_ngram_fraud_DF.printSchema()
+##
+############# ISSUE - NGRAMS ARE TOO BIG ############
+#Traceback (most recent call last):
+#  File "/opt/cloudera/parcels/SPARK2-2.3.0.cloudera2-1.cdh5.13.3.p0.316101/lib/spark2/python/pyspark/sql/utils.py", line 63, in deco
+#    return f(*a, **kw)
+#  File "/opt/cloudera/parcels/SPARK2-2.3.0.cloudera2-1.cdh5.13.3.p0.316101/lib/spark2/python/lib/py4j-0.10.6-src.zip/py4j/protocol.py", line 320, in get_return_value
+#py4j.protocol.Py4JJavaError: An error occurred while calling o200.fit.
+#: java.lang.IllegalArgumentException: Argument with more than 65535 cols: 262144
+#	at org.apache.spark.mllib.linalg.distributed.RowMatrix.checkNumColumns(RowMatrix.scala:133)
+#	at org.apache.spark.mllib.linalg.distributed.RowMatrix.computeCovariance(RowMatrix.scala:332)
+#	at org.apache.spark.mllib.linalg.distributed.RowMatrix.computePrincipalComponentsAndExplainedVariance(RowMatrix.scala:387)
+#	at org.apache.spark.mllib.feature.PCA.fit(PCA.scala:53)
+#	at org.apache.spark.ml.feature.PCA.fit(PCA.scala:99)
+#	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+#	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+#	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+#	at java.lang.reflect.Method.invoke(Method.java:498)
+#	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+#	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+#	at py4j.Gateway.invoke(Gateway.java:282)
+#	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+#	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+#	at py4j.GatewayConnection.run(GatewayConnection.java:214)
+#	at java.lang.Thread.run(Thread.java:748)
+#
+#
+#During handling of the above exception, another exception occurred:
+#
+#Traceback (most recent call last):
+#  File "/home/siemanalyst/projects/logs-archive-production/fraud-canada-tokenizedwords/notebooks/x1-FraudCanada-Model-NGrams-CountVectorizer-KL-KS-Entropy-Model-CleanData.py", line 173, in <module>
+#####################################################
 #
 #result_ngrams_words_fraud_DF = countvModel.fit(modelPCA_ngram_fraud_DF).transform(modelPCA_ngram_fraud_DF)\
 result_ngrams_words_fraud_DF = countvModel.fit(ngram_vc_fraud_DF).transform(ngram_vc_fraud_DF)\
 .persist(pyspark.StorageLevel.MEMORY_AND_DISK_2)
 result_ngrams_words_fraud_DF.printSchema()
 #
-result_ngrams_words_fraud_DF.coalesce(1).write.json(output_file1)
+#modelPCA_features_ngram_fraud_DF = pcaWords.fit(result_ngrams_words_fraud_DF).transform(result_ngrams_words_fraud_DF)\
+#.persist(pyspark.StorageLevel.MEMORY_AND_DISK_2)
+#modelPCA_features_ngram_fraud_DF.printSchema()
 #
+#modelPCA_features_ngram_fraud_DF.coalesce(1).write.json(output_file1)
+result_ngrams_words_fraud_DF.coalesce(1).write.json(output_file1)
 #
 print("Calculation of most frequent fraud_ngram notfraud_ngram - Start!")
 #
