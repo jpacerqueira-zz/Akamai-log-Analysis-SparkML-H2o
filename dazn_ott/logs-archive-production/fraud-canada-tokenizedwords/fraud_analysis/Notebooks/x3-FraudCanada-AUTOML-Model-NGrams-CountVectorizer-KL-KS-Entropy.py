@@ -192,10 +192,10 @@ test = fraud_label_test.rbind(not_fraud_label_test)
 #  Unpersist Dataframes indivilually releasing memmory from Cluster Nodes
 #  While doing AUTOML use only memmory in the Driver Node and in H20 Cluster in gatewayNode
 #
-fraud_label_train_pd_rand.unpersist() 
-fraud_label_test_pd_rand.unpersist() 
-not_fraud_label_train_pd_rand.unpersist() 
-not_fraud_label_test_pd_rand.unpersist() 
+#fraud_label_train_pd_rand.unpersist() 
+#fraud_label_test_pd_rand.unpersist() 
+#not_fraud_label_train_pd_rand.unpersist() 
+#not_fraud_label_test_pd_rand.unpersist() 
 #
 print("train")
 print(train.head(10))
