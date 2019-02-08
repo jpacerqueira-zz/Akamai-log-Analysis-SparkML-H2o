@@ -85,7 +85,7 @@ print("Start Training Model NGrams Vectors KS KL Entropty")
 #
 # Horrible code :: close your eyes, is ugly
 #
-fraud_label_read_file=sqlContext.read.json(output_file1)
+fraud_label_read_file=sqlContext.read.json(output_file1).repartition(20)
 fraud_label_read_file.printSchema()
 #
 fraud_label_read_df=fraud_label_read_file\
@@ -157,7 +157,7 @@ fraud_label_test=h2o.H2OFrame(fraud_label_test_pd)
 not_fraud_label_train_pd_rand=notfraud_fraud_label_read1_df.limit(10000)\
 .orderBy(rand()).persist(pyspark.StorageLevel.MEMORY_AND_DISK_SER)
 #
-not_fraud_label_train_pd=not_fraud_label_train_pd_rand.limit(3100).toPandas()\
+not_fraud_label_train_pd=not_fraud_label_train_pd_rand.limit(3300).toPandas()\
 .assign(features85_list_indices=lambda x: x['features85_indices'].apply(np.ravel),\
         features85_list_values=lambda x: x['features85_values'].apply(np.ravel),\
         ngramscounts7_list_indices=lambda x: x['ngramscounts7_indices'].apply(np.ravel),\
@@ -218,7 +218,7 @@ test[y] = test[y].asfactor()
 # http://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html
 # Balance Classes to compensate unbalanced data
 # Run AutoML for 50 base models (limited to 1 hour max runtime by default)
-aml = H2OAutoML(max_models=50, seed=1999, exclude_algos=["DRF","GLM"])
+aml = H2OAutoML(max_models=50, max_runtime_secs=3601 , seed=1999, exclude_algos=["DRF","GLM"])
 aml.train(x=x, y=y, training_frame=train)
 #
 #preserve_training_output.write.json(preserve_training_output_file)
