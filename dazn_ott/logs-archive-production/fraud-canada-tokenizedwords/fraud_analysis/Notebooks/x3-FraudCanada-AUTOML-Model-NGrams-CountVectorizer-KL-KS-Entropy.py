@@ -76,7 +76,7 @@ import subprocess
 subprocess.run('unset http_proxy', shell=True)
 #
 # Start an H2O virtual cluster that uses 6 gigs of RAM and 6 cores
-h2o.init(ip="localhost",port=54321,max_mem_size = "4g", nthreads = 1) 
+h2o.init(ip="localhost",port=54321,max_mem_size = "6g", nthreads = 6) 
 #
 # Clean up the h2o cluster just in case
 h2o.remove_all()
@@ -224,8 +224,8 @@ test[y] = test[y].asfactor()
 #
 # http://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html
 # Balance Classes to compensate unbalanced data
-# Run AutoML for 50 base models (limited to 1 hour max runtime by default) 35min 2100secs
-aml = H2OAutoML(max_models=50, max_runtime_secs=2100 , seed=1999, exclude_algos=["DRF","GLM"])
+# Run AutoML for 50 base models (limited to 1 hour max runtime by default) 40min 2400secs
+aml = H2OAutoML(max_models=50, max_runtime_secs=2400 , seed=1999, exclude_algos=["DRF","GLM"])
 aml.train(x=x, y=y, training_frame=train)
 #
 #preserve_training_output.write.json(preserve_training_output_file)
