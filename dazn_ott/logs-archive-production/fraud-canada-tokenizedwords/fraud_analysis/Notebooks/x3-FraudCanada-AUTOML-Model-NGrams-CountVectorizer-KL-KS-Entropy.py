@@ -64,6 +64,8 @@ input_file1="hdfs:///data/staged/ott_dazn/advanced-model-data/fraud-notfraud-can
 output_file1="hdfs:///data/staged/ott_dazn/advanced-model-data/label-fraud-notfraud-data-model/dt="+process_date
 preserve_training_input_file="hdfs:///data/staged/ott_dazn/advanced-model-data/preserve-training-output-automl-clean/dt="+process_date
 #
+output_h2o_tmp="hdfs:///tmp/advanced-model-data/dt="+process_date+"/"
+#
 import h2o
 from h2o.automl import H2OAutoML
 #
@@ -74,7 +76,7 @@ import subprocess
 subprocess.run('unset http_proxy', shell=True)
 #
 # Start an H2O virtual cluster that uses 6 gigs of RAM and 6 cores
-h2o.init(ip="localhost",port=54321,max_mem_size = "6g", nthreads = 6) 
+h2o.init(ip="localhost",port=54321,max_mem_size = "4g", nthreads = 1) 
 #
 # Clean up the h2o cluster just in case
 h2o.remove_all()
@@ -85,7 +87,7 @@ print("Start Training Model NGrams Vectors KS KL Entropty")
 #
 # Horrible code :: close your eyes, is ugly
 #
-fraud_label_read_file=sqlContext.read.json(output_file1).repartition(20)
+fraud_label_read_file=sqlContext.read.json(output_file1).repartition(5)
 fraud_label_read_file.printSchema()
 #
 fraud_label_read_df=fraud_label_read_file\
@@ -111,9 +113,10 @@ fraud_label_read_df.printSchema()
 # https://stackoverflow.com/questions/47401418/pyspark-conversion-to-array-types?rq=1 
 #
 #
-fraud_fraud_label_read1_df=fraud_label_read_df.filter("fraud_label=1")\
+fraud_fraud_label_read1_df=fraud_label_read_df.filter("fraud_label=1").repartition(1)\
 .persist(pyspark.StorageLevel.MEMORY_AND_DISK_2)
-notfraud_fraud_label_read1_df=fraud_label_read_df.filter("fraud_label=0")\
+#
+notfraud_fraud_label_read1_df=fraud_label_read_df.filter("fraud_label=0").repartition(1)\
 .persist(pyspark.StorageLevel.MEMORY_AND_DISK_2)
 #
 fraud_fraud_label_read1_df.printSchema()
@@ -131,18 +134,21 @@ drop_list_cols=['features85_indices','features85_values','ngramscounts7_indices'
 ###    df.orderBy(rand()).limit(n)
 from pyspark.sql.functions import rand
 #
-fraud_label_train_pd_rand=fraud_fraud_label_read1_df.limit(10000)\
-.orderBy(rand()).persist(pyspark.StorageLevel.MEMORY_AND_DISK_SER)
 #
-fraud_label_train_pd=fraud_label_train_pd_rand.limit(3100).toPandas()\
+fraud_label_train_pd_rand=fraud_fraud_label_read1_df.limit(50000)\
+.coalesce(1).orderBy(rand()).persist(pyspark.StorageLevel.MEMORY_AND_DISK_SER)
+#
+fraud_label_train_pd=fraud_label_train_pd_rand.limit(3300).toPandas()\
 .assign(features85_list_indices=lambda x: x['features85_indices'].apply(np.ravel),\
         features85_list_values=lambda x: x['features85_values'].apply(np.ravel),\
         ngramscounts7_list_indices=lambda x: x['ngramscounts7_indices'].apply(np.ravel),\
         ngramscounts7_list_values=lambda x: x['ngramscounts7_values'].apply(np.ravel))\
 .drop(drop_list_cols, axis=1, inplace=False)
 #
-fraud_label_test_pd_rand=fraud_fraud_label_read1_df.limit(10000)\
-.orderBy(rand()).persist(pyspark.StorageLevel.MEMORY_AND_DISK_SER)
+fraud_label_train=h2o.H2OFrame(fraud_label_train_pd)
+#
+fraud_label_test_pd_rand=fraud_fraud_label_read1_df.limit(50000)\
+.coalesce(1).orderBy(rand()).persist(pyspark.StorageLevel.MEMORY_AND_DISK_SER)
 #
 fraud_label_test_pd=fraud_label_test_pd_rand.limit(500).toPandas()\
 .assign(features85_list_indices=lambda x: x['features85_indices'].apply(np.ravel),\
@@ -151,11 +157,11 @@ fraud_label_test_pd=fraud_label_test_pd_rand.limit(500).toPandas()\
         ngramscounts7_list_values=lambda x: x['ngramscounts7_values'].apply(np.ravel))\
 .drop(drop_list_cols, axis=1, inplace=False)
 #
-fraud_label_train=h2o.H2OFrame(fraud_label_train_pd)
 fraud_label_test=h2o.H2OFrame(fraud_label_test_pd)
 #
-not_fraud_label_train_pd_rand=notfraud_fraud_label_read1_df.limit(10000)\
-.orderBy(rand()).persist(pyspark.StorageLevel.MEMORY_AND_DISK_SER)
+#
+not_fraud_label_train_pd_rand=notfraud_fraud_label_read1_df.limit(50000)\
+.coalesce(1).orderBy(rand()).persist(pyspark.StorageLevel.MEMORY_AND_DISK_SER)
 #
 not_fraud_label_train_pd=not_fraud_label_train_pd_rand.limit(3300).toPandas()\
 .assign(features85_list_indices=lambda x: x['features85_indices'].apply(np.ravel),\
@@ -164,8 +170,10 @@ not_fraud_label_train_pd=not_fraud_label_train_pd_rand.limit(3300).toPandas()\
         ngramscounts7_list_values=lambda x: x['ngramscounts7_values'].apply(np.ravel))\
 .drop(drop_list_cols, axis=1, inplace=False)
 #
-not_fraud_label_test_pd_rand=notfraud_fraud_label_read1_df.limit(10000)\
-.orderBy(rand()).persist(pyspark.StorageLevel.MEMORY_AND_DISK_SER)
+not_fraud_label_train=h2o.H2OFrame(not_fraud_label_train_pd)
+#
+not_fraud_label_test_pd_rand=notfraud_fraud_label_read1_df.limit(50000)\
+.coalesce(1).orderBy(rand()).persist(pyspark.StorageLevel.MEMORY_AND_DISK_SER)
 #
 not_fraud_label_test_pd=not_fraud_label_test_pd_rand.limit(800).toPandas()\
 .assign(features85_list_indices=lambda x: x['features85_indices'].apply(np.ravel),\
@@ -175,9 +183,8 @@ not_fraud_label_test_pd=not_fraud_label_test_pd_rand.limit(800).toPandas()\
 .drop(drop_list_cols, axis=1, inplace=False)
 #.orderBy(rand())\
 #.sort(notfraud_fraud_label_read1_df.kl_notfraud_words.desc())\
-#
-not_fraud_label_train=h2o.H2OFrame(not_fraud_label_train_pd)
 not_fraud_label_test=h2o.H2OFrame(not_fraud_label_test_pd)
+#
 #
 ################# Use Two DataFrames ##################### - rbind() H2o Frames issue
 #
@@ -217,8 +224,8 @@ test[y] = test[y].asfactor()
 #
 # http://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html
 # Balance Classes to compensate unbalanced data
-# Run AutoML for 50 base models (limited to 1 hour max runtime by default)
-aml = H2OAutoML(max_models=50, max_runtime_secs=3601 , seed=1999, exclude_algos=["DRF","GLM"])
+# Run AutoML for 50 base models (limited to 1 hour max runtime by default) 35min 2100secs
+aml = H2OAutoML(max_models=50, max_runtime_secs=2100 , seed=1999, exclude_algos=["DRF","GLM"])
 aml.train(x=x, y=y, training_frame=train)
 #
 #preserve_training_output.write.json(preserve_training_output_file)
