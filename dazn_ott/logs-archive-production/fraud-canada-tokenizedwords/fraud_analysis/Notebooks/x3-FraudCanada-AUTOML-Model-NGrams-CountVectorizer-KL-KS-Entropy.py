@@ -122,6 +122,27 @@ notfraud_fraud_label_read1_df=fraud_label_read_df.filter("fraud_label=0").repart
 fraud_fraud_label_read1_df.printSchema()
 notfraud_fraud_label_read1_df.printSchema()
 #
+#
+# Apply Quartiles over KL Function 
+# https://stackoverflow.com/questions/51506820/pyspark-calculate-quartiles-based-on-id-and-classify-based-on-the-quartile-range
+#
+#fraud_fraud_label_read1_df.registerTempTable("fraud_fraud_label_read1_df_tb")
+#quartile_f_df = sqlContext.sql("select hash_message, percentile_approx(cast(kl_fraud_words as double), 0.25) as Q1_value, percentile_approx(cast(kl_fraud_words as double), 0.5) as Q2_value, percentile_approx(cast(kl_fraud_words as double), 0.75) as Q3_value from fraud_fraud_label_read1_df_tb group by hash_message")
+#
+#fraud_fraud_label_read1_df=fraud_fraud_label_read1_df.join(quartile_f_df, fraud_fraud_label_read1_df.hash_message == quartile_f_df.hash_message, 'left_outer')
+#fraud_label_qt_rand=fraud_fraud_label_read1_df.select(F.when(fraud_fraud_label_read1_df.kl_fraud_words < fraud_fraud_label_read1_df.Q1_value, '25').when(fraud_fraud_label_read1_df.kl_fraud_words.between(fraud_fraud_label_read1_df.Q1_value, fraud_fraud_label_read1_df.Q3_value), '50').when(fraud_fraud_label_read1_df.kl_fraud_words > fraud_fraud_label_read1_df.Q3_value, '75').alias('kl_fraud_words_quartile')).limit(200000)\
+#.persist(pyspark.StorageLevel.MEMORY_AND_DISK_SER)
+#
+#notfraud_fraud_label_read1_df.registerTempTable("notfraud_fraud_label_read1_df_tb")
+#quartile_nf_df = sqlContext.sql("select hash_message, percentile_approx(cast(kl_notfraud_words as double), 0.25) as Q1_value, percentile_approx(cast(kl_notfraud_words as double), 0.5) as Q2_value, percentile_approx(cast(kl_notfraud_words as double), 0.75) as Q3_value from notfraud_fraud_label_read1_df_tb group by hash_message")
+#
+#notfraud_fraud_label_read1_df=notfraud_fraud_label_read1_df.join(quartile_nf_df, notfraud_fraud_label_read1_df.hash_message == quartile_nf_df.hash_message, 'left_outer')
+#notfraud_label_qt_rand=notfraud_fraud_label_read1_df.select(F.when(notfraud_fraud_label_read1_df.kl_fraud_words < notfraud_fraud_label_read1_df.Q1_value, '25').when(notfraud_fraud_label_read1_df.kl_fraud_words.between(notfraud_fraud_label_read1_df.Q1_value, notfraud_fraud_label_read1_df.Q3_value), '50').when(notfraud_fraud_label_read1_df.kl_fraud_words > notfraud_fraud_label_read1_df.Q3_value, '75').alias('kl_fraud_words_quartile')).limit(200000)\
+#.persist(pyspark.StorageLevel.MEMORY_AND_DISK_SER)
+#
+#fraud_label_qt_rand.printSchema()
+#notfraud_label_qt_rand.printSchema()
+#
 drop_list_cols=['features85_indices','features85_values','ngramscounts7_indices','ngramscounts7_values']
 #
 ### 1.) https://stackoverflow.com/questions/38610559/convert-spark-dataframe-column-to-python-list

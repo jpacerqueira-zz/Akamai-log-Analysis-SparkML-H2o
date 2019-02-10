@@ -1,0 +1,874 @@
+Process d=20181125 FILES COUNT : 
+288
+|___|
+Deleted hdfs:///data/staged/ott_dazn/advanced-model-data/fraud-notfraud-canada-tokenizedwords-ngrams-7-features-85/dt=20181125
+Deleted hdfs:///data/staged/ott_dazn/advanced-model-data/label-fraud-notfraud-data-model/dt=20181125
+Deleted hdfs:///data/staged/ott_dazn/advanced-model-data/not-fraud-canada-tokenizedwords/dt=20181125
+Deleted hdfs:///data/staged/ott_dazn/advanced-model-data/the-most-frequent-fraud-hash_message/dt=20181125
+Deleted hdfs:///data/staged/ott_dazn/advanced-model-data/the-most-frequent-notfraud-hash_message/dt=20181125
+|
+Pyspark :-: x1-FraudCanada-Model-NGrams-CountVectorizer-KL-KS-Entropy-Model-CleanData.py
+|
+root
+ |-- metadata: struct (nullable = true)
+ |    |-- beat: string (nullable = true)
+ |    |-- type: string (nullable = true)
+ |-- logzio_id: string (nullable = true)
+ |-- awsRegion: string (nullable = true)
+ |-- beat: struct (nullable = true)
+ |    |-- hostname: string (nullable = true)
+ |    |-- name: string (nullable = true)
+ |    |-- version: string (nullable = true)
+ |-- function_version: string (nullable = true)
+ |-- host: struct (nullable = true)
+ |    |-- name: string (nullable = true)
+ |-- id: string (nullable = true)
+ |-- input_type: string (nullable = true)
+ |-- invoked_function_arn: string (nullable = true)
+ |-- it: string (nullable = true)
+ |-- logGroup: string (nullable = true)
+ |-- logStream: string (nullable = true)
+ |-- logzio_codec: string (nullable = true)
+ |-- message: string (nullable = true)
+ |-- messageType: string (nullable = true)
+ |-- offset: long (nullable = true)
+ |-- owner: string (nullable = true)
+ |-- source: string (nullable = true)
+ |-- tags: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+ |-- timestamp: long (nullable = true)
+ |-- type: string (nullable = true)
+ |-- token: string (nullable = true)
+
+root
+ |-- metadata: struct (nullable = true)
+ |    |-- beat: string (nullable = true)
+ |    |-- type: string (nullable = true)
+ |-- logzio_id: string (nullable = true)
+ |-- awsRegion: string (nullable = true)
+ |-- beat: struct (nullable = true)
+ |    |-- hostname: string (nullable = true)
+ |    |-- name: string (nullable = true)
+ |    |-- version: string (nullable = true)
+ |-- function_version: string (nullable = true)
+ |-- host: struct (nullable = true)
+ |    |-- name: string (nullable = true)
+ |-- id: string (nullable = true)
+ |-- input_type: string (nullable = true)
+ |-- invoked_function_arn: string (nullable = true)
+ |-- it: string (nullable = true)
+ |-- logGroup: string (nullable = true)
+ |-- logStream: string (nullable = true)
+ |-- logzio_codec: string (nullable = true)
+ |-- message: string (nullable = true)
+ |-- messageType: string (nullable = true)
+ |-- offset: long (nullable = true)
+ |-- owner: string (nullable = true)
+ |-- source: string (nullable = true)
+ |-- tags: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+ |-- timestamp: long (nullable = true)
+ |-- type: string (nullable = true)
+ |-- token: string (nullable = true)
+
+root
+ |-- metadata: struct (nullable = true)
+ |    |-- beat: string (nullable = true)
+ |    |-- type: string (nullable = true)
+ |-- logzio_id: string (nullable = true)
+ |-- awsRegion: string (nullable = true)
+ |-- beat: struct (nullable = true)
+ |    |-- hostname: string (nullable = true)
+ |    |-- name: string (nullable = true)
+ |    |-- version: string (nullable = true)
+ |-- function_version: string (nullable = true)
+ |-- host: struct (nullable = true)
+ |    |-- name: string (nullable = true)
+ |-- id: string (nullable = true)
+ |-- input_type: string (nullable = true)
+ |-- invoked_function_arn: string (nullable = true)
+ |-- it: string (nullable = true)
+ |-- logGroup: string (nullable = true)
+ |-- logStream: string (nullable = true)
+ |-- logzio_codec: string (nullable = true)
+ |-- message: string (nullable = true)
+ |-- messageType: string (nullable = true)
+ |-- offset: long (nullable = true)
+ |-- owner: string (nullable = true)
+ |-- source: string (nullable = true)
+ |-- tags: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+ |-- timestamp: long (nullable = true)
+ |-- type: string (nullable = true)
+ |-- token: string (nullable = true)
+ |-- messagecut: string (nullable = true)
+ |-- words: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+
+19/02/10 00:56:39 WARN streaming.FileStreamSink: Error while looking for metadata directory.
+root
+ |-- beat: struct (nullable = true)
+ |    |-- hostname: string (nullable = true)
+ |    |-- name: string (nullable = true)
+ |    |-- version: string (nullable = true)
+ |-- host: struct (nullable = true)
+ |    |-- name: string (nullable = true)
+ |-- it: string (nullable = true)
+ |-- logzio_codec: string (nullable = true)
+ |-- logzio_id: string (nullable = true)
+ |-- message: string (nullable = true)
+ |-- messagecut: string (nullable = true)
+ |-- metadata: struct (nullable = true)
+ |    |-- beat: string (nullable = true)
+ |    |-- type: string (nullable = true)
+ |-- offset: long (nullable = true)
+ |-- source: string (nullable = true)
+ |-- tags: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+ |-- type: string (nullable = true)
+ |-- words: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+
+root
+ |-- hash_message: string (nullable = true)
+ |-- fraud_label: integer (nullable = true)
+ |-- words: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+ |-- message: string (nullable = true)
+
+root
+ |-- fraud_label: integer (nullable = true)
+ |-- hash_message: string (nullable = true)
+ |-- words: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+
+root
+ |-- @metadata: struct (nullable = true)
+ |    |-- beat: string (nullable = true)
+ |    |-- type: string (nullable = true)
+ |    |-- version: string (nullable = true)
+ |-- @timestamp: string (nullable = true)
+ |-- __logz_account_id: string (nullable = true)
+ |-- __logz_received_timestamp: string (nullable = true)
+ |-- __logzio_X-B3-Sampled: string (nullable = true)
+ |-- __logzio_X-B3-SpanId: string (nullable = true)
+ |-- __logzio_X-B3-TraceId: string (nullable = true)
+ |-- __logzio_id: string (nullable = true)
+ |-- beat: struct (nullable = true)
+ |    |-- hostname: string (nullable = true)
+ |    |-- name: string (nullable = true)
+ |    |-- version: string (nullable = true)
+ |-- host: struct (nullable = true)
+ |    |-- name: string (nullable = true)
+ |-- input_type: string (nullable = true)
+ |-- it: string (nullable = true)
+ |-- logzio_codec: string (nullable = true)
+ |-- logzio_id: string (nullable = true)
+ |-- message: string (nullable = true)
+ |-- messagecut: string (nullable = true)
+ |-- metadata: struct (nullable = true)
+ |    |-- beat: string (nullable = true)
+ |    |-- type: string (nullable = true)
+ |-- offset: long (nullable = true)
+ |-- source: string (nullable = true)
+ |-- tags: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+ |-- type: string (nullable = true)
+ |-- words: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+
+root
+ |-- hash_message: string (nullable = true)
+ |-- fraud_label: integer (nullable = true)
+ |-- words: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+ |-- message: string (nullable = true)
+
+root
+ |-- fraud_label: integer (nullable = true)
+ |-- hash_message: string (nullable = true)
+ |-- words: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+
+root
+ |-- fraud_label: integer (nullable = true)
+ |-- hash_message: string (nullable = true)
+ |-- words: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+ |-- ngrams_7: array (nullable = true)
+ |    |-- element: string (containsNull = false)
+ |-- ngramscounts_7: vector (nullable = true)
+
+root
+ |-- fraud_label: integer (nullable = true)
+ |-- hash_message: string (nullable = true)
+ |-- words: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+ |-- ngrams_7: array (nullable = true)
+ |    |-- element: string (containsNull = false)
+ |-- ngramscounts_7: vector (nullable = true)
+ |-- features_85: vector (nullable = true)
+
+Calculation of most frequent fraud_ngram notfraud_ngram - Start!
+19/02/10 01:02:20 WARN streaming.FileStreamSink: Error while looking for metadata directory.
+root
+ |-- features_85: struct (nullable = true)
+ |    |-- indices: array (nullable = true)
+ |    |    |-- element: long (containsNull = true)
+ |    |-- size: long (nullable = true)
+ |    |-- type: long (nullable = true)
+ |    |-- values: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |-- fraud_label: long (nullable = true)
+ |-- hash_message: string (nullable = true)
+ |-- ngrams_7: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+ |-- ngramscounts_7: struct (nullable = true)
+ |    |-- indices: array (nullable = true)
+ |    |    |-- element: long (containsNull = true)
+ |    |-- size: long (nullable = true)
+ |    |-- type: long (nullable = true)
+ |    |-- values: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |-- words: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+
+root
+ |-- hash_message: string (nullable = true)
+ |-- count: double (nullable = true)
+
+Value Print: standard_fraud_ngram=
+                                        hash_message
+0  f84420629d3c16704b4ec739af768a9dbd2a3437d8cecf...
+19/02/10 01:02:31 WARN streaming.FileStreamSink: Error while looking for metadata directory.
+root
+ |-- features_85: struct (nullable = true)
+ |    |-- indices: array (nullable = true)
+ |    |    |-- element: long (containsNull = true)
+ |    |-- size: long (nullable = true)
+ |    |-- type: long (nullable = true)
+ |    |-- values: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |-- fraud_label: long (nullable = true)
+ |-- hash_message: string (nullable = true)
+ |-- ngrams_7: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+ |-- ngramscounts_7: struct (nullable = true)
+ |    |-- indices: array (nullable = true)
+ |    |    |-- element: long (containsNull = true)
+ |    |-- size: long (nullable = true)
+ |    |-- type: long (nullable = true)
+ |    |-- values: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |-- words: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+
+root
+ |-- hash_message: string (nullable = true)
+ |-- count: double (nullable = true)
+
+Value Print: standard_notfraud_ngram=
+                                        hash_message
+0  3969fee33c9e715c88be5d1818c005a8efc2874e269f42...
+Calculation of most frequent fraud_ngram notfraud_ngram - Done!
+Preparation of Data Done!
+|
+Pyspark :-: x2-FraudCanada-Model-NGrams-CountVectorizer-KL-KS-Entropy-Model-Labeling.py
+|
+19/02/10 01:03:19 WARN streaming.FileStreamSink: Error while looking for metadata directory.
+Value UDF : standard_fraud_ngram=
+f95dce15a60e728380072a216e96016e4f89e86c6568aa82b321a3a06ef39fe49cd127d63184217af1698754419e9458380da06931cc78a3dc41801fd0c6d580
+19/02/10 01:03:30 WARN streaming.FileStreamSink: Error while looking for metadata directory.
+root
+ |-- features_85: struct (nullable = true)
+ |    |-- indices: array (nullable = true)
+ |    |    |-- element: long (containsNull = true)
+ |    |-- size: long (nullable = true)
+ |    |-- type: long (nullable = true)
+ |    |-- values: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |-- fraud_label: long (nullable = true)
+ |-- hash_message: string (nullable = true)
+ |-- ngrams_7: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+ |-- ngramscounts_7: struct (nullable = true)
+ |    |-- indices: array (nullable = true)
+ |    |    |-- element: long (containsNull = true)
+ |    |-- size: long (nullable = true)
+ |    |-- type: long (nullable = true)
+ |    |-- values: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |-- words: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+
+root
+ |-- features_85: struct (nullable = true)
+ |    |-- indices: array (nullable = true)
+ |    |    |-- element: long (containsNull = true)
+ |    |-- size: long (nullable = true)
+ |    |-- type: long (nullable = true)
+ |    |-- values: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |-- fraud_label: long (nullable = true)
+ |-- hash_message: string (nullable = true)
+ |-- ngrams_7: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+ |-- ngramscounts_7: struct (nullable = true)
+ |    |-- indices: array (nullable = true)
+ |    |    |-- element: long (containsNull = true)
+ |    |-- size: long (nullable = true)
+ |    |-- type: long (nullable = true)
+ |    |-- values: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |-- words: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+ |-- fraud_master_hash: string (nullable = false)
+
+Value UDF : standard_fraud_words=
+root15bfb328dacc86370dd229020d72b9c80requestmethodgeturlhttpsislcadazncommislv2playbackassetid1ucj5rs6kdrps18wzqmunwe206eventidaqyfdlrw6emaz31fj2ivtm9gqformatmpegdashplayeriddazn001c3b59f4securetruelanguagecodeenlatitudenulllongitudenullplatformwebmanufacturermodelnullclientip10817322197headersuseragentmozilla50macintoshintelmacosx10_12_6applewebkit605115khtmllikegeckoversion1112safari605115typeinresponsestatuscode200reasonphraseokduration31jwtviewerid1b2f94d0267cdeviceid0b93dd8eaabb41c49c561b2f94d0267c001c3b59f4userstatusactivepaid
+19/02/10 01:03:49 WARN streaming.FileStreamSink: Error while looking for metadata directory.
+Value UDF : standard_notfraud_ngram=
+3969fee33c9e715c88be5d1818c005a8efc2874e269f42fcb41802ff3d4520ec91d970770b5949ab4c8a51c665542a492c9e181fe9cb165413b27d91264f1a75
+19/02/10 01:03:52 WARN streaming.FileStreamSink: Error while looking for metadata directory.
+root
+ |-- features_85: struct (nullable = true)
+ |    |-- indices: array (nullable = true)
+ |    |    |-- element: long (containsNull = true)
+ |    |-- size: long (nullable = true)
+ |    |-- type: long (nullable = true)
+ |    |-- values: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |-- fraud_label: long (nullable = true)
+ |-- hash_message: string (nullable = true)
+ |-- ngrams_7: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+ |-- ngramscounts_7: struct (nullable = true)
+ |    |-- indices: array (nullable = true)
+ |    |    |-- element: long (containsNull = true)
+ |    |-- size: long (nullable = true)
+ |    |-- type: long (nullable = true)
+ |    |-- values: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |-- words: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+
+root
+ |-- features_85: struct (nullable = true)
+ |    |-- indices: array (nullable = true)
+ |    |    |-- element: long (containsNull = true)
+ |    |-- size: long (nullable = true)
+ |    |-- type: long (nullable = true)
+ |    |-- values: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |-- fraud_label: long (nullable = true)
+ |-- hash_message: string (nullable = true)
+ |-- ngrams_7: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+ |-- ngramscounts_7: struct (nullable = true)
+ |    |-- indices: array (nullable = true)
+ |    |    |-- element: long (containsNull = true)
+ |    |-- size: long (nullable = true)
+ |    |-- type: long (nullable = true)
+ |    |-- values: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |-- words: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+ |-- fraud_master_hash: string (nullable = false)
+
+Value UDF : standard_notfraud_words=
+root15bfae47d2e435bb882f04afcc6ed0b984c0149dd83b8472899983729a29ba956requestmethodgeturlhttpsislcadazncommislv2playbackassetidw5riqz1nsqu111ldz25k9elq9eventidaqyfdlrw6emaz31fj2ivtm9gqformatmpegdashplayeriddazn38efb0d12d14088csecuretruelanguagecodeenlatitudenulllongitudenullplatformandroidtvmanufacturernvidiamodelnullmtalanguagecodeenclientip5098153215headersuseragentmozilla50linuxandroid800shieldandroidtvbuildopr6170623010wvapplewebkit53736khtmllikegeckoversion40chrome700353880mobilesafari53736fev1420typeinresponsestatuscode200reasonphraseokduration31jwtvieweriddd3d5c4a7203deviceid5e3689475fdd4f40ae33dd3d5c4a720338efb0d12d14088cuserstatusactivepaid
+19/02/10 01:04:01 WARN streaming.FileStreamSink: Error while looking for metadata directory.
+root
+ |-- features_85: struct (nullable = true)
+ |    |-- indices: array (nullable = true)
+ |    |    |-- element: long (containsNull = true)
+ |    |-- size: long (nullable = true)
+ |    |-- type: long (nullable = true)
+ |    |-- values: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |-- fraud_label: long (nullable = true)
+ |-- hash_message: string (nullable = true)
+ |-- ngrams_7: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+ |-- ngramscounts_7: struct (nullable = true)
+ |    |-- indices: array (nullable = true)
+ |    |    |-- element: long (containsNull = true)
+ |    |-- size: long (nullable = true)
+ |    |-- type: long (nullable = true)
+ |    |-- values: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |-- words: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+
+root
+ |-- features_85: struct (nullable = true)
+ |    |-- indices: array (nullable = true)
+ |    |    |-- element: long (containsNull = true)
+ |    |-- size: long (nullable = true)
+ |    |-- type: long (nullable = true)
+ |    |-- values: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |-- fraud_label: long (nullable = true)
+ |-- hash_message: string (nullable = true)
+ |-- ngramscounts_7: struct (nullable = true)
+ |    |-- indices: array (nullable = true)
+ |    |    |-- element: long (containsNull = true)
+ |    |-- size: long (nullable = true)
+ |    |-- type: long (nullable = true)
+ |    |-- values: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |-- words_conc: string (nullable = false)
+ |-- kl_fraud_words: double (nullable = true)
+ |-- ks_fraud_words: double (nullable = true)
+ |-- entropy_fraud_words: double (nullable = true)
+ |-- kl_notfraud_words: double (nullable = true)
+ |-- ks_notfraud_words: double (nullable = true)
+ |-- entropy_notfraud_words: double (nullable = true)
+
+Model Data KL,KS, Entropy Done! NGrams Vectors Data Done!
+|
+Pyspark :-: x3-FraudCanada-AUTOML-Model-NGrams-CountVectorizer-KL-KS-Entropy.py
+|
+Checking whether there is an H2O instance running at http://localhost:54321..... not found.
+Attempting to start a local H2O server...
+  Java Version: java version "1.8.0_172"; Java(TM) SE Runtime Environment (build 1.8.0_172-b11); Java HotSpot(TM) 64-Bit Server VM (build 25.172-b11, mixed mode)
+  Starting server from /opt/cloudera/parcels/Anaconda-5.1.0.1/lib/python3.6/site-packages/h2o/backend/bin/h2o.jar
+  Ice root: /tmp/tmpbyy2pu7f
+  JVM stdout: /tmp/tmpbyy2pu7f/h2o_siemanalyst_started_from_python.out
+  JVM stderr: /tmp/tmpbyy2pu7f/h2o_siemanalyst_started_from_python.err
+  Server is running at http://127.0.0.1:54321
+Connecting to H2O server at http://127.0.0.1:54321... successful.
+Warning: Your H2O cluster version is too old (3 months and 14 days)! Please download and install the latest version from http://h2o.ai/download/
+--------------------------  ----------------------------------------
+H2O cluster uptime:         01 secs
+H2O cluster timezone:       UTC
+H2O data parsing timezone:  UTC
+H2O cluster version:        3.22.0.1
+H2O cluster version age:    3 months and 14 days !!!
+H2O cluster name:           H2O_from_python_siemanalyst_zudks7
+H2O cluster total nodes:    1
+H2O cluster free memory:    3.556 Gb
+H2O cluster total cores:    12
+H2O cluster allowed cores:  1
+H2O cluster status:         accepting new members, healthy
+H2O connection url:         http://127.0.0.1:54321
+H2O connection proxy:
+H2O internal security:      False
+H2O API Extensions:         XGBoost, Algos, AutoML, Core V3, Core V4
+Python version:             3.6.4 final
+--------------------------  ----------------------------------------
+Start Training Model NGrams Vectors KS KL Entropty
+19/02/10 01:11:18 WARN streaming.FileStreamSink: Error while looking for metadata directory.
+root
+ |-- entropy_fraud_words: double (nullable = true)
+ |-- entropy_notfraud_words: double (nullable = true)
+ |-- features_85: struct (nullable = true)
+ |    |-- indices: array (nullable = true)
+ |    |    |-- element: long (containsNull = true)
+ |    |-- size: long (nullable = true)
+ |    |-- type: long (nullable = true)
+ |    |-- values: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |-- fraud_label: long (nullable = true)
+ |-- hash_message: string (nullable = true)
+ |-- kl_fraud_words: double (nullable = true)
+ |-- kl_notfraud_words: double (nullable = true)
+ |-- ks_fraud_words: double (nullable = true)
+ |-- ks_notfraud_words: double (nullable = true)
+ |-- ngramscounts_7: struct (nullable = true)
+ |    |-- indices: array (nullable = true)
+ |    |    |-- element: long (containsNull = true)
+ |    |-- size: long (nullable = true)
+ |    |-- type: long (nullable = true)
+ |    |-- values: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |-- words_conc: string (nullable = true)
+
+root
+ |-- hash_message: string (nullable = true)
+ |-- fraud_label: integer (nullable = true)
+ |-- kl_fraud_words: double (nullable = true)
+ |-- ks_fraud_words: double (nullable = true)
+ |-- entropy_fraud_words: double (nullable = true)
+ |-- kl_notfraud_words: double (nullable = true)
+ |-- ks_notfraud_words: double (nullable = true)
+ |-- entropy_notfraud_words: double (nullable = true)
+ |-- features85_type: long (nullable = true)
+ |-- features85_size: long (nullable = true)
+ |-- features85_indices: array (nullable = true)
+ |    |-- element: long (containsNull = true)
+ |-- features85_values: array (nullable = true)
+ |    |-- element: double (containsNull = true)
+ |-- ngramscounts7_type: long (nullable = true)
+ |-- ngramscounts7_size: long (nullable = true)
+ |-- ngramscounts7_indices: array (nullable = true)
+ |    |-- element: long (containsNull = true)
+ |-- ngramscounts7_values: array (nullable = true)
+ |    |-- element: double (containsNull = true)
+
+root
+ |-- hash_message: string (nullable = true)
+ |-- fraud_label: integer (nullable = true)
+ |-- kl_fraud_words: double (nullable = true)
+ |-- ks_fraud_words: double (nullable = true)
+ |-- entropy_fraud_words: double (nullable = true)
+ |-- kl_notfraud_words: double (nullable = true)
+ |-- ks_notfraud_words: double (nullable = true)
+ |-- entropy_notfraud_words: double (nullable = true)
+ |-- features85_type: long (nullable = true)
+ |-- features85_size: long (nullable = true)
+ |-- features85_indices: array (nullable = true)
+ |    |-- element: long (containsNull = true)
+ |-- features85_values: array (nullable = true)
+ |    |-- element: double (containsNull = true)
+ |-- ngramscounts7_type: long (nullable = true)
+ |-- ngramscounts7_size: long (nullable = true)
+ |-- ngramscounts7_indices: array (nullable = true)
+ |    |-- element: long (containsNull = true)
+ |-- ngramscounts7_values: array (nullable = true)
+ |    |-- element: double (containsNull = true)
+
+root
+ |-- hash_message: string (nullable = true)
+ |-- fraud_label: integer (nullable = true)
+ |-- kl_fraud_words: double (nullable = true)
+ |-- ks_fraud_words: double (nullable = true)
+ |-- entropy_fraud_words: double (nullable = true)
+ |-- kl_notfraud_words: double (nullable = true)
+ |-- ks_notfraud_words: double (nullable = true)
+ |-- entropy_notfraud_words: double (nullable = true)
+ |-- features85_type: long (nullable = true)
+ |-- features85_size: long (nullable = true)
+ |-- features85_indices: array (nullable = true)
+ |    |-- element: long (containsNull = true)
+ |-- features85_values: array (nullable = true)
+ |    |-- element: double (containsNull = true)
+ |-- ngramscounts7_type: long (nullable = true)
+ |-- ngramscounts7_size: long (nullable = true)
+ |-- ngramscounts7_indices: array (nullable = true)
+ |    |-- element: long (containsNull = true)
+ |-- ngramscounts7_values: array (nullable = true)
+ |    |-- element: double (containsNull = true)
+
+Parse progress: |█████████████████████████████████████████████████████████| 100%
+Parse progress: |█████████████████████████████████████████████████████████| 100%
+Parse progress: |█████████████████████████████████████████████████████████| 100%
+Parse progress: |█████████████████████████████████████████████████████████| 100%
+train
+hash_message                                                                                                                        fraud_label    kl_fraud_words    ks_fraud_words    entropy_fraud_words    kl_notfraud_words    ks_notfraud_words    entropy_notfraud_words    features85_type    features85_size    ngramscounts7_type    ngramscounts7_size  features85_list_indices                                                   features85_list_values                                                    ngramscounts7_list_indices                                                ngramscounts7_list_values
+--------------------------------------------------------------------------------------------------------------------------------  -------------  ----------------  ----------------  ---------------------  -------------------  -------------------  ------------------------  -----------------  -----------------  --------------------  --------------------  ------------------------------------------------------------------------  ------------------------------------------------------------------------  ------------------------------------------------------------------------  ------------------------------------------------------------------------
+7a1b17334b150098e6b7d3a6ea24ff5a52edfd0ace4555d2aa41c8f65ee3e80424aa57b4c49b5e1ef9cdfcfa4775bfe8f28a5422817299a75ad83b45c6b58d29              1           2028.17          0.999999              0.0444633              3308.34             0.999999                 0.064044                   0                 85                     0                262144  [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  [1. 2. 3. 4. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.  [    0     1     2     3     4     5     6     7     8     9    10    11  [1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+                                                                                                                                                                                                                                                                                                                                                                   24 25 26 27 28 29 30 31 32 33 34 35 37 38 40 41 42 43 44 45 46 47 49 50   1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.      29    30    37   138   139   140   141   142   288   289   290   291   1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+                                                                                                                                                                                                                                                                                                                                                                   51 52 54 55 56 58 64 65 70 83]                                            1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]                                              292   293   525   526   770   771   915   930   931   932   933   934   1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         937   938   939   940   941   942  1848  1850  1865  1866  1869  1871
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        1872  1873  2356  4279  4294  4305 11630 12158 12199 12208 12238 12253
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       12304 60088 63311 69901 72748 72990 73104 73980 74252]
+7f0d9215572353691b1bb243cf6ab4456e28d2e9c104bf7b6382e9fbbf09b96294f4b53d4e33b387ba50f40044b805f0ad8171bc5be7c63e80148c85a75db095              1           2547.08          0.999791              0.0449009              3625.26             0.990999                 0.0649128                  0                 85                     0                262144  [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  [1. 2. 3. 4. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.  [     0      1      2      3      4      5      6      7      8      9    [1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+                                                                                                                                                                                                                                                                                                                                                                   24 25 26 27 28 29 30 31 32 33 34 35 37 38 40 41 42 43 44 45 46 47 49 50   1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.       10     11     14     15     16     29     30     37     41    138     1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+                                                                                                                                                                                                                                                                                                                                                                   51 52 54 55 56 57 58 64 65 66 83]                                         1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]                                            139    140    141    142    288    289    290    291    292    293     1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          525    526    770    771    915    930    931    932    933    934     1.]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          937    938    939    940    941    942   1848   1850   1865   1866
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         1869   1871   1872   1873   2175   7085   7116   7118  32960  40347
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        42208  43035 101534 182101 224529 227987 230074 232167 235122 235470
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       246159 256262 257373]
+72bd757b148230e9d13853bcc4ff5de492d1f640d3f2c17f0faada2675091d95818a0bb10ea127531b61c720d36027d8c11ad8b69a22f4c0eda53ab710ccbb51              1           1819.61          0.981257              0.0344965              3594.48             0.965139                 0.0680934                  0                 85                     0                262144  [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  [1. 2. 3. 4. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.  [    0     1     2     3     4     5     6     7     8     9    10    11  [1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+                                                                                                                                                                                                                                                                                                                                                                   24 25 26 27 28 29 30 31 32 33 34 35 37 38 40 41 42 43 44 45 46 49 50 51   1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.      29    30    37   138   139   140   141   142   288   289   290   291   1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+                                                                                                                                                                                                                                                                                                                                                                   52 54 55 56 57 58 64 65 83]                                               1. 1. 1. 1. 1. 1. 1. 1. 1.]                                                 292   293   525   526   770   771   915   930   931   932   933   934   1. 1. 1. 1. 1. 1. 1.]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         937   938   939   940   941   942  1848  1850  1865  1866  1869  1871
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        1872  1873  1986 10850 10870 10950 17962]
+5287f589719d6501af3fdefa3c74516c9b32c4c60bdb6b998acca8cf1ec71f8a21735fed10c33fe19bec9aa3f58719ca99852386ffd548977aef6eea9867d263              1           3465.35          0.780179              0.0568678              4215.78             0.908468                 0.0703319                  0                 85                     0                262144  [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  [1. 2. 3. 4. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.  [     0      1      2      3      4      5      6      7      8      9    [1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+                                                                                                                                                                                                                                                                                                                                                                   24 25 26 27 28 29 30 31 32 33 34 35 37 38 40 41 42 43 44 45 46 47 49 50   1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.       10     11     14     15     16     29     30     37     41    138     1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+                                                                                                                                                                                                                                                                                                                                                                   51 52 54 55 56 57 58 60 64 65 66 83]                                      1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]                                         139    140    141    142    288    289    290    291    292    293     1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          525    526    770    771    915    930    931    932    933    934
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          937    938    939    940    941    942   1848   1850   1865   1866
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         1869   1871   1872   1873   2352 142836 143828 152337 194055 235501
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       235604]
+bc8eb55fb1206ed99a1602c2f9a69cfd111047e8186dec9c56b6bb92fce6c297938b5df3cf452058212b407ddca0b5b5c7513faca61b3e8aa8e31fbe3741c914              1           3016.17          0.999974              0.0545374              3685.95             0.872386                 0.0660898                  0                 85                     0                262144  [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  [1. 2. 3. 4. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.  [     0      1      2      3      4      5      6      7      8      9    [1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+                                                                                                                                                                                                                                                                                                                                                                   24 25 26 27 28 29 30 31 32 33 34 35 37 38 40 41 42 43 44 45 46 47 49 50   1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.       10     11     29     30     37    138    139    140    141    142     1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+                                                                                                                                                                                                                                                                                                                                                                   51 52 54 55 56 57 58 64 65 83]                                            1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]                                               288    289    290    291    292    293    525    526    770    771     1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          915    930    931    932    933    934    937    938    939    940
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          941    942   1848   1850   1865   1866   1869   1871   1872   1873
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         2488   4924   4926   4929   7732   7739   7780   8889  10007 126757
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       176811 204307]
+5b5250ce306315574020cc9da1cc2037027b23ab4723c40cda052368b5695be54b637385a68703ffa2bf0bf958e97992335244dd7058e7b3764e884ee53e00ce              1           3672.36          0.870141              0.0597731              4400.87             0.728529                 0.0716089                  0                 85                     0                262144  [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  [1. 2. 3. 4. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.  [     0      1      2      3      4      5      6      7      8      9    [1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+                                                                                                                                                                                                                                                                                                                                                                   24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 40 41 42 43 44 45 46 47 49   1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 1. 1.       10     11     29     30     37    138    139    140    141    142     1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+                                                                                                                                                                                                                                                                                                                                                                   50 51 52 54 55 56 57 58 64 65 83]                                         1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]                                            288    289    290    291    292    293    404    405    406    525     1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          526    576    770    771    915    930    931    932    933    934
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          937    938    939    940    941    942   1848   1850   1865   1866
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         1869   1871   1872   1873   2366   7732   7739   7780  10652 116027
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       126970 164053]
+b4a6633ad3867ba625d79b2bfe9130d30852914484829e43bab64f1bbeb94965199aaeaa632051147c1a0d622d9c20e3edb9a07683ed46750bc448a618d375e9              1           1343.09          0.999846              0.0296878              3403.47             0.947507                 0.0646395                  0                 85                     0                262144  [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  [1. 2. 3. 4. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.  [     0      1      2      3      4      5      6      7      8      9    [1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+                                                                                                                                                                                                                                                                                                                                                                   24 25 26 27 28 29 30 31 32 33 34 35 37 38 40 41 42 43 44 45 46 47 49 50   1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.       10     11     14     15     16     29     30     37    138    139     1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+                                                                                                                                                                                                                                                                                                                                                                   51 52 54 55 56 58 64 65 66 83]                                            1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]                                               140    141    142    288    289    290    291    292    293    525     1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          526    770    771    915    930    931    932    933    934    937
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          938    939    940    941    942   1848   1850   1865   1866   1869
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         1871   1872   1873   2107   8889  11174  11179  11207  11237  11256
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        11358  86015  86221  86422  90429 150941]
+65d720e49125155a11165bf12f25929a9cc885cab81affd3c95a0940e3863e1bfc72a769339879c5cbb1338777a9f0a02c3d85a1130d87b5d357a0c3d00db9cc              1           2516.89          0.998996              0.0399307              3759.95             0.980881                 0.0631396                  0                 85                     0                262144  [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  [1. 2. 3. 4. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.  [     0      1      2      3      4      5      6      7      8      9    [1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+                                                                                                                                                                                                                                                                                                                                                                   24 25 26 27 28 29 30 31 32 33 34 35 37 38 40 41 42 43 44 45 46 47 49 50   1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.       10     11     29     30     37    138    139    140    141    142     1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+                                                                                                                                                                                                                                                                                                                                                                   51 52 54 55 56 57 58 62 64 65 83]                                         1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]                                            288    289    290    291    292    293    525    526    770    771     1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          915    930    931    932    933    934    937    938    939    940
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          941    942   1832   1841   1843   1844   1848   1850   1865   1866
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         1869   1871   1872   1873   2746   7085   7116   7118 206384]
+5bd4c5a2a55ee23b587da8ab2a4eba0bfe02f843086f408ed7c3aa3e77ca3c3721dd00c1edc832544a61b6a824c63551a816e9a0b9e355090d2fbeee4f480bb1              1           2744.7           0.996545              0.0467949              3732.92             0.910259                 0.0649614                  0                 85                     0                262144  [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  [1. 2. 3. 4. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.  [     0      1      2      3      4      5      6      7      8      9    [1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+                                                                                                                                                                                                                                                                                                                                                                   24 25 26 27 28 29 30 31 32 33 34 35 37 38 40 41 42 43 44 45 46 47 49 50   1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.       10     11     29     30     37    138    139    140    141    142     1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+                                                                                                                                                                                                                                                                                                                                                                   51 52 54 55 56 57 58 64 65 83]                                            1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]                                               288    289    290    291    292    293    525    526    770    771     1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          915    930    931    932    933    934    937    938    939    940
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          941    942   1848   1850   1865   1866   1869   1871   1872   1873
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         2488   6251   6286   6287   7085   7116   7118   8889   9181 126757
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       132221 177325]
+ccdc1d09c7bdc8c6e53375ed7a96d0d9d79d8b4cfecf306dde11b273ffbdd42b7a9ee4ff5370cdf28cab6d21cf76649ae78d43f81f82bbf266708336a8a97cf7              1           3010.05          0.629505              0.0409472              4077.78             0.831228                 0.060481                   0                 85                     0                262144  [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  [1. 2. 3. 4. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.  [     0      1      2      3      4      5      6      7      8      9    [1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+                                                                                                                                                                                                                                                                                                                                                                   24 25 26 27 28 29 30 31 32 33 34 35 37 38 40 41 42 43 44 45 46 47 49 50   1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.       10     11     29     30     37    138    139    140    141    142     1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+                                                                                                                                                                                                                                                                                                                                                                   51 52 54 55 56 57 58 64 65 83]                                            1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]                                               288    289    290    291    292    293    525    526    770    771     1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          915    930    931    932    933    934    937    938    939    940
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          941    942   1848   1850   1865   1866   1869   1871   1872   1873
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         2470   7085   7116   7118   8889  78889 117987 123295 123858 125165
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       128318 133246 134918]
+
+[10 rows x 16 columns]
+
+test
+hash_message                                                                                                                        fraud_label    kl_fraud_words    ks_fraud_words    entropy_fraud_words    kl_notfraud_words    ks_notfraud_words    entropy_notfraud_words    features85_type    features85_size    ngramscounts7_type    ngramscounts7_size  features85_list_indices                                                   features85_list_values                                                    ngramscounts7_list_indices                                                ngramscounts7_list_values
+--------------------------------------------------------------------------------------------------------------------------------  -------------  ----------------  ----------------  ---------------------  -------------------  -------------------  ------------------------  -----------------  -----------------  --------------------  --------------------  ------------------------------------------------------------------------  ------------------------------------------------------------------------  ------------------------------------------------------------------------  ------------------------------------------------------------------------
+028743cfa6f12fa8a34d0b47e8775085c0924727c2eac6f783fdc48260df810a54c0e66f9eac71cb704caf1f5f9e33beb2d822717d7f4d0494b6db8693046384              1           2503.42          0.873862              0.0382594              3627.56             0.964534                 0.0590653                  0                 85                     0                262144  [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  [1. 2. 3. 4. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.  [     0      1      2      3      4      5      6      7      8      9    [1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+                                                                                                                                                                                                                                                                                                                                                                   24 25 26 27 28 29 30 31 32 33 34 35 37 38 40 41 42 43 44 45 46 47 49 50   1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.       10     11     29     30     37    138    139    140    141    142     1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+                                                                                                                                                                                                                                                                                                                                                                   51 52 54 55 56 57 58 64 65 83]                                            1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]                                               288    289    290    291    292    293    471    472    473    525     1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          526    719    770    771    915    930    931    932    933    934
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          937    938    939    940    941    942   1848   1850   1865   1866
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         1869   1871   1872   1873   1933  18806  19089  19212  34328  37614
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        83321  96189  96420  98957  99317 100093 102771]
+30d2acff4fc63bbbbdd0d160b6164e6024cf133bc3033ba94c58cd9fe3fa98a044ac703853567b2dbe3291a675a2af980bf18043f4077c3b0c10a162b246badc              1           2799.98          0.732933              0.0382767              3994.24             0.576074                 0.060355                   0                 85                     0                262144  [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  [1. 2. 3. 4. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.  [     0      1      2      3      4      5      6      7      8      9    [1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+                                                                                                                                                                                                                                                                                                                                                                   24 25 26 27 28 29 30 31 32 33 34 35 37 38 40 41 42 43 44 45 46 47 49 50   1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 1. 1.       10     11     29     30     37    138    139    140    141    142     1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+                                                                                                                                                                                                                                                                                                                                                                   51 52 54 55 56 57 58 64 65 83]                                            1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]                                               288    289    290    291    292    293    525    526    770    771     1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          915    930    931    932    933    934    937    938    939    940
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          941    942   1848   1850   1865   1866   1869   1871   1872   1873
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         2387   2486   2490   2491   3248   6905   6908   6925 130018 136459
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       160749 162706 166561 166903 168464 173864 180576]
+3e183ca890bd952e73a8b5a6a12511c7078d89abba17517bc5cadd3928a79600b5ecfacf1217a9b6feb3d23b8d73344a4e07b0b5b4e2acf7b97651e42728a938              1           1314.39          0.999211              0.0307744              3345.59             0.999982                 0.0652187                  0                 85                     0                262144  [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  [1. 2. 3. 4. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.  [    0     1     2     3     4     5     6     7     8     9    10    11  [1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+                                                                                                                                                                                                                                                                                                                                                                   24 25 26 27 28 29 30 31 32 33 34 35 37 38 40 41 42 43 44 45 46 47 49 50   1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.      29    30    37   138   139   140   141   142   173   288   289   290   1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+                                                                                                                                                                                                                                                                                                                                                                   51 52 54 55 56 58 64 65 70 83]                                            1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]                                              291   292   293   525   526   770   771   915   929   930   931   932   1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         933   934   937   938   939   940   941   942   958   959   960  1638
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        1639  1813  1848  1850  1865  1866  1869  1871  1872  1873  2415  4011
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        4013  4016 23189 28758 28761 29504 29807 29891 29910]
+fdaf174a78c389d3421d94f62001a7bfc126df5278c5617183f1aca884dfcdbd605cdec19c11f49d383441c12b0632d985e7eec23eac0cf0e63c5496b70db15e              1            902.52          0.999999              0.0234153              3540.92             0.997292                 0.0697554                  0                 85                     0                262144  [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  [1. 2. 3. 4. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.  [    0     1     2     3     4     5     6     7     8     9    10    11  [1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+                                                                                                                                                                                                                                                                                                                                                                   24 25 26 27 28 29 30 31 32 33 34 35 37 38 40 41 42 43 44 45 46 47 49 50   1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.      29    30    37   138   139   140   141   142   288   289   290   291   1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+                                                                                                                                                                                                                                                                                                                                                                   51 52 54 55 56 58 64 65 83]                                               1. 1. 1. 1. 1. 1. 1. 1. 1.]                                                 292   293   318   525   526   770   771   915   930   931   932   933   1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         934   937   938   939   940   941   942  1848  1850  1865  1866  1869
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        1871  1872  1873  2012  2418  2420  2421  6830  6846  6893  6894 11174
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       11179 11207 11237 11256 11358 14341 14507 17329]
+3a848f47bfde6bfc7547ce94d8f17dc6b185eac71a5f8a0c2170a344d0b2c9c2dd64c1ea12da37840277fcd7166af6ca50fdab5d1c6d7df3ab86e707045db196              1           1775.14          1                     0.0340238              3490.47             0.997218                 0.0620839                  0                 85                     0                262144  [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  [1. 2. 3. 4. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.  [    0     1     2     3     4     5     6     7     8     9    10    11  [1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+                                                                                                                                                                                                                                                                                                                                                                   24 25 26 27 28 29 30 31 32 33 34 35 37 38 40 41 42 43 44 45 46 47 49 50   1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.      29    30    37   138   139   140   141   142   288   289   290   291   1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+                                                                                                                                                                                                                                                                                                                                                                   51 52 54 55 56 58 62 64 65 83]                                            1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]                                              292   293   525   526   770   771   915   930   931   932   933   934   1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         937   938   939   940   941   942  1832  1848  1850  1865  1866  1869
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        1871  1872  1873  3749  3751  3757 10652 11174 11179 11207 11237 11256
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       11358]
+8de676ef50468c38ddf2ce914a6b747d9f494c9de0f80ca25bafe5d6da23e869504a468381d42df22ff1a2851a145c28da0055cbf9a2101d054dc2d402e533ed              1           1606.64          0.999999              0.03489                3546.58             0.997218                 0.0674844                  0                 85                     0                262144  [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  [1. 2. 3. 4. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.  [     0      1      2      3      4      5      6      7      8      9    [1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+                                                                                                                                                                                                                                                                                                                                                                   24 25 26 27 28 29 30 31 32 33 34 35 37 38 40 41 42 43 44 45 46 47 49 50   1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.       10     11     14     15     16     29     30     37    138    139     1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+                                                                                                                                                                                                                                                                                                                                                                   51 52 54 55 56 58 64 65 66 83]                                            1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]                                               140    141    142    288    289    290    291    292    293    525     1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          526    770    771    915    930    931    932    933    934    937     1.]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          938    939    940    941    942   1848   1850   1865   1866   1869
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         1871   1872   1873   2960   9016  10652  12158  12199  12208  12238
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        12253  12304  66138  68418  69525  69818 226582 226904 227635 238605
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       241710 256340 260372]
+f7a3b629bfd491835a7b0304b5e32820782fc9133e3e5080c2752f34dfe9b09c2ee02aafb9522666552277df62cc77954e481f021c9e8fce089c3e11fdfdeeec              1           3128.61          0.963607              0.0553033              3799.74             0.828598                 0.0671737                  0                 85                     0                262144  [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  [1. 2. 3. 4. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.  [     0      1      2      3      4      5      6      7      8      9    [1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+                                                                                                                                                                                                                                                                                                                                                                   24 25 26 27 28 29 30 31 32 33 34 35 37 38 40 41 42 43 44 45 46 47 49 50   1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 1. 1.       10     11     29     30     37    138    139    140    141    142     1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+                                                                                                                                                                                                                                                                                                                                                                   51 52 54 55 56 57 58 64 65 83]                                            1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]                                               288    289    290    291    292    293    525    526    770    771     1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          915    930    931    932    933    934    937    938    939    940
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          941    942   1848   1850   1865   1866   1869   1871   1872   1873
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         1977   2496   2497   2498   3352   7085   7116   7118  23189  76445
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        76858  77085  77116  77503  79441  80861  82047 210342]
+a0f6a2c68c6640085d7f35229e562870ece248d68b6f12fc89600a34f5642c3492e485094cdc140d64da1756b6b932955ecafb2aff3b700b43b27e66377a2ff2              1           1698.42          0.996637              0.0272985              3775.99             0.735111                 0.0668549                  0                 85                     0                262144  [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  [1. 2. 3. 4. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.  [    0     1     2     3     4     5     6     7     8     9    10    11  [1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+                                                                                                                                                                                                                                                                                                                                                                   24 25 26 27 28 29 30 31 32 33 34 35 37 38 40 41 42 43 44 45 46 47 49 50   1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.      29    30    37   138   139   140   141   142   288   289   290   291   1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+                                                                                                                                                                                                                                                                                                                                                                   51 52 54 55 56 57 58 64 65 83]                                            1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]                                              292   293   525   526   770   771   915   930   931   932   933   934   1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         937   938   939   940   941   942  1848  1850  1865  1866  1869  1871   1. 1. 1. 1.]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        1872  1873  2214  2554  2555  2556  3454  6905  6908  6925 15002 16348
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       20928 21343 21479 21515 21625 21635 21656 53897 56091 69833 69902 70341
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       70714 73402 74648 74793]
+03f91639fe78e79673cc0555514a3b25beaa30954f73f02a5be07b7b21ac7da5450842cfb0c97970e1871e2e8590937a923e024736ab167b7d451dc5490dc289              1           2884.69          0.990894              0.0438968              3833.47             0.909666                 0.0609198                  0                 85                     0                262144  [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  [1. 2. 3. 4. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.  [    0     1     2     3     4     5     6     7     8     9    10    11  [1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+                                                                                                                                                                                                                                                                                                                                                                   24 25 26 27 28 29 30 31 32 33 34 35 37 38 40 41 42 43 44 45 46 47 49 50   1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.      29    30    37    88    93    94   137   138   139   140   141   142   1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+                                                                                                                                                                                                                                                                                                                                                                   51 52 54 55 56 57 58 64 65 83]                                            1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]                                              288   289   290   291   292   293   525   526   770   771   915   930   1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         931   932   933   934   937   938   939   940   941   942  1848  1850
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        1865  1866  1869  1871  1872  1873  1966  7732  7739  7780 34328 76254
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       83321]
+022c7c41ac4755d97693500bd6474ff385cf574e0f57c768bad8e6a745b373d331d769c850627a3488e10e8b6ed74a1da104c1280547a26e18c5313eaf0a93b4              1           2710.36          0.783181              0.0424581              3780.6              0.830355                 0.0621941                  0                 85                     0                262144  [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23  [1. 2. 3. 4. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.  [   0    1    2    3    4    5    6    7    8    9   10   11   29   30    [1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+                                                                                                                                                                                                                                                                                                                                                                   24 25 26 27 28 29 30 31 32 33 34 35 37 38 40 41 42 43 44 45 46 47 49 50   1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.     37  138  139  140  141  142  187  188  189  233  288  289  290  291     1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+                                                                                                                                                                                                                                                                                                                                                                   51 52 54 55 56 57 58 64 65 83]                                            1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]                                             292  293  525  526  770  771  915  930  931  932  933  934  937  938     1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        939  940  941  942 1848 1850 1865 1866 1869 1871 1872 1873 2464 6905
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       6908 6925]
+
+[10 rows x 16 columns]
+
+AutoML progress: |██████████████████████████████████████████████████████Traceback (most recent call last):
+  File "/home/siemanalyst/projects/logs-archive-production/fraud-canada-tokenizedwords/notebooks/x3-FraudCanada-AUTOML-Model-NGrams-CountVectorizer-KL-KS-Entropy.py", line 229, in <module>
+    aml.train(x=x, y=y, training_frame=train)
+  File "/opt/cloudera/parcels/Anaconda-5.1.0.1/lib/python3.6/site-packages/h2o/automl/autoh2o.py", line 372, in train
+    self._job.poll()
+  File "/opt/cloudera/parcels/Anaconda-5.1.0.1/lib/python3.6/site-packages/h2o/job.py", line 58, in poll
+    pb.execute(self._refresh_job_status)
+  File "/opt/cloudera/parcels/Anaconda-5.1.0.1/lib/python3.6/site-packages/h2o/utils/progressbar.py", line 169, in execute
+    res = progress_fn()  # may raise StopIteration
+  File "/opt/cloudera/parcels/Anaconda-5.1.0.1/lib/python3.6/site-packages/h2o/job.py", line 93, in _refresh_job_status
+    jobs = h2o.api("GET /3/Jobs/%s" % self.job_key)
+  File "/opt/cloudera/parcels/Anaconda-5.1.0.1/lib/python3.6/site-packages/h2o/h2o.py", line 103, in api
+    return h2oconn.request(endpoint, data=data, json=json, filename=filename, save_to=save_to)
+  File "/opt/cloudera/parcels/Anaconda-5.1.0.1/lib/python3.6/site-packages/h2o/backend/connection.py", line 402, in request
+    return self._process_response(resp, save_to)
+  File "/opt/cloudera/parcels/Anaconda-5.1.0.1/lib/python3.6/site-packages/h2o/backend/connection.py", line 725, in _process_response
+    raise H2OResponseError(data)
+h2o.exceptions.H2OResponseError: Server error java.lang.IllegalArgumentException:
+  Error: Job is missing
+  Request: GET /3/Jobs/$03017f00000132d4ffffffff$_85c95f3a30936b82c93b1e29988e45c1
+
+| Move Files 
+
+
+|
+Pyspark :-: x4-FraudCanada-Merge-Scoring-Data-From-Model.py
+|
+Traceback (most recent call last):
+  File "/opt/cloudera/parcels/SPARK2-2.3.0.cloudera2-1.cdh5.13.3.p0.316101/lib/spark2/python/pyspark/sql/utils.py", line 63, in deco
+    return f(*a, **kw)
+  File "/opt/cloudera/parcels/SPARK2-2.3.0.cloudera2-1.cdh5.13.3.p0.316101/lib/spark2/python/lib/py4j-0.10.6-src.zip/py4j/protocol.py", line 320, in get_return_value
+py4j.protocol.Py4JJavaError: An error occurred while calling o73.csv.
+: org.apache.spark.sql.AnalysisException: Path does not exist: hdfs://bda-ns/data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=20181125/file_prediction_20181125.csv;
+	at org.apache.spark.sql.execution.datasources.DataSource$.org$apache$spark$sql$execution$datasources$DataSource$$checkAndGlobPathIfNecessary(DataSource.scala:715)
+	at org.apache.spark.sql.execution.datasources.DataSource$$anonfun$15.apply(DataSource.scala:389)
+	at org.apache.spark.sql.execution.datasources.DataSource$$anonfun$15.apply(DataSource.scala:389)
+	at scala.collection.TraversableLike$$anonfun$flatMap$1.apply(TraversableLike.scala:241)
+	at scala.collection.TraversableLike$$anonfun$flatMap$1.apply(TraversableLike.scala:241)
+	at scala.collection.immutable.List.foreach(List.scala:381)
+	at scala.collection.TraversableLike$class.flatMap(TraversableLike.scala:241)
+	at scala.collection.immutable.List.flatMap(List.scala:344)
+	at org.apache.spark.sql.execution.datasources.DataSource.resolveRelation(DataSource.scala:388)
+	at org.apache.spark.sql.DataFrameReader.loadV1Source(DataFrameReader.scala:239)
+	at org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:227)
+	at org.apache.spark.sql.DataFrameReader.csv(DataFrameReader.scala:594)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.GatewayConnection.run(GatewayConnection.java:214)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/siemanalyst/projects/logs-archive-production/fraud-canada-tokenizedwords/notebooks/x4-FraudCanada-Merge-Scoring-Data-From-Model.py", line 84, in <module>
+    prediction_df=sqlContext.read.csv(input_file_prediction_df,header=True,inferSchema=True)
+  File "/opt/cloudera/parcels/SPARK2-2.3.0.cloudera2-1.cdh5.13.3.p0.316101/lib/spark2/python/pyspark/sql/readwriter.py", line 439, in csv
+    return self._df(self._jreader.csv(self._spark._sc._jvm.PythonUtils.toSeq(path)))
+  File "/opt/cloudera/parcels/SPARK2-2.3.0.cloudera2-1.cdh5.13.3.p0.316101/lib/spark2/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 1160, in __call__
+  File "/opt/cloudera/parcels/SPARK2-2.3.0.cloudera2-1.cdh5.13.3.p0.316101/lib/spark2/python/pyspark/sql/utils.py", line 69, in deco
+    raise AnalysisException(s.split(': ', 1)[1], stackTrace)
+pyspark.sql.utils.AnalysisException: 'Path does not exist: hdfs://bda-ns/data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=20181125/file_prediction_20181125.csv;'
+19/02/10 01:37:08 WARN ipc.Client: interrupted waiting to send rpc request to server
+java.lang.InterruptedException
+	at java.util.concurrent.FutureTask.awaitDone(FutureTask.java:404)
+	at java.util.concurrent.FutureTask.get(FutureTask.java:191)
+	at org.apache.hadoop.ipc.Client$Connection.sendRpcRequest(Client.java:1088)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1483)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1441)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:230)
+	at com.sun.proxy.$Proxy15.getApplicationReport(Unknown Source)
+	at org.apache.hadoop.yarn.api.impl.pb.client.ApplicationClientProtocolPBClientImpl.getApplicationReport(ApplicationClientProtocolPBClientImpl.java:187)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:258)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:104)
+	at com.sun.proxy.$Proxy16.getApplicationReport(Unknown Source)
+	at org.apache.hadoop.yarn.client.api.impl.YarnClientImpl.getApplicationReport(YarnClientImpl.java:408)
+	at org.apache.spark.deploy.yarn.Client.getApplicationReport(Client.scala:340)
+	at org.apache.spark.deploy.yarn.Client.monitorApplication(Client.scala:1047)
+	at org.apache.spark.scheduler.cluster.YarnClientSchedulerBackend$MonitorThread.run(YarnClientSchedulerBackend.scala:103)
+19/02/10 01:37:08 ERROR yarn.Client: Failed to contact YARN for application application_1546957450782_5333.
+java.io.IOException: java.lang.InterruptedException
+	at org.apache.hadoop.ipc.Client.call(Client.java:1489)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1441)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:230)
+	at com.sun.proxy.$Proxy15.getApplicationReport(Unknown Source)
+	at org.apache.hadoop.yarn.api.impl.pb.client.ApplicationClientProtocolPBClientImpl.getApplicationReport(ApplicationClientProtocolPBClientImpl.java:187)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:258)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:104)
+	at com.sun.proxy.$Proxy16.getApplicationReport(Unknown Source)
+	at org.apache.hadoop.yarn.client.api.impl.YarnClientImpl.getApplicationReport(YarnClientImpl.java:408)
+	at org.apache.spark.deploy.yarn.Client.getApplicationReport(Client.scala:340)
+	at org.apache.spark.deploy.yarn.Client.monitorApplication(Client.scala:1047)
+	at org.apache.spark.scheduler.cluster.YarnClientSchedulerBackend$MonitorThread.run(YarnClientSchedulerBackend.scala:103)
+Caused by: java.lang.InterruptedException
+	at java.util.concurrent.FutureTask.awaitDone(FutureTask.java:404)
+	at java.util.concurrent.FutureTask.get(FutureTask.java:191)
+	at org.apache.hadoop.ipc.Client$Connection.sendRpcRequest(Client.java:1088)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1483)
+	... 15 more
+19/02/10 01:37:08 ERROR cluster.YarnClientSchedulerBackend: Yarn application has already exited with state FAILED!
+cp: `hdfs:///data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=20181125/merged_prediction_train/part-*.csv': No such file or directory
+cp: `hdfs:///data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=20181125/merged_prediction_train/merge_prediction_train_20181125.csv': No such file or directory
+|
+Pyspark :-: x5-search-discover-values-hash_message.py
+|
+19/02/10 01:37:16 WARN util.Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+19/02/10 01:37:27 WARN streaming.FileStreamSink: Error while looking for metadata directory.
+root
+ |-- hash_message: string (nullable = true)
+ |-- words: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+
+Traceback (most recent call last):
+  File "/opt/cloudera/parcels/SPARK2-2.3.0.cloudera2-1.cdh5.13.3.p0.316101/lib/spark2/python/pyspark/sql/utils.py", line 63, in deco
+    return f(*a, **kw)
+  File "/opt/cloudera/parcels/SPARK2-2.3.0.cloudera2-1.cdh5.13.3.p0.316101/lib/spark2/python/lib/py4j-0.10.6-src.zip/py4j/protocol.py", line 320, in get_return_value
+py4j.protocol.Py4JJavaError: An error occurred while calling o84.csv.
+: org.apache.spark.sql.AnalysisException: Path does not exist: hdfs://bda-ns/data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=20181125/merged_prediction_train/merge_prediction_train_20181125.csv;
+	at org.apache.spark.sql.execution.datasources.DataSource$.org$apache$spark$sql$execution$datasources$DataSource$$checkAndGlobPathIfNecessary(DataSource.scala:715)
+	at org.apache.spark.sql.execution.datasources.DataSource$$anonfun$15.apply(DataSource.scala:389)
+	at org.apache.spark.sql.execution.datasources.DataSource$$anonfun$15.apply(DataSource.scala:389)
+	at scala.collection.TraversableLike$$anonfun$flatMap$1.apply(TraversableLike.scala:241)
+	at scala.collection.TraversableLike$$anonfun$flatMap$1.apply(TraversableLike.scala:241)
+	at scala.collection.immutable.List.foreach(List.scala:381)
+	at scala.collection.TraversableLike$class.flatMap(TraversableLike.scala:241)
+	at scala.collection.immutable.List.flatMap(List.scala:344)
+	at org.apache.spark.sql.execution.datasources.DataSource.resolveRelation(DataSource.scala:388)
+	at org.apache.spark.sql.DataFrameReader.loadV1Source(DataFrameReader.scala:239)
+	at org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:227)
+	at org.apache.spark.sql.DataFrameReader.csv(DataFrameReader.scala:594)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.GatewayConnection.run(GatewayConnection.java:214)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/siemanalyst/projects/logs-archive-production/fraud-canada-tokenizedwords/notebooks/x5-search-discover-values-hash_message.py", line 80, in <module>
+    merged_df=sqlContext.read.csv(input_merged_prediction_train,header=True,inferSchema=True,multiLine=True)\
+  File "/opt/cloudera/parcels/SPARK2-2.3.0.cloudera2-1.cdh5.13.3.p0.316101/lib/spark2/python/pyspark/sql/readwriter.py", line 439, in csv
+    return self._df(self._jreader.csv(self._spark._sc._jvm.PythonUtils.toSeq(path)))
+  File "/opt/cloudera/parcels/SPARK2-2.3.0.cloudera2-1.cdh5.13.3.p0.316101/lib/spark2/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 1160, in __call__
+  File "/opt/cloudera/parcels/SPARK2-2.3.0.cloudera2-1.cdh5.13.3.p0.316101/lib/spark2/python/pyspark/sql/utils.py", line 69, in deco
+    raise AnalysisException(s.split(': ', 1)[1], stackTrace)
+pyspark.sql.utils.AnalysisException: 'Path does not exist: hdfs://bda-ns/data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=20181125/merged_prediction_train/merge_prediction_train_20181125.csv;'
+cp: `hdfs:///data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=20181125/no_match_hash_message/part-*.csv': No such file or directory
+cp: `hdfs:///data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=20181125/no_match_hash_message/TEMP_no_match_hash_message_20181125.csv': No such file or directory
+ NO_MATCH_NUM_FRAUD_RECORDS= : 
+0
+| Job Finished  ___;

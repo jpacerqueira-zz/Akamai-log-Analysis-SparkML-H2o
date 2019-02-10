@@ -1,0 +1,680 @@
+Process d=20181215 FILES COUNT : 
+288
+|___|
+|
+Pyspark :-: x1-FraudCanada-Model-NGrams-CountVectorizer-KL-KS-Entropy-Model-CleanData.py
+|
+root
+ |-- metadata: struct (nullable = true)
+ |    |-- beat: string (nullable = true)
+ |    |-- type: string (nullable = true)
+ |-- logzio_id: string (nullable = true)
+ |-- awsRegion: string (nullable = true)
+ |-- beat: struct (nullable = true)
+ |    |-- hostname: string (nullable = true)
+ |    |-- name: string (nullable = true)
+ |    |-- version: string (nullable = true)
+ |-- function_version: string (nullable = true)
+ |-- host: struct (nullable = true)
+ |    |-- name: string (nullable = true)
+ |-- id: string (nullable = true)
+ |-- input_type: string (nullable = true)
+ |-- invoked_function_arn: string (nullable = true)
+ |-- it: string (nullable = true)
+ |-- logGroup: string (nullable = true)
+ |-- logStream: string (nullable = true)
+ |-- logzio_codec: string (nullable = true)
+ |-- message: string (nullable = true)
+ |-- messageType: string (nullable = true)
+ |-- offset: long (nullable = true)
+ |-- owner: string (nullable = true)
+ |-- source: string (nullable = true)
+ |-- tags: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+ |-- timestamp: long (nullable = true)
+ |-- type: string (nullable = true)
+ |-- token: string (nullable = true)
+
+root
+ |-- metadata: struct (nullable = true)
+ |    |-- beat: string (nullable = true)
+ |    |-- type: string (nullable = true)
+ |-- logzio_id: string (nullable = true)
+ |-- awsRegion: string (nullable = true)
+ |-- beat: struct (nullable = true)
+ |    |-- hostname: string (nullable = true)
+ |    |-- name: string (nullable = true)
+ |    |-- version: string (nullable = true)
+ |-- function_version: string (nullable = true)
+ |-- host: struct (nullable = true)
+ |    |-- name: string (nullable = true)
+ |-- id: string (nullable = true)
+ |-- input_type: string (nullable = true)
+ |-- invoked_function_arn: string (nullable = true)
+ |-- it: string (nullable = true)
+ |-- logGroup: string (nullable = true)
+ |-- logStream: string (nullable = true)
+ |-- logzio_codec: string (nullable = true)
+ |-- message: string (nullable = true)
+ |-- messageType: string (nullable = true)
+ |-- offset: long (nullable = true)
+ |-- owner: string (nullable = true)
+ |-- source: string (nullable = true)
+ |-- tags: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+ |-- timestamp: long (nullable = true)
+ |-- type: string (nullable = true)
+ |-- token: string (nullable = true)
+
+root
+ |-- metadata: struct (nullable = true)
+ |    |-- beat: string (nullable = true)
+ |    |-- type: string (nullable = true)
+ |-- logzio_id: string (nullable = true)
+ |-- awsRegion: string (nullable = true)
+ |-- beat: struct (nullable = true)
+ |    |-- hostname: string (nullable = true)
+ |    |-- name: string (nullable = true)
+ |    |-- version: string (nullable = true)
+ |-- function_version: string (nullable = true)
+ |-- host: struct (nullable = true)
+ |    |-- name: string (nullable = true)
+ |-- id: string (nullable = true)
+ |-- input_type: string (nullable = true)
+ |-- invoked_function_arn: string (nullable = true)
+ |-- it: string (nullable = true)
+ |-- logGroup: string (nullable = true)
+ |-- logStream: string (nullable = true)
+ |-- logzio_codec: string (nullable = true)
+ |-- message: string (nullable = true)
+ |-- messageType: string (nullable = true)
+ |-- offset: long (nullable = true)
+ |-- owner: string (nullable = true)
+ |-- source: string (nullable = true)
+ |-- tags: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+ |-- timestamp: long (nullable = true)
+ |-- type: string (nullable = true)
+ |-- token: string (nullable = true)
+ |-- messagecut: string (nullable = true)
+ |-- words: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+
+19/02/10 18:04:53 WARN streaming.FileStreamSink: Error while looking for metadata directory.
+root
+ |-- beat: struct (nullable = true)
+ |    |-- hostname: string (nullable = true)
+ |    |-- name: string (nullable = true)
+ |    |-- version: string (nullable = true)
+ |-- host: struct (nullable = true)
+ |    |-- name: string (nullable = true)
+ |-- it: string (nullable = true)
+ |-- logzio_codec: string (nullable = true)
+ |-- logzio_id: string (nullable = true)
+ |-- message: string (nullable = true)
+ |-- messagecut: string (nullable = true)
+ |-- metadata: struct (nullable = true)
+ |    |-- beat: string (nullable = true)
+ |    |-- type: string (nullable = true)
+ |-- offset: long (nullable = true)
+ |-- source: string (nullable = true)
+ |-- tags: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+ |-- type: string (nullable = true)
+ |-- words: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+
+root
+ |-- hash_message: string (nullable = true)
+ |-- fraud_label: integer (nullable = true)
+ |-- words: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+ |-- message: string (nullable = true)
+
+root
+ |-- fraud_label: integer (nullable = true)
+ |-- hash_message: string (nullable = true)
+ |-- words: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+
+root
+ |-- @metadata: struct (nullable = true)
+ |    |-- beat: string (nullable = true)
+ |    |-- type: string (nullable = true)
+ |    |-- version: string (nullable = true)
+ |-- @timestamp: string (nullable = true)
+ |-- __logz_account_id: string (nullable = true)
+ |-- __logz_received_timestamp: string (nullable = true)
+ |-- __logzio_X-B3-Sampled: string (nullable = true)
+ |-- __logzio_X-B3-SpanId: string (nullable = true)
+ |-- __logzio_X-B3-TraceId: string (nullable = true)
+ |-- __logzio_id: string (nullable = true)
+ |-- beat: struct (nullable = true)
+ |    |-- hostname: string (nullable = true)
+ |    |-- name: string (nullable = true)
+ |    |-- version: string (nullable = true)
+ |-- host: struct (nullable = true)
+ |    |-- name: string (nullable = true)
+ |-- input_type: string (nullable = true)
+ |-- it: string (nullable = true)
+ |-- logzio_codec: string (nullable = true)
+ |-- logzio_id: string (nullable = true)
+ |-- message: string (nullable = true)
+ |-- messagecut: string (nullable = true)
+ |-- metadata: struct (nullable = true)
+ |    |-- beat: string (nullable = true)
+ |    |-- type: string (nullable = true)
+ |-- offset: long (nullable = true)
+ |-- source: string (nullable = true)
+ |-- tags: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+ |-- type: string (nullable = true)
+ |-- words: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+
+root
+ |-- hash_message: string (nullable = true)
+ |-- fraud_label: integer (nullable = true)
+ |-- words: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+ |-- message: string (nullable = true)
+
+root
+ |-- fraud_label: integer (nullable = true)
+ |-- hash_message: string (nullable = true)
+ |-- words: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+
+root
+ |-- fraud_label: integer (nullable = true)
+ |-- hash_message: string (nullable = true)
+ |-- words: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+ |-- ngrams_7: array (nullable = true)
+ |    |-- element: string (containsNull = false)
+ |-- ngramscounts_7: vector (nullable = true)
+
+root
+ |-- fraud_label: integer (nullable = true)
+ |-- hash_message: string (nullable = true)
+ |-- words: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+ |-- ngrams_7: array (nullable = true)
+ |    |-- element: string (containsNull = false)
+ |-- ngramscounts_7: vector (nullable = true)
+ |-- features_85: vector (nullable = true)
+
+Calculation of most frequent fraud_ngram notfraud_ngram - Start!
+19/02/10 18:08:01 WARN streaming.FileStreamSink: Error while looking for metadata directory.
+root
+ |-- features_85: struct (nullable = true)
+ |    |-- indices: array (nullable = true)
+ |    |    |-- element: long (containsNull = true)
+ |    |-- size: long (nullable = true)
+ |    |-- type: long (nullable = true)
+ |    |-- values: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |-- fraud_label: long (nullable = true)
+ |-- hash_message: string (nullable = true)
+ |-- ngrams_7: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+ |-- ngramscounts_7: struct (nullable = true)
+ |    |-- indices: array (nullable = true)
+ |    |    |-- element: long (containsNull = true)
+ |    |-- size: long (nullable = true)
+ |    |-- type: long (nullable = true)
+ |    |-- values: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |-- words: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+
+root
+ |-- hash_message: string (nullable = true)
+ |-- count: double (nullable = true)
+
+Value Print: standard_fraud_ngram=
+                                        hash_message
+0  8619a20be588691518a58c887e5d6aef19d7e48cf4d5f0...
+19/02/10 18:08:12 WARN streaming.FileStreamSink: Error while looking for metadata directory.
+root
+ |-- features_85: struct (nullable = true)
+ |    |-- indices: array (nullable = true)
+ |    |    |-- element: long (containsNull = true)
+ |    |-- size: long (nullable = true)
+ |    |-- type: long (nullable = true)
+ |    |-- values: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |-- fraud_label: long (nullable = true)
+ |-- hash_message: string (nullable = true)
+ |-- ngrams_7: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+ |-- ngramscounts_7: struct (nullable = true)
+ |    |-- indices: array (nullable = true)
+ |    |    |-- element: long (containsNull = true)
+ |    |-- size: long (nullable = true)
+ |    |-- type: long (nullable = true)
+ |    |-- values: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |-- words: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+
+root
+ |-- hash_message: string (nullable = true)
+ |-- count: double (nullable = true)
+
+Value Print: standard_notfraud_ngram=
+                                        hash_message
+0  9b87e3751d3a734061204872f04234e14c2177951ddb49...
+Calculation of most frequent fraud_ngram notfraud_ngram - Done!
+Preparation of Data Done!
+|
+Pyspark :-: x2-FraudCanada-Model-NGrams-CountVectorizer-KL-KS-Entropy-Model-Labeling.py
+|
+19/02/10 18:08:43 WARN streaming.FileStreamSink: Error while looking for metadata directory.
+Value UDF : standard_fraud_ngram=
+44eaca675769da0342bee76d24d32dbe68d3c1965a7c0e4862b0a89c3b27e1d45087796c9da0469dcbde21c86bd520f60fb5f2b61b8c887b2d8f00adefd92986
+19/02/10 18:08:52 WARN streaming.FileStreamSink: Error while looking for metadata directory.
+root
+ |-- features_85: struct (nullable = true)
+ |    |-- indices: array (nullable = true)
+ |    |    |-- element: long (containsNull = true)
+ |    |-- size: long (nullable = true)
+ |    |-- type: long (nullable = true)
+ |    |-- values: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |-- fraud_label: long (nullable = true)
+ |-- hash_message: string (nullable = true)
+ |-- ngrams_7: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+ |-- ngramscounts_7: struct (nullable = true)
+ |    |-- indices: array (nullable = true)
+ |    |    |-- element: long (containsNull = true)
+ |    |-- size: long (nullable = true)
+ |    |-- type: long (nullable = true)
+ |    |-- values: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |-- words: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+
+root
+ |-- features_85: struct (nullable = true)
+ |    |-- indices: array (nullable = true)
+ |    |    |-- element: long (containsNull = true)
+ |    |-- size: long (nullable = true)
+ |    |-- type: long (nullable = true)
+ |    |-- values: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |-- fraud_label: long (nullable = true)
+ |-- hash_message: string (nullable = true)
+ |-- ngrams_7: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+ |-- ngramscounts_7: struct (nullable = true)
+ |    |-- indices: array (nullable = true)
+ |    |    |-- element: long (containsNull = true)
+ |    |-- size: long (nullable = true)
+ |    |-- type: long (nullable = true)
+ |    |-- values: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |-- words: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+ |-- fraud_master_hash: string (nullable = false)
+
+Value UDF : standard_fraud_words=
+root15c006c3e12927f2e369507beb5a1ab3brequestmethodgeturlhttpsislcadazncommislv2playbackassetid11urjv8u1kkvc1ubhbk2ue7vo8eventidarje1qisaix60w5monmemlyzuformatmpegdashplayeriddazn001c3b59f4securetruelanguagecodeenlatitudenulllongitudenullplatformwebmanufacturermodelnullclientip475481104headersuseragentmozilla50macintoshintelmacosx10_12_6applewebkit605115khtmllikegeckoversion1112safari605115typeinresponsestatuscode200reasonphraseokduration125jwtviewerid1b2f94d0267cdeviceid0b93dd8eaabb41c49c561b2f94d0267c001c3b59f4userstatusactivepaid
+19/02/10 18:09:01 WARN streaming.FileStreamSink: Error while looking for metadata directory.
+Value UDF : standard_notfraud_ngram=
+b5b1714089196bba8165ce57c4692988d6cdf2e6bba435699bce40f4043b72e8349fb50a567a25a6737e0bf6bcab0d7b3704d47457172818261eba0fc0f8d110
+19/02/10 18:09:02 WARN streaming.FileStreamSink: Error while looking for metadata directory.
+root
+ |-- features_85: struct (nullable = true)
+ |    |-- indices: array (nullable = true)
+ |    |    |-- element: long (containsNull = true)
+ |    |-- size: long (nullable = true)
+ |    |-- type: long (nullable = true)
+ |    |-- values: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |-- fraud_label: long (nullable = true)
+ |-- hash_message: string (nullable = true)
+ |-- ngrams_7: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+ |-- ngramscounts_7: struct (nullable = true)
+ |    |-- indices: array (nullable = true)
+ |    |    |-- element: long (containsNull = true)
+ |    |-- size: long (nullable = true)
+ |    |-- type: long (nullable = true)
+ |    |-- values: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |-- words: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+
+root
+ |-- features_85: struct (nullable = true)
+ |    |-- indices: array (nullable = true)
+ |    |    |-- element: long (containsNull = true)
+ |    |-- size: long (nullable = true)
+ |    |-- type: long (nullable = true)
+ |    |-- values: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |-- fraud_label: long (nullable = true)
+ |-- hash_message: string (nullable = true)
+ |-- ngrams_7: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+ |-- ngramscounts_7: struct (nullable = true)
+ |    |-- indices: array (nullable = true)
+ |    |    |-- element: long (containsNull = true)
+ |    |-- size: long (nullable = true)
+ |    |-- type: long (nullable = true)
+ |    |-- values: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |-- words: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+ |-- fraud_master_hash: string (nullable = false)
+
+Value UDF : standard_notfraud_words=
+root15c1492d142642fa8152e5c204288eb78b03d5b11cb4346c0bcd64aa29175c46frequestmethodgeturlhttpsislcadazncommislv2playbackassetid448tzscjd7w1pq7beuwvcctheventid281j1juci9ukxb3rvuka8ueh0formatmpegdashplayeriddazn898ed55aa90f2e3bsecuretruelanguagecodeenlatitudenulllongitudenullplatformandroidtvmanufacturernvidiamodelnullmtalanguagecodeenclientip745813146headersuseragentmozilla50linuxandroid800shieldandroidtvbuildopr6170623010wvapplewebkit53736khtmllikegeckoversion40chrome7003538110mobilesafari53736fev1420typeinresponsestatuscode200reasonphraseokduration31jwtvieweridfcb3590a8211deviceidadcfbd561d3241a89676fcb3590a8211898ed55aa90f2e3buserstatusfreetrial
+19/02/10 18:09:05 WARN streaming.FileStreamSink: Error while looking for metadata directory.
+root
+ |-- features_85: struct (nullable = true)
+ |    |-- indices: array (nullable = true)
+ |    |    |-- element: long (containsNull = true)
+ |    |-- size: long (nullable = true)
+ |    |-- type: long (nullable = true)
+ |    |-- values: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |-- fraud_label: long (nullable = true)
+ |-- hash_message: string (nullable = true)
+ |-- ngrams_7: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+ |-- ngramscounts_7: struct (nullable = true)
+ |    |-- indices: array (nullable = true)
+ |    |    |-- element: long (containsNull = true)
+ |    |-- size: long (nullable = true)
+ |    |-- type: long (nullable = true)
+ |    |-- values: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |-- words: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+
+root
+ |-- features_85: struct (nullable = true)
+ |    |-- indices: array (nullable = true)
+ |    |    |-- element: long (containsNull = true)
+ |    |-- size: long (nullable = true)
+ |    |-- type: long (nullable = true)
+ |    |-- values: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |-- fraud_label: long (nullable = true)
+ |-- hash_message: string (nullable = true)
+ |-- ngramscounts_7: struct (nullable = true)
+ |    |-- indices: array (nullable = true)
+ |    |    |-- element: long (containsNull = true)
+ |    |-- size: long (nullable = true)
+ |    |-- type: long (nullable = true)
+ |    |-- values: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |-- words_conc: string (nullable = false)
+ |-- kl_fraud_words: double (nullable = true)
+ |-- ks_fraud_words: double (nullable = true)
+ |-- entropy_fraud_words: double (nullable = true)
+ |-- kl_notfraud_words: double (nullable = true)
+ |-- ks_notfraud_words: double (nullable = true)
+ |-- entropy_notfraud_words: double (nullable = true)
+
+Model Data KL,KS, Entropy Done! NGrams Vectors Data Done!
+|
+Pyspark :-: x3-FraudCanada-AUTOML-Model-NGrams-CountVectorizer-KL-KS-Entropy.py
+|
+Checking whether there is an H2O instance running at http://localhost:54321..... not found.
+Attempting to start a local H2O server...
+  Java Version: java version "1.8.0_172"; Java(TM) SE Runtime Environment (build 1.8.0_172-b11); Java HotSpot(TM) 64-Bit Server VM (build 25.172-b11, mixed mode)
+  Starting server from /opt/cloudera/parcels/Anaconda-5.1.0.1/lib/python3.6/site-packages/h2o/backend/bin/h2o.jar
+  Ice root: /tmp/tmpf853qk58
+  JVM stdout: /tmp/tmpf853qk58/h2o_siemanalyst_started_from_python.out
+  JVM stderr: /tmp/tmpf853qk58/h2o_siemanalyst_started_from_python.err
+  Server is running at http://127.0.0.1:54321
+Connecting to H2O server at http://127.0.0.1:54321... successful.
+Warning: Your H2O cluster version is too old (3 months and 14 days)! Please download and install the latest version from http://h2o.ai/download/
+--------------------------  ----------------------------------------
+H2O cluster uptime:         01 secs
+H2O cluster timezone:       UTC
+H2O data parsing timezone:  UTC
+H2O cluster version:        3.22.0.1
+H2O cluster version age:    3 months and 14 days !!!
+H2O cluster name:           H2O_from_python_siemanalyst_plbciw
+H2O cluster total nodes:    1
+H2O cluster free memory:    5.333 Gb
+H2O cluster total cores:    12
+H2O cluster allowed cores:  6
+H2O cluster status:         accepting new members, healthy
+H2O connection url:         http://127.0.0.1:54321
+H2O connection proxy:
+H2O internal security:      False
+H2O API Extensions:         XGBoost, Algos, AutoML, Core V3, Core V4
+Python version:             3.6.4 final
+--------------------------  ----------------------------------------
+Start Training Model NGrams Vectors KS KL Entropty
+19/02/10 18:12:53 WARN streaming.FileStreamSink: Error while looking for metadata directory.
+root
+ |-- entropy_fraud_words: double (nullable = true)
+ |-- entropy_notfraud_words: double (nullable = true)
+ |-- features_85: struct (nullable = true)
+ |    |-- indices: array (nullable = true)
+ |    |    |-- element: long (containsNull = true)
+ |    |-- size: long (nullable = true)
+ |    |-- type: long (nullable = true)
+ |    |-- values: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |-- fraud_label: long (nullable = true)
+ |-- hash_message: string (nullable = true)
+ |-- kl_fraud_words: double (nullable = true)
+ |-- kl_notfraud_words: double (nullable = true)
+ |-- ks_fraud_words: double (nullable = true)
+ |-- ks_notfraud_words: double (nullable = true)
+ |-- ngramscounts_7: struct (nullable = true)
+ |    |-- indices: array (nullable = true)
+ |    |    |-- element: long (containsNull = true)
+ |    |-- size: long (nullable = true)
+ |    |-- type: long (nullable = true)
+ |    |-- values: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |-- words_conc: string (nullable = true)
+
+root
+ |-- hash_message: string (nullable = true)
+ |-- fraud_label: integer (nullable = true)
+ |-- kl_fraud_words: double (nullable = true)
+ |-- ks_fraud_words: double (nullable = true)
+ |-- entropy_fraud_words: double (nullable = true)
+ |-- kl_notfraud_words: double (nullable = true)
+ |-- ks_notfraud_words: double (nullable = true)
+ |-- entropy_notfraud_words: double (nullable = true)
+ |-- features85_type: long (nullable = true)
+ |-- features85_size: long (nullable = true)
+ |-- features85_indices: array (nullable = true)
+ |    |-- element: long (containsNull = true)
+ |-- features85_values: array (nullable = true)
+ |    |-- element: double (containsNull = true)
+ |-- ngramscounts7_type: long (nullable = true)
+ |-- ngramscounts7_size: long (nullable = true)
+ |-- ngramscounts7_indices: array (nullable = true)
+ |    |-- element: long (containsNull = true)
+ |-- ngramscounts7_values: array (nullable = true)
+ |    |-- element: double (containsNull = true)
+
+root
+ |-- hash_message: string (nullable = true)
+ |-- fraud_label: integer (nullable = true)
+ |-- kl_fraud_words: double (nullable = true)
+ |-- ks_fraud_words: double (nullable = true)
+ |-- entropy_fraud_words: double (nullable = true)
+ |-- kl_notfraud_words: double (nullable = true)
+ |-- ks_notfraud_words: double (nullable = true)
+ |-- entropy_notfraud_words: double (nullable = true)
+ |-- features85_type: long (nullable = true)
+ |-- features85_size: long (nullable = true)
+ |-- features85_indices: array (nullable = true)
+ |    |-- element: long (containsNull = true)
+ |-- features85_values: array (nullable = true)
+ |    |-- element: double (containsNull = true)
+ |-- ngramscounts7_type: long (nullable = true)
+ |-- ngramscounts7_size: long (nullable = true)
+ |-- ngramscounts7_indices: array (nullable = true)
+ |    |-- element: long (containsNull = true)
+ |-- ngramscounts7_values: array (nullable = true)
+ |    |-- element: double (containsNull = true)
+
+root
+ |-- hash_message: string (nullable = true)
+ |-- fraud_label: integer (nullable = true)
+ |-- kl_fraud_words: double (nullable = true)
+ |-- ks_fraud_words: double (nullable = true)
+ |-- entropy_fraud_words: double (nullable = true)
+ |-- kl_notfraud_words: double (nullable = true)
+ |-- ks_notfraud_words: double (nullable = true)
+ |-- entropy_notfraud_words: double (nullable = true)
+ |-- features85_type: long (nullable = true)
+ |-- features85_size: long (nullable = true)
+ |-- features85_indices: array (nullable = true)
+ |    |-- element: long (containsNull = true)
+ |-- features85_values: array (nullable = true)
+ |    |-- element: double (containsNull = true)
+ |-- ngramscounts7_type: long (nullable = true)
+ |-- ngramscounts7_size: long (nullable = true)
+ |-- ngramscounts7_indices: array (nullable = true)
+ |    |-- element: long (containsNull = true)
+ |-- ngramscounts7_values: array (nullable = true)
+ |    |-- element: double (containsNull = true)
+
+Parse progress: |█████████████████████████████████████████████████████████| 100%
+Parse progress: |█████████████████████████████████████████████████████████| 100%
+Traceback (most recent call last):
+  File "/home/siemanalyst/projects/logs-archive-production/fraud-canada-tokenizedwords/notebooks/x3-FraudCanada-AUTOML-Model-NGrams-CountVectorizer-KL-KS-Entropy.py", line 173, in <module>
+    not_fraud_label_train=h2o.H2OFrame(not_fraud_label_train_pd)
+  File "/opt/cloudera/parcels/Anaconda-5.1.0.1/lib/python3.6/site-packages/h2o/frame.py", line 108, in __init__
+    column_names, column_types, na_strings)
+  File "/opt/cloudera/parcels/Anaconda-5.1.0.1/lib/python3.6/site-packages/h2o/frame.py", line 149, in _upload_python_object
+    self._upload_parse(tmp_path, destination_frame, 1, separator, column_names, column_types, na_strings)
+  File "/opt/cloudera/parcels/Anaconda-5.1.0.1/lib/python3.6/site-packages/h2o/frame.py", line 325, in _upload_parse
+    self._parse(rawkey, destination_frame, header, sep, column_names, column_types, na_strings)
+  File "/opt/cloudera/parcels/Anaconda-5.1.0.1/lib/python3.6/site-packages/h2o/frame.py", line 331, in _parse
+    setup = h2o.parse_setup(rawkey, destination_frame, header, separator, column_names, column_types, na_strings)
+  File "/opt/cloudera/parcels/Anaconda-5.1.0.1/lib/python3.6/site-packages/h2o/h2o.py", line 567, in parse_setup
+    j = api("POST /3/ParseSetup", data=kwargs)
+  File "/opt/cloudera/parcels/Anaconda-5.1.0.1/lib/python3.6/site-packages/h2o/h2o.py", line 103, in api
+    return h2oconn.request(endpoint, data=data, json=json, filename=filename, save_to=save_to)
+  File "/opt/cloudera/parcels/Anaconda-5.1.0.1/lib/python3.6/site-packages/h2o/backend/connection.py", line 402, in request
+    return self._process_response(resp, save_to)
+  File "/opt/cloudera/parcels/Anaconda-5.1.0.1/lib/python3.6/site-packages/h2o/backend/connection.py", line 725, in _process_response
+    raise H2OResponseError(data)
+h2o.exceptions.H2OResponseError: Server error water.exceptions.H2OIllegalArgumentException:
+  Error: Cannot determine file type. for upload_8ef2c65bc01a2fe48269724bfefe48ed
+  Request: POST /3/ParseSetup
+    data: {'check_header': '1', 'source_frames': '["upload_8ef2c65bc01a2fe48269724bfefe48ed"]', 'separator': '44'}
+
+H2O session _sid_b807 closed.
+| Move Files 
+
+
+|
+Pyspark :-: x4-FraudCanada-Merge-Scoring-Data-From-Model.py
+|
+Traceback (most recent call last):
+  File "/opt/cloudera/parcels/SPARK2-2.3.0.cloudera2-1.cdh5.13.3.p0.316101/lib/spark2/python/pyspark/sql/utils.py", line 63, in deco
+    return f(*a, **kw)
+  File "/opt/cloudera/parcels/SPARK2-2.3.0.cloudera2-1.cdh5.13.3.p0.316101/lib/spark2/python/lib/py4j-0.10.6-src.zip/py4j/protocol.py", line 320, in get_return_value
+py4j.protocol.Py4JJavaError: An error occurred while calling o73.csv.
+: org.apache.spark.sql.AnalysisException: Path does not exist: hdfs://bda-ns/data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=20181215/file_prediction_20181215.csv;
+	at org.apache.spark.sql.execution.datasources.DataSource$.org$apache$spark$sql$execution$datasources$DataSource$$checkAndGlobPathIfNecessary(DataSource.scala:715)
+	at org.apache.spark.sql.execution.datasources.DataSource$$anonfun$15.apply(DataSource.scala:389)
+	at org.apache.spark.sql.execution.datasources.DataSource$$anonfun$15.apply(DataSource.scala:389)
+	at scala.collection.TraversableLike$$anonfun$flatMap$1.apply(TraversableLike.scala:241)
+	at scala.collection.TraversableLike$$anonfun$flatMap$1.apply(TraversableLike.scala:241)
+	at scala.collection.immutable.List.foreach(List.scala:381)
+	at scala.collection.TraversableLike$class.flatMap(TraversableLike.scala:241)
+	at scala.collection.immutable.List.flatMap(List.scala:344)
+	at org.apache.spark.sql.execution.datasources.DataSource.resolveRelation(DataSource.scala:388)
+	at org.apache.spark.sql.DataFrameReader.loadV1Source(DataFrameReader.scala:239)
+	at org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:227)
+	at org.apache.spark.sql.DataFrameReader.csv(DataFrameReader.scala:594)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.GatewayConnection.run(GatewayConnection.java:214)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/siemanalyst/projects/logs-archive-production/fraud-canada-tokenizedwords/notebooks/x4-FraudCanada-Merge-Scoring-Data-From-Model.py", line 84, in <module>
+    prediction_df=sqlContext.read.csv(input_file_prediction_df,header=True,inferSchema=True)
+  File "/opt/cloudera/parcels/SPARK2-2.3.0.cloudera2-1.cdh5.13.3.p0.316101/lib/spark2/python/pyspark/sql/readwriter.py", line 439, in csv
+    return self._df(self._jreader.csv(self._spark._sc._jvm.PythonUtils.toSeq(path)))
+  File "/opt/cloudera/parcels/SPARK2-2.3.0.cloudera2-1.cdh5.13.3.p0.316101/lib/spark2/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 1160, in __call__
+  File "/opt/cloudera/parcels/SPARK2-2.3.0.cloudera2-1.cdh5.13.3.p0.316101/lib/spark2/python/pyspark/sql/utils.py", line 69, in deco
+    raise AnalysisException(s.split(': ', 1)[1], stackTrace)
+pyspark.sql.utils.AnalysisException: 'Path does not exist: hdfs://bda-ns/data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=20181215/file_prediction_20181215.csv;'
+cp: `hdfs:///data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=20181215/merged_prediction_train/part-*.csv': No such file or directory
+cp: `hdfs:///data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=20181215/merged_prediction_train/merge_prediction_train_20181215.csv': No such file or directory
+|
+Pyspark :-: x5-search-discover-values-hash_message.py
+|
+19/02/10 18:14:07 WARN streaming.FileStreamSink: Error while looking for metadata directory.
+root
+ |-- hash_message: string (nullable = true)
+ |-- words: array (nullable = true)
+ |    |-- element: string (containsNull = true)
+
+Traceback (most recent call last):
+  File "/opt/cloudera/parcels/SPARK2-2.3.0.cloudera2-1.cdh5.13.3.p0.316101/lib/spark2/python/pyspark/sql/utils.py", line 63, in deco
+    return f(*a, **kw)
+  File "/opt/cloudera/parcels/SPARK2-2.3.0.cloudera2-1.cdh5.13.3.p0.316101/lib/spark2/python/lib/py4j-0.10.6-src.zip/py4j/protocol.py", line 320, in get_return_value
+py4j.protocol.Py4JJavaError: An error occurred while calling o84.csv.
+: org.apache.spark.sql.AnalysisException: Path does not exist: hdfs://bda-ns/data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=20181215/merged_prediction_train/merge_prediction_train_20181215.csv;
+	at org.apache.spark.sql.execution.datasources.DataSource$.org$apache$spark$sql$execution$datasources$DataSource$$checkAndGlobPathIfNecessary(DataSource.scala:715)
+	at org.apache.spark.sql.execution.datasources.DataSource$$anonfun$15.apply(DataSource.scala:389)
+	at org.apache.spark.sql.execution.datasources.DataSource$$anonfun$15.apply(DataSource.scala:389)
+	at scala.collection.TraversableLike$$anonfun$flatMap$1.apply(TraversableLike.scala:241)
+	at scala.collection.TraversableLike$$anonfun$flatMap$1.apply(TraversableLike.scala:241)
+	at scala.collection.immutable.List.foreach(List.scala:381)
+	at scala.collection.TraversableLike$class.flatMap(TraversableLike.scala:241)
+	at scala.collection.immutable.List.flatMap(List.scala:344)
+	at org.apache.spark.sql.execution.datasources.DataSource.resolveRelation(DataSource.scala:388)
+	at org.apache.spark.sql.DataFrameReader.loadV1Source(DataFrameReader.scala:239)
+	at org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:227)
+	at org.apache.spark.sql.DataFrameReader.csv(DataFrameReader.scala:594)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.GatewayConnection.run(GatewayConnection.java:214)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/siemanalyst/projects/logs-archive-production/fraud-canada-tokenizedwords/notebooks/x5-search-discover-values-hash_message.py", line 80, in <module>
+    merged_df=sqlContext.read.csv(input_merged_prediction_train,header=True,inferSchema=True,multiLine=True)\
+  File "/opt/cloudera/parcels/SPARK2-2.3.0.cloudera2-1.cdh5.13.3.p0.316101/lib/spark2/python/pyspark/sql/readwriter.py", line 439, in csv
+    return self._df(self._jreader.csv(self._spark._sc._jvm.PythonUtils.toSeq(path)))
+  File "/opt/cloudera/parcels/SPARK2-2.3.0.cloudera2-1.cdh5.13.3.p0.316101/lib/spark2/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 1160, in __call__
+  File "/opt/cloudera/parcels/SPARK2-2.3.0.cloudera2-1.cdh5.13.3.p0.316101/lib/spark2/python/pyspark/sql/utils.py", line 69, in deco
+    raise AnalysisException(s.split(': ', 1)[1], stackTrace)
+pyspark.sql.utils.AnalysisException: 'Path does not exist: hdfs://bda-ns/data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=20181215/merged_prediction_train/merge_prediction_train_20181215.csv;'
+cp: `hdfs:///data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=20181215/no_match_hash_message/part-*.csv': No such file or directory
+cp: `hdfs:///data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=20181215/no_match_hash_message/TEMP_no_match_hash_message_20181215.csv': No such file or directory
+ NO_MATCH_NUM_FRAUD_RECORDS= : 
+0
+| Job Finished  ___;

@@ -100,6 +100,7 @@ notfraud_df=notfraud_file\
 .withColumn('fraud_label',lit(0).cast('int'))\
 .withColumn('hash_message',F.sha2(col('message'),512)).groupby(col('hash_message'))\
 .agg(F.first(col('fraud_label')).alias('fraud_label'),F.first(col('words')).alias('words'),F.first(col('message')).alias('message'))\
+.orderBy(rand())\
 .persist(pyspark.StorageLevel.MEMORY_AND_DISK_2)
 notfraud_df.printSchema()
 # Only the Not-Fraud are randomly sorted
@@ -107,7 +108,6 @@ notfraud_df.printSchema()
 from pyspark.sql.functions import rand
 #
 df_notfraud_words = notfraud_df.filter("message IS NOT NULL").select(col('fraud_label'),col('hash_message'),col('words'))\
-.orderBy(rand())\
 .persist(pyspark.StorageLevel.MEMORY_AND_DISK_2)
 df_notfraud_words.printSchema()
 #
@@ -129,9 +129,10 @@ df_words = fraud_df.filter("message IS NOT NULL").select(col('fraud_label'),col(
 .persist(pyspark.StorageLevel.MEMORY_AND_DISK_2)
 df_words.printSchema()
 #
-# Limit to 300,000 Daily Not-Fraud Records input in the nGrams Graph analysis
+# Limit to 500,000 Daily Not-Fraud Records input in the nGrams Graph analysis
+# As the limit of Ngrams vectors is 264k "ngramscounts_7":{"type":0,"size":262144 ....
 #
-result_fraud_nofraud_words = df_words.union(df_notfraud_words).limit(300000)\
+result_fraud_nofraud_words = df_words.union(df_notfraud_words).limit(500000)\
 .persist(pyspark.StorageLevel.MEMORY_AND_DISK_SER)
 ## Register Generic Functions
 # -----------------------------------------------------------------------------
