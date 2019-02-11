@@ -1,0 +1,14 @@
+hash_message,id1,predict,p0,p1,fraud_label,kl_fraud_words,ks_fraud_words,entropy_fraud_words,kl_notfraud_words,ks_notfraud_words,entropy_notfraud_words,features85_type,features85_size,ngramscounts7_type,ngramscounts7_size,features85_list_indices,features85_list_values,ngramscounts7_list_indices,ngramscounts7_list_values,match_no_match,words_conc
+9cbcde24344cd226f79ece77e165938602decef50e63303f9a8ad0606fccfd8d0cd91971de8d022470a9e4f7a1131c93ee372d2437e9116fc6a85688d58e7e96,2120,1,0.999999994125597,5.874402969845669E-9,0,5496.47265625,0.06431978195905685,0.07587534189224243,5527.0,0.021853065118193623,0.06801644712686539,0,85,0,262144,"[ 0  1  2  3  4  5  6  8 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
+ 26 27 28 29 30 31 32 33 34 35 36 37 38 39 45 46 47 48 49 50 52 53 54 55
+ 56 67 74 75 76 77 78 79 82]","[2. 2. 3. 4. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1.]","[     0      1      2      3      4      5      9     10     11     16
+     17     18     19     24     25     26     27     28     29     32
+    105    106    107    108    109    230    231    232    233    234
+    235    245    442    443    456    457    458    459    460    461
+    580    658    702    703    870    871    872   1839   1840   1842
+   1845   1846   2366   3911   3921   7057   7150   7382   7401   7414
+  12693  12839 111110 113546 113891 118197 131128]","[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]",no_match_predict_fraud,folivesportcommoninfrastructurehttplogginghandlerroot15c377a9622577b64da2f60b7121e2594requestmethodoptionsurlhttpsislcadazncommislv2playbackassetid18d3u3vz6bs941vh4bkvwpzgl5eventidoxe0ogwxp8r5l8w0ngti6k62formatm3uplayeriddazn007eb08181securetruelanguagecodeenlatitudenulllongitudenullplatformwebmanufacturermodelmtalanguagecodedeclientipnullheadersuseragentmozilla50macintoshintelmacosx10_11_6applewebkit605115khtmllikegeckoversion1112safari605115typeinresponsestatuscode200reasonphraseokduration0

@@ -82,9 +82,10 @@ merged_df=sqlContext.read.csv(input_merged_prediction_train,header=True,inferSch
 merged_df.printSchema()
 #
 join_results_df=merged_df.join(notfraud_df, "hash_message" )\
-.withColumn('words_conc',F.concat_ws('',col('words')).cast('string')).drop('words')\
+.withColumn('words_conc',F.concat_ws(' ',col('words')).cast('string')).drop('words')\
 .persist(pyspark.StorageLevel.MEMORY_AND_DISK_2)
 join_results_df.printSchema()
+#
 #
 join_results_df.coalesce(1).write.csv(output_no_match,header=True)
 #
