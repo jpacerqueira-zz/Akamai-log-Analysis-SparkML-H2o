@@ -321,7 +321,7 @@ not_fraud_label_test=h2o.H2OFrame(not_fraud_label_test_pd)
 # RBIND "Merge" all of vars internal subset of data with fraud and with not_fraud
 # function merge() doesn't work if both H2O/dataframes have same variables
 #
-train = fraud_label_train..rbind(not_fraud_label_train)
+train = fraud_label_train.rbind(not_fraud_label_train)
 test = fraud_label_test.rbind(not_fraud_label_test)
 #
 #  Unpersist Dataframes indivilually releasing memmory from Cluster Nodes
