@@ -39,31 +39,40 @@ process_date = processdate
 if not process_date:
     process_date = "20181231"
 #
-#
 # -----------------------------------------------------------------------------
 # -----------------------------------------------------------------------------
 # Execute SparkSession Fraud-canada-tokenizedwords-ngram85.py
 #
+def last_8_tokens(words):
+    return ''.join(words[-8:])
+#       
+last_8_tokens_udf = udf(last_8_tokens, StringType())  
 # 
-sc = pyspark.SparkContext(appName="Daily-TokenizedWords-Ngram-85-StagedParquet")
+sc = pyspark.SparkContext(appName="Daily-TokenizedWords-ExpandViewer-Ngram-85-StagedParquet")
 sqlContext = SQLContext(sc)
 # 
 #
 #
-input_file1="hdfs:///data/staged/ott_dazn/logs-archive-production/parquet/dt="+process_date+"/*.parquet"
+input_file1="hdfs:///data/staged/ott_dazn/fraud-canada-tokenizedwords/dt="+process_date
+#
 output_file1="hdfs:///data/staged/ott_dazn/fraud-canada-tokenizedwords/dt="+process_date
 #
+input_file2="hdfs:///data/staged/ott_dazn/logs-archive-production/parquet/dt="+process_date+"/*.parquet"
 #
-#input_file2="hdfs:///data/staged/ott_dazn/fraud-canada-tokenizedwords/dt="+process_date+"/*.json"
-#output_file2="hdfs:///data/staged/ott_dazn/fraud-canada-tokenizedwords-ngram-85/dt="+process_date
+df1=sqlContext.read.json(input_file1)
+count_daily_tokenizer=df1.count()
 #
+# Close Job if Daily Tokenizer is Empty
+if (count_daily_tokenizer == 0):
+    sc.stop()
+    print("Daily Counter Tokenizer "+str(count_daily_tokenizer))
+else :
+    print("Daily Counter Tokenizer "+str(count_daily_tokenizer))
 #
-df2= sqlContext.read.parquet(input_file1)
+df2=sqlContext.read.parquet(input_file2)
 df2.printSchema()
 #
 df3 = df2.filter(df2.message.contains('\"Url\":\"https://isl-ca.dazn.com/misl/v2/Playback'))\
-    .filter(df2.message.contains('&Format=MPEG-DASH&'))\
-    .filter(df2.message.contains('\"User-Agent\":\"Mozilla/5.0,(Macintosh; Intel Mac OS X 10_12_6),AppleWebKit/605.1.15,(KHTML, like Gecko),Version/11.1.2,Safari/605.1.15\"},'))\
     .filter(df2.message.contains(',\"Response\":{\"StatusCode\":200,\"ReasonPhrase\":\"OK\",'))
 df3.printSchema()
 df4 = df3.withColumn("messagecut", expr("substring(message, locate('|Livesport.WebApi.Controllers.Playback.PlaybackV2Controller|',message)+60 , length(message)-1)"))
@@ -71,9 +80,28 @@ df4 = df3.withColumn("messagecut", expr("substring(message, locate('|Livesport.W
 #val regexTokenizer = new RegexTokenizer().setInputCol("messagecut").setOutputCol("words").setPattern("\\w+|").setGaps(false)
 regexTokenizer = RegexTokenizer(minTokenLength=1, gaps=False, pattern='\\w+|', inputCol="messagecut", outputCol="words", toLowercase=True)
 #
-tokenized = regexTokenizer.transform(df4)
+## Extract Last 8 words
+## my_list[-8:]
+tokenized = regexTokenizer.transform(df4)\
+.withColumn('last_8_tokens',last_8_tokens_udf(col('words')))\
+.persist(pyspark.StorageLevel.MEMORY_AND_DISK_2)
+#
 tokenized.printSchema()
-tokenized.coalesce(1).write.json(output_file1)
+#
+tokens_to_match=df1\
+.withColumn('last_8_tokens',last_8_tokens_udf(col('words')))\
+.persist(pyspark.StorageLevel.MEMORY_AND_DISK_2)
+#
+tokens_to_match.printSchema()
+##
+### df1.join(df2, df1("col1") === df2("col1"), "left_outer")
+##  a LEFT SEMI JOIN will only return one row from the left, even if there are multiple matches in the right. An INNER JOIN will return multiple rows if there are multiple matching on the right
+#
+new_expand_match=tokenized.join(tokens_to_match, tokenized.last_8_tokens == tokens_to_match.last_8_tokens , 'leftsemi')\
+.select(tokenized.metadata, tokenized.logzio_id, tokenized.beat, tokenized.host, tokenized.it, tokenized.logzio_codec, tokenized.message, tokenized.offset, tokenized.source, tokenized.tags, tokenized.type, tokenized.messagecut , tokenized.words )
+#
+new_expand_match.printSchema()
+new_expand_match.coalesce(1).write.mode('append').json(output_file1)
 #
 #df5 = sqlContext.read.json(input_file2).filter("message IS NOT NULL")
 #

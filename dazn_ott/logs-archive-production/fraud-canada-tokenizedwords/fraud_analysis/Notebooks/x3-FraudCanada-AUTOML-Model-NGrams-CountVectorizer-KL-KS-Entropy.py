@@ -90,7 +90,50 @@ print("Start Training Model NGrams Vectors KS KL Entropty")
 fraud_label_read_file=sqlContext.read.json(output_file1).repartition(5)
 fraud_label_read_file.printSchema()
 #
+'''
+root
+ |-- entropy_fraud_words: double (nullable = true)
+ |-- entropy_notfraud_words: double (nullable = true)
+ |-- features_85: struct (nullable = true)
+ |    |-- indices: array (nullable = true)
+ |    |    |-- element: long (containsNull = true)
+ |    |-- size: long (nullable = true)
+ |    |-- type: long (nullable = true)
+ |    |-- values: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |-- fraud_label: long (nullable = true)
+ |-- hash_message: string (nullable = true)
+ |-- kl_fraud_words: double (nullable = true)
+ |-- kl_notfraud_words: double (nullable = true)
+ |-- ks_fraud_words: double (nullable = true)
+ |-- ks_notfraud_words: double (nullable = true)
+ |-- ngramscounts_7: struct (nullable = true)
+ |    |-- indices: array (nullable = true)
+ |    |    |-- element: long (containsNull = true)
+ |    |-- size: long (nullable = true)
+ |    |-- type: long (nullable = true)
+ |    |-- values: array (nullable = true)
+ |    |    |-- element: double (containsNull = true)
+ |-- words_conc: string (nullable = true)
+'''
+#
 fraud_label_read_df=fraud_label_read_file\
+.filter("hash_message IS NOT NULL")\
+.filter("fraud_label IS NOT NULL")\
+.filter("kl_fraud_words IS NOT NULL")\
+.filter("ks_fraud_words IS NOT NULL")\
+.filter("entropy_fraud_words IS NOT NULL")\
+.filter("kl_notfraud_words IS NOT NULL")\
+.filter("ks_notfraud_words IS NOT NULL")\
+.filter("entropy_notfraud_words IS NOT NULL")\
+.filter("features_85.type IS NOT NULL")\
+.filter("features_85.size IS NOT NULL")\
+.filter("features_85.indices IS NOT NULL")\
+.filter("features_85.values IS NOT NULL")\
+.filter("ngramscounts_7.type IS NOT NULL")\
+.filter("ngramscounts_7.size IS NOT NULL")\
+.filter("ngramscounts_7.indices IS NOT NULL")\
+.filter("ngramscounts_7.values IS NOT NULL")\
 .select(col('hash_message').cast('string'),col('fraud_label').cast('int'),\
         col('kl_fraud_words').cast('double'),col('ks_fraud_words').cast('double'),\
         col('entropy_fraud_words').cast('double'),\
@@ -106,6 +149,30 @@ fraud_label_read_df=fraud_label_read_file\
         col('ngramscounts_7.values').alias('ngramscounts7_values'))
 fraud_label_read_df.printSchema()
 #
+'''
+root
+ |-- hash_message: string (nullable = true)
+ |-- fraud_label: integer (nullable = true)
+ |-- kl_fraud_words: double (nullable = true)
+ |-- ks_fraud_words: double (nullable = true)
+ |-- entropy_fraud_words: double (nullable = true)
+ |-- kl_notfraud_words: double (nullable = true)
+ |-- ks_notfraud_words: double (nullable = true)
+ |-- entropy_notfraud_words: double (nullable = true)
+ |-- features85_type: long (nullable = true)
+ |-- features85_size: long (nullable = true)
+ |-- features85_indices: array (nullable = true)
+ |    |-- element: long (containsNull = true)
+ |-- features85_values: array (nullable = true)
+ |    |-- element: double (containsNull = true)
+ |-- ngramscounts7_type: long (nullable = true)
+ |-- ngramscounts7_size: long (nullable = true)
+ |-- ngramscounts7_indices: array (nullable = true)
+ |    |-- element: long (containsNull = true)
+ |-- ngramscounts7_values: array (nullable = true)
+ |    |-- element: double (containsNull = true)
+'''
+#
 # ABOVE ARE CASE ISSUES on struct Struct of features_85 and ngramscounts_7 
 # Both cares conversion to DF valide type list
 # Flat vars for each, individually and seperately from the original struct
@@ -114,9 +181,42 @@ fraud_label_read_df.printSchema()
 #
 #
 fraud_fraud_label_read1_df=fraud_label_read_df.filter("fraud_label=1").repartition(1)\
+.filter("hash_message IS NOT NULL")\
+.filter("fraud_label IS NOT NULL")\
+.filter("kl_fraud_words IS NOT NULL")\
+.filter("ks_fraud_words IS NOT NULL")\
+.filter("entropy_fraud_words IS NOT NULL")\
+.filter("kl_notfraud_words IS NOT NULL")\
+.filter("ks_notfraud_words IS NOT NULL")\
+.filter("entropy_notfraud_words IS NOT NULL")\
+.filter("features85_type IS NOT NULL")\
+.filter("features85_size IS NOT NULL")\
+.filter("features85_indices IS NOT NULL")\
+.filter("features85_values IS NOT NULL")\
+.filter("ngramscounts7_type IS NOT NULL")\
+.filter("ngramscounts7_size IS NOT NULL")\
+.filter("ngramscounts7_indices IS NOT NULL")\
+.filter("ngramscounts7_values IS NOT NULL")\
 .persist(pyspark.StorageLevel.MEMORY_AND_DISK_2)
 #
+#
 notfraud_fraud_label_read1_df=fraud_label_read_df.filter("fraud_label=0").repartition(1)\
+.filter("hash_message IS NOT NULL")\
+.filter("fraud_label IS NOT NULL")\
+.filter("kl_fraud_words IS NOT NULL")\
+.filter("ks_fraud_words IS NOT NULL")\
+.filter("entropy_fraud_words IS NOT NULL")\
+.filter("kl_notfraud_words IS NOT NULL")\
+.filter("ks_notfraud_words IS NOT NULL")\
+.filter("entropy_notfraud_words IS NOT NULL")\
+.filter("features85_type IS NOT NULL")\
+.filter("features85_size IS NOT NULL")\
+.filter("features85_indices IS NOT NULL")\
+.filter("features85_values IS NOT NULL")\
+.filter("ngramscounts7_type IS NOT NULL")\
+.filter("ngramscounts7_size IS NOT NULL")\
+.filter("ngramscounts7_indices IS NOT NULL")\
+.filter("ngramscounts7_values IS NOT NULL")\
 .persist(pyspark.StorageLevel.MEMORY_AND_DISK_2)
 #
 fraud_fraud_label_read1_df.printSchema()
@@ -156,10 +256,12 @@ drop_list_cols=['features85_indices','features85_values','ngramscounts7_indices'
 from pyspark.sql.functions import rand
 #
 #
-fraud_label_train_pd_rand=fraud_fraud_label_read1_df.limit(50000)\
-.coalesce(1).orderBy(rand()).persist(pyspark.StorageLevel.MEMORY_AND_DISK_SER)
+fraud_label_train_pd_rand=fraud_fraud_label_read1_df\
+.coalesce(1).orderBy(rand()).limit(5000).persist(pyspark.StorageLevel.MEMORY_AND_DISK_2)
 #
-fraud_label_train_pd=fraud_label_train_pd_rand.limit(3300).toPandas()\
+fraud_label_train_pd_rand.printSchema()
+#
+fraud_label_train_pd=fraud_label_train_pd_rand.limit(3000).toPandas()\
 .assign(features85_list_indices=lambda x: x['features85_indices'].apply(np.ravel),\
         features85_list_values=lambda x: x['features85_values'].apply(np.ravel),\
         ngramscounts7_list_indices=lambda x: x['ngramscounts7_indices'].apply(np.ravel),\
@@ -168,10 +270,12 @@ fraud_label_train_pd=fraud_label_train_pd_rand.limit(3300).toPandas()\
 #
 fraud_label_train=h2o.H2OFrame(fraud_label_train_pd)
 #
-fraud_label_test_pd_rand=fraud_fraud_label_read1_df.limit(50000)\
-.coalesce(1).orderBy(rand()).persist(pyspark.StorageLevel.MEMORY_AND_DISK_SER)
+fraud_label_test_pd_rand=fraud_fraud_label_read1_df\
+.coalesce(1).orderBy(rand()).limit(5000).persist(pyspark.StorageLevel.MEMORY_AND_DISK_2)
 #
-fraud_label_test_pd=fraud_label_test_pd_rand.limit(500).toPandas()\
+fraud_label_test_pd_rand.printSchema()
+#
+fraud_label_test_pd=fraud_label_test_pd_rand.limit(800).toPandas()\
 .assign(features85_list_indices=lambda x: x['features85_indices'].apply(np.ravel),\
         features85_list_values=lambda x: x['features85_values'].apply(np.ravel),\
         ngramscounts7_list_indices=lambda x: x['ngramscounts7_indices'].apply(np.ravel),\
@@ -180,11 +284,12 @@ fraud_label_test_pd=fraud_label_test_pd_rand.limit(500).toPandas()\
 #
 fraud_label_test=h2o.H2OFrame(fraud_label_test_pd)
 #
+not_fraud_label_train_pd_rand=notfraud_fraud_label_read1_df\
+.coalesce(1).orderBy(rand()).limit(5000).persist(pyspark.StorageLevel.MEMORY_AND_DISK_2)
 #
-not_fraud_label_train_pd_rand=notfraud_fraud_label_read1_df.limit(50000)\
-.coalesce(1).orderBy(rand()).persist(pyspark.StorageLevel.MEMORY_AND_DISK_SER)
+not_fraud_label_train_pd_rand.printSchema()
 #
-not_fraud_label_train_pd=not_fraud_label_train_pd_rand.limit(3300).toPandas()\
+not_fraud_label_train_pd=not_fraud_label_train_pd_rand.limit(3000).toPandas()\
 .assign(features85_list_indices=lambda x: x['features85_indices'].apply(np.ravel),\
         features85_list_values=lambda x: x['features85_values'].apply(np.ravel),\
         ngramscounts7_list_indices=lambda x: x['ngramscounts7_indices'].apply(np.ravel),\
@@ -193,8 +298,10 @@ not_fraud_label_train_pd=not_fraud_label_train_pd_rand.limit(3300).toPandas()\
 #
 not_fraud_label_train=h2o.H2OFrame(not_fraud_label_train_pd)
 #
-not_fraud_label_test_pd_rand=notfraud_fraud_label_read1_df.limit(50000)\
-.coalesce(1).orderBy(rand()).persist(pyspark.StorageLevel.MEMORY_AND_DISK_SER)
+not_fraud_label_test_pd_rand=notfraud_fraud_label_read1_df\
+.coalesce(1).orderBy(rand()).limit(5000).persist(pyspark.StorageLevel.MEMORY_AND_DISK_2)
+#
+not_fraud_label_test_pd_rand.printSchema()
 #
 not_fraud_label_test_pd=not_fraud_label_test_pd_rand.limit(800).toPandas()\
 .assign(features85_list_indices=lambda x: x['features85_indices'].apply(np.ravel),\
@@ -214,7 +321,7 @@ not_fraud_label_test=h2o.H2OFrame(not_fraud_label_test_pd)
 # RBIND "Merge" all of vars internal subset of data with fraud and with not_fraud
 # function merge() doesn't work if both H2O/dataframes have same variables
 #
-train = fraud_label_train.rbind(not_fraud_label_train)
+train = fraud_label_train..rbind(not_fraud_label_train)
 test = fraud_label_test.rbind(not_fraud_label_test)
 #
 #  Unpersist Dataframes indivilually releasing memmory from Cluster Nodes

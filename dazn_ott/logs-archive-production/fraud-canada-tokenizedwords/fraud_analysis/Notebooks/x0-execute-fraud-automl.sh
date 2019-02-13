@@ -1,5 +1,6 @@
 #!/bin/bash
 MY_FOLDER="/home/siemanalyst/projects/logs-archive-production/fraud-canada-tokenizedwords/notebooks"
+MY_FOLDER_AUX="/home/siemanalyst/projects/logs-archive-production/fraud-canada-tokenizedwords/"
 ##
 ### MODEL: x ngrams75
 #
@@ -39,10 +40,14 @@ hdfs dfs -rm -r -f -skipTrash hdfs:///data/staged/ott_dazn/advanced-model-data/t
 hdfs dfs -rm -r -f -skipTrash hdfs:///data/staged/ott_dazn/advanced-model-data/the-most-frequent-notfraud-hash_message/dt=${DATE_V1} >> $JOB_LOG_FILE 2>&1
 #
 # x1 Job Clean Not-Fraud and Ngrams/Features/Vectors
+NUM_DAILY_FRAUD_RECORDS=$(cat $MY_FOLDER_AUX/fraud_data/${DATE_V1}.json | wc -l )
+echo "NUM_DAILY_FRAUD_RECORDS : " >> $JOB_LOG_FILE
+echo "$NUM_DAILY_FRAUD_RECORDS" >> $JOB_LOG_FILE 
+echo "|___|" >> $JOB_LOG_FILE 2>&1
 echo "|" >> $JOB_LOG_FILE 2>&1
 echo "Pyspark :-: x1-FraudCanada-Model-NGrams-CountVectorizer-KL-KS-Entropy-Model-CleanData.py" >> $JOB_LOG_FILE 2>&1
 echo "|" >> $JOB_LOG_FILE 2>&1
-spark2-submit --master yarn --deploy-mode client --conf spark.debug.maxToStringFields=1500 $MY_FOLDER/x1-FraudCanada-Model-NGrams-CountVectorizer-KL-KS-Entropy-Model-CleanData.py --datev1 ${DATE_V1} >> $JOB_LOG_FILE 2>&1
+spark2-submit --master yarn --deploy-mode client --conf spark.debug.maxToStringFields=1500 $MY_FOLDER/x1-FraudCanada-Model-NGrams-CountVectorizer-KL-KS-Entropy-Model-CleanData.py --datev1 ${DATE_V1} --fraudnrdaily $NUM_DAILY_FRAUD_RECORDS >> $JOB_LOG_FILE 2>&1
 ## x2 Job
 echo "|" >> $JOB_LOG_FILE 2>&1
 echo "Pyspark :-: x2-FraudCanada-Model-NGrams-CountVectorizer-KL-KS-Entropy-Model-Labeling.py" >> $JOB_LOG_FILE 2>&1
@@ -91,12 +96,14 @@ then
   # for zero records fraud
   echo "| Job Finished  ___;" >> $JOB_LOG_FILE 2>&1
   hdfs dfs -copyFromLocal -f $JOB_LOG_FILE hdfs:///data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=${DATE_V1}
+  rm -r -f $JOB_LOG_FILE
   exit 1
 else
   # for any records fraud
   hdfs dfs -cp hdfs:///data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=${DATE_V1}/no_match_hash_message/TEMP_no_match_hash_message_${DATE_V1}.csv hdfs:///data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=${DATE_V1}/no_match_hash_message/no_match_hash_message_${DATE_V1}.csv >> $JOB_LOG_FILE 2>&1
   echo "| Job Finished  ___;" >> $JOB_LOG_FILE 2>&1
   hdfs dfs -copyFromLocal -f $JOB_LOG_FILE hdfs:///data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=${DATE_V1}
+  rm -r -f $JOB_LOG_FILE
   exit 0
 fi
 #

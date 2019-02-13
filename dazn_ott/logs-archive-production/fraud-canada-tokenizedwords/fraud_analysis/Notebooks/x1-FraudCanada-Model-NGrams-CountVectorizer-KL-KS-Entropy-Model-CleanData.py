@@ -15,6 +15,7 @@ from pyspark.sql.types import IntegerType
 from pyspark.sql.types import FloatType
 from pyspark.sql.functions import udf
 from pyspark.sql.functions import *
+from pyspark.sql.types import StringType
 from scipy.stats import kstest
 from scipy import stats
 #
@@ -47,19 +48,30 @@ import argparse
 ## Parse date_of execution
 parser = argparse.ArgumentParser()
 parser.add_argument("--datev1", help="Execution Date")
+parser.add_argument("--fraudnrdaily", help="Execution Date")
 args = parser.parse_args()
 if args.datev1:
     processdate = args.datev1
+#    
 # GENERAL PREPARATION SCRIPT
-#
 #  Date in format YYYYMMDD
 process_date = processdate
 if not process_date:
     process_date = "20190122"
 #
+#
+if args.fraudnrdaily:
+    fraud_number_records_daily = args.fraudnrdaily
+if not fraud_number_records_daily:
+    fraud_number_records_daily = "0"
+#
+print("fraud_number_records_daily="+fraud_number_records_daily)
 #process_date="20190122"
 #
-input_file1_playback_fraud="hdfs:///data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=*/*.json"
+# Pick only Expand Files from x.2019
+## Pick all Additional 2019 Fraud patterns YYYMMMDD.JSON files 
+input_file1_playback_fraud_paths=['hdfs:///data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=2019*/part-*.json','hdfs:///data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=2019*/2019*.json','hdfs:///data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=2019*/expand-2019*.json']
+#
 output_file1="hdfs:///data/staged/ott_dazn/advanced-model-data/fraud-notfraud-canada-tokenizedwords-ngrams-7-features-85/dt="+process_date
 #
 input_file2_playback_not_fraud="hdfs:///data/staged/ott_dazn/logs-archive-production/parquet/dt="+process_date+"/*.parquet"
@@ -72,11 +84,19 @@ output_most_frequent_fraud_df="hdfs:///data/staged/ott_dazn/advanced-model-data/
 #
 output_most_frequent_notfraud_df="hdfs:///data/staged/ott_dazn/advanced-model-data/the-most-frequent-notfraud-hash_message/dt="+process_date
 #
+##### AUX. Functions
+#
+def last_8_tokens(words):
+    return ''.join(words[-8:])
+#       
+last_8_tokens_udf = udf(last_8_tokens, StringType())  
+#
+#####
 #  FILTER Non-Fraud AND LABEL
 from pyspark.sql import functions as F
 #
 #
-df2= sqlContext.read.parquet(input_file2_playback_not_fraud)
+df2= sqlContext.read.parquet(input_file2_playback_not_fraud).repartition(50)
 df2.printSchema()
 #
 df3 = df2.filter(" (message LIKE '%\"Url\":\"https://isl-ca.dazn.com/misl/v2/Playback%') AND (message LIKE '%,\"Response\":{\"StatusCode\":200,\"ReasonPhrase\":\"OK\",%') AND ( ( (message LIKE '%&Format=MPEG-DASH&%' OR message LIKE '%&Format=M3U&%') ) OR (message NOT LIKE '%\"User-Agent\":\"Mozilla/5.0,(Macintosh; Intel Mac OS X 10_12_6),AppleWebKit/605.1.75,(KHTML, like Gecko),Version/11.1.2,Safari/605.1.75\"},%')   )  ")
@@ -87,12 +107,35 @@ df4 = df3.withColumn("messagecut", expr("substring(message, locate('|Livesport.W
 #
 regexTokenizer = RegexTokenizer(minTokenLength=1, gaps=False, pattern='\\w+|', inputCol="messagecut", outputCol="words", toLowercase=True)
 #
-tokenized = regexTokenizer.transform(df4)
+tokenized = regexTokenizer.transform(df4)\
+.filter("message IS NOT NULL").filter("words IS NOT NULL")\
+.withColumn('last_8_tokens',last_8_tokens_udf(col('words')))\
+.persist(pyspark.StorageLevel.MEMORY_AND_DISK_2)
 tokenized.printSchema()
-tokenized.coalesce(1).write.json(output_file2)
+#
+#  Exclude from NotFraud all recordds from ViwerID in Fraud source
+if ((fraud_number_records_daily == "0")|(fraud_number_records_daily == "")):
+    print("No join()")
+    tokenized_validated = tokenized.drop(col('last_8_tokens')).orderBy(rand()).limit(500000)
+    tokenized_validated.printSchema()
+else:
+    print("Yes join()")
+    input_file1="hdfs:///data/staged/ott_dazn/fraud-canada-tokenizedwords/dt="+process_date
+    #
+    df1=sqlContext.read.json(input_file1).repartition(50)
+    tokens_to_match=df1.filter("message IS NOT NULL").filter("words IS NOT NULL")\
+    .withColumn('last_8_tokens',last_8_tokens_udf(col('words')))\
+    .persist(pyspark.StorageLevel.MEMORY_AND_DISK_2)
+    # Left outer so notfraud excludes all times viwerID of Frua dwas used in that day
+    new_expand_match=tokenized.join(tokens_to_match, tokenized.last_8_tokens == tokens_to_match.last_8_tokens , 'left_outer')\
+.select(tokenized.metadata, tokenized.logzio_id, tokenized.beat, tokenized.host, tokenized.it, tokenized.logzio_codec, tokenized.message, tokenized.offset, tokenized.source, tokenized.tags, tokenized.type, tokenized.messagecut , tokenized.words )
+    tokenized_validated = new_expand_match.orderBy(rand()).limit(500000)
+    tokenized_validated.printSchema()
+#
+tokenized_validated.coalesce(1).write.json(output_file2)
 # Tokenize NON-Fraud-LABEL
 # hash the message de-duplicate those records
-notfraud_file=sqlContext.read.json(input_file3).repartition(500)
+notfraud_file=sqlContext.read.json(input_file3).repartition(50)
 notfraud_file.printSchema()
 #
 notfraud_df=notfraud_file\
@@ -114,7 +157,7 @@ df_notfraud_words.printSchema()
 # FILTER FRAUD AND LABEL 
 # Join with Internal Curation Data in urltopredict staged folder
 # hash the message de-duplicate those records
-fraud_file=sqlContext.read.json(input_file1_playback_fraud).repartition(500)
+fraud_file=sqlContext.read.json(input_file1_playback_fraud_paths*).repartition(50)
 fraud_file.printSchema()
 #
 fraud_df=fraud_file\
@@ -130,7 +173,7 @@ df_words = fraud_df.filter("message IS NOT NULL").select(col('fraud_label'),col(
 df_words.printSchema()
 #
 # Limit to 250,000 Daily Not-Fraud Records input in the nGrams Graph analysis
-# As the limit of Ngrams vectors is 264k "ngramscounts_7":{"type":0,"size":262144 ....
+# As the limit of Ngrams _7 vectors is 264k "ngramscounts_7":{"type":0,"size":262144 ....
 #
 result_fraud_nofraud_words = df_words.union(df_notfraud_words).limit(250000)\
 .persist(pyspark.StorageLevel.MEMORY_AND_DISK_SER)
