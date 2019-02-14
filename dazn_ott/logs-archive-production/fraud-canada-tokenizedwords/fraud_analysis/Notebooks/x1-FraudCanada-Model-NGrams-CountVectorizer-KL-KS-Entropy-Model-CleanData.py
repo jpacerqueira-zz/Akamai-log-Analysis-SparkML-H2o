@@ -70,7 +70,7 @@ print("fraud_number_records_daily="+fraud_number_records_daily)
 #
 # Pick only Expand Files from x.2019
 ## Pick all Additional 2019 Fraud patterns YYYMMMDD.JSON files 
-input_file1_playback_fraud_paths=['hdfs:///data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=2019*/part-*.json','hdfs:///data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=2019*/2019*.json','hdfs:///data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=2019*/expand-2019*.json']
+input_file1_playback_fraud="hdfs:///data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=2019*/*.json"
 #
 output_file1="hdfs:///data/staged/ott_dazn/advanced-model-data/fraud-notfraud-canada-tokenizedwords-ngrams-7-features-85/dt="+process_date
 #
@@ -157,7 +157,7 @@ df_notfraud_words.printSchema()
 # FILTER FRAUD AND LABEL 
 # Join with Internal Curation Data in urltopredict staged folder
 # hash the message de-duplicate those records
-fraud_file=sqlContext.read.json(input_file1_playback_fraud_paths*).repartition(50)
+fraud_file=sqlContext.read.json(input_file1_playback_fraud).repartition(50)
 fraud_file.printSchema()
 #
 fraud_df=fraud_file\
