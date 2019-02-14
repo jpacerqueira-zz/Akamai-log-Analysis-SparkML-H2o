@@ -75,17 +75,17 @@ if not process_date:
 sc = pyspark.SparkContext(appName="FraudCanada-Merge-Scoring-Data-From-Model")
 sqlContext = SQLContext(sc)
 #
-input_file_prediction_df="hdfs:///data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85//dt="+process_date+"/file_prediction_"+process_date+".csv"
+input_file_prediction_test_train_df="hdfs:///data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt="+process_date+"/file_prediction_t*_"+process_date+".csv"
 #
-input_file_train_df="hdfs:///data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85//dt="+process_date+"/file_train_"+process_date+".csv"
+input_file_test_train_df="hdfs:///data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt="+process_date+"/file_t*_"+process_date+".csv"
 #
-output_file1="hdfs:///data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85//dt="+process_date+"/merged_prediction_train"
+output_file1="hdfs:///data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt="+process_date+"/merged_prediction_train"
 #
-prediction_df=sqlContext.read.csv(input_file_prediction_df,header=True,inferSchema=True)
+prediction_df=sqlContext.read.csv(input_file_prediction_test_train_df,header=True,inferSchema=True)
 prediction_df = prediction_df.withColumn("id1", monotonically_increasing_id())
 prediction_df.printSchema()
 #
-train_df=sqlContext.read.csv(input_file_train_df,header=True,inferSchema=True,multiLine=True)
+train_df=sqlContext.read.csv(input_file_test_train_df,header=True,inferSchema=True,multiLine=True)
 train_df = train_df.withColumn("id1", monotonically_increasing_id())
 train_df.printSchema()
 #
@@ -93,7 +93,7 @@ merged_prediction_train_df3 = prediction_df.join(train_df, "id1", "outer") #.dro
 #
 merged_prediction_train_df3\
 .withColumn("match_no_match",match_udf(col('predict').cast('int'),col('fraud_label').cast('int')))\
-.sort(merged_prediction_train_df3.id1.desc()).coalesce(1).write.csv(output_file1,header=True)
+.sort(merged_prediction_train_df3.id1).coalesce(1).write.csv(output_file1,header=True)
 #
 sc.stop()
 #

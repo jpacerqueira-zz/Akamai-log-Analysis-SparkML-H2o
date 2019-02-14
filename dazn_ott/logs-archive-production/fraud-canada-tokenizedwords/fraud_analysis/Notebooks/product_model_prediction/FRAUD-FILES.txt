@@ -1,0 +1,238 @@
+Administrators-MacBook-Pro-6:bda-akamai-logs-spark joao.cerqueira$ 
+Administrators-MacBook-Pro-6:bda-akamai-logs-spark joao.cerqueira$ 
+Administrators-MacBook-Pro-6:bda-akamai-logs-spark joao.cerqueira$ ssh siemanalyst@10.112.61.20
+siemanalyst@10.112.61.20's password: 
+Last login: Thu Feb 14 18:47:54 2019 from 10.112.72.185
+#
+# This server is managed using Ansible 2 CM.
+# Please do not change anything manually.
+# Thank you.
+#
+
+Ticket cache: FILE:/tmp/krb5cc_1021
+Default principal: siemanalyst/chpbda@BDA2.PERFORMGROUP.COM
+
+Valid starting     Expires            Service principal
+14/02/19 21:58:55  15/02/19 21:58:55  krbtgt/BDA2.PERFORMGROUP.COM@BDA2.PERFORMGROUP.COM
+	renew until 21/02/19 21:58:55
+(CH PROD)[siemanalyst@chpbdaodi02 ~]$ 
+(CH PROD)[siemanalyst@chpbdaodi02 ~]$ 
+(CH PROD)[siemanalyst@chpbdaodi02 ~]$ 
+(CH PROD)[siemanalyst@chpbdaodi02 ~]$ hdfs dfs -ls -R /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=*/*.json
+-rw-r--r--   3 siemanalyst supergroup     106927 2019-02-13 18:20 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20180924/20180924.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-02-13 18:21 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20180924/expand-20180924.json
+-rw-r--r--   3 siemanalyst supergroup      21904 2019-02-14 11:26 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20180925/20180925.json
+-rw-r--r--   3 siemanalyst supergroup      43341 2019-02-14 11:34 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20180925/expand-20180925.json
+-rw-r--r--   3 siemanalyst supergroup      10956 2019-02-14 11:35 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20180926/20180926.json
+-rw-r--r--   3 siemanalyst supergroup      21677 2019-02-14 11:49 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20180926/expand-20180926.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-02-14 11:50 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20180927/20180927.json
+-rw-r--r--   3 siemanalyst supergroup     306673 2019-02-14 11:51 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20180928/20180928.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-02-14 11:53 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20180929/20180929.json
+-rw-r--r--   3 siemanalyst supergroup     221558 2019-02-14 11:54 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20180930/20180930.json
+-rw-r--r--   3 siemanalyst supergroup     123169 2019-02-14 11:56 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181001/20181001.json
+-rw-r--r--   3 siemanalyst supergroup      35599 2019-02-14 12:00 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181002/20181002.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-02-14 12:06 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181003/20181003.json
+-rw-r--r--   3 siemanalyst supergroup       5464 2019-02-14 12:10 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181004/20181004.json
+-rw-r--r--   3 siemanalyst supergroup      13695 2019-02-14 12:15 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181005/20181005.json
+-rw-r--r--   3 siemanalyst supergroup      27096 2019-02-14 12:24 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181005/expand-20181005.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-02-14 12:25 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181006/20181006.json
+-rw-r--r--   3 siemanalyst supergroup     147804 2019-02-14 12:26 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181007/20181007.json
+-rw-r--r--   3 siemanalyst supergroup     298274 2019-02-14 12:52 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181007/expand-20181007.json
+-rw-r--r--   3 siemanalyst supergroup      84927 2019-02-14 12:53 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181008/20181008.json
+-rw-r--r--   3 siemanalyst supergroup     168054 2019-02-14 13:02 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181008/expand-20181008.json
+-rw-r--r--   3 siemanalyst supergroup      57419 2019-02-14 13:03 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181009/20181009.json
+-rw-r--r--   3 siemanalyst supergroup     114404 2019-02-14 13:10 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181009/expand-20181009.json
+-rw-r--r--   3 siemanalyst supergroup       5474 2019-02-14 13:11 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181010/20181010.json
+-rw-r--r--   3 siemanalyst supergroup      10904 2019-02-14 13:16 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181010/expand-20181010.json
+-rw-r--r--   3 siemanalyst supergroup     155760 2019-02-14 13:18 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181011/20181011.json
+-rw-r--r--   3 siemanalyst supergroup     310312 2019-02-14 13:24 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181011/expand-20181011.json
+-rw-r--r--   3 siemanalyst supergroup      19144 2019-02-14 13:25 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181012/20181012.json
+-rw-r--r--   3 siemanalyst supergroup      38140 2019-02-14 13:34 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181012/expand-20181012.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-02-14 13:35 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181013/20181013.json
+-rw-r--r--   3 siemanalyst supergroup     183122 2019-02-14 13:36 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181014/20181014.json
+-rw-r--r--   3 siemanalyst supergroup     370738 2019-02-14 13:53 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181014/expand-20181014.json
+-rw-r--r--   3 siemanalyst supergroup       5471 2019-02-14 13:56 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181017/20181017.json
+-rw-r--r--   3 siemanalyst supergroup      10902 2019-02-14 14:03 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181017/expand-20181017.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-02-14 14:04 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181018/20181018.json
+-rw-r--r--   3 siemanalyst supergroup       5465 2019-02-14 14:05 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181019/20181019.json
+-rw-r--r--   3 siemanalyst supergroup      10893 2019-02-14 14:15 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181019/expand-20181019.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-02-14 14:16 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181020/20181020.json
+-rw-r--r--   3 siemanalyst supergroup      84733 2019-02-14 14:18 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181021/20181021.json
+-rw-r--r--   3 siemanalyst supergroup     174640 2019-02-14 14:37 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181021/expand-20181021.json
+-rw-r--r--   3 siemanalyst supergroup      79328 2019-02-14 14:38 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181022/20181022.json
+-rw-r--r--   3 siemanalyst supergroup     158052 2019-02-14 14:47 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181022/expand-20181022.json
+-rw-r--r--   3 siemanalyst supergroup       5474 2019-02-14 14:48 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181023/20181023.json
+-rw-r--r--   3 siemanalyst supergroup      10911 2019-02-14 15:00 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181023/expand-20181023.json
+-rw-r--r--   3 siemanalyst supergroup      19115 2019-02-14 15:02 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181026/20181026.json
+-rw-r--r--   3 siemanalyst supergroup      43956 2019-02-14 15:11 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181026/expand-20181026.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-02-14 15:12 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181027/20181027.json
+-rw-r--r--   3 siemanalyst supergroup     101597 2019-02-14 15:13 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181028/20181028.json
+-rw-r--r--   3 siemanalyst supergroup     202451 2019-02-14 15:35 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181028/expand-20181028.json
+-rw-r--r--   3 siemanalyst supergroup      90851 2019-02-14 15:36 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181029/20181029.json
+-rw-r--r--   3 siemanalyst supergroup     178300 2019-02-14 15:47 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181029/expand-20181029.json
+-rw-r--r--   3 siemanalyst supergroup      57682 2019-02-14 15:48 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181030/20181030.json
+-rw-r--r--   3 siemanalyst supergroup     114932 2019-02-14 15:56 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181030/expand-20181030.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-02-14 15:57 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181031/20181031.json
+-rw-r--r--   3 siemanalyst supergroup       5468 2019-02-14 15:59 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181101/20181101.json
+-rw-r--r--   3 siemanalyst supergroup      10896 2019-02-14 16:05 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181101/expand-20181101.json
+-rw-r--r--   3 siemanalyst supergroup      24704 2019-02-14 16:06 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181102/20181102.json
+-rw-r--r--   3 siemanalyst supergroup      49222 2019-02-14 16:14 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181102/expand-20181102.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-02-14 16:15 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181103/20181103.json
+-rw-r--r--   3 siemanalyst supergroup      57931 2019-02-14 16:16 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181104/20181104.json
+-rw-r--r--   3 siemanalyst supergroup     109957 2019-02-14 16:33 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181104/expand-20181104.json
+-rw-r--r--   3 siemanalyst supergroup     165274 2019-02-14 16:34 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181105/20181105.json
+-rw-r--r--   3 siemanalyst supergroup     329314 2019-02-14 16:44 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181105/expand-20181105.json
+-rw-r--r--   3 siemanalyst supergroup      19173 2019-02-14 16:45 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181106/20181106.json
+-rw-r--r--   3 siemanalyst supergroup      38194 2019-02-14 16:57 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181106/expand-20181106.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-02-14 16:59 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181107/20181107.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-02-14 17:00 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181108/20181108.json
+-rw-r--r--   3 siemanalyst supergroup      19310 2019-02-14 17:01 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181109/20181109.json
+-rw-r--r--   3 siemanalyst supergroup      38476 2019-02-14 17:11 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181109/expand-20181109.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-02-14 17:12 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181110/20181110.json
+-rw-r--r--   3 siemanalyst supergroup      96228 2019-02-14 17:13 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181111/20181111.json
+-rw-r--r--   3 siemanalyst supergroup     191738 2019-02-14 17:37 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181111/expand-20181111.json
+-rw-r--r--   3 siemanalyst supergroup     151551 2019-02-14 17:40 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181112/20181112.json
+-rw-r--r--   3 siemanalyst supergroup     301968 2019-02-14 17:49 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181112/expand-20181112.json
+-rw-r--r--   3 siemanalyst supergroup      13899 2019-02-14 17:50 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181113/20181113.json
+-rw-r--r--   3 siemanalyst supergroup      27689 2019-02-14 17:56 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181113/expand-20181113.json
+-rw-r--r--   3 siemanalyst supergroup       5590 2019-02-14 17:57 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181114/20181114.json
+-rw-r--r--   3 siemanalyst supergroup      11137 2019-02-14 18:03 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181114/expand-20181114.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-02-14 18:04 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181115/20181115.json
+-rw-r--r--   3 siemanalyst supergroup      13741 2019-02-14 18:05 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181116/20181116.json
+-rw-r--r--   3 siemanalyst supergroup      27390 2019-02-14 18:12 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181116/expand-20181116.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-02-14 18:13 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181117/20181117.json
+-rw-r--r--   3 siemanalyst supergroup      74396 2019-02-14 18:15 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181118/20181118.json
+-rw-r--r--   3 siemanalyst supergroup     154097 2019-02-14 18:28 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181118/expand-20181118.json
+-rw-r--r--   3 siemanalyst supergroup     151750 2019-02-14 18:29 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181119/20181119.json
+-rw-r--r--   3 siemanalyst supergroup     302380 2019-02-14 18:35 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181119/expand-20181119.json
+-rw-r--r--   3 siemanalyst supergroup       2782 2019-02-14 18:36 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181120/20181120.json
+-rw-r--r--   3 siemanalyst supergroup       5544 2019-02-14 18:43 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181120/expand-20181120.json
+-rw-r--r--   3 siemanalyst supergroup       8317 2019-02-14 18:44 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181121/20181121.json
+-rw-r--r--   3 siemanalyst supergroup      16570 2019-02-14 18:49 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181121/expand-20181121.json
+-rw-r--r--   3 siemanalyst supergroup      10918 2019-02-14 18:50 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181122/20181122.json
+-rw-r--r--   3 siemanalyst supergroup      21755 2019-02-14 18:56 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181122/expand-20181122.json
+-rw-r--r--   3 siemanalyst supergroup      24790 2019-02-14 18:57 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181123/20181123.json
+-rw-r--r--   3 siemanalyst supergroup      49394 2019-02-14 19:04 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181123/expand-20181123.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-02-14 19:06 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181124/20181124.json
+-rw-r--r--   3 siemanalyst supergroup      47078 2019-02-14 19:07 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181125/20181125.json
+-rw-r--r--   3 siemanalyst supergroup      93809 2019-02-14 19:21 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181125/expand-20181125.json
+-rw-r--r--   3 siemanalyst supergroup      79682 2019-02-14 19:22 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181126/20181126.json
+-rw-r--r--   3 siemanalyst supergroup     158755 2019-02-14 19:30 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181126/expand-20181126.json
+-rw-r--r--   3 siemanalyst supergroup      41579 2019-02-14 19:31 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181127/20181127.json
+-rw-r--r--   3 siemanalyst supergroup      82847 2019-02-14 19:36 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181127/expand-20181127.json
+-rw-r--r--   3 siemanalyst supergroup      11064 2019-02-14 19:37 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181128/20181128.json
+-rw-r--r--   3 siemanalyst supergroup      22038 2019-02-14 19:47 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181128/expand-20181128.json
+-rw-r--r--   3 siemanalyst supergroup       5585 2019-02-14 19:48 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181129/20181129.json
+-rw-r--r--   3 siemanalyst supergroup      11123 2019-02-14 19:54 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181129/expand-20181129.json
+-rw-r--r--   3 siemanalyst supergroup      19318 2019-02-14 19:56 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181130/20181130.json
+-rw-r--r--   3 siemanalyst supergroup      38497 2019-02-14 20:01 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181130/expand-20181130.json
+-rw-r--r--   3 siemanalyst supergroup      10934 2019-02-14 20:03 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181201/20181201.json
+-rw-r--r--   3 siemanalyst supergroup      21780 2019-02-14 20:14 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181201/expand-20181201.json
+-rw-r--r--   3 siemanalyst supergroup      54926 2019-02-14 20:15 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181202/20181202.json
+-rw-r--r--   3 siemanalyst supergroup     109438 2019-02-14 20:31 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181202/expand-20181202.json
+-rw-r--r--   3 siemanalyst supergroup     124109 2019-02-14 20:32 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181203/20181203.json
+-rw-r--r--   3 siemanalyst supergroup     247292 2019-02-14 20:39 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181203/expand-20181203.json
+-rw-r--r--   3 siemanalyst supergroup      30287 2019-02-14 20:40 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181204/20181204.json
+-rw-r--r--   3 siemanalyst supergroup      60344 2019-02-14 20:49 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181204/expand-20181204.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-02-14 20:50 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181205/20181205.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-02-14 20:51 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181206/20181206.json
+-rw-r--r--   3 siemanalyst supergroup      13991 2019-02-14 20:53 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181207/20181207.json
+-rw-r--r--   3 siemanalyst supergroup      27878 2019-02-14 21:01 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181207/expand-20181207.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-02-14 21:02 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181208/20181208.json
+-rw-r--r--   3 siemanalyst supergroup      11056 2019-02-14 21:03 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181209/20181209.json
+-rw-r--r--   3 siemanalyst supergroup      22030 2019-02-14 21:13 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181209/expand-20181209.json
+-rw-r--r--   3 siemanalyst supergroup      93491 2019-02-14 21:14 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181210/20181210.json
+-rw-r--r--   3 siemanalyst supergroup     186272 2019-02-14 21:22 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181210/expand-20181210.json
+-rw-r--r--   3 siemanalyst supergroup      13854 2019-02-14 21:23 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181211/20181211.json
+-rw-r--r--   3 siemanalyst supergroup      27598 2019-02-14 21:35 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181211/expand-20181211.json
+-rw-r--r--   3 siemanalyst supergroup      16466 2019-02-14 21:36 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181212/20181212.json
+-rw-r--r--   3 siemanalyst supergroup      32810 2019-02-14 21:46 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181212/expand-20181212.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-02-14 21:47 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181213/20181213.json
+-rw-r--r--   3 siemanalyst supergroup      19297 2019-02-14 21:48 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181214/20181214.json
+-rw-r--r--   3 siemanalyst supergroup      38448 2019-02-14 21:57 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181214/expand-20181214.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-02-14 21:58 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181215/20181215.json
+-rwxrwxrwt   3 siemanalyst supergroup      57418 2019-01-05 19:29 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181217/part-00000-5f3971bb-57a4-4b6a-8ca0-aa718ecde09b-c000.json
+-rwxrwxrwt   3 siemanalyst supergroup      39304 2019-01-05 19:25 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181218/part-00000-0d3ea1ed-4c74-4621-a61c-6f2fd2d789fb-c000.json
+-rwxrwxrwt   3 siemanalyst supergroup          0 2019-01-05 19:25 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181219/part-00000-70209724-8299-4a27-ac63-8320a554d3ab-c000.json
+-rwxrwxrwt   3 siemanalyst supergroup          0 2019-01-05 19:19 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181220/part-00000-92219e91-ae8e-4867-bbf8-71d8a101f70b-c000.json
+-rwxrwxrwt   3 siemanalyst supergroup       6114 2019-01-04 17:45 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181221/part-00000-2977da93-121c-43ef-a2ff-d1142bc296a5-c000.json
+-rwxrwxrwt   3 siemanalyst supergroup       9095 2019-01-04 19:03 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181222/part-00000-cbbe2f7d-0ff3-4033-bc76-a5a0ddce6e0a-c000.json
+-rwxrwxrwt   3 siemanalyst supergroup      84728 2019-01-04 18:42 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181223/part-00000-7b0ff415-7759-43d4-9ffe-f53ee137aa5d-c000.json
+-rwxrwxrwt   3 siemanalyst supergroup      57416 2019-01-04 16:42 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181224/part-00000-940d82e7-aecb-4817-a0ae-817e2a3504e9-c000.json
+-rwxrwxrwt   3 siemanalyst supergroup      27051 2019-01-04 16:41 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181225/part-00000-3b95686e-15c4-4a1c-9973-dd0b17b72c7b-c000.json
+-rwxrwxrwt   3 siemanalyst supergroup       2989 2019-01-04 17:14 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181226/part-00000-406a0c9d-b2e9-45bc-9945-af0aa48e7304-c000.json
+-rwxrwxrwt   3 siemanalyst supergroup       3057 2019-01-04 16:44 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181227/part-00000-b6a27911-dde6-4dfe-80e9-bac61885bd00-c000.json
+-rwxrwxrwt   3 siemanalyst supergroup       3055 2019-01-04 16:35 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181228/part-00000-45c71f70-cf59-482d-8ea3-bf864b6b7965-c000.json
+-rwxrwxrwt   3 siemanalyst supergroup          0 2019-01-04 17:23 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181229/part-00000-10fa7d0e-65fa-4668-a4f2-211c271d609b-c000.json
+-rwxrwxrwt   3 siemanalyst supergroup     106029 2019-01-04 17:06 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181230/part-00000-28b2ea02-ecef-4cfc-b73f-91ae51ef6158-c000.json
+-rwxrwxrwt   3 siemanalyst supergroup      51616 2019-01-04 16:33 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20181231/part-00000-3c1166a5-e757-475e-9ba1-63c90520f98b-c000.json
+-rw-r--r--   3 siemanalyst supergroup       5589 2019-02-13 23:20 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190101/20190101.json
+-rw-r--r--   3 siemanalyst supergroup      11136 2019-02-13 23:29 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190101/expand-20190101.json
+-rwxrwxrwt   3 siemanalyst supergroup          0 2019-01-04 17:26 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190102/part-00000-6f829fde-6bbb-4a33-867b-5d648a8f54c3-c000.json
+-rwxrwxrwt   3 siemanalyst supergroup          0 2019-01-04 17:49 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190103/part-00000-97ff1688-6561-4249-840b-04d3e31184b8-c000.json
+-rw-r--r--   3 siemanalyst supergroup      22232 2019-02-13 23:19 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190104/20190104.json
+-rw-r--r--   3 siemanalyst supergroup      44298 2019-02-13 23:28 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190104/expand-20190104.json
+-rw-r--r--   3 siemanalyst supergroup       2790 2019-02-13 23:16 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190105/20190105.json
+-rw-r--r--   3 siemanalyst supergroup       5559 2019-02-13 23:27 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190105/expand-20190105.json
+-rw-r--r--   3 siemanalyst supergroup      41604 2019-02-13 23:19 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190106/20190106.json
+-rw-r--r--   3 siemanalyst supergroup      82901 2019-02-13 23:34 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190106/expand-20190106.json
+-rw-r--r--   3 siemanalyst supergroup      16703 2019-02-13 23:16 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190107/20190107.json
+-rw-r--r--   3 siemanalyst supergroup      33270 2019-02-13 23:27 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190107/expand-20190107.json
+-rw-r--r--   3 siemanalyst supergroup       5529 2019-02-13 23:14 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190108/20190108.json
+-rw-r--r--   3 siemanalyst supergroup      11014 2019-02-13 23:22 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190108/expand-20190108.json
+-rw-r--r--   3 siemanalyst supergroup       5533 2019-02-13 23:11 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190109/20190109.json
+-rw-r--r--   3 siemanalyst supergroup      11025 2019-02-13 23:18 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190109/expand-20190109.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-01-14 16:19 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190110/part-00000-1f4afb76-4a43-458f-aa9e-97ac37bdb45d-c000.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-01-14 16:30 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190111/part-00000-c881892e-278d-4d07-afae-1ace003fcab6-c000.json
+-rw-r--r--   3 siemanalyst supergroup       5452 2019-02-13 23:15 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190112/20190112.json
+-rw-r--r--   3 siemanalyst supergroup      10864 2019-02-13 23:28 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190112/expand-20190112.json
+-rw-r--r--   3 siemanalyst supergroup      40995 2019-02-13 23:18 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190113/20190113.json
+-rw-r--r--   3 siemanalyst supergroup      81700 2019-02-13 23:33 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190113/expand-20190113.json
+-rw-r--r--   3 siemanalyst supergroup      27342 2019-02-13 23:13 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190114/20190114.json
+-rw-r--r--   3 siemanalyst supergroup      54472 2019-02-13 23:22 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190114/expand-20190114.json
+-rw-r--r--   3 siemanalyst supergroup       5486 2019-02-13 23:11 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190115/20190115.json
+-rw-r--r--   3 siemanalyst supergroup      10929 2019-02-13 23:18 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190115/expand-20190115.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-01-20 19:51 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190116/part-00000-3b40888c-5fd1-481a-ab23-352e76be148e-c000.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-01-20 19:51 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190117/part-00000-2652484c-0182-4b51-aa38-4b02fab1711c-c000.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-01-20 17:11 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190118/part-00000-ecf0be03-9135-44b0-a102-3a3daaa4c25f-c000.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-01-20 19:22 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190119/part-00000-898e5de8-3fdb-4bb2-9a89-e65d629795df-c000.json
+-rw-r--r--   3 siemanalyst supergroup       8203 2019-02-13 22:56 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190120/20190120.json
+-rw-r--r--   3 siemanalyst supergroup      16345 2019-02-13 23:11 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190120/expand-20190120.json
+-rw-r--r--   3 siemanalyst supergroup      10948 2019-02-13 22:51 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190121/20190121.json
+-rw-r--r--   3 siemanalyst supergroup      21810 2019-02-13 23:01 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190121/expand-20190121.json
+-rw-r--r--   3 siemanalyst supergroup       5462 2019-02-13 22:49 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190122/20190122.json
+-rw-r--r--   3 siemanalyst supergroup      10881 2019-02-13 22:55 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190122/expand-20190122.json
+-rw-r--r--   3 siemanalyst supergroup       5483 2019-02-13 22:47 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190123/20190123.json
+-rw-r--r--   3 siemanalyst supergroup      10923 2019-02-13 22:54 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190123/expand-20190123.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-01-25 00:51 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190124/part-00000-c9eb9538-4748-40da-8727-7b7daae47da4-c000.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-01-26 00:51 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190125/part-00000-4507f214-cb52-406b-bd3c-66547640e5ce-c000.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-01-27 00:57 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190126/part-00000-a971d8db-14ff-4ad2-b01e-15ac9c90632c-c000.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-01-28 00:53 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190127/part-00000-a3068780-076f-4b46-a089-e8e7c8c6ca76-c000.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-01-29 00:51 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190128/part-00000-630dfeb5-4cbf-473f-b35c-3505fddd1c13-c000.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-01-30 00:50 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190129/part-00000-0550ea13-d875-4e88-a311-e57444ee08a6-c000.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-01-31 00:51 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190130/part-00000-78f204d4-3e44-460d-9ccf-1af45d3be6dc-c000.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-02-01 00:51 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190131/part-00000-1e1bed32-3bb6-4125-b890-40c853e84378-c000.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-02-02 00:50 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190201/part-00000-bf8b6690-2a99-4938-9e44-4c4f39eaeb36-c000.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-02-03 00:55 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190202/part-00000-c5decb78-645b-4077-90d0-8f0b709eacce-c000.json
+-rw-r--r--   3 siemanalyst supergroup       5456 2019-02-13 22:49 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190203/20190203.json
+-rw-r--r--   3 siemanalyst supergroup      10872 2019-02-13 23:02 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190203/expand-20190203.json
+-rw-r--r--   3 siemanalyst supergroup       2738 2019-02-13 22:45 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190204/20190204.json
+-rw-r--r--   3 siemanalyst supergroup       5456 2019-02-13 22:55 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190204/expand-20190204.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-02-13 22:43 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190205/20190205.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-02-13 22:47 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190206/20190206.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-02-13 18:22 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190207/20190207.json
+-rw-r--r--   3 siemanalyst supergroup       2734 2019-02-13 10:56 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190208/20190208.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-02-13 10:56 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190208/expand-20190208.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-02-13 11:33 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190209/20190209.json
+-rw-r--r--   3 siemanalyst supergroup       2735 2019-02-13 11:44 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190210/20190210.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-02-13 11:44 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190210/expand-20190210.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-02-13 11:55 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190211/20190211.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-02-14 00:31 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190212/20190212.json
+-rw-r--r--   3 siemanalyst supergroup          0 2019-02-14 00:46 /data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=20190213/20190213.json
+(CH PROD)[siemanalyst@chpbdaodi02 ~]$ 
+(CH PROD)[siemanalyst@chpbdaodi02 ~]$ 
+(CH PROD)[siemanalyst@chpbdaodi02 ~]$ exit
+logout
+Connection to 10.112.61.20 closed.
+Administrators-MacBook-Pro-6:bda-akamai-logs-spark joao.cerqueira$ 
+Administrators-MacBook-Pro-6:bda-akamai-logs-spark joao.cerqueira$

@@ -237,6 +237,8 @@ fraud_label_read_df=ngram7_fraud.filter("hash_message is not NULL")\
 .persist(pyspark.StorageLevel.MEMORY_AND_DISK_2)
 fraud_label_read_df.printSchema()
 #
+## Sort to Get Fraud Records 1st in Order
+#
 fraud_label_read_df.coalesce(1).write.json(output_file1)
 #
 fraud_label_read_df.unpersist()

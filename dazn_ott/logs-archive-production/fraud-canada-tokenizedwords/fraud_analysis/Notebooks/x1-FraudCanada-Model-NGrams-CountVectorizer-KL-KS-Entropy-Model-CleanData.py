@@ -48,7 +48,7 @@ import argparse
 ## Parse date_of execution
 parser = argparse.ArgumentParser()
 parser.add_argument("--datev1", help="Execution Date")
-parser.add_argument("--fraudnrdaily", help="Execution Date")
+parser.add_argument("--fraudnrdaily", help="Fraud Records Found")
 args = parser.parse_args()
 if args.datev1:
     processdate = args.datev1
@@ -70,7 +70,7 @@ print("fraud_number_records_daily="+fraud_number_records_daily)
 #
 # Pick only Expand Files from x.2019
 ## Pick all Additional 2019 Fraud patterns YYYMMMDD.JSON files 
-input_file1_playback_fraud="hdfs:///data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=2019*/*.json"
+input_file1_playback_fraud="hdfs:///data/staged/ott_dazn/fraud-canada-tokenizedwords/dt=*/*.json"
 #
 output_file1="hdfs:///data/staged/ott_dazn/advanced-model-data/fraud-notfraud-canada-tokenizedwords-ngrams-7-features-85/dt="+process_date
 #
@@ -109,14 +109,13 @@ regexTokenizer = RegexTokenizer(minTokenLength=1, gaps=False, pattern='\\w+|', i
 #
 tokenized = regexTokenizer.transform(df4)\
 .filter("message IS NOT NULL").filter("words IS NOT NULL")\
-.withColumn('last_8_tokens',last_8_tokens_udf(col('words')))\
 .persist(pyspark.StorageLevel.MEMORY_AND_DISK_2)
 tokenized.printSchema()
 #
 #  Exclude from NotFraud all recordds from ViwerID in Fraud source
 if ((fraud_number_records_daily == "0")|(fraud_number_records_daily == "")):
     print("No join()")
-    tokenized_validated = tokenized.drop(col('last_8_tokens')).orderBy(rand()).limit(500000)
+    tokenized_validated = tokenized.drop(col('last_8_tokens')).orderBy(rand()).limit(95000)
     tokenized_validated.printSchema()
 else:
     print("Yes join()")
@@ -126,10 +125,11 @@ else:
     tokens_to_match=df1.filter("message IS NOT NULL").filter("words IS NOT NULL")\
     .withColumn('last_8_tokens',last_8_tokens_udf(col('words')))\
     .persist(pyspark.StorageLevel.MEMORY_AND_DISK_2)
-    # Left outer so notfraud excludes all times viwerID of Frua dwas used in that day
-    new_expand_match=tokenized.join(tokens_to_match, tokenized.last_8_tokens == tokens_to_match.last_8_tokens , 'left_outer')\
-.select(tokenized.metadata, tokenized.logzio_id, tokenized.beat, tokenized.host, tokenized.it, tokenized.logzio_codec, tokenized.message, tokenized.offset, tokenized.source, tokenized.tags, tokenized.type, tokenized.messagecut , tokenized.words )
-    tokenized_validated = new_expand_match.orderBy(rand()).limit(500000)
+    # Left outer so notfraud excludes all records from viwerID of Fruad in it's not-fraud dataset
+    tokenizedit=tokenized.withColumn('last_8_tokens',last_8_tokens_udf(col('words')))
+    #
+    new_expand_match=tokenizedit.join(tokens_to_match, tokenizedit.last_8_tokens == tokens_to_match.last_8_tokens , 'left_outer').select(tokenizedit.metadata, tokenizedit.logzio_id, tokenizedit.beat, tokenizedit.host, tokenizedit.it, tokenizedit.logzio_codec, tokenizedit.message, tokenizedit.offset, tokenizedit.source, tokenizedit.tags, tokenizedit.type, tokenizedit.messagecut , tokenizedit.words )
+    tokenized_validated = new_expand_match.orderBy(rand()).limit(95000)
     tokenized_validated.printSchema()
 #
 tokenized_validated.coalesce(1).write.json(output_file2)
@@ -143,7 +143,6 @@ notfraud_df=notfraud_file\
 .withColumn('fraud_label',lit(0).cast('int'))\
 .withColumn('hash_message',F.sha2(col('message'),512)).groupby(col('hash_message'))\
 .agg(F.first(col('fraud_label')).alias('fraud_label'),F.first(col('words')).alias('words'),F.first(col('message')).alias('message'))\
-.orderBy(rand())\
 .persist(pyspark.StorageLevel.MEMORY_AND_DISK_2)
 notfraud_df.printSchema()
 # Only the Not-Fraud are randomly sorted
@@ -172,10 +171,10 @@ df_words = fraud_df.filter("message IS NOT NULL").select(col('fraud_label'),col(
 .persist(pyspark.StorageLevel.MEMORY_AND_DISK_2)
 df_words.printSchema()
 #
-# Limit to 250,000 Daily Not-Fraud Records input in the nGrams Graph analysis
+# Limit to 100000 Daily Not-Fraud Records input in the nGrams Graph analysis
 # As the limit of Ngrams _7 vectors is 264k "ngramscounts_7":{"type":0,"size":262144 ....
 #
-result_fraud_nofraud_words = df_words.union(df_notfraud_words).limit(250000)\
+result_fraud_nofraud_words = df_words.union(df_notfraud_words).limit(100000)\
 .persist(pyspark.StorageLevel.MEMORY_AND_DISK_SER)
 ## Register Generic Functions
 # -----------------------------------------------------------------------------
