@@ -58,7 +58,7 @@ if [ -z "$NUM_FRAUD_RECORDS" ] || [ "$NUM_FRAUD_RECORDS" = "0" ]
 then
   # for any:any credentials
   hdfs dfs -mkdir -p ${MY_EMAIL_HDFS_FOLDER}/dt=${DATE_V1}
-  hdfs dfs -copyFromLocal $JOB_LOG_FILE ${MY_EMAIL_HDFS_FOLDER}/dt=${DATE_V1}
+  hdfs dfs -copyFromLocal -f $JOB_LOG_FILE ${MY_EMAIL_HDFS_FOLDER}/dt=${DATE_V1}
   rm -r -f $JOB_LOG_FILE
   #
   exit 1
@@ -72,7 +72,7 @@ else
   hdfs dfs -cp -f ${MY_HDFS_FOLDER}/dt=${DATE_V1}/part-*.json ${MY_HDFS_FOLDER}/dt=${DATE_V1}/expand-${DATE_V1}.json >> $JOB_LOG_FILE
   hdfs dfs -rm -r -f ${MY_HDFS_FOLDER}/dt=${DATE_V1}/part-*.json >> $JOB_LOG_FILE
   hdfs dfs -cp ${MY_HDFS_FOLDER}/dt=${DATE_V1}/expand-${DATE_V1}.json ${MY_EMAIL_HDFS_FOLDER}/dt=${DATE_V1} >> $JOB_LOG_FILE
-  hdfs dfs -copyFromLocal $JOB_LOG_FILE ${MY_EMAIL_HDFS_FOLDER}/dt=${DATE_V1}
+  hdfs dfs -copyFromLocal -f $JOB_LOG_FILE ${MY_EMAIL_HDFS_FOLDER}/dt=${DATE_V1}
   rm -r -f $JOB_LOG_FILE
   #
   exit 0

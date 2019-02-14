@@ -261,7 +261,7 @@ fraud_label_train_pd_rand=fraud_fraud_label_read1_df\
 #
 fraud_label_train_pd_rand.printSchema()
 #
-fraud_label_train_pd=fraud_label_train_pd_rand.limit(3000).toPandas()\
+fraud_label_train_pd=fraud_label_train_pd_rand.limit(3300).toPandas()\
 .assign(features85_list_indices=lambda x: x['features85_indices'].apply(np.ravel),\
         features85_list_values=lambda x: x['features85_values'].apply(np.ravel),\
         ngramscounts7_list_indices=lambda x: x['ngramscounts7_indices'].apply(np.ravel),\
@@ -289,7 +289,7 @@ not_fraud_label_train_pd_rand=notfraud_fraud_label_read1_df\
 #
 not_fraud_label_train_pd_rand.printSchema()
 #
-not_fraud_label_train_pd=not_fraud_label_train_pd_rand.limit(3000).toPandas()\
+not_fraud_label_train_pd=not_fraud_label_train_pd_rand.limit(3300).toPandas()\
 .assign(features85_list_indices=lambda x: x['features85_indices'].apply(np.ravel),\
         features85_list_values=lambda x: x['features85_values'].apply(np.ravel),\
         ngramscounts7_list_indices=lambda x: x['ngramscounts7_indices'].apply(np.ravel),\
