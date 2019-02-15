@@ -96,14 +96,16 @@ spark2-submit --master yarn --deploy-mode client --conf spark.debug.maxToStringF
 hdfs dfs -cp ${MY_HDFS_ADVANCED_FOLDER}/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=${DATE_V1}/no_match_hash_message/part-*.csv ${MY_HDFS_ADVANCED_FOLDER}/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=${DATE_V1}/no_match_hash_message/TEMP_no_match_hash_message_${DATE_V1}.csv >> $JOB_LOG_FILE 2>&1
 #
 NUM_FRAUD_RECORDS=$(hdfs dfs -cat hdfs:///data/staged/ott_dazn/advanced-model-data/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=${DATE_V1}/no_match_hash_message/TEMP_no_match_hash_message_${DATE_V1}.csv | wc -l )
-echo " NO_MATCH_NUM_FRAUD_RECORDS= : "  >> $JOB_LOG_FILE 2>&1
+echo "File Lines : NO_MATCH_NUM_FRAUD_RECORDS = "  >> $JOB_LOG_FILE 2>&1
 echo "$NUM_FRAUD_RECORDS"  >> $JOB_LOG_FILE 2>&1
 #
 if [ -z "$NUM_FRAUD_RECORDS" ] || [ "$NUM_FRAUD_RECORDS" = "0" ]
 then
   # for zero records fraud
   echo "| Job Finished  ___;" >> $JOB_LOG_FILE 2>&1
-  hdfs dfs -copyFromLocal -f $JOB_LOG_FILE $MY_HDFS_ADVANCED_FOLDER/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=${DATE_V1}
+  # Remove Training model as there are no Fraudulent discoveries
+  rm -rf $MY_FOLDER/product_model_bin/ngrams7_features85_m50/v${DATE_V1} >> $JOB_LOG_FILE 2>&1
+  hdfs dfs -copyFromLocal -f $JOB_LOG_FILE $MY_HDFS_ADVANCED_FOLDER/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=${DATE_V1} >> $JOB_LOG_FILE 2>&1
   rm -r -f $JOB_LOG_FILE
   exit 1
 else

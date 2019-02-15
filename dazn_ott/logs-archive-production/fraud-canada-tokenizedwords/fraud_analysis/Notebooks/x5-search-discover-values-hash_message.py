@@ -86,6 +86,8 @@ join_results_df=merged_df.join(notfraud_df, "hash_message" )\
 .persist(pyspark.StorageLevel.MEMORY_AND_DISK_2)
 join_results_df.printSchema()
 #
+ct1=join_results_df.count()
+print("Number records : no_match_predict_fraud = "+str(ct1))
 #
 join_results_df.coalesce(1).write.csv(output_no_match,header=True)
 #
