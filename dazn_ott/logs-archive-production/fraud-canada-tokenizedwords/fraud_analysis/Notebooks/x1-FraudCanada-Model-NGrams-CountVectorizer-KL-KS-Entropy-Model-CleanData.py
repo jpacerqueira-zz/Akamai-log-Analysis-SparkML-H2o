@@ -86,10 +86,20 @@ output_most_frequent_notfraud_df="hdfs:///data/staged/ott_dazn/advanced-model-da
 #
 ##### AUX. Functions
 #
+# Last 8 tokes identifies ViwerID, DeviceID and User Status
+#
 def last_8_tokens(words):
     return ''.join(words[-8:])
 #       
 last_8_tokens_udf = udf(last_8_tokens, StringType())  
+#
+# DeviceID via 3 tokens
+#
+def match_deviceid_3_tokens(words):
+    return ''.join(words[-5:-3])
+#       
+match_deviceid_3_tokens_udf = udf(match_deviceid_3_tokens, StringType())  
+# 
 #
 #####
 #  FILTER Non-Fraud AND LABEL
@@ -115,7 +125,7 @@ tokenized.printSchema()
 #  Exclude from NotFraud all recordds from ViwerID in Fraud source
 if ((fraud_number_records_daily == "0")|(fraud_number_records_daily == "")):
     print("No join()")
-    tokenized_validated = tokenized.drop(col('last_8_tokens')).orderBy(rand()).limit(95000)
+    tokenized_validated = tokenized.drop(col('match_deviceid_3_tokens')).orderBy(rand()).limit(95000)
     tokenized_validated.printSchema()
 else:
     print("Yes join()")
@@ -123,12 +133,12 @@ else:
     #
     df1=sqlContext.read.json(input_file1).repartition(50)
     tokens_to_match=df1.filter("message IS NOT NULL").filter("words IS NOT NULL")\
-    .withColumn('last_8_tokens',last_8_tokens_udf(col('words')))\
+    .withColumn('match_deviceid_3_tokens',match_deviceid_3_tokens_udf(col('words')))\
     .persist(pyspark.StorageLevel.MEMORY_AND_DISK_2)
     # Left outer so notfraud excludes all records from viwerID of Fruad in it's not-fraud dataset
-    tokenizedit=tokenized.withColumn('last_8_tokens',last_8_tokens_udf(col('words')))
+    tokenizedit=tokenized.withColumn('match_deviceid_3_tokens',match_deviceid_3_tokens_udf(col('words')))
     #
-    new_expand_match=tokenizedit.join(tokens_to_match, tokenizedit.last_8_tokens == tokens_to_match.last_8_tokens , 'left_outer').select(tokenizedit.metadata, tokenizedit.logzio_id, tokenizedit.beat, tokenizedit.host, tokenizedit.it, tokenizedit.logzio_codec, tokenizedit.message, tokenizedit.offset, tokenizedit.source, tokenizedit.tags, tokenizedit.type, tokenizedit.messagecut , tokenizedit.words )
+    new_expand_match=tokenizedit.join(tokens_to_match, tokenizedit.match_deviceid_3_tokens == tokens_to_match.match_deviceid_3_tokens , 'left_outer').select(tokenizedit.metadata, tokenizedit.logzio_id, tokenizedit.beat, tokenizedit.host, tokenizedit.it, tokenizedit.logzio_codec, tokenizedit.message, tokenizedit.offset, tokenizedit.source, tokenizedit.tags, tokenizedit.type, tokenizedit.messagecut , tokenizedit.words )
     tokenized_validated = new_expand_match.orderBy(rand()).limit(95000)
     tokenized_validated.printSchema()
 #

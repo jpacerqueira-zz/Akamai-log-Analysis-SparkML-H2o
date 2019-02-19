@@ -43,11 +43,21 @@ if not process_date:
 # -----------------------------------------------------------------------------
 # Execute SparkSession Fraud-canada-tokenizedwords-ngram85.py
 #
+# Last 8 tokes identifies ViwerID, DeviceID and User Status
+#
 def last_8_tokens(words):
     return ''.join(words[-8:])
 #       
 last_8_tokens_udf = udf(last_8_tokens, StringType())  
+#
+# DeviceID via 3 tokens
+#
+def match_deviceid_3_tokens(words):
+    return ''.join(words[-5:-3])
+#       
+match_deviceid_3_tokens_udf = udf(match_deviceid_3_tokens, StringType())  
 # 
+#
 sc = pyspark.SparkContext(appName="Daily-TokenizedWords-ExpandViewer-Ngram-85-StagedParquet")
 sqlContext = SQLContext(sc)
 # 
@@ -80,16 +90,16 @@ df4 = df3.withColumn("messagecut", expr("substring(message, locate('|Livesport.W
 #val regexTokenizer = new RegexTokenizer().setInputCol("messagecut").setOutputCol("words").setPattern("\\w+|").setGaps(false)
 regexTokenizer = RegexTokenizer(minTokenLength=1, gaps=False, pattern='\\w+|', inputCol="messagecut", outputCol="words", toLowercase=True)
 #
-## Extract Last 8 words
-## my_list[-8:]
+## Extract Now DeviceID and not the Last 8 words
+## 
 tokenized = regexTokenizer.transform(df4)\
-.withColumn('last_8_tokens',last_8_tokens_udf(col('words')))\
+.withColumn('match_deviceid_3_tokens',match_deviceid_3_tokens_udf(col('words')))\
 .persist(pyspark.StorageLevel.MEMORY_AND_DISK_2)
 #
 tokenized.printSchema()
 #
 tokens_to_match=df1\
-.withColumn('last_8_tokens',last_8_tokens_udf(col('words')))\
+.withColumn('match_deviceid_3_tokens',match_deviceid_3_tokens_udf(col('words')))\
 .persist(pyspark.StorageLevel.MEMORY_AND_DISK_2)
 #
 tokens_to_match.printSchema()
@@ -97,7 +107,7 @@ tokens_to_match.printSchema()
 ### df1.join(df2, df1("col1") === df2("col1"), "left_outer")
 ##  a LEFT SEMI JOIN will only return one row from the left, even if there are multiple matches in the right. An INNER JOIN will return multiple rows if there are multiple matching on the right
 #
-new_expand_match=tokenized.join(tokens_to_match, tokenized.last_8_tokens == tokens_to_match.last_8_tokens , 'leftsemi')\
+new_expand_match=tokenized.join(tokens_to_match, tokenized.match_deviceid_3_tokens == tokens_to_match.match_deviceid_3_tokens , 'leftsemi')\
 .select(tokenized.metadata, tokenized.logzio_id, tokenized.beat, tokenized.host, tokenized.it, tokenized.logzio_codec, tokenized.message, tokenized.offset, tokenized.source, tokenized.tags, tokenized.type, tokenized.messagecut , tokenized.words )
 #
 new_expand_match.printSchema()
