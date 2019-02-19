@@ -1,0 +1,740 @@
+hash_message,id1,predict,p0,p1,fraud_label,kl_fraud_words,ks_fraud_words,entropy_fraud_words,kl_notfraud_words,ks_notfraud_words,entropy_notfraud_words,features85_type,features85_size,ngramscounts7_type,ngramscounts7_size,features85_list_indices,features85_list_values,ngramscounts7_list_indices,ngramscounts7_list_values,match_no_match,words_conc
+fc88b90801d1d75d2d8e151b77f62e148d77c2b577dc9c42c15027d64e2548ae1c5e5ab88f48f1c0314a18179ba0a66d73cf41ccf2ab925a49844a3b32116b60,8589936299,1,8.459501764054352E-7,0.9999991540498236,0,3995.0546875,0.8089671730995178,0.07864770293235779,1224.3656005859375,1.0,0.020990625023841854,0,85,0,262144,"[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+ 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+ 48 49 50 51 52 53 55 58 60 63 64 66 74 81]","[6. 2. 3. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]","[     0      1      2      3      4      5      6      7      8      9
+     10     11     34    106    107    108    207    233    242    243
+    244    249    258    267    268    269    339    340    341    397
+    442    443    444    445    446    447    448    458    459    460
+    461    462    463    464    465    466    467    494    495    604
+    605    606    607    608    609    619    638    639    669   1073
+   1078   1081   1107   1108   1109   1112   1113   2355   2358   2359
+   2363   2364   2365   2370   2434   2935   7551   7684   7695  24443
+  35024  35082  35524  35655  35765  36037  36100  36142  36536  37003
+  37509  37656  37830  37873  38032  38077  38537  38626  38917  39032
+  39091 243304]","[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1.]",no_match_predict_fraud,root 1 5c6b082e 1636e57987916fb1983e0086 fd864895 bea3 40d1 853e 1c0f7014573a request method get url https isl ca dazn com misl v2 playback assetid ik0y2f8pfgfa13o4bql0qx9qz eventid 3b9hh8wrvvh1zws4cd6ke0goa format mpeg dash playerid dazn a72ada89afabd30d secure true languagecode en latitude null longitude null platform androidtv manufacturer sony model null mtalanguagecode en clientip 24 53 106 230 headers user agent mozilla 5 0 linux android 8 0 0 bravia 4k gb atv3 build opr2 170623 027 s16 wv applewebkit 537 36 khtml like gecko version 4 0 chrome 72 0 3626 105 mobile safari 537 36 fe v1 42 0 type in response statuscode 200 reasonphrase ok duration 109 jwt viewerid f87da6a9b04d deviceid 6484155b 2984 479d 8717 f87da6a9b04d a72ada89afabd30d userstatus freetrial
+944ee6dc8f71b0c8e4eae2869f9595f67870f7c71ee9e7bbe4a6e1c2e08cf3c9c1e0287e564f2f55204789def819fa2f272b6e2e01280275b78e7c7294b07e7a,8589937560,1,7.722039093286584E-6,0.9999922779609067,0,3542.36865234375,0.721303403377533,0.07862760126590729,1398.02880859375,0.995113968849182,0.03202822804450989,0,85,0,262144,"[ 0  1  2  3  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+ 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48
+ 49 50 51 52 53 55 56 58 60 63 64 66 74 81]","[6. 2. 3. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1.]","[     0      1      2      3      4      5      6      7      8     34
+    106    107    108    207    233    242    243    244    251    281
+    282    414    415    416    442    443    444    445    446    447
+    448    458    459    460    461    462    463    464    465    466
+    467    608    609    619   1137   1142   1143   1144   1145   1146
+   1147   1155   1157   1158   1159   1160   1161   1162   1163   1167
+   1168   1875   2655   3100  13423  13432  15022  15489  15659  15675
+  21025  45633  47334  49205  79360  85642  89549  90957  92608  92712
+  93125  93721  94807  95904  96143  96956  97973  98304  98603 102704
+ 102946 103411 104391 104840 105026 105816 106720 108160 108874 239443]","[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1.]",no_match_predict_fraud,root 1 5c6a0b33 1a095496dc5f7674b35cc294 f3bf364e 60f8 40c5 a987 12d7841673fd request method get url https isl ca dazn com misl v2 playback assetid 1wyfbs0unj32i1uq13q003c53c eventid 3bo3ojx3ys6scmbi9ddq932wa format mpeg dash playerid dazn f66456228378cb59 secure true languagecode fr latitude null longitude null platform androidtv manufacturer nvidia model null mtalanguagecode fr clientip 70 80 205 33 headers user agent mozilla 5 0 linux android 8 0 0 shield android tv build opr6 170623 010 wv applewebkit 537 36 khtml like gecko version 4 0 chrome 72 0 3626 105 mobile safari 537 36 fe v1 42 0 type in response statuscode 200 reasonphrase ok duration 141 jwt viewerid dc7c7f2059d6 deviceid 610247bd e84f 4879 9b72 dc7c7f2059d6 f66456228378cb59 userstatus activepaid
+f1b7865349626723000a32497a16d75df48492c3ae283289c8763ae022755c7b0e93e4f83c5d5e2491a6aa96d335c0cd5da2bd5a7ea39a734c537b94516d69b3,8589935531,1,4.336829392855304E-7,0.9999995663170607,0,4092.630615234375,0.8860741257667542,0.07848554849624634,1019.5438842773438,1.0,0.017023835331201553,0,85,0,262144,"[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+ 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+ 48 49 50 51 52 53 55 58 60 63 64 66 74 81]","[6. 2. 3. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]","[     0      1      2      3      4      5      6      7      8      9
+     10     11     34    106    107    108    207    233    242    243
+    244    249    442    443    444    445    446    447    448    458
+    459    460    461    462    463    464    465    466    467    604
+    605    606    607    608    609    619    638    639   1073   1078
+   1081   1107   1108   1109   1112   1113   1393   1397   1398   1399
+   1548   1676   1677   1683   2355   2358   2359   2363   2364   2365
+   2370   2434   2935   2983   2987   3121   7551   7684   7695  24443
+  35024  35082  35524  35655  35765  36037  36100  36142  36536  37003
+  37509  37656  37830  37873  38032  38077  38537  38626  38917  39032
+  39091 235547 251648 253170 259535]","[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1.]",no_match_predict_fraud,root 1 5c6b34b2 73187218e9a1ccdc7840c3f9 fd864895 bea3 40d1 853e 1c0f7014573a request method get url https isl ca dazn com misl v2 playback assetid 14cuzkmid32n8130qebq8qjgq2 eventid 9er9zbo156fopuu6xynos9ca2 format mpeg dash playerid dazn a72ada89afabd30d secure true languagecode en latitude null longitude null platform androidtv manufacturer sony model null mtalanguagecode en clientip 24 53 106 230 headers user agent mozilla 5 0 linux android 8 0 0 bravia 4k gb atv3 build opr2 170623 027 s16 wv applewebkit 537 36 khtml like gecko version 4 0 chrome 72 0 3626 105 mobile safari 537 36 fe v1 42 0 type in response statuscode 200 reasonphrase ok duration 187 jwt viewerid f87da6a9b04d deviceid 6484155b 2984 479d 8717 f87da6a9b04d a72ada89afabd30d userstatus freetrial
+c078659f8b9f3f9d0ca519427f55d3d910c8b7497cc340840a39eddfc23310de31982653a1c2a28249d3d5f37ac5a4d1545531bd40fba2d51af3fdd48f33fd62,8589937319,1,1.712870929967801E-5,0.9999828712907004,0,3569.764404296875,0.4919300973415375,0.07794592529535294,1368.426025390625,0.8860741257667542,0.030446525663137436,0,85,0,262144,"[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+ 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+ 48 49 50 51 52 53 55 56 58 60 63 64 66 74 81]","[6. 2. 3. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1.]","[    0     1     2     3     4     5     6     7     8     9    10    11
+    34   106   107   108   207   233   242   243   244   249   442   443
+   444   445   446   447   448   458   459   460   461   462   463   464
+   465   466   467   608   609   619  1137  1142  1143  1144  1145  1146
+  1147  1155  1157  1158  1159  1160  1161  1162  1163  1167  1168  1211
+  1212  1271  1318  1319  1321  1756  2505  2506  2704  2708  2709  2848
+  3003 16980]","[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1.]",no_match_predict_fraud,root 1 5c6a2823 3f1a47f01aa49bd0664936e8 feaa8476 eef7 456b 9fcb 7da6a062a046 request method get url https isl ca dazn com misl v2 playback assetid qdwu9b6cte731xh0eop3zazac eventid c7j73shbxemy6skxn5tr06v2h format mpeg dash playerid dazn 53855432895fb150 secure true languagecode en latitude null longitude null platform androidtv manufacturer nvidia model null mtalanguagecode en clientip 216 26 223 62 headers user agent mozilla 5 0 linux android 8 0 0 shield android tv build opr6 170623 010 wv applewebkit 537 36 khtml like gecko version 4 0 chrome 72 0 3626 105 mobile safari 537 36 fe v1 42 0 type in response statuscode 200 reasonphrase ok duration 112 jwt viewerid 6f533e882581 deviceid 4ac753ff 1234 4607 b730 6f533e882581 53855432895fb150 userstatus activepaid
+685937c7f66e5afaf7af5b852d875867a11a17b02b5ed8592cf2c1c124f2397f4ccbd1e014589b728886524b6b738b22ef4faf7aaaa403b9a56003a008348be8,8589936389,1,3.1822031472526567E-6,0.9999968177968527,0,3879.707763671875,0.8097045421600342,0.08210070431232452,1240.4276123046875,0.9891560673713684,0.027434373274445537,0,85,0,262144,"[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+ 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+ 48 49 50 51 52 53 55 56 58 60 63 64 66 74 81]","[6. 2. 3. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]","[    0     1     2     3     4     5     6     7     8     9    10    11
+    34   106   107   108   207   233   242   243   244   249   270   271
+   272   442   443   444   445   446   447   448   458   459   460   461
+   462   463   464   465   466   467   604   605   606   607   608   609
+   619   638   639  1073  1078  1081  1107  1108  1109  1112  1113  1473
+  1996  2057  2061  2063  2355  2358  2359  2363  2364  2365  2370  2722
+  4363  4366  4836  5816 18731 23302 53118 53368 53845 54433 54853 55835
+ 55991 56158 56542 56556 56960 57105 57328 57477 57515 58087 58173 58603
+ 58656 59292 59861 60080 60880]","[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1.]",no_match_predict_fraud,root 1 5c6af9f4 e1e94a32b0c751343fb6b88b 00d409f0 702e 4ad3 95b6 91a3e6a45088 request method get url https isl ca dazn com misl v2 playback assetid 126gun07quhw71r0dpgo9gtgdk eventid 2upox17bzaj20o1jsij91csgw format mpeg dash playerid dazn 92b149ff557fc55 secure true languagecode en latitude null longitude null platform androidtv manufacturer sony model null mtalanguagecode en clientip 142 112 184 20 headers user agent mozilla 5 0 linux android 8 0 0 bravia 4k gb atv3 build opr2 170623 027 s16 wv applewebkit 537 36 khtml like gecko version 4 0 chrome 72 0 3626 105 mobile safari 537 36 fe v1 42 0 type in response statuscode 200 reasonphrase ok duration 125 jwt viewerid a76c72234912 deviceid e5800cef 856d 4635 aaaf a76c72234912 92b149ff557fc55 userstatus activepaid
+1ace03b129628682f0a895475f47ef524fec3f329463d212f17e5e1aa241ab8f4382df33ad739bee31132fec74caa0a4b56b2aa404880719c3dd2a69760cbd73,8589936943,1,5.345528404570382E-7,0.9999994654471596,0,4018.65673828125,0.8860741257667542,0.07872290909290314,1319.4334716796875,1.0,0.02330627664923668,0,85,0,262144,"[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+ 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+ 48 49 50 51 52 53 55 58 60 63 64 66 74 81]","[6. 2. 3. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]","[     0      1      2      3      4      5      6      7      8      9
+     10     11     34    106    107    108    207    233    242    243
+    244    249    442    443    444    445    446    447    448    458
+    459    460    461    462    463    464    465    466    467    604
+    605    606    607    608    609    619    638    639    825    845
+    846    847   1027   1073   1078   1081   1107   1108   1109   1112
+   1113   1624   1842   1845   1972   2168   2355   2358   2359   2363
+   2364   2365   2370  10318  73915  73970  74714  75870  76140  76608
+  77137  77310  77346  77918  78026  80257  80841  80921  81135  81525
+  82524  83989  85012  85486  85748  86123  86493  87869 217082 223373
+ 233628]","[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1.]",no_match_predict_fraud,root 1 5c6a39ba a5a808d1828c9084acdf9645 f9e432a6 4e27 47fd 8ce7 3898f40a3600 request method get url https isl ca dazn com misl v2 playback assetid 18ks8zkdyc0os1mubosfeg1dz7 eventid 9e2try9s2jk8rg05f6eany63u format mpeg dash playerid dazn b85884a24069fecc secure true languagecode en latitude null longitude null platform androidtv manufacturer sony model null mtalanguagecode en clientip 99 247 116 11 headers user agent mozilla 5 0 linux android 8 0 0 bravia 4k gb atv3 build opr2 170623 027 s16 wv applewebkit 537 36 khtml like gecko version 4 0 chrome 72 0 3626 105 mobile safari 537 36 fe v1 42 0 type in response statuscode 200 reasonphrase ok duration 676 jwt viewerid 23f578d16d1d deviceid 33dc2edb b1f2 4394 a95b 23f578d16d1d b85884a24069fecc userstatus freetrial
+fbc7d2a76ad962cb4d0d356841f63a7aac10dd6fdc3ac97add5492243de8e91589b50f0d43a92b985869fa76916a38dc2e12a18f808d54cd04c167a69275d750,8589935781,1,1.6644506205762326E-6,0.9999983355493796,0,3866.290771484375,0.8089671730995178,0.07955554872751236,1105.974853515625,1.0,0.0219399556517601,0,85,0,262144,"[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+ 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+ 48 49 50 51 52 53 55 58 60 63 64 66 74 81]","[6. 2. 3. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]","[    0     1     2     3     4     5     6     7     8     9    10    11
+    34   106   107   108   128   129   130   207   233   242   243   244
+   249   442   443   444   445   446   447   448   458   459   460   461
+   462   463   464   465   466   467   604   605   606   607   608   609
+   619   638   639   757   812   813   814   875  1073  1078  1081  1107
+  1108  1109  1112  1113  1512  1513  1624  2102  2168  2355  2358  2359
+  2363  2364  2365  2370 10318 73915 73970 74714 75870 76140 76608 77137
+ 77310 77346 77918 78026 80257 80841 80921 81135 81525 82524 83989 85012
+ 85486 85748 86123 86493 87869]","[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1.]",no_match_predict_fraud,root 1 5c6a39f4 159a2d087401144ae8b0463f f9e432a6 4e27 47fd 8ce7 3898f40a3600 request method get url https isl ca dazn com misl v2 playback assetid 1sgdmh6xftn5010ejt78zk08gg eventid 3c7mgv8bcxbiwyz536rc8gdwq format mpeg dash playerid dazn b85884a24069fecc secure true languagecode en latitude null longitude null platform androidtv manufacturer sony model null mtalanguagecode en clientip 99 247 116 11 headers user agent mozilla 5 0 linux android 8 0 0 bravia 4k gb atv3 build opr2 170623 027 s16 wv applewebkit 537 36 khtml like gecko version 4 0 chrome 72 0 3626 105 mobile safari 537 36 fe v1 42 0 type in response statuscode 200 reasonphrase ok duration 47 jwt viewerid 23f578d16d1d deviceid 33dc2edb b1f2 4394 a95b 23f578d16d1d b85884a24069fecc userstatus freetrial
+bc8e5c36ce1373b62b4a99ed63d4656521d48a418483cb14c8ca14384da50f4e788b603fc3a60631181fe3b78f686886263dd655812776dc4ae4a5d54219df8e,8589938531,1,2.5430266991333612E-5,0.9999745697330087,0,3569.081787109375,0.45051825046539307,0.07938933372497559,1499.2518310546875,0.9440207481384276,0.03424065560102463,0,85,0,262144,"[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+ 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+ 48 49 50 51 52 53 55 56 58 60 63 64 66 74 81]","[6. 2. 3. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1.]","[     0      1      2      3      4      5      6      7      8      9
+     10     11     34    106    107    108    207    233    242    243
+    244    249    414    415    416    442    443    444    445    446
+    447    448    458    459    460    461    462    463    464    465
+    466    467    608    609    619   1137   1142   1143   1144   1145
+   1146   1147   1155   1157   1158   1159   1160   1161   1162   1163
+   1167   1168   1211   1212   1589   1631   1632   1634   2347   2388
+   2522   2529   3113 126078]","[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1.]",no_match_predict_fraud,root 1 5c6a0420 25ba402c4730a7782ec37b5c fd66b4fc ff36 48e8 9103 5fe769c09316 request method get url https isl ca dazn com misl v2 playback assetid 3y16nhqnfxfy1tqtjh6z484hb eventid 7d08657vikbj412mkzy8dyegl format mpeg dash playerid dazn 348f8d9073667263 secure true languagecode en latitude null longitude null platform androidtv manufacturer nvidia model null mtalanguagecode en clientip 156 34 214 127 headers user agent mozilla 5 0 linux android 8 0 0 shield android tv build opr6 170623 010 wv applewebkit 537 36 khtml like gecko version 4 0 chrome 72 0 3626 105 mobile safari 537 36 fe v1 42 0 type in response statuscode 200 reasonphrase ok duration 141 jwt viewerid 227103c108cc deviceid 6e0cc9f5 1a3a 4e8a b34e 227103c108cc 348f8d9073667263 userstatus activepaid
+da945a0c837423263b95714c751261e24bbd44d65be843f52125f45a04b67f95a6255f3b4bd32f92288aabf47fd1b1dee43184345630752569c299d03b1accd3,8589937022,1,8.090023161534905E-7,0.9999991909976839,0,4050.5322265625,0.8860741257667542,0.0811287984251976,1329.4385986328125,1.0,0.025275837630033493,0,85,0,262144,"[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+ 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+ 48 49 50 51 52 53 55 56 58 60 63 64 66 74 81]","[6. 2. 3. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]","[     0      1      2      3      4      5      6      7      8      9
+     10     11     34    106    107    108    207    233    242    243
+    244    249    442    443    444    445    446    447    448    458
+    459    460    461    462    463    464    465    466    467    543
+    544    545    604    605    606    607    608    609    619    638
+    639   1073   1078   1081   1107   1108   1109   1112   1113   2355
+   2358   2359   2363   2364   2365   2370   2728   2864   3027   3028
+   3040   3345   5566   6617   6618   9316  61958 111604 113724 114591
+ 116863 117305 117583 117659 119807 120010 121813 126077 126323 126432
+ 127476 127611 127620 131932 132616 132760 132815 133971 135039 137771
+ 138111]","[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1.]",no_match_predict_fraud,root 1 5c6a1073 a479f3067bd4f46b8a92b0bb fd00825e d86e 4621 a40c 0825f4fb0155 request method get url https isl ca dazn com misl v2 playback assetid nta82qifgcnn1aq36rsmkcl9u eventid 9f7fnxdo8byci73u5788wz7u2 format mpeg dash playerid dazn 3a20a3bedf79f46f secure true languagecode en latitude null longitude null platform androidtv manufacturer sony model null mtalanguagecode en clientip 173 177 21 192 headers user agent mozilla 5 0 linux android 8 0 0 bravia 4k gb atv3 build opr2 170623 027 s16 wv applewebkit 537 36 khtml like gecko version 4 0 chrome 72 0 3626 105 mobile safari 537 36 fe v1 42 0 type in response statuscode 200 reasonphrase ok duration 62 jwt viewerid f2437a465c65 deviceid 21bdd71d b889 4991 9e93 f2437a465c65 3a20a3bedf79f46f userstatus activepaid
+81655a2231cf42eb803779328d1979aba62cc3d3ba183126f4572494f14464a0aed91677aa36956bab96a002c91efad06f416aa17aabfa6e5ead591cf5c51503,8589938143,1,1.2484691418328407E-6,0.999998751530858,0,3708.0234375,0.8498544096946716,0.07715300470590591,1460.3515625,0.9999989867210388,0.028998052701354027,0,85,0,262144,"[ 0  1  2  3  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+ 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48
+ 49 50 51 52 53 55 56 58 60 63 64 66 74 81]","[6. 2. 3. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1.]","[     0      1      2      3      4      5      6      7      8     34
+    106    107    108    207    233    242    243    244    251    281
+    282    339    340    341    442    443    444    445    446    447
+    448    458    459    460    461    462    463    464    465    466
+    467    503    608    609    619   1137   1142   1143   1144   1145
+   1146   1147   1155   1157   1158   1159   1160   1161   1162   1163
+   1167   1168   1870   1878   1879   1880   2655   3100   3533   3548
+   3914  13423  13432  21025  79360  85642  89549  90957  92608  92712
+  93125  93721  94807  95904  96143  96956  97973  98304  98603 102704
+ 102946 103411 104391 104840 105026 105816 106720 108160 108874]","[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1.]",no_match_predict_fraud,root 1 5c69f77f 7667190e2fba4a2a755ce823 f3bf364e 60f8 40c5 a987 12d7841673fd request method get url https isl ca dazn com misl v2 playback assetid 126r10c4nz0o81urb4u1y1rgwj eventid au99jnnn7s3asxqlo7gvje2cq format mpeg dash playerid dazn f66456228378cb59 secure true languagecode fr latitude null longitude null platform androidtv manufacturer nvidia model null mtalanguagecode fr clientip 70 80 205 33 headers user agent mozilla 5 0 linux android 8 0 0 shield android tv build opr6 170623 010 wv applewebkit 537 36 khtml like gecko version 4 0 chrome 72 0 3626 105 mobile safari 537 36 fe v1 42 0 type in response statuscode 200 reasonphrase ok duration 109 jwt viewerid dc7c7f2059d6 deviceid 610247bd e84f 4879 9b72 dc7c7f2059d6 f66456228378cb59 userstatus activepaid
+b81233529b9de22c2a67d3ba82348d9b6c39b5717f6ec526301a9ae8bb95cb23c0353967f15ebc1d625b5a84bc4377ad54061130bae1ffa0bf0d076a9639224f,8589938327,1,1.7168206951097324E-5,0.999982831793049,0,3422.998779296875,0.6271228790283203,0.07792939245700836,1479.0643310546875,0.9981518983840942,0.03354395925998688,0,85,0,262144,"[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+ 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+ 48 49 50 51 52 53 54 55 58 60 63 64 66 74 81]","[6. 2. 3. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1.]","[     0      1      2      3      4      5      6      7      8      9
+     10     11     34    106    107    108    207    233    242    243
+    244    249    442    443    444    445    446    447    448    458
+    459    460    461    462    463    464    465    466    467    608
+    609    619   1137   1142   1143   1144   1145   1146   1147   1155
+   1157   1158   1159   1160   1161   1162   1163   1167   1168   1211
+   1212   3595   7981   8058   8078   8079  14622  16008  16371  19557
+  20339  20635  21894 193433 197460 198641 199573 200888 204106 204391
+ 205646 207247 207285 215567 216849 219306 224755 226107 226357 228521
+ 239648 240988 246129 251471 254678 259998 261003 261562]","[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1.]",no_match_predict_fraud,root 1 5c6b2898 3340d1856503b45838961e40 023fd177 e18d 47bc a496 07fc5d83901b request method get url https isl ca dazn com misl v2 playback assetid 1s6rthgjcppcc1n2a8a2qfx71k eventid 4btw88na1gs2k7uy0jkxsf78q format mpeg dash playerid dazn 07a874386961937e secure true languagecode en latitude null longitude null platform androidtv manufacturer nvidia model null mtalanguagecode en clientip 45 2 125 194 headers user agent mozilla 5 0 linux android 8 0 0 shield android tv build opr6 170623 010 wv applewebkit 537 36 khtml like gecko version 4 0 chrome 72 0 3626 105 mobile safari 537 36 fe v1 42 0 type in response statuscode 200 reasonphrase ok duration 211 jwt viewerid 6d91f42b87e2 deviceid 31d5bc6d a8bc 429c a773 6d91f42b87e2 07a874386961937e userstatus freetrial
+65ec2541e3aa2f560611d0b5d7dbc1496acee2d0fb611a26c343beea7d5cfaf7615bb0c477e4da4f1643bd1890a048a6a26e629dbf4985fd3863180e0adb202b,8589935102,1,1.458430686534369E-6,0.9999985415693134,0,4104.73779296875,0.721303403377533,0.07943274825811386,534.3114624023438,1.0,0.009808911941945553,0,85,0,262144,"[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+ 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+ 48 49 50 51 52 53 55 58 60 63 64 66 74 81]","[6. 2. 3. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]","[     0      1      2      3      4      5      6      7      8      9
+     10     11     34    106    107    108    207    233    242    243
+    244    249    270    271    272    442    443    444    445    446
+    447    448    458    459    460    461    462    463    464    465
+    466    467    493    496    497    498    503    604    605    606
+    607    608    609    619    638    639    896    898    926   1073
+   1078   1081   1107   1108   1109   1112   1113   2355   2358   2359
+   2363   2364   2365   2370   2434   2935   7551   7684   7695  24443
+  35024  35082  35524  35655  35765  36037  36100  36142  36536  37003
+  37509  37656  37830  37873  38032  38077  38537  38626  38917  39032
+  39091 112340 125121 128576 130122 174321]","[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]",no_match_predict_fraud,root 1 5c6b3496 54a4e227d075b696528ee59a fd864895 bea3 40d1 853e 1c0f7014573a request method get url https isl ca dazn com misl v2 playback assetid 1rav11949ug1c1w0ocl0pisvp1 eventid au99jnnn7s3asxqlo7gvje2cq format mpeg dash playerid dazn a72ada89afabd30d secure true languagecode en latitude null longitude null platform androidtv manufacturer sony model null mtalanguagecode en clientip 24 53 106 230 headers user agent mozilla 5 0 linux android 8 0 0 bravia 4k gb atv3 build opr2 170623 027 s16 wv applewebkit 537 36 khtml like gecko version 4 0 chrome 72 0 3626 105 mobile safari 537 36 fe v1 42 0 type in response statuscode 200 reasonphrase ok duration 125 jwt viewerid f87da6a9b04d deviceid 6484155b 2984 479d 8717 f87da6a9b04d a72ada89afabd30d userstatus freetrial
+26e8aaf911df1bdd196b5af9c0415ce0ce49a314833c19d33671f0fd079ed9d66d5a2c531dee6aea91255b89fd8b0d17d3ae99a987d212f6a59d4254e21493ae,8589938568,1,1.7440887825408706E-5,0.9999825591121746,0,3551.009521484375,0.5806384682655334,0.07847089320421219,1503.273193359375,0.98906010389328,0.03242247924208641,0,85,0,262144,"[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+ 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+ 48 49 50 51 52 53 55 58 60 63 64 66 74 81]","[6. 2. 3. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1.]","[     0      1      2      3      4      5      6      7      8      9
+     10     11     34    106    107    108    207    233    242    243
+    244    249    442    443    444    445    446    447    448    458
+    459    460    461    462    463    464    465    466    467    608
+    609    619    994    995    998   1071   1115   1116   1117   1137
+   1142   1143   1144   1145   1146   1147   1155   1157   1158   1159
+   1160   1161   1162   1163   1167   1168   1211   1212   1275   2473
+   2474   2602   2741  11781 193611 193649 193767 195407 196086 196398
+ 198436 201959 207509 209011 215324 220792 220969 225291 241324 249287
+ 250858 252105 253806 254151 256366 259996]","[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]",no_match_predict_fraud,root 1 5c6ade80 703b0415a0471208e7a8fc69 01737a84 9d88 42a6 8252 0aabd2580a66 request method get url https isl ca dazn com misl v2 playback assetid 1niv86kbuz72c16j8rehy6pn96 eventid 9g167b1p0bw0pqztm5t0wof3e format mpeg dash playerid dazn f656587249f6e0d3 secure true languagecode en latitude null longitude null platform androidtv manufacturer nvidia model null mtalanguagecode en clientip 50 67 44 100 headers user agent mozilla 5 0 linux android 8 0 0 shield android tv build opr6 170623 010 wv applewebkit 537 36 khtml like gecko version 4 0 chrome 72 0 3626 105 mobile safari 537 36 fe v1 42 0 type in response statuscode 200 reasonphrase ok duration 203 jwt viewerid 2cf450307f3f deviceid 4eabbebe 9b1c 4140 89d1 2cf450307f3f f656587249f6e0d3 userstatus freetrial
+c9ff5ebe0fb8fa9b65569123dd1957b1af3e59dc38715f0cfe01b206b0e5c4a498eb2aee1b828a84233fb9331d2e1b68da257b1cadc4c22fd526b95e5900fb0f,8589935994,1,9.640950000047352E-7,0.9999990359049999,0,3931.442626953125,0.9175515174865724,0.08109777420759201,1156.81396484375,0.9981734752655028,0.024285856634378433,0,85,0,262144,"[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+ 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+ 48 49 50 51 52 53 55 56 58 60 63 64 66 74 81]","[6. 2. 3. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]","[    0     1     2     3     4     5     6     7     8     9    10    11
+    34   106   107   108   113   114   115   207   233   242   243   244
+   249   310   403   404   405   442   443   444   445   446   447   448
+   458   459   460   461   462   463   464   465   466   467   604   605
+   606   607   608   609   619   638   639   766   784   785  1035  1073
+  1078  1081  1107  1108  1109  1112  1113  2355  2358  2359  2363  2364
+  2365  2370  2728 24853 25719]","[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1.]",no_match_predict_fraud,root 1 5c6aec25 3daa7a5754e17281a4637245 01a9ce3f 5d0e 44b0 8e2d c1d6b2b7b629 request method get url https isl ca dazn com misl v2 playback assetid 1vna0svebdxgq1k0lz9ilt3x8e eventid p9gvtvfwvum525bk53mg3sy0 format mpeg dash playerid dazn 4cd0d1b334b77370 secure true languagecode en latitude null longitude null platform androidtv manufacturer sony model null mtalanguagecode en clientip 205 250 52 192 headers user agent mozilla 5 0 linux android 8 0 0 bravia 4k gb atv3 build opr2 170623 027 s16 wv applewebkit 537 36 khtml like gecko version 4 0 chrome 72 0 3626 105 mobile safari 537 36 fe v1 42 0 type in response statuscode 200 reasonphrase ok duration 31 jwt viewerid e12f989d5699 deviceid c3584793 64ab 4157 b1c9 e12f989d5699 4cd0d1b334b77370 userstatus activepaid
+1f59fcd0deea4be0138dfaa95be4567251accfbf515ae58de1278c11a76f81743561d2b9a58a9ef37a22eef3542bad4ed78cee171a4c3e27f660c6d4b4777c78,8589938249,1,1.5618291487452663E-7,0.9999998438170852,0,4018.572509765625,0.9793136119842528,0.07567371428012848,1470.1510009765625,0.9793136119842528,0.0230867899954319,0,85,0,262144,"[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+ 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+ 48 49 50 51 52 53 55 56 58 60 63 64 66 74 81]","[6. 2. 3. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1.]","[     0      1      2      3      4      5      6      7      8      9
+     10     11     34    106    107    108    207    233    242    243
+    244    249    442    443    444    445    446    447    448    458
+    459    460    461    462    463    464    465    466    467    493
+    496    497    498    503    608    609    619    896    898    926
+   1137   1142   1143   1144   1145   1146   1147   1155   1157   1158
+   1159   1160   1161   1162   1163   1167   1168   1211   1212   1799
+   5710   5713   5766  13443  33147  88297  88506  88536  88625  90882
+  91239  92386  92878  95977  96701  97506  98495  98884  99506 100830
+ 101353 101410 101438 102961 103664 104940 105099 106400 109402 261239]","[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1.]",no_match_predict_fraud,root 1 5c6b403e 213ff9d8289e16f0a3619c38 01f5569c 8278 4cf3 a67f 4fe765211fbe request method get url https isl ca dazn com misl v2 playback assetid 1rav11949ug1c1w0ocl0pisvp1 eventid au99jnnn7s3asxqlo7gvje2cq format mpeg dash playerid dazn c4cf2f56d5a9611c secure true languagecode en latitude null longitude null platform androidtv manufacturer nvidia model null mtalanguagecode en clientip 135 23 217 28 headers user agent mozilla 5 0 linux android 8 0 0 shield android tv build opr6 170623 010 wv applewebkit 537 36 khtml like gecko version 4 0 chrome 72 0 3626 105 mobile safari 537 36 fe v1 42 0 type in response statuscode 200 reasonphrase ok duration 327 jwt viewerid c635c2e18253 deviceid a7e2d4e1 afaf 4f02 b38c c635c2e18253 c4cf2f56d5a9611c userstatus activepaid
+e406d77dcf4ec288404cb945df924f31b127b79c8664d0d3b3429c3f6e1da8704e9d926a275ae1b5ec376d36213135b9eeffe8f0c737c8562178d5bdb91bd3c2,8589938500,1,5.115008516628384E-7,0.9999994884991484,0,3987.047119140625,0.9175515174865724,0.07932138442993164,1496.2572021484375,0.9994667172431946,0.027270248159766197,0,85,0,262144,"[ 0  1  2  3  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+ 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48
+ 49 50 51 52 53 55 58 60 63 64 66 74 81]","[6. 2. 3. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]","[     0      1      2      3      4      5      6      7      8     34
+    106    107    108    207    233    242    243    244    251    281
+    282    442    443    444    445    446    447    448    458    459
+    460    461    462    463    464    465    466    467    599    604
+    605    606    607    608    609    619   1073   1078   1081   1107
+   1108   1109   1112   1113   1201   1202   1203   2073   2237   2307
+   2314   2323   2355   2358   2359   2363   2364   2365   2370   2655
+   4439   4444   4633   4679   6987  21233  45647  45986  46065  46385
+  46505  46633  46727  47033  47202  47259  47701  47989  48178  48339
+  48521  48757  48807  49179  49444  49712  50357  51461  51908  52223
+  52692 194592]","[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1.]",no_match_predict_fraud,root 1 5c6b0d8c 5af0327d0fdc68183557dab4 01cbdeb9 4888 4915 921d ef3ef84b0726 request method get url https isl ca dazn com misl v2 playback assetid 16bexcqe5izhy18gnz0yv7rmmw eventid 43s5qho1kdxv7kw3sk36rdz75 format mpeg dash playerid dazn d92c4ba446d483e5 secure true languagecode fr latitude null longitude null platform androidtv manufacturer sony model null mtalanguagecode fr clientip 142 120 88 39 headers user agent mozilla 5 0 linux android 8 0 0 bravia 4k gb atv3 build opr2 170623 027 s16 wv applewebkit 537 36 khtml like gecko version 4 0 chrome 72 0 3626 105 mobile safari 537 36 fe v1 42 0 type in response statuscode 200 reasonphrase ok duration 234 jwt viewerid 09916da65a12 deviceid 5f5acb5b 9641 4bf5 8647 09916da65a12 d92c4ba446d483e5 userstatus freetrial
+ab2493fe0d0fc4174db45affcd337c054105e5ab0d16e50b95ceb55f4c1467b5343b832b4b955787633c82b7120d0f0e7222ac9ff2340b4b9caae5392ffdfd49,8589935131,1,2.5808102476745156E-7,0.9999997419189752,0,4257.08984375,0.8855268955230713,0.07909220457077026,681.0630493164062,1.0,0.008462571538984776,0,85,0,262144,"[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+ 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+ 48 49 50 51 52 53 55 58 60 63 64 66 74 81]","[6. 2. 3. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]","[    0     1     2     3     4     5     6     7     8     9    10    11
+    34   106   107   108   207   233   242   243   244   249   351   409
+   410   442   443   444   445   446   447   448   458   459   460   461
+   462   463   464   465   466   467   604   605   606   607   608   609
+   619   638   639  1073  1078  1081  1107  1108  1109  1112  1113  1292
+  1382  1383  1391  1548  2355  2358  2359  2363  2364  2365  2370  2434
+  2499  2512  2935  3153  7551  7684  7695 24443 35024 35082 35524 35655
+ 35765 36037 36100 36142 36536 37003 37509 37656 37830 37873 38032 38077
+ 38537 38626 38917 39032 39091]","[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1.]",no_match_predict_fraud,root 1 5c6b34b5 227164fe7789f6f3526953ff fd864895 bea3 40d1 853e 1c0f7014573a request method get url https isl ca dazn com misl v2 playback assetid 1byqajf0eqfp612nudfgysbdo1 eventid 9er9zbo156fopuu6xynos9ca2 format mpeg dash playerid dazn a72ada89afabd30d secure true languagecode en latitude null longitude null platform androidtv manufacturer sony model null mtalanguagecode en clientip 24 53 106 230 headers user agent mozilla 5 0 linux android 8 0 0 bravia 4k gb atv3 build opr2 170623 027 s16 wv applewebkit 537 36 khtml like gecko version 4 0 chrome 72 0 3626 105 mobile safari 537 36 fe v1 42 0 type in response statuscode 200 reasonphrase ok duration 16 jwt viewerid f87da6a9b04d deviceid 6484155b 2984 479d 8717 f87da6a9b04d a72ada89afabd30d userstatus freetrial
+73a333bf09c0b725f0f6a6aa6434a3fc3d0ab2e1cf4377b6d14151ad4ffd46a40828c673bd6ce97466f8f191baecf38a37759314603289af8588a283e07ba015,8589935429,1,9.344828716798115E-6,0.9999906551712832,0,3801.54150390625,0.6748828291893005,0.08137483894824982,962.0782470703124,0.979153335094452,0.023393234238028526,0,85,0,262144,"[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+ 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+ 48 49 50 51 52 53 55 58 60 63 64 66 74 81]","[6. 2. 3. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]","[     0      1      2      3      4      5      6      7      8      9
+     10     11     34    106    107    108    128    129    130    207
+    233    242    243    244    249    442    443    444    445    446
+    447    448    458    459    460    461    462    463    464    465
+    466    467    493    496    497    498    503    604    605    606
+    607    608    609    619    638    639    896    898    926   1073
+   1078   1081   1107   1108   1109   1112   1113   2348   2355   2358
+   2359   2363   2364   2365   2370  16697 199248 201462 205156 205549
+ 218027 218151 221538 225813 233256]","[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]",no_match_predict_fraud,root 1 5c6a09c3 c7640f61fdf233b801307638 fadb8517 75b3 4531 9d22 1d82562d118a request method get url https isl ca dazn com misl v2 playback assetid 1rav11949ug1c1w0ocl0pisvp1 eventid au99jnnn7s3asxqlo7gvje2cq format mpeg dash playerid dazn 0a1d55060be77dd1 secure true languagecode en latitude null longitude null platform androidtv manufacturer sony model null mtalanguagecode en clientip 64 180 234 238 headers user agent mozilla 5 0 linux android 8 0 0 bravia 4k gb atv3 build opr2 170623 027 s16 wv applewebkit 537 36 khtml like gecko version 4 0 chrome 72 0 3626 105 mobile safari 537 36 fe v1 42 0 type in response statuscode 200 reasonphrase ok duration 47 jwt viewerid a9718a0cc11b deviceid e51645af 6368 4c2f 805d a9718a0cc11b 0a1d55060be77dd1 userstatus freetrial
+0eb94502e1dfc83cac3403d9012c9c85c067bafa37b81034b76f66c5e1a255353aaece6488919f6716e83489770794a32accaba68a63fa608bd36d1a23f1497d,8589936017,1,3.152507507281965E-6,0.9999968474924928,0,3871.666015625,0.7657259106636047,0.08132123947143555,1162.3726806640625,0.9994593262672424,0.024473004043102264,0,85,0,262144,"[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+ 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+ 48 49 50 51 52 53 55 56 58 60 63 64 66 74 81]","[6. 2. 3. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]","[    0     1     2     3     4     5     6     7     8     9    10    11
+    34   106   107   108   128   129   130   207   233   242   243   244
+   249   442   443   444   445   446   447   448   458   459   460   461
+   462   463   464   465   466   467   604   605   606   607   608   609
+   619   638   639   757   812   813   814   875  1073  1078  1081  1107
+  1108  1109  1112  1113  1512  1513  2102  2355  2358  2359  2363  2364
+  2365  2370  2722  5816 18731 23302 53118 53368 53845 54433 54853 55835
+ 55991 56158 56542 56556 56960 57105 57328 57477 57515 58087 58173 58603
+ 58656 59292 59861 60080 60880]","[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1.]",no_match_predict_fraud,root 1 5c6afa9b b2a56ad8e35210b8fa43c128 00d409f0 702e 4ad3 95b6 91a3e6a45088 request method get url https isl ca dazn com misl v2 playback assetid 1sgdmh6xftn5010ejt78zk08gg eventid 3c7mgv8bcxbiwyz536rc8gdwq format mpeg dash playerid dazn 92b149ff557fc55 secure true languagecode en latitude null longitude null platform androidtv manufacturer sony model null mtalanguagecode en clientip 142 112 184 20 headers user agent mozilla 5 0 linux android 8 0 0 bravia 4k gb atv3 build opr2 170623 027 s16 wv applewebkit 537 36 khtml like gecko version 4 0 chrome 72 0 3626 105 mobile safari 537 36 fe v1 42 0 type in response statuscode 200 reasonphrase ok duration 47 jwt viewerid a76c72234912 deviceid e5800cef 856d 4635 aaaf a76c72234912 92b149ff557fc55 userstatus activepaid
+dd64bf7df2963dd1e587c4a0a2523ab7212de9e389355e9effb9b80d4b2e8bf0105c07e94ce419e100b9f1010ddf6f249677c3b4f435a8f817f2241a01c9b0d3,8589936386,1,1.5966398544775388E-6,0.9999984033601454,0,3759.205810546875,0.8492076396942139,0.07896608859300613,1240.0760498046875,0.9994593262672424,0.025264153257012367,0,85,0,262144,"[ 0  1  2  3  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+ 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48
+ 49 50 51 52 53 55 58 60 63 64 66 74 81]","[6. 2. 3. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]","[     0      1      2      3      4      5      6      7      8     34
+    106    107    108    128    129    130    207    233    242    243
+    244    251    281    282    442    443    444    445    446    447
+    448    458    459    460    461    462    463    464    465    466
+    467    599    604    605    606    607    608    609    619   1073
+   1078   1081   1107   1108   1109   1112   1113   2073   2237   2307
+   2314   2323   2355   2358   2359   2363   2364   2365   2370   2655
+   4439   4444   4633   4679   6987  21233  45647  45986  46065  46385
+  46505  46633  46727  47033  47202  47259  47701  47989  48178  48339
+  48521  48757  48807  49179  49444  49712  50357  51461  51908  52223
+  52692 194592]","[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1.]",no_match_predict_fraud,root 1 5c6b0da0 7021a8f62b398141769cf810 01cbdeb9 4888 4915 921d ef3ef84b0726 request method get url https isl ca dazn com misl v2 playback assetid 16bexcqe5izhy18gnz0yv7rmmw eventid 43s5qho1kdxv7kw3sk36rdz75 format mpeg dash playerid dazn d92c4ba446d483e5 secure true languagecode fr latitude null longitude null platform androidtv manufacturer sony model null mtalanguagecode fr clientip 142 120 88 39 headers user agent mozilla 5 0 linux android 8 0 0 bravia 4k gb atv3 build opr2 170623 027 s16 wv applewebkit 537 36 khtml like gecko version 4 0 chrome 72 0 3626 105 mobile safari 537 36 fe v1 42 0 type in response statuscode 200 reasonphrase ok duration 47 jwt viewerid 09916da65a12 deviceid 5f5acb5b 9641 4bf5 8647 09916da65a12 d92c4ba446d483e5 userstatus freetrial
+29b2e38f6da13bb8cb4127d28bf54e3cf1c5a7da1686c85543b9dfebe076064b7fd8b58d3cf612bde4b8faa442607fe4b268e5a75dac613e1e505687f77f83bd,8589938034,1,2.7761394695070583E-5,0.9999722386053049,0,3808.523193359375,0.9781522750854492,0.08131817728281021,1451.041748046875,0.8335345983505249,0.04929647222161293,0,85,0,262144,"[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+ 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+ 48 49 50 51 52 53 55 60 63 64 65 79 80 82 83 84]","[3. 2. 2. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]","[   0    1    2    3    4    5    6    7    8    9   10   11   12   13
+   14   15   16   26   27   28   29   30   32   33   36   37   38   39
+   48   49   50   51   52   53   54   55   56   57   58   59   72   73
+   74   75  411  493  496  497  498  503  896  898  926 1227 1228 1229
+ 2969 6107]","[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]",no_match_predict_fraud,root 1 5c6b188f a1676588be5ae9f0330da438 0255cf10 90e9 44a1 99f6 14748490035b request method get url https isl ca dazn com misl v2 playback assetid 1rav11949ug1c1w0ocl0pisvp1 eventid au99jnnn7s3asxqlo7gvje2cq format mpeg dash playerid dazn 000c55e554 secure true languagecode en latitude null longitude null platform web manufacturer model mtalanguagecode en clientip 99 239 132 42 headers user agent mozilla 5 0 windows nt 10 0 win64 x64 applewebkit 537 36 khtml like gecko chrome 72 0 3626 109 safari 537 36 type in response statuscode 200 reasonphrase ok duration 250 jwt viewerid 47d1e910fbb5 deviceid aa52a847 6435 4b0d b923 47d1e910fbb5 000c55e554 userstatus freetrial
+d15ce8b4d9a862d48af6c18393783c549627b8b6c5287c031fd9f64c62dc417ccac730e3ba0f20012aad40acc95d32ffc1a9ef49d887f12a7ff6986d023655b4,8589935485,1,2.5045586052780317E-7,0.9999997495441394,0,4266.4638671875,0.9641784429550172,0.08088753372430801,992.984130859375,1.0,0.016175372526049614,0,85,0,262144,"[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+ 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+ 48 49 50 51 52 53 55 58 60 63 64 66 74 81]","[6. 2. 3. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]","[    0     1     2     3     4     5     6     7     8     9    10    11
+    34   106   107   108   207   233   242   243   244   249   442   443
+   444   445   446   447   448   458   459   460   461   462   463   464
+   465   466   467   493   496   497   498   503   604   605   606   607
+   608   609   619   638   639   727   728   729   896   898   926  1073
+  1078  1081  1107  1108  1109  1112  1113  1624  2168  2355  2358  2359
+  2363  2364  2365  2370 10318 73915 73970 74714 75870 76140 76608 77137
+ 77310 77346 77918 78026 80257 80841 80921 81135 81525 82524 83989 85012
+ 85486 85748 86123 86493 87869]","[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1.]",no_match_predict_fraud,root 1 5c6a3bfc 8d3c1b9451a6f9e0ae5b3f09 f9e432a6 4e27 47fd 8ce7 3898f40a3600 request method get url https isl ca dazn com misl v2 playback assetid 1rav11949ug1c1w0ocl0pisvp1 eventid au99jnnn7s3asxqlo7gvje2cq format mpeg dash playerid dazn b85884a24069fecc secure true languagecode en latitude null longitude null platform androidtv manufacturer sony model null mtalanguagecode en clientip 99 247 116 11 headers user agent mozilla 5 0 linux android 8 0 0 bravia 4k gb atv3 build opr2 170623 027 s16 wv applewebkit 537 36 khtml like gecko version 4 0 chrome 72 0 3626 105 mobile safari 537 36 fe v1 42 0 type in response statuscode 200 reasonphrase ok duration 126 jwt viewerid 23f578d16d1d deviceid 33dc2edb b1f2 4394 a95b 23f578d16d1d b85884a24069fecc userstatus freetrial
+5c2393264c76f5c077fc27f7b01ddb30eb631d7725d4c5742a435b2f31363dacdb526170469f808137f7fcce8c937c9746928df19f7a8b3fe965acd9a89225d8,8589936007,1,4.0504477671590705E-7,0.9999995949552234,0,4031.755126953125,0.9440207481384276,0.07894627749919891,1160.1846923828125,0.9994739890098572,0.020964236930012703,0,85,0,262144,"[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+ 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+ 48 49 50 51 52 53 55 56 58 60 63 64 66 74 81]","[6. 2. 3. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]","[     0      1      2      3      4      5      6      7      8      9
+     10     11     34    106    107    108    207    233    242    243
+    244    249    442    443    444    445    446    447    448    458
+    459    460    461    462    463    464    465    466    467    604
+    605    606    607    608    609    619    638    639    869    870
+    871   1073   1078   1081   1107   1108   1109   1112   1113   1230
+   1293   1294   1295   1797   2355   2358   2359   2363   2364   2365
+   2370   2620   2622   3237   4200  13034  88481  90024  91052  92490
+  94212  94580  97170  97553  97702  97789  97796  97871  97967  98471
+ 102269 102527 103551 104074 105122 105447 106403 106569 107959 108559
+ 108961]","[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1.]",no_match_predict_fraud,root 1 5c6b37d5 55cbb8aa583526ba00eb5d0e f7dac638 5de2 48e5 81a4 6fc610726f6d request method get url https isl ca dazn com misl v2 playback assetid 1fm159iglxj351dv8bw9ksiuqa eventid 108csocwkq82nkyfamctwkj8q format mpeg dash playerid dazn e9c3a89f1200c7a5 secure true languagecode en latitude null longitude null platform androidtv manufacturer sony model null mtalanguagecode en clientip 68 149 17 150 headers user agent mozilla 5 0 linux android 8 0 0 bravia 4k gb atv3 build opr2 170623 027 s16 wv applewebkit 537 36 khtml like gecko version 4 0 chrome 72 0 3626 105 mobile safari 537 36 fe v1 42 0 type in response statuscode 200 reasonphrase ok duration 111 jwt viewerid 1463e50e421c deviceid f16a1144 2ac0 45f9 9da6 1463e50e421c e9c3a89f1200c7a5 userstatus activepaid
+801676ebafe7d0fffd046de772ab7d7ff93e8bbcd99723286b1d98a5f66dd1ad15e44937d6eb10e7ec6f5c9420925d51726a44a920d62721460718bef2e2cb3a,8589935406,1,4.1473252830020417E-7,0.9999995852674716,0,4242.83837890625,0.8504985570907593,0.07939433306455612,949.819580078125,1.0,0.014682050794363022,0,85,0,262144,"[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+ 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+ 48 49 50 51 52 53 55 56 58 60 63 64 66 74 81]","[6. 2. 3. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]","[     0      1      2      3      4      5      6      7      8      9
+     10     11     34    106    107    108    207    233    242    243
+    244    249    442    443    444    445    446    447    448    458
+    459    460    461    462    463    464    465    466    467    493
+    496    497    498    503    604    605    606    607    608    609
+    619    638    639    896    898    926   1073   1078   1081   1107
+   1108   1109   1112   1113   2355   2358   2359   2363   2364   2365
+   2370   2482   2935   6745   7219   7246   7270  26120  26172  26213
+  26647  27033  27064  27250  28048  28193 192502 194699 195437 200174
+ 208988 215623 216278 217025 220865 223477 229515 248680 260676]","[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1.]",no_match_predict_fraud,root 1 5c6a3f4f 6fb599e878dfafb08e00b2e8 fbc9d434 bce9 408c a073 fd6ec929a97d request method get url https isl ca dazn com misl v2 playback assetid 1rav11949ug1c1w0ocl0pisvp1 eventid au99jnnn7s3asxqlo7gvje2cq format mpeg dash playerid dazn 7638c98baa07eca7 secure true languagecode en latitude null longitude null platform androidtv manufacturer sony model null mtalanguagecode en clientip 24 141 182 46 headers user agent mozilla 5 0 linux android 8 0 0 bravia 4k gb atv3 build opr2 170623 027 s16 wv applewebkit 537 36 khtml like gecko version 4 0 chrome 72 0 3626 105 mobile safari 537 36 fe v1 42 0 type in response statuscode 200 reasonphrase ok duration 808 jwt viewerid 75a256002a0d deviceid 0a2c8ab1 0906 4163 a9e4 75a256002a0d 7638c98baa07eca7 userstatus activepaid
+4bbf0b9a7c64dff96c007166dc82ad33fade4205fa0b860a2ff22c6de556ab1fb185143d05556d2aac5e9f2bec790e9a8cadd9ac4b7ff0bc30f579811f8c9249,8589935600,1,1.2737757052453235E-5,0.9999872622429476,0,3741.341552734375,0.6280897259712219,0.08085623383522034,1047.17919921875,0.9981734752655028,0.02524471841752529,0,85,0,262144,"[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+ 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+ 48 49 50 51 52 53 55 56 58 60 63 64 66 74 81]","[6. 2. 3. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]","[     0      1      2      3      4      5      6      7      8      9
+     10     11     34    106    107    108    128    129    130    207
+    233    242    243    244    249    442    443    444    445    446
+    447    448    458    459    460    461    462    463    464    465
+    466    467    604    605    606    607    608    609    619    638
+    639   1073   1078   1081   1107   1108   1109   1112   1113   2355
+   2358   2359   2363   2364   2365   2370   2593   2601   2607   2611
+   2728   3345   5566   5577   5595   6334  61958 111604 113724 114591
+ 116863 117305 117583 117659 119807 120010 121813 126077 126323 126432
+ 127476 127611 127620 131932 132616 132760 132815 133971 135039 137771
+ 138111]","[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1.]",no_match_predict_fraud,root 1 5c6a1070 af275012389f4aea2a6d44e9 fd00825e d86e 4621 a40c 0825f4fb0155 request method get url https isl ca dazn com misl v2 playback assetid e96lag6277ff1wooof3e2v3xg eventid 9f7fnxdo8byci73u5788wz7u2 format mpeg dash playerid dazn 3a20a3bedf79f46f secure true languagecode en latitude null longitude null platform androidtv manufacturer sony model null mtalanguagecode en clientip 173 177 21 192 headers user agent mozilla 5 0 linux android 8 0 0 bravia 4k gb atv3 build opr2 170623 027 s16 wv applewebkit 537 36 khtml like gecko version 4 0 chrome 72 0 3626 105 mobile safari 537 36 fe v1 42 0 type in response statuscode 200 reasonphrase ok duration 47 jwt viewerid f2437a465c65 deviceid 21bdd71d b889 4991 9e93 f2437a465c65 3a20a3bedf79f46f userstatus activepaid
+ec4ff16d4546ae75047975ea92c4facf3618db9931b7f42ef62cced8f1d16c6c68da90b0c14b00fb4c31a338a786e48f03d1e98f13a0f06a055ad7360a6f2fe4,8589935419,1,9.709207066401123E-8,0.9999999029079293,0,4491.94287109375,0.9641784429550172,0.08000575006008148,957.2865600585938,1.0,0.011275281198322771,0,85,0,262144,"[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+ 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+ 48 49 50 51 52 53 55 58 60 63 64 66 74 81]","[6. 2. 3. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]","[     0      1      2      3      4      5      6      7      8      9
+     10     11     34    106    107    108    207    233    242    243
+    244    249    442    443    444    445    446    447    448    458
+    459    460    461    462    463    464    465    466    467    493
+    496    497    498    503    604    605    606    607    608    609
+    619    638    639    896    898    926   1073   1078   1081   1107
+   1108   1109   1112   1113   2355   2358   2359   2363   2364   2365
+   2370   2434   2935   7551   7684   7695  11656  11733  11764  24443
+  35024  35082  35524  35655  35765  36037  36100  36142  36536  37003
+  37509  37656  37830  37873  38032  38077  38537  38626  38917  39032
+  39091 174321]","[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1.]",no_match_predict_fraud,root 1 5c6b361e 90c5c5fbb4c6af517bf77afe fd864895 bea3 40d1 853e 1c0f7014573a request method get url https isl ca dazn com misl v2 playback assetid 1rav11949ug1c1w0ocl0pisvp1 eventid au99jnnn7s3asxqlo7gvje2cq format mpeg dash playerid dazn a72ada89afabd30d secure true languagecode en latitude null longitude null platform androidtv manufacturer sony model null mtalanguagecode en clientip 24 53 106 230 headers user agent mozilla 5 0 linux android 8 0 0 bravia 4k gb atv3 build opr2 170623 027 s16 wv applewebkit 537 36 khtml like gecko version 4 0 chrome 72 0 3626 105 mobile safari 537 36 fe v1 42 0 type in response statuscode 200 reasonphrase ok duration 807 jwt viewerid f87da6a9b04d deviceid 6484155b 2984 479d 8717 f87da6a9b04d a72ada89afabd30d userstatus freetrial
+18f91d0db3ae26d350f9f7f91cc9ddc128a668f964bab71c16010f95890ec9af68a80af3dcf4cf34648fc45767849de0c4ce657d1b69b08818a1c061e3da12bf,8589937748,1,7.558965391389333E-7,0.999999244103461,0,3807.513427734375,0.9171082973480223,0.0780152827501297,1420.1055908203125,0.963934063911438,0.026542386040091515,0,85,0,262144,"[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+ 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+ 48 49 50 51 52 53 55 56 58 60 63 64 66 74 81]","[6. 2. 3. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1.]","[     0      1      2      3      4      5      6      7      8      9
+     10     11     34    106    107    108    113    114    115    207
+    233    242    243    244    249    442    443    444    445    446
+    447    448    458    459    460    461    462    463    464    465
+    466    467    493    496    497    498    503    608    609    619
+    896    898    926   1137   1142   1143   1144   1145   1146   1147
+   1155   1157   1158   1159   1160   1161   1162   1163   1167   1168
+   1211   1212   2761  37992  39670  40401  40654  41769  41897  44170
+  73273  74345  75592  75915  77409  78289  79241  79810  79832  80097
+  80869  81095  81547  82814  83377  83624  83672  85057  85278 133981
+ 216438 217400 221141 258691]","[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1.]",no_match_predict_fraud,root 1 5c6a2450 234f9b586c59f3909ed426d0 f96a19ab da20 4ca2 990d 71ab007074c1 request method get url https isl ca dazn com misl v2 playback assetid 1rav11949ug1c1w0ocl0pisvp1 eventid au99jnnn7s3asxqlo7gvje2cq format mpeg dash playerid dazn 963e624a07d20bea secure true languagecode en latitude null longitude null platform androidtv manufacturer nvidia model null mtalanguagecode en clientip 67 193 191 6 headers user agent mozilla 5 0 linux android 8 0 0 shield android tv build opr6 170623 010 wv applewebkit 537 36 khtml like gecko version 4 0 chrome 72 0 3626 105 mobile safari 537 36 fe v1 42 0 type in response statuscode 200 reasonphrase ok duration 31 jwt viewerid 901ed101e6c2 deviceid fe573f5f 5457 4781 9023 901ed101e6c2 963e624a07d20bea userstatus activepaid
+8aac97ff7c54f8fd4d8b3bf3d3fc0e4a972fac4b07969683252a795bd2f01f6bcc8242d37a0240e9c5ccaac02d3ca90acde461e86da36e361a2bd44cf538c718,8589936571,1,1.874796097059418E-7,0.9999998125203903,0,3945.06103515625,0.979153335094452,0.07539821416139603,1270.0938720703125,1.0,0.02046528086066246,0,85,0,262144,"[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+ 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+ 48 49 50 51 52 53 54 55 56 58 60 63 64 66 74 81 84]","[5. 2. 3. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 1.]","[    0     1     2     3     4     5     6     7     8     9    10    11
+   106   107   108   128   129   130   195   207   233   242   243   244
+   249   360   361   362   363   364   365   366   493   496   497   498
+   503   608   609   619   896   898   926  1137  1142  1143  1144  1145
+  1146  1147  1155  1157  1158  1159  1160  1161  1162  1163  1167  1168
+  1211  1212  2017  6422  6745 17893 17928 17944 17977 18193 18456 18493
+ 18592 18693 18730 34100 45522 45623 45626 46037 46732 48594 48797 49192
+ 49435 49730 50297 50353 50474 50942 51592 51777 52419 52677 73722 76241
+ 83346 83400 86970]","[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1.]",no_match_predict_fraud,root 1 5c6a33b3 5956b9b6a49117b2552120a4 fec055be 428d 4d95 b9ea f4583f2177fe request method get url https isl ca dazn com misl v2 playback assetid 1rav11949ug1c1w0ocl0pisvp1 eventid au99jnnn7s3asxqlo7gvje2cq format mpeg dash playerid dazn f0a8da9d93acd3f6 secure true languagecode en latitude null longitude null platform androidtv manufacturer nvidia model null mtalanguagecode en clientip 24 141 10 212 headers user agent mozilla 5 0 linux android 8 0 0 shield android tv build opr6 170623 010 wv applewebkit 537 36 khtml like gecko version 4 0 chrome 69 0 3497 100 mobile safari 537 36 fe v1 41 2 type in response statuscode 200 reasonphrase ok duration 47 jwt viewerid 4801bf26bf30 deviceid 63799840 93c3 4555 a783 4801bf26bf30 f0a8da9d93acd3f6 userstatus activepaid
+08507974659823e2696c5afedb2aa1a3368a9c09568b94d6c78d3e9853b4c2b98223fd68bb1412dd44adb09beedaf97acc29b9c1ee04892c2960ca85dfdc98f2,8589937958,1,1.202594531096186E-6,0.999998797405469,0,3745.656494140625,0.8089671730995178,0.07670441269874573,1443.556640625,0.9950641989707948,0.026641661301255223,0,85,0,262144,"[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+ 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+ 48 49 50 51 52 53 55 56 58 60 63 64 66 74 81]","[6. 2. 3. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1.]","[     0      1      2      3      4      5      6      7      8      9
+     10     11     34    106    107    108    128    129    130    207
+    233    242    243    244    249    442    443    444    445    446
+    447    448    458    459    460    461    462    463    464    465
+    466    467    493    496    497    498    503    608    609    619
+    896    898    926   1137   1142   1143   1144   1145   1146   1147
+   1155   1157   1158   1159   1160   1161   1162   1163   1167   1168
+   1211   1212   2761  37992  39670  40401  40654  41769  41897  44170
+  73273  74345  75592  75915  77409  78289  79241  79810  79832  80097
+  80869  81095  81547  82814  83377  83624  83672  85057  85278 133981]","[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1.]",no_match_predict_fraud,root 1 5c6a2417 7a7577a8dca047089955e5e8 f96a19ab da20 4ca2 990d 71ab007074c1 request method get url https isl ca dazn com misl v2 playback assetid 1rav11949ug1c1w0ocl0pisvp1 eventid au99jnnn7s3asxqlo7gvje2cq format mpeg dash playerid dazn 963e624a07d20bea secure true languagecode en latitude null longitude null platform androidtv manufacturer nvidia model null mtalanguagecode en clientip 67 193 191 6 headers user agent mozilla 5 0 linux android 8 0 0 shield android tv build opr6 170623 010 wv applewebkit 537 36 khtml like gecko version 4 0 chrome 72 0 3626 105 mobile safari 537 36 fe v1 42 0 type in response statuscode 200 reasonphrase ok duration 47 jwt viewerid 901ed101e6c2 deviceid fe573f5f 5457 4781 9023 901ed101e6c2 963e624a07d20bea userstatus activepaid
+034de25fb4f5d46a5136cfb88f3838ac6aef6d32ada3a5bd0df238bf4f806c0ca17c694c851fecc7fed69721f7c754a7de3fa6b3ef0834e01ccd206e9c73847f,8589938291,1,3.1906784076164245E-7,0.9999996809321593,0,4188.201171875,0.9436824917793274,0.08088389039039612,1475.135009765625,1.0,0.02526627667248249,0,85,0,262144,"[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+ 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+ 48 49 50 51 52 53 55 56 58 60 63 64 66 74 81]","[6. 2. 3. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]","[     0      1      2      3      4      5      6      7      8      9
+     10     11     34    106    107    108    207    233    242    243
+    244    249    442    443    444    445    446    447    448    458
+    459    460    461    462    463    464    465    466    467    471
+    472    473    604    605    606    607    608    609    619    638
+    639    904    978    979    980   1027   1073   1078   1081   1107
+   1108   1109   1112   1113   1935   1937   2355   2358   2359   2363
+   2364   2365   2370   2550   2728   5566  61958 111604 113724 114591
+ 116863 117305 117583 117659 119807 120010 121813 126077 126323 126432
+ 127476 127611 127620 131932 132616 132760 132815 133971 135039 137771
+ 138111]","[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1.]",no_match_predict_fraud,root 1 5c6a0f0e 39a8e1b8cc462bd8a042abc4 fd00825e d86e 4621 a40c 0825f4fb0155 request method get url https isl ca dazn com misl v2 playback assetid 9k7dow45thko1fqa4bzh8iwvj eventid 9e2try9s2jk8rg05f6eany63u format mpeg dash playerid dazn 3a20a3bedf79f46f secure true languagecode en latitude null longitude null platform androidtv manufacturer sony model null mtalanguagecode en clientip 173 177 21 192 headers user agent mozilla 5 0 linux android 8 0 0 bravia 4k gb atv3 build opr2 170623 027 s16 wv applewebkit 537 36 khtml like gecko version 4 0 chrome 72 0 3626 105 mobile safari 537 36 fe v1 42 0 type in response statuscode 200 reasonphrase ok duration 94 jwt viewerid f2437a465c65 deviceid 21bdd71d b889 4991 9e93 f2437a465c65 3a20a3bedf79f46f userstatus activepaid
+32c33c2a90b8433ae354dbcca018f92102e1052a0180b40be2bade28b2a63581ffb329f8b00a7586ef29ba3e07288001bf5ea75c7532dbdba81d1a66f7d08202,8589935092,1,6.936120653410384E-7,0.9999993063879346,0,4210.2529296875,0.8089671730995178,0.08115597069263458,0.0,1.0,0.0,0,85,0,262144,"[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+ 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+ 48 49 50 51 52 53 55 58 60 63 64 66 74 81]","[6. 2. 3. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]","[     0      1      2      3      4      5      6      7      8      9
+     10     11     34    106    107    108    113    114    115    207
+    233    242    243    244    249    442    443    444    445    446
+    447    448    458    459    460    461    462    463    464    465
+    466    467    493    496    497    498    503    604    605    606
+    607    608    609    619    638    639    896    898    926   1073
+   1078   1081   1107   1108   1109   1112   1113   2355   2358   2359
+   2363   2364   2365   2370   2434   2935   7551   7684   7695  24443
+  35024  35082  35524  35655  35765  36037  36100  36142  36536  37003
+  37509  37656  37830  37873  38032  38077  38537  38626  38917  39032
+  39091  88768  91441  96715  99254 174321]","[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]",no_match_predict_fraud,root 1 5c6b07f5 98198c3613d954e7d63c33d6 fd864895 bea3 40d1 853e 1c0f7014573a request method get url https isl ca dazn com misl v2 playback assetid 1rav11949ug1c1w0ocl0pisvp1 eventid au99jnnn7s3asxqlo7gvje2cq format mpeg dash playerid dazn a72ada89afabd30d secure true languagecode en latitude null longitude null platform androidtv manufacturer sony model null mtalanguagecode en clientip 24 53 106 230 headers user agent mozilla 5 0 linux android 8 0 0 bravia 4k gb atv3 build opr2 170623 027 s16 wv applewebkit 537 36 khtml like gecko version 4 0 chrome 72 0 3626 105 mobile safari 537 36 fe v1 42 0 type in response statuscode 200 reasonphrase ok duration 31 jwt viewerid f87da6a9b04d deviceid 6484155b 2984 479d 8717 f87da6a9b04d a72ada89afabd30d userstatus freetrial
+f6bf75dbf614bb7f91785a5406ec1052a446090eaa87bf13a84f689d113175c550a19f74ff7c95b464e84e4bf7185d8fabab1ded34c3d0fbcf26860c1f5325bd,8589938159,1,4.40686198333746E-7,0.9999995593138017,0,4131.74951171875,0.9179925322532654,0.08063112944364548,1461.7744140625,1.0,0.025938302278518677,0,85,0,262144,"[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+ 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+ 48 49 50 51 52 53 55 56 58 60 63 64 66 74 81]","[6. 2. 3. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]","[     0      1      2      3      4      5      6      7      8      9
+     10     11     34    106    107    108    128    129    130    207
+    233    242    243    244    249    442    443    444    445    446
+    447    448    458    459    460    461    462    463    464    465
+    466    467    493    496    497    498    503    604    605    606
+    607    608    609    619    638    639    896    898    926   1073
+   1078   1081   1107   1108   1109   1112   1113   2355   2358   2359
+   2363   2364   2365   2370   2728   5566  61958 111604 113724 114591
+ 116863 117305 117583 117659 119807 120010 121813 126077 126323 126432
+ 127476 127611 127620 131932 132616 132760 132815 133971 135039 137771
+ 138111]","[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1.]",no_match_predict_fraud,root 1 5c6a0dc1 3a82a998f26f2cb4a5fcf714 fd00825e d86e 4621 a40c 0825f4fb0155 request method get url https isl ca dazn com misl v2 playback assetid 1rav11949ug1c1w0ocl0pisvp1 eventid au99jnnn7s3asxqlo7gvje2cq format mpeg dash playerid dazn 3a20a3bedf79f46f secure true languagecode en latitude null longitude null platform androidtv manufacturer sony model null mtalanguagecode en clientip 173 177 21 192 headers user agent mozilla 5 0 linux android 8 0 0 bravia 4k gb atv3 build opr2 170623 027 s16 wv applewebkit 537 36 khtml like gecko version 4 0 chrome 72 0 3626 105 mobile safari 537 36 fe v1 42 0 type in response statuscode 200 reasonphrase ok duration 47 jwt viewerid f2437a465c65 deviceid 21bdd71d b889 4991 9e93 f2437a465c65 3a20a3bedf79f46f userstatus activepaid
+fbdf682984ab4fdf301c870a42c23fdfafb00502ae04c9dac6995b224be0a7393f48579e55e7cee85e511ba33db35b72240541d41de5aa01aba504ce415463ea,8589936261,1,1.9025058458110479E-4,0.9998097494154188,0,3700.763916015625,0.4919300973415375,0.08351075649261475,1217.945556640625,0.7665419578552246,0.031248662620782852,0,85,0,262144,"[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+ 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+ 48 49 50 51 52 53 55 56 58 60 63 64 66 74 81]","[6. 2. 3. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]","[     0      1      2      3      4      5      6      7      8      9
+     10     11     34    106    107    108    207    233    242    243
+    244    249    339    340    341    442    443    444    445    446
+    447    448    458    459    460    461    462    463    464    465
+    466    467    604    605    606    607    608    609    619    638
+    639   1073   1078   1081   1107   1108   1109   1112   1113   1271
+   1318   1319   1321   1756   2325   2355   2358   2359   2363   2364
+   2365   2370   2505   2506   2935   3003   6745 195007 209896 210519
+ 211972 214060 214485 215016 215223 215882 220599 224893 225031 225592
+ 225967 226152 236454 242167 243250 246335 247167 253152 254980 258827
+ 262094]","[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1.]",no_match_predict_fraud,root 1 5c6a1024 71b596885122e0b0ffcba8e0 fe42c703 34dd 43e8 9b34 2ed0ce8ec464 request method get url https isl ca dazn com misl v2 playback assetid qdwu9b6cte731xh0eop3zazac eventid c7j73shbxemy6skxn5tr06v2h format mpeg dash playerid dazn 41343396e3785664 secure true languagecode en latitude null longitude null platform androidtv manufacturer sony model null mtalanguagecode en clientip 24 141 105 50 headers user agent mozilla 5 0 linux android 8 0 0 bravia 4k gb atv3 build opr2 170623 027 s16 wv applewebkit 537 36 khtml like gecko version 4 0 chrome 72 0 3626 105 mobile safari 537 36 fe v1 42 0 type in response statuscode 200 reasonphrase ok duration 109 jwt viewerid 9543a3d385f5 deviceid 1474a74e a89a 44db 9106 9543a3d385f5 41343396e3785664 userstatus activepaid
+2943c1dd28c4a8cae2edefdb6f9b000d21f748f6e39f3450b0ba603be06b96ab3a47c9247f623718845712c2ee9a1654a0c83655e947a6d737ed8d8596c5a5b4,8589936357,1,2.8307890505866165E-7,0.999999716921095,0,4161.1728515625,0.9641784429550172,0.08012808859348297,1234.5400390625,0.9994667172431946,0.021034426987171173,0,85,0,262144,"[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+ 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+ 48 49 50 51 52 53 55 56 58 60 63 64 66 74 81]","[6. 2. 3. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]","[     0      1      2      3      4      5      6      7      8      9
+     10     11     34    106    107    108    207    233    242    243
+    244    249    442    443    444    445    446    447    448    458
+    459    460    461    462    463    464    465    466    467    604
+    605    606    607    608    609    619    638    639   1073   1078
+   1081   1107   1108   1109   1112   1113   1230   1293   1294   1295
+   1472   1474   1475   1797   2355   2358   2359   2363   2364   2365
+   2370   2620   2622   3237   4200  13034  88481  90024  91052  92490
+  94212  94580  97170  97553  97702  97789  97796  97871  97967  98471
+ 102269 102527 103551 104074 105122 105447 106403 106569 107959 108559
+ 108961]","[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1.]",no_match_predict_fraud,root 1 5c6b351e bca6d92aee6353a93153e4bc f7dac638 5de2 48e5 81a4 6fc610726f6d request method get url https isl ca dazn com misl v2 playback assetid 1fm159iglxj351dv8bw9ksiuqa eventid 108csocwkq82nkyfamctwkj8q format mpeg dash playerid dazn e9c3a89f1200c7a5 secure true languagecode en latitude null longitude null platform androidtv manufacturer sony model null mtalanguagecode en clientip 68 149 17 150 headers user agent mozilla 5 0 linux android 8 0 0 bravia 4k gb atv3 build opr2 170623 027 s16 wv applewebkit 537 36 khtml like gecko version 4 0 chrome 72 0 3626 105 mobile safari 537 36 fe v1 42 0 type in response statuscode 200 reasonphrase ok duration 32 jwt viewerid 1463e50e421c deviceid f16a1144 2ac0 45f9 9da6 1463e50e421c e9c3a89f1200c7a5 userstatus activepaid
+ff9a06094f6667a4c79cd210589657f864f5f9929025574e6f7508239861de86f86b80b716fd13a27d6bd36f97bcb9d77f8350fcf30466d94bf900542479e55b,8589936003,1,1.286080517500707E-4,0.9998713919482499,0,3551.056640625,0.4101336598396301,0.07980693131685257,1159.9703369140625,0.9179925322532654,0.029346926137804985,0,85,0,262144,"[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+ 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+ 48 49 50 51 52 53 55 56 58 60 63 64 66 74 81]","[6. 2. 3. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1.]","[     0      1      2      3      4      5      6      7      8      9
+     10     11     34    106    107    108    207    233    242    243
+    244    249    442    443    444    445    446    447    448    458
+    459    460    461    462    463    464    465    466    467    608
+    609    619    683    803    804    805    869    870    871   1137
+   1142   1143   1144   1145   1146   1147   1155   1157   1158   1159
+   1160   1161   1162   1163   1167   1168   1211   1212   1477   1551
+   1552   2021   4726  15065  62226 195910 206495 208009 214516 217224
+ 221981 223022 224623 230800 234587 237335 240919 243387 243412 246053
+ 247168 247173 249856 250312 253994 255277 258075]","[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1.]",no_match_predict_fraud,root 1 5c6b390b 577214f845a60ea026f8d1c8 02d69092 1eab 4f90 83c8 271dfe34f03e request method get url https isl ca dazn com misl v2 playback assetid 18d3u3vz6bs941vh4bkvwpzgl5 eventid oxe0ogwxp8r5l8w0ngti6k62 format mpeg dash playerid dazn 5530f7d3777c678c secure true languagecode en latitude null longitude null platform androidtv manufacturer nvidia model null mtalanguagecode en clientip 142 184 55 255 headers user agent mozilla 5 0 linux android 8 0 0 shield android tv build opr6 170623 010 wv applewebkit 537 36 khtml like gecko version 4 0 chrome 72 0 3626 105 mobile safari 537 36 fe v1 42 0 type in response statuscode 200 reasonphrase ok duration 111 jwt viewerid 4e87393280c7 deviceid 7ac9a347 f182 4f35 8130 4e87393280c7 5530f7d3777c678c userstatus activepaid
+95f40ce8b315aefa01e492132e2e7bac4e0a44b41cd7ac6d769d1092a7c6e32104e5166db76add5f9b500daffd886848a5948c5118e68c9236d5cd4604f4525c,8589935166,1,5.323503670586891E-7,0.999999467649633,0,4188.71435546875,0.8492076396942139,0.08020980656147003,741.3318481445312,1.0,0.011560768820345402,0,85,0,262144,"[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+ 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+ 48 49 50 51 52 53 55 58 60 63 64 66 74 81]","[6. 2. 3. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]","[    0     1     2     3     4     5     6     7     8     9    10    11
+    34   106   107   108   113   114   115   207   233   242   243   244
+   249   442   443   444   445   446   447   448   458   459   460   461
+   462   463   464   465   466   467   604   605   606   607   608   609
+   619   638   639   725   772   773   774   778  1073  1078  1081  1107
+  1108  1109  1112  1113  1364  1365  1825  2355  2358  2359  2363  2364
+  2365  2370  2434  2935  7551  7684  7695 24443 35024 35082 35524 35655
+ 35765 36037 36100 36142 36536 37003 37509 37656 37830 37873 38032 38077
+ 38537 38626 38917 39032 39091 88768 91441 96715 99254]","[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1.]",no_match_predict_fraud,root 1 5c6b357e 9b891d083b3e613cfae642a0 fd864895 bea3 40d1 853e 1c0f7014573a request method get url https isl ca dazn com misl v2 playback assetid 1r2nepou03ufi1bl1ttm26hkb5 eventid 3cszch443ao4cvx3vts188acq format mpeg dash playerid dazn a72ada89afabd30d secure true languagecode en latitude null longitude null platform androidtv manufacturer sony model null mtalanguagecode en clientip 24 53 106 230 headers user agent mozilla 5 0 linux android 8 0 0 bravia 4k gb atv3 build opr2 170623 027 s16 wv applewebkit 537 36 khtml like gecko version 4 0 chrome 72 0 3626 105 mobile safari 537 36 fe v1 42 0 type in response statuscode 200 reasonphrase ok duration 31 jwt viewerid f87da6a9b04d deviceid 6484155b 2984 479d 8717 f87da6a9b04d a72ada89afabd30d userstatus freetrial
+40e23f4bdde9f4825fb2805974732faf4f71a37ae759213690ea79fb84be1cd74a5c897f5cc35524bac2e22c982f518b2ec0fd93d99ed852a67a1f0b54ec3ae9,8589937139,1,4.085370195595488E-5,0.999959146298044,0,3799.28271484375,0.9781522750854492,0.0829128697514534,1344.6439208984375,0.7417657375335693,0.04899471625685692,0,85,0,262144,"[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+ 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+ 48 49 50 51 52 53 55 56 60 63 64 65 79 80 82 83 84]","[3. 2. 2. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]","[     0      1      2      3      4      5      6      7      8      9
+     10     11     12     13     14     15     16     26     27     28
+     29     30     32     33     36     37     38     39     48     49
+     50     51     52     53     54     55     56     57     58     59
+     72     73     74     75    493    496    497    498    503    618
+    896    898    926   1514   1515   1516   2266  20526 110608 112003
+ 120117 121550 125156 131487 197762 201052 203288 203818 204051 215477
+ 217779 218549 223759 232686 240738 241022 241191 245848 255739 258368]","[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1.]",no_match_predict_fraud,root 1 5c6b1f7a 92e57cf8797b7745954fc5e6 0271f6b2 2ee5 4fd1 ab46 9180d4116562 request method get url https isl ca dazn com misl v2 playback assetid 1rav11949ug1c1w0ocl0pisvp1 eventid au99jnnn7s3asxqlo7gvje2cq format mpeg dash playerid dazn 0044441ab8 secure true languagecode en latitude null longitude null platform web manufacturer model mtalanguagecode en clientip 24 37 25 146 headers user agent mozilla 5 0 windows nt 10 0 win64 x64 applewebkit 537 36 khtml like gecko chrome 72 0 3626 109 safari 537 36 type in response statuscode 200 reasonphrase ok duration 266 jwt viewerid 3087333f1e1e deviceid 8f84fb06 1592 4190 822b 3087333f1e1e 0044441ab8 userstatus activepaid
+a3acf1c4b71ff92e6a6a8546cd891d1fc64e1241946fc2c39a0e9afe02582b007e0c94a46faa820587521af913899eaa27224268f709f2d11ba773397af3b061,8589936044,1,6.394795037962065E-5,0.9999360520496204,0,3384.95458984375,0.5360827445983887,0.07899537682533264,1171.3724365234375,0.979153335094452,0.031153159216046333,0,85,0,262144,"[ 0  1  2  3  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+ 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48
+ 49 50 51 52 53 55 56 58 60 63 64 66 74 81]","[6. 2. 3. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1.]","[     0      1      2      3      4      5      6      7      8     34
+    106    107    108    207    233    242    243    244    251    281
+    282    442    443    444    445    446    447    448    458    459
+    460    461    462    463    464    465    466    467    608    609
+    619    954    955    956   1137   1142   1143   1144   1145   1146
+   1147   1155   1157   1158   1159   1160   1161   1162   1163   1167
+   1168   1875   2655   3100  13423  13432  15022  15489  15659  15675
+  21025  45633  47334  49205  79360  85642  89549  90957  92608  92712
+  93125  93721  94807  95904  96143  96956  97973  98304  98603 102704
+ 102946 103411 104391 104840 105026 105816 106720 108160 108874 239443]","[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1.]",no_match_predict_fraud,root 1 5c69f773 4307632319b590f4e8684c17 f3bf364e 60f8 40c5 a987 12d7841673fd request method get url https isl ca dazn com misl v2 playback assetid 1wyfbs0unj32i1uq13q003c53c eventid 3bo3ojx3ys6scmbi9ddq932wa format mpeg dash playerid dazn f66456228378cb59 secure true languagecode fr latitude null longitude null platform androidtv manufacturer nvidia model null mtalanguagecode fr clientip 70 80 205 33 headers user agent mozilla 5 0 linux android 8 0 0 shield android tv build opr6 170623 010 wv applewebkit 537 36 khtml like gecko version 4 0 chrome 72 0 3626 105 mobile safari 537 36 fe v1 42 0 type in response statuscode 200 reasonphrase ok duration 142 jwt viewerid dc7c7f2059d6 deviceid 610247bd e84f 4879 9b72 dc7c7f2059d6 f66456228378cb59 userstatus activepaid
+f493c1ca1776e1a8683ca636989f26907b72a20ea27e07a318f20f0f65d15eac7f012366e3cc8d2178034c579b89b36ca3af861ef985b20a44f6a38d7860048f,8589937425,1,8.15174388169497E-8,0.9999999184825612,0,4395.86865234375,0.9644212126731871,0.0781245082616806,1382.2691650390625,1.0,0.018133332952857018,0,85,0,262144,"[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+ 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+ 48 49 50 51 52 53 55 56 58 60 63 64 66 74 81]","[6. 2. 3. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]","[    0     1     2     3     4     5     6     7     8     9    10    11
+    34   106   107   108   207   233   242   243   244   249   270   271
+   272   442   443   444   445   446   447   448   458   459   460   461
+   462   463   464   465   466   467   493   496   497   498   503   604
+   605   606   607   608   609   619   638   639   896   898   926  1073
+  1078  1081  1107  1108  1109  1112  1113  2168  2355  2358  2359  2363
+  2364  2365  2370  2579 16218 45747 46015 46686 48191 48650 49765 50007
+ 50713 52342 75519 76420 77468 79567 80556 81811 83432 84015 84094 84584
+ 84985 85864 86518 86554 87518]","[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1.]",no_match_predict_fraud,root 1 5c6b14c8 70e4aa62d2da59842cf9d7fb 01dda677 e769 4ed1 b952 aaa598b2adbe request method get url https isl ca dazn com misl v2 playback assetid 1rav11949ug1c1w0ocl0pisvp1 eventid au99jnnn7s3asxqlo7gvje2cq format mpeg dash playerid dazn def8bc3548192ad6 secure true languagecode en latitude null longitude null platform androidtv manufacturer sony model null mtalanguagecode en clientip 99 246 124 60 headers user agent mozilla 5 0 linux android 8 0 0 bravia 4k gb atv3 build opr2 170623 027 s16 wv applewebkit 537 36 khtml like gecko version 4 0 chrome 72 0 3626 105 mobile safari 537 36 fe v1 42 0 type in response statuscode 200 reasonphrase ok duration 125 jwt viewerid f9d311fa42d6 deviceid 89c02c1e e579 4c5f a760 f9d311fa42d6 def8bc3548192ad6 userstatus activepaid
+a83aadc94235b3426995fec39c2ebfd206c5ed4ede1d1a709eea654c3c9f0c2c69f87e08447e84d8f079b55117ba743dc5ec38a142ec958b628bd578ca9e9dc0,8589936596,1,8.985801738673833E-7,0.9999991014198261,0,3835.8203125,0.8860741257667542,0.07820384949445724,1274.915283203125,0.9999852776527404,0.02495145238935947,0,85,0,262144,"[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+ 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+ 48 49 50 51 52 53 55 56 58 60 63 64 66 74 81]","[6. 2. 3. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]","[     0      1      2      3      4      5      6      7      8      9
+     10     11     34    106    107    108    207    233    242    243
+    244    249    442    443    444    445    446    447    448    458
+    459    460    461    462    463    464    465    466    467    503
+    509    532    533    534    604    605    606    607    608    609
+    619    638    639    912    913   1073   1078   1081   1107   1108
+   1109   1112   1113   1325   2355   2358   2359   2363   2364   2365
+   2370   2728   4127   4136   4139   5566  61958 111604 113724 114591
+ 116863 117305 117583 117659 119807 120010 121813 126077 126323 126432
+ 127476 127611 127620 131932 132616 132760 132815 133971 135039 137771
+ 138111]","[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1.]",no_match_predict_fraud,root 1 5c6a0dc8 2708071e69040ea46ae7e191 fd00825e d86e 4621 a40c 0825f4fb0155 request method get url https isl ca dazn com misl v2 playback assetid z7l2f51dn0lz1og3c1zts4pi9 eventid au99jnnn7s3asxqlo7gvje2cq format mpeg dash playerid dazn 3a20a3bedf79f46f secure true languagecode en latitude null longitude null platform androidtv manufacturer sony model null mtalanguagecode en clientip 173 177 21 192 headers user agent mozilla 5 0 linux android 8 0 0 bravia 4k gb atv3 build opr2 170623 027 s16 wv applewebkit 537 36 khtml like gecko version 4 0 chrome 72 0 3626 105 mobile safari 537 36 fe v1 42 0 type in response statuscode 200 reasonphrase ok duration 46 jwt viewerid f2437a465c65 deviceid 21bdd71d b889 4991 9e93 f2437a465c65 3a20a3bedf79f46f userstatus activepaid
+285f8edd26e9ae321d75a6a0e79cde57d5b0ce5b2c11dda17eb0f538f5cd04929b6ac300b8e75d93cb34b7742f614624b726ce9759cca9c91fc9ba3149e200c6,8589937839,1,5.627213047705582E-7,0.9999994372786951,0,3815.397216796875,0.8498544096946716,0.0788099393248558,1429.6322021484375,0.9641784429550172,0.028393346816301342,0,85,0,262144,"[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+ 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+ 48 49 50 51 52 53 55 56 58 60 63 64 66 74 81]","[6. 2. 3. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1.]","[     0      1      2      3      4      5      6      7      8      9
+     10     11     34    106    107    108    207    233    242    243
+    244    249    442    443    444    445    446    447    448    458
+    459    460    461    462    463    464    465    466    467    608
+    609    619   1137   1142   1143   1144   1145   1146   1147   1155
+   1157   1158   1159   1160   1161   1162   1163   1167   1168   1211
+   1212   2266   2929   2965   2968   2974   4183   5502   5556   5560
+   5947   5976   6016 107998]","[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1.]",no_match_predict_fraud,root 1 5c6b1f6a 44be0668360dce88a2561658 f6ee754e 7d43 4534 a626 6ad1f657fb40 request method get url https isl ca dazn com misl v2 playback assetid 1awhy9q3nah1m1iyjp3bo6oybr eventid 2xkdaq62oqdfnhtru32a9x6y2 format mpeg dash playerid dazn 3e31f3e559e50e0e secure true languagecode en latitude null longitude null platform androidtv manufacturer nvidia model null mtalanguagecode en clientip 69 60 229 146 headers user agent mozilla 5 0 linux android 8 0 0 shield android tv build opr6 170623 010 wv applewebkit 537 36 khtml like gecko version 4 0 chrome 72 0 3626 105 mobile safari 537 36 fe v1 42 0 type in response statuscode 200 reasonphrase ok duration 97 jwt viewerid 79365873947c deviceid 2e1403cd 9600 40c4 81d0 79365873947c 3e31f3e559e50e0e userstatus activepaid
+e07d3787fdd454f467f64d3cf966bed3ce83fa1132a8e46be0c4bc4824d79fbd3cacc4117285a748386184c3008f366abebf4e18de44d17b4fee4b54d4c28fae,8589936713,1,1.3113519265492667E-6,0.9999986886480735,0,3802.45703125,0.8860741257667542,0.07906831055879593,1290.1466064453125,0.979153335094452,0.026557616889476776,0,85,0,262144,"[ 0  1  2  3  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+ 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48
+ 49 50 51 52 53 55 58 60 63 64 66 74 81]","[6. 2. 3. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 2. 1. 2. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]","[     0      1      2      3      4      5      6      7      8     34
+    106    107    108    207    233    242    243    244    251    281
+    282    339    340    341    442    443    444    445    446    447
+    448    458    459    460    461    462    463    464    465    466
+    467    599    604    605    606    607    608    609    619   1073
+   1078   1081   1107   1108   1109   1112   1113   2073   2237   2307
+   2314   2323   2355   2358   2359   2363   2364   2365   2370   2655
+   4439   4444   4633   4679   6987  21233  45647  45986  46065  46385
+  46505  46633  46727  47033  47202  47259  47701  47989  48178  48339
+  48521  48757  48807  49179  49444  49712  50357  51461  51908  52223
+  52692 194592]","[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1.]",no_match_predict_fraud,root 1 5c6b0e04 c606ebd4b4840e42d2029801 01cbdeb9 4888 4915 921d ef3ef84b0726 request method get url https isl ca dazn com misl v2 playback assetid 16bexcqe5izhy18gnz0yv7rmmw eventid 43s5qho1kdxv7kw3sk36rdz75 format mpeg dash playerid dazn d92c4ba446d483e5 secure true languagecode fr latitude null longitude null platform androidtv manufacturer sony model null mtalanguagecode fr clientip 142 120 88 39 headers user agent mozilla 5 0 linux android 8 0 0 bravia 4k gb atv3 build opr2 170623 027 s16 wv applewebkit 537 36 khtml like gecko version 4 0 chrome 72 0 3626 105 mobile safari 537 36 fe v1 42 0 type in response statuscode 200 reasonphrase ok duration 109 jwt viewerid 09916da65a12 deviceid 5f5acb5b 9641 4bf5 8647 09916da65a12 d92c4ba446d483e5 userstatus freetrial
