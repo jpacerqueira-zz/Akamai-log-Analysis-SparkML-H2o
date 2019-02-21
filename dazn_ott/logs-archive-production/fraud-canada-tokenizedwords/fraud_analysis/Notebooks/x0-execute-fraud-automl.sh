@@ -101,23 +101,23 @@ echo "$NUM_ML_FRAUD_RECORDS"  >> $JOB_LOG_FILE 2>&1
 #
 # Only Fire Message Out if There is also Linear Fraud Detection in Filter
 #
-if ([ -z "$NUM_ML_FRAUD_RECORDS" ] || [ "$NUM_ML_FRAUD_RECORDS" = "0" ]) && ( [ -z "$NUM_DAILY_FRAUD_RECORDS" ] || [ "$NUM_DAILY_FRAUD_RECORDS" = "0" ] )
+if ([ ! -z "$NUM_ML_FRAUD_RECORDS" ] && [ "$NUM_ML_FRAUD_RECORDS" != "0" ]) && ( [ ! -z "$NUM_DAILY_FRAUD_RECORDS" ] && [ "$NUM_DAILY_FRAUD_RECORDS" != "0" ] )
 then
+  # for any records fraud
+  hdfs dfs -cp ${MY_HDFS_ADVANCED_FOLDER}/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=${DATE_V1}/no_match_hash_message/TEMP_no_match_hash_message_${DATE_V1}.csv ${MY_HDFS_ADVANCED_FOLDER}/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=${DATE_V1}/no_match_hash_message/no_match_hash_message_${DATE_V1}.csv >> $JOB_LOG_FILE 2>&1
+  echo "| NUM_ML_FRAUD_RECORDS=$NUM_ML_FRAUD_RECORDS & NUM_DAILY_FRAUD_RECORDS=$NUM_DAILY_FRAUD_RECORDS"  >> $JOB_LOG_FILE 2>&1
+  echo "| Job Finished  ___;" >> $JOB_LOG_FILE 2>&1
+  hdfs dfs -copyFromLocal -f $JOB_LOG_FILE $MY_HDFS_ADVANCED_FOLDER/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=${DATE_V1}
+  rm -r -f $JOB_LOG_FILE
+  exit 0
+else
   # for zero records fraud and zero linear
-  echo "| NUM_ML_FRAUD_RECORDS=$NUM_ML_FRAUD_RECORDS & NUM_DAILY_FRAUD_RECORDS=$NUM_DAILY_FRAUD_RECORDS"
+  echo "| NUM_ML_FRAUD_RECORDS=$NUM_ML_FRAUD_RECORDS & NUM_DAILY_FRAUD_RECORDS=$NUM_DAILY_FRAUD_RECORDS"  >> $JOB_LOG_FILE 2>&1
   echo "| Job Finished  ___;" >> $JOB_LOG_FILE 2>&1
   # Remove Training model as there are no Fraudulent discoveries
   rm -rf $MY_FOLDER/product_model_bin/ngrams7_features85_m50/v${DATE_V1} >> $JOB_LOG_FILE 2>&1
   hdfs dfs -copyFromLocal -f $JOB_LOG_FILE $MY_HDFS_ADVANCED_FOLDER/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=${DATE_V1} >> $JOB_LOG_FILE 2>&1
   rm -r -f $JOB_LOG_FILE
   exit 1
-else
-  # for any records fraud
-  hdfs dfs -cp ${MY_HDFS_ADVANCED_FOLDER}/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=${DATE_V1}/no_match_hash_message/TEMP_no_match_hash_message_${DATE_V1}.csv ${MY_HDFS_ADVANCED_FOLDER}/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=${DATE_V1}/no_match_hash_message/no_match_hash_message_${DATE_V1}.csv >> $JOB_LOG_FILE 2>&1
-  echo "| NUM_ML_FRAUD_RECORDS=$NUM_ML_FRAUD_RECORDS & NUM_DAILY_FRAUD_RECORDS=$NUM_DAILY_FRAUD_RECORDS"
-  echo "| Job Finished  ___;" >> $JOB_LOG_FILE 2>&1
-  hdfs dfs -copyFromLocal -f $JOB_LOG_FILE $MY_HDFS_ADVANCED_FOLDER/scoring-fraud-notfraud-kl-ks-entropy-ngrams7-features-85/dt=${DATE_V1}
-  rm -r -f $JOB_LOG_FILE
-  exit 0
 fi
 #
