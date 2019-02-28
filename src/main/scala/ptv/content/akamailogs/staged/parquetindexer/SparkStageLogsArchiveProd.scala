@@ -70,6 +70,7 @@ object SparkStageLogsArchiveProd extends App{
 
     // 16Aug2018 - Repartition 1000 to account for 1.1GB file sizes
     val df1: DataFrame =spark.read.json(rawDataPath).repartition(1000)
+
     df1.printSchema()
 
     val df2=df1
@@ -97,6 +98,7 @@ object SparkStageLogsArchiveProd extends App{
       // Workarround for Volume with coalesce 144 instead of 72
       // Made CoalesceFactor Dynami depending on Data volume evaluation //17Aug2018
       .dropNestedColumn("metadata.version").coalesce(coalescefactor).persist(newLevel = StorageLevel.MEMORY_AND_DISK)
+
     df2.printSchema()
 
     df2.write.mode("append").partitionBy("dt").parquet(stagedDataPath)
